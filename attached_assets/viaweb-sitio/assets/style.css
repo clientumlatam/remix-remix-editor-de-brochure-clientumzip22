@@ -324,6 +324,38 @@ table.cmp-full tr:hover td{background:rgba(255,255,255,.02);}
 /* ---------- FAQ preview section ---------- */
 .faq-preview .faq-item summary{font-size:18px;}
 
+/* ---------- Numbered service cards (Clientum style) ---------- */
+.num-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.num-card{background:var(--ink-soft);border:1px solid var(--line-soft);padding:36px 28px;display:flex;flex-direction:column;gap:16px;}
+.num-badge{font-family:var(--mono);font-size:34px;font-weight:700;color:var(--lime);line-height:1;}
+.num-badge.n2{color:var(--cyan);}
+.num-badge.n3{color:var(--amber);}
+.num-card h3{font-family:var(--serif);font-size:20px;margin:0;color:var(--paper);}
+.num-card p{font-size:14px;color:var(--muted);margin:0;line-height:1.6;flex:1;}
+.num-link{font-family:var(--mono);font-size:12px;color:var(--lime);text-decoration:underline;text-underline-offset:3px;text-transform:uppercase;letter-spacing:.03em;}
+.num-link.n2{color:var(--cyan);}
+.num-link.n3{color:var(--amber);}
+@media(max-width:700px){.num-cards{grid-template-columns:1fr;}}
+
+/* ---------- Presupuesto / Lead form ---------- */
+.presupuesto-layout{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.presupuesto-text h2{font-family:var(--serif);font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--paper);margin:18px 0 20px;line-height:1.05;}
+.presupuesto-text p{color:var(--paper-dim);font-size:17px;line-height:1.6;margin:0;max-width:44ch;}
+.presupuesto-form{background:var(--ink-soft);border:1px solid var(--line-soft);padding:36px;}
+.pf-live{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);display:flex;align-items:center;gap:8px;margin-bottom:16px;}
+.presupuesto-form h3{font-family:var(--serif);font-size:21px;margin:0 0 8px;color:var(--paper);}
+.presupuesto-form>p{font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.5;}
+.form-field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.form-field label{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);}
+.form-field input,.form-field select{background:var(--ink);border:1px solid var(--line-soft);color:var(--paper);padding:12px 14px;font-family:var(--sans);font-size:14px;outline:none;transition:border-color .15s;width:100%;box-sizing:border-box;}
+.form-field input::placeholder{color:var(--muted);}
+.form-field input:focus,.form-field select:focus{border-color:var(--lime);}
+.form-field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A7569' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.live-dot{width:8px;height:8px;background:var(--lime);border-radius:50%;display:inline-block;animation:pulse-dot 1.8s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.7);}}
+@media(max-width:900px){.presupuesto-layout{grid-template-columns:1fr;gap:40px;}.form-row{grid-template-columns:1fr;}}
+
 /* ---------- Módulos badge ---------- */
 .mod-badge{font-family:var(--mono);font-size:11px;color:var(--cyan);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:10px;}
 
