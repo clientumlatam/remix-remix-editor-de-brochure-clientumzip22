@@ -12,3 +12,9 @@ id = "ydBsLaDJ7mMyPk1WW05eS"
 uri = "file://clientum-wp-theme/clientum-theme.zip"
 type = "unspecified"
 title = "clientum-theme.zip — Tema WordPress Clientum (actualizado)"
+
+[[outputs]]
+id = "USlQsU4lzmByWmVCgwDeg"
+uri = "file://clientum-wp-theme/clientum-theme-content.xml"
+type = "unspecified"
+title = "Clientum — Contenido para importar (WXR)"
