@@ -180,7 +180,7 @@ export default function SalesProspectorDashboard({
     "pipeline" | "icp" | "research" | "meddic" | "outreach" |
     "products" | "sellers" | "branches" | "conversations" | "bot" |
     "brochure" | "config" | "pages" | "ai" | "activity" | "quickcreate"
-  >("pipeline");
+  >("config");
   // "CRM Completo" reorganizado: barra horizontal de categorías (arriba) + menú vertical (izquierda)
   // Single unified navigation — all tools in one sidebar, no category switcher.
   const NAV_ITEMS = [
