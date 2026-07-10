@@ -168,6 +168,152 @@ export const INDUSTRY_PRESETS: { [key: string]: { label: string; data: BrochureD
       }
     }
   },
+  clientum_completo: {
+    label: "🚀 Clientum — Catálogo Completo de Soluciones",
+    data: {
+      cover: {
+        slogan: "Todo lo que tu empresa necesita, en una sola plataforma.",
+        sub: "CRM, Chatbot WhatsApp con IA, E-Commerce, ERP, Business Intelligence, Marketing Digital, Ciberseguridad, Cloud, Apps Móviles y Capacitación — el ecosistema completo de Clientum para hacer crecer tu PyME."
+      },
+      chatbot: {
+        title: "Atención inteligente 24/7, en todos tus canales.",
+        features: [
+          { title: "Respuesta instantánea por WhatsApp", desc: "Atiende consultas frecuentes al instante, a cualquier hora, con el tono de tu marca." },
+          { title: "Agendamiento y cotización automática", desc: "El bot agenda citas, genera presupuestos y los envía sin intervención humana." },
+          { title: "Calificación de leads con IA", desc: "Clasifica cada consulta según intención de compra y la prioriza automáticamente en el CRM." },
+          { title: "Integración multicanal", desc: "Centraliza WhatsApp, Instagram, Facebook y tu sitio web en una sola bandeja de conversaciones." },
+          { title: "Seguimiento post-consulta", desc: "Retoma el contacto a las 24 y 48 horas si el cliente no responde. Cero ventas perdidas." },
+          { title: "Asistente IA en castellano", desc: "Preguntale al asistente sobre tus ventas, clientes o stock y obtené la respuesta al instante." }
+        ],
+        flowSteps: [
+          "El cliente escribe por WhatsApp, Instagram o tu web y el bot responde al instante",
+          "La IA califica, cotiza, agenda o recopila datos automáticamente",
+          "El lead llega al CRM con historial completo si necesita un asesor",
+          "Tu equipo cierra la venta con todo el contexto ya cargado"
+        ]
+      },
+      crm: {
+        title: "Un ecosistema conectado de punta a punta.",
+        features: [
+          { title: "Pipeline drag & drop", desc: "Visualizá y gestioná cada oportunidad de venta en tiempo real, desde el lead hasta el cierre." },
+          { title: "Facturación AFIP integrada", desc: "Emitís facturas A, B y C con CAE directamente desde el CRM, sin cargar datos dos veces." },
+          { title: "Contactos y empresas unificados", desc: "Historial completo de interacciones por WhatsApp, email, redes y llamadas en un solo lugar." },
+          { title: "Dashboards de Business Intelligence", desc: "KPIs comerciales y operativos en tiempo real, con reportes automáticos por email o WhatsApp." }
+        ]
+      },
+      services: [
+        {
+          title: "CRM + Chatbot IA + Facturación (Plan Pro)",
+          desc: "La base de la plataforma Clientum: chatbot de WhatsApp ilimitado, CRM con pipeline visual, asistente de IA y facturación AFIP integrada, todo en un solo abono.",
+          bullets: [
+            "Chatbot WhatsApp con conversaciones ilimitadas",
+            "CRM con contactos ilimitados y pipeline visual",
+            "Facturación AFIP (A, B y C) integrada",
+            "Asistente IA incluido para análisis instantáneo"
+          ],
+          price: 0,
+          monthly: 179990,
+          time: 7
+        },
+        {
+          title: "Desarrollo Web & E-Commerce",
+          desc: "Tiendas online y sitios de alto rendimiento con pasarela de pago, sincronización de stock y diseño UX/UI premium, integrados directamente al CRM.",
+          bullets: [
+            "Tiendas WooCommerce y Shopify con stock sincronizado",
+            "Landing pages y sitios institucionales integrados al CRM",
+            "Pasarela de pago MercadoPago nativa",
+            "SEO técnico y diseño responsivo incluido"
+          ],
+          price: 800000,
+          monthly: 0,
+          time: 15
+        },
+        {
+          title: "Implementación de ERP y Automatización",
+          desc: "Conectamos tu ERP, e-commerce y sistemas de stock en tiempo real, automatizando flujos repetitivos y liquidaciones sin intervención manual.",
+          bullets: [
+            "Sincronización de stock y precios entre canales",
+            "Automatización de flujos y aprobaciones internas",
+            "Integración API/webhooks con sistemas existentes",
+            "Alertas automáticas ante quiebres de stock"
+          ],
+          price: 400000,
+          monthly: 0,
+          time: 10
+        },
+        {
+          title: "Business Intelligence & Analítica",
+          desc: "Convertimos los datos de tu CRM y ERP en dashboards e informes que guían decisiones, con predicciones y tendencias por sector.",
+          bullets: [
+            "Dashboards personalizados en tiempo real",
+            "KPIs comerciales y operativos en un panel",
+            "Predicciones y análisis con IA",
+            "Reportes automáticos por email o WhatsApp"
+          ],
+          price: 600000,
+          monthly: 0,
+          time: 8
+        },
+        {
+          title: "Marketing Digital & Redes Sociales",
+          desc: "Captación automática de leads desde Instagram y Facebook, campañas segmentadas y broadcast masivo integrados a tu pipeline de ventas.",
+          bullets: [
+            "Captura automática de leads desde FB e IG",
+            "Broadcast segmentado por WhatsApp",
+            "Integración de DMs y comentarios al CRM",
+            "Métricas de apertura, clics y conversión por campaña"
+          ],
+          price: 250000,
+          monthly: 60000,
+          time: 7
+        },
+        {
+          title: "Ciberseguridad & Cloud",
+          desc: "Auditorías de seguridad, respaldo automatizado en la nube y protección de tus bases de datos frente a filtraciones y ciberataques.",
+          bullets: [
+            "Auditorías de seguridad y vulnerabilidades",
+            "Respaldo en la nube automatizado",
+            "Gestión de accesos y permisos por rol",
+            "Monitoreo continuo de infraestructura"
+          ],
+          price: 350000,
+          monthly: 45000,
+          time: 5
+        },
+        {
+          title: "Aplicaciones Móviles a Medida",
+          desc: "Apps nativas y multiplataforma para vendedores, repartidores o clientes finales, conectadas en tiempo real con tu CRM y ERP.",
+          bullets: [
+            "Apps nativas iOS/Android y multiplataforma",
+            "Sincronización en tiempo real con el CRM",
+            "Notificaciones push y geolocalización",
+            "Panel de administración incluido"
+          ],
+          price: 700000,
+          monthly: 0,
+          time: 20
+        },
+        {
+          title: "Capacitación & Soporte Continuo",
+          desc: "Formación de tu equipo en el uso de la plataforma y soporte prioritario para asegurar la adopción y el éxito de la implementación.",
+          bullets: [
+            "Capacitación inicial para todo el equipo",
+            "Material y video-tutoriales personalizados",
+            "Soporte prioritario en menos de 4 horas",
+            "Revisiones periódicas de uso y mejoras"
+          ],
+          price: 0,
+          monthly: 35000,
+          time: 3
+        }
+      ],
+      testimonial: {
+        text: "Con Clientum unificamos WhatsApp, ventas, facturación y redes en un solo lugar. El equipo dejó de perder tiempo saltando entre sistemas y las decisiones ahora se toman con datos reales, no con intuición.",
+        author: "Martín R.",
+        company: "Distribuidora del Sur S.A. — Neuquén"
+      }
+    }
+  },
   gaman: {
     label: "🛠️ GAMAN — E-Commerce & ERP (5 Etapas)",
     data: {
@@ -706,14 +852,7 @@ export const INDUSTRY_PRESETS: { [key: string]: { label: string; data: BrochureD
   }
 };
 
-export const INITIAL_DEALS: CRMDeal[] = [
-  { id: "1", company: "Distribuidora del Sur S.A.", amount: 179990, stage: "closed", industry: "Distribuidora" },
-  { id: "2", company: "Lácteos La Pampa mayorista", amount: 269990, stage: "proposed", industry: "Distribuidora" },
-  { id: "3", company: "Bodega Estancia Mendoza", amount: 179990, stage: "bot_contact", industry: "Gastronomía" },
-  { id: "4", company: "Campos de Balcarce", amount: 350000, stage: "leads", industry: "Agro" },
-  { id: "5", company: "Inmobiliaria Neuquén", amount: 89990, stage: "leads", industry: "Inmobiliaria" },
-  { id: "6", company: "Corralón Patagónico", amount: 179990, stage: "proposed", industry: "Construcción" }
-];
+export const INITIAL_DEALS: CRMDeal[] = [];
 
 export const AI_PRESETS_CHATS: { [key: string]: AIChatMessage } = {
   ventas: {

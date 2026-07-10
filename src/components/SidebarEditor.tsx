@@ -502,6 +502,7 @@ export default function SidebarEditor({
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-xs text-slate-800 font-medium focus:outline-none focus:border-blue-500"
               >
                 <optgroup label="Plantillas de Industria">
+                  <option value="clientum_completo">🚀 Clientum — Catálogo Completo de Soluciones</option>
                   <option value="gaman">🛠️ GAMAN — E-Commerce & ERP (5 Etapas)</option>
                   <option value="default">Default Clientum (Servicios)</option>
                   <option value="agro">Agropecuaria & Logística de Granos</option>

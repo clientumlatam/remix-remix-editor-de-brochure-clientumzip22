@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { CRMDeal, BrochureData, CustomTemplate } from "../types";
 import { INITIAL_DEALS } from "../data";
+import { loadDeals, saveDeals, addActivity, DEALS_EVENT } from "../store/sharedStore";
 import CrmFullApp from "./crm-full/CrmFullApp";
 import SidebarEditor from "./SidebarEditor";
 import BrochurePreview from "./BrochurePreview";
@@ -63,6 +64,9 @@ interface SalesProspectorDashboardProps {
   brochureData: BrochureData;
   hidePrices: boolean;
   onBack?: () => void;
+  onLogout?: () => void;
+  currentUsername?: string;
+  currentUserRole?: string;
   onChangeDeals?: (newDeals: CRMDeal[]) => void;
   // Brochure editor (merged "Brochure" tab)
   onChangeBrochureData?: (data: BrochureData) => void;
@@ -143,13 +147,16 @@ export default function SalesProspectorDashboard({
   brochureData,
   hidePrices,
   onBack,
+  onLogout,
+  currentUsername,
+  currentUserRole = "user",
   onChangeDeals,
   onChangeBrochureData,
   colorTheme = "navy",
   onThemeChange,
   contactInfo,
   onContactChange,
-  activePreset = "gaman",
+  activePreset = "clientum_completo",
   onPresetChange,
   customTemplates = [],
   onSaveTemplate,
@@ -165,6 +172,9 @@ export default function SalesProspectorDashboard({
   onExportPDF,
   onResetBrochure
 }: SalesProspectorDashboardProps) {
+  // currentUserRole is kept in the prop signature for future server-enforced
+  // admin-only actions inside this dashboard; the nav itself is shown to all.
+  void currentUserRole;
   // Navigation tabs
   const [activeTab, setActiveTab] = useState<
     "pipeline" | "icp" | "research" | "meddic" | "outreach" |
@@ -172,47 +182,25 @@ export default function SalesProspectorDashboard({
     "brochure" | "config" | "pages" | "ai" | "activity" | "quickcreate"
   >("pipeline");
   // "CRM Completo" reorganizado: barra horizontal de categorías (arriba) + menú vertical (izquierda)
-  const NAV_CATEGORIES = [
-    {
-      id: "ventas", label: "Pipeline & Ventas", icon: Compass,
-      items: [
-        { id: "pipeline" as const, label: "CRM Pipeline", icon: Compass },
-        { id: "products" as const, label: "Productos", icon: Package },
-        { id: "sellers" as const, label: "Vendedores", icon: Users },
-        { id: "branches" as const, label: "Sucursales", icon: Building2 },
-      ],
-    },
-    {
-      id: "prospeccion", label: "Prospección B2B", icon: Search,
-      items: [
-        { id: "icp" as const, label: "ICP Builder", desc: "Definí tu cliente ideal", icon: Target },
-        { id: "research" as const, label: "Patagonia Explorer", desc: "Buscá y calificá leads reales", icon: Search },
-        { id: "meddic" as const, label: "Calificación MEDDIC", desc: "Auditá el potencial de cada lead", icon: Award },
-        { id: "outreach" as const, label: "Outreach Campaigns", desc: "Generá campañas de contacto", icon: Mail },
-      ],
-    },
-    {
-      id: "comunicacion", label: "Comunicación", icon: MessageSquare,
-      items: [
-        { id: "conversations" as const, label: "Conversaciones", icon: MessageSquare },
-        { id: "bot" as const, label: "Bot", icon: Bot },
-      ],
-    },
-    {
-      id: "contenido", label: "Brochure & Contenido", icon: FileText,
-      items: [
-        { id: "brochure" as const, label: "Brochure", icon: FileText },
-        { id: "config" as const, label: "Configuración", icon: Sliders },
-        { id: "pages" as const, label: "Contenido", icon: Edit3 },
-        { id: "ai" as const, label: "Copiloto IA", icon: Sparkles },
-        { id: "activity" as const, label: "Actividad", icon: Clock },
-        { id: "quickcreate" as const, label: "Creación Rápida", icon: PlusCircle },
-      ],
-    },
+  // Single unified navigation — all tools in one sidebar, no category switcher.
+  const NAV_ITEMS = [
+    { id: "pipeline" as const, label: "CRM Pipeline", icon: Compass },
+    { id: "products" as const, label: "Productos", icon: Package },
+    { id: "sellers" as const, label: "Vendedores", icon: Users },
+    { id: "branches" as const, label: "Sucursales", icon: Building2 },
+    { id: "icp" as const, label: "ICP Builder", desc: "Definí tu cliente ideal", icon: Target },
+    { id: "research" as const, label: "Patagonia Explorer", desc: "Buscá y calificá leads reales", icon: Search },
+    { id: "meddic" as const, label: "Calificación MEDDIC", desc: "Auditá el potencial de cada lead", icon: Award },
+    { id: "outreach" as const, label: "Outreach Campaigns", desc: "Generá campañas de contacto", icon: Mail },
+    { id: "conversations" as const, label: "Conversaciones", icon: MessageSquare },
+    { id: "bot" as const, label: "Bot", icon: Bot },
+    { id: "brochure" as const, label: "Brochure", icon: FileText },
+    { id: "config" as const, label: "Configuración", icon: Sliders },
+    { id: "pages" as const, label: "Contenido", icon: Edit3 },
+    { id: "ai" as const, label: "Copiloto IA", icon: Sparkles },
+    { id: "activity" as const, label: "Actividad", icon: Clock },
+    { id: "quickcreate" as const, label: "Creación Rápida", icon: PlusCircle },
   ];
-  const getCategoryForTab = (tab: string) => NAV_CATEGORIES.find((c) => c.items.some((i) => i.id === tab))?.id || "ventas";
-  const [activeCategory, setActiveCategory] = useState<string>(() => getCategoryForTab("pipeline"));
-  const currentCategory = NAV_CATEGORIES.find((c) => c.id === activeCategory) || NAV_CATEGORIES[0];
   const brochureActivePages = hideChatbot ? [1, 2, 4, 6, 7, 8] : [1, 2, 3, 4, 5, 6, 7, 8];
   const resolvedContactInfo = contactInfo || {
     website: "clientum.com.ar",
@@ -233,29 +221,35 @@ export default function SalesProspectorDashboard({
   const isKeyActive = Boolean(customApiKey) && customApiKey !== "YOUR_API_KEY" && customApiKey.trim() !== "";
   const hasActiveValidKey = hasValidKey || isKeyActive;
 
-  // CRM deals management (Saves to localStorage and is synchronized)
+  // CRM deals management — shared across every tab (Pipeline, Patagonia
+  // Explorer, Creación Rápida, Actividad) via the sharedStore event bus.
   const [deals, setDeals] = useState<CRMDeal[]>(() => {
     if (brochureData?.crm?.deals && brochureData.crm.deals.length > 0) {
       return brochureData.crm.deals;
     }
-    const saved = localStorage.getItem("clientum_sim_deals");
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error("Error reading saved deals", e);
-      }
-    }
+    const saved = loadDeals();
+    if (saved.length > 0) return saved;
     return INITIAL_DEALS;
   });
 
   // Track state and changes
   useEffect(() => {
-    localStorage.setItem("clientum_sim_deals", JSON.stringify(deals));
+    saveDeals(deals);
     if (onChangeDeals) {
       onChangeDeals(deals);
     }
   }, [deals]);
+
+  // Live-sync: pick up deals created/edited from other tabs (e.g. Creación
+  // Rápida) without requiring a full page reload.
+  useEffect(() => {
+    const handleExternalDealsUpdate = (e: Event) => {
+      const updated = (e as CustomEvent<CRMDeal[]>).detail ?? loadDeals();
+      setDeals((prev) => (JSON.stringify(prev) !== JSON.stringify(updated) ? updated : prev));
+    };
+    window.addEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+    return () => window.removeEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+  }, []);
 
   // ICP Builder States
   const [icpIndustry, setIcpIndustry] = useState("Distribuidora Mayorista");
@@ -402,6 +396,7 @@ export default function SalesProspectorDashboard({
   // Move deal stages
   const moveDeal = (id: string, direction: "next" | "prev") => {
     const stages: CRMDeal["stage"][] = ["leads", "bot_contact", "proposed", "closed"];
+    let movedDeal: CRMDeal | null = null;
     setDeals((prev) =>
       prev.map((deal) => {
         if (deal.id !== id) return deal;
@@ -412,9 +407,13 @@ export default function SalesProspectorDashboard({
         } else if (direction === "prev" && currentIndex > 0) {
           nextIndex = currentIndex - 1;
         }
-        return { ...deal, stage: stages[nextIndex] };
+        movedDeal = { ...deal, stage: stages[nextIndex] };
+        return movedDeal;
       })
     );
+    if (movedDeal) {
+      addActivity({ type: "stage", title: `"${movedDeal.company}" pasó a la etapa "${movedDeal.stage}"` });
+    }
   };
 
   const handleDeleteDeal = (id: string) => {
@@ -881,27 +880,6 @@ export default function SalesProspectorDashboard({
           </div>
         </div>
 
-        {/* Barra horizontal de categorías - agrupa "CRM Completo" en 4 grupos lógicos */}
-        <div className="flex bg-slate-800/80 p-0.5 rounded-lg border border-slate-700 gap-0.5">
-          {NAV_CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => {
-                setActiveCategory(cat.id);
-                if (!cat.items.some((i) => i.id === activeTab)) {
-                  setActiveTab(cat.items[0].id);
-                }
-              }}
-              className={`px-3 py-1.5 rounded-md text-[11px] font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                activeCategory === cat.id ? "bg-emerald-600 text-white shadow-md" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              <cat.icon className="w-3.5 h-3.5" />
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
         {/* Back and CSV triggers */}
         <div className="flex items-center gap-2">
           <button
@@ -918,6 +896,16 @@ export default function SalesProspectorDashboard({
             >
               Volver al Editor
               <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          )}
+          {onLogout && (
+            <button
+              onClick={onLogout}
+              title={currentUsername ? `Sesión: ${currentUsername}` : undefined}
+              className="bg-slate-800 hover:bg-red-900/60 border border-slate-700 hover:border-red-800 text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all text-slate-300"
+            >
+              <Lock className="w-3.5 h-3.5" />
+              Cerrar sesión
             </button>
           )}
         </div>
@@ -940,14 +928,14 @@ export default function SalesProspectorDashboard({
         </div>
       )}
 
-      {/* Cuerpo: menú vertical a la izquierda (sub-items de la categoría activa) + contenido */}
+      {/* Cuerpo: menú vertical unificado + contenido */}
       <div className="flex-1 flex overflow-hidden">
         <aside className="w-56 bg-white border-r border-slate-200 overflow-y-auto flex-shrink-0 no-print py-3 px-2">
           <div className="px-2.5 pb-2 mb-1 border-b border-slate-100 flex items-center gap-1.5 text-slate-400">
-            <currentCategory.icon className="w-3.5 h-3.5" />
-            <span className="text-[10px] font-bold uppercase tracking-wider font-mono">{currentCategory.label}</span>
+            <Compass className="w-3.5 h-3.5" />
+            <span className="text-[10px] font-bold uppercase tracking-wider font-mono">Pipeline, Prospección &amp; Comunicación</span>
           </div>
-          {currentCategory.items.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}

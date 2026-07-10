@@ -9,6 +9,8 @@ import {
   PlusCircle,
   ChevronDown,
 } from "lucide-react";
+import { addDeal, addActivity } from "../../store/sharedStore";
+import { CRMDeal } from "../../types";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                                */
@@ -22,6 +24,7 @@ interface QuickItem {
   label: string;
   sub: string;
   createdAt: string;
+  raw?: Record<string, string>;
 }
 
 /* ------------------------------------------------------------------ */
@@ -88,6 +91,7 @@ function ContactForm({ onSave, onCancel }: { onSave: (item: Omit<QuickItem, "id"
       kind: "contact",
       label: name.trim(),
       sub: [email.trim(), company.trim()].filter(Boolean).join(" · "),
+      raw: { name: name.trim(), email: email.trim(), phone: phone.trim(), company: company.trim() },
     });
   }
 
@@ -113,9 +117,14 @@ function LeadForm({ onSave, onCancel }: { onSave: (item: Omit<QuickItem, "id" | 
     e.preventDefault();
     if (!title.trim()) return;
     const parts = [];
-    if (value.trim())  parts.push(`$${value}`);
+    if (value.trim())  parts.push(`${value}`);
     if (source.trim()) parts.push(source);
-    onSave({ kind: "lead", label: title.trim(), sub: parts.join(" · ") || "Sin datos adicionales" });
+    onSave({
+      kind: "lead",
+      label: title.trim(),
+      sub: parts.join(" · ") || "Sin datos adicionales",
+      raw: { title: title.trim(), value: value.trim(), source: source.trim() },
+    });
   }
 
   return (
@@ -144,7 +153,12 @@ function ActivityForm({ onSave, onCancel }: { onSave: (item: Omit<QuickItem, "id
   function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!title.trim()) return;
-    onSave({ kind: "activity", label: title.trim(), sub: actType + (notes.trim() ? ` · ${notes.trim()}` : "") });
+    onSave({
+      kind: "activity",
+      label: title.trim(),
+      sub: actType + (notes.trim() ? ` · ${notes.trim()}` : ""),
+      raw: { title: title.trim(), actType, notes: notes.trim() },
+    });
   }
 
   return (
@@ -171,9 +185,14 @@ function DealForm({ onSave, onCancel }: { onSave: (item: Omit<QuickItem, "id" | 
     e.preventDefault();
     if (!title.trim()) return;
     const parts = [];
-    if (value.trim()) parts.push(`$${value}`);
+    if (value.trim()) parts.push(`${value}`);
     parts.push(stage);
-    onSave({ kind: "deal", label: title.trim(), sub: parts.join(" · ") });
+    onSave({
+      kind: "deal",
+      label: title.trim(),
+      sub: parts.join(" · "),
+      raw: { title: title.trim(), value: value.trim(), stage },
+    });
   }
 
   return (
@@ -227,6 +246,54 @@ export default function QuickCreateTab() {
     const label = KIND_CONFIG[partial.kind].label;
     setSuccessMsg(`${label} creado: "${newItem.label}"`);
     setTimeout(() => setSuccessMsg(null), 3000);
+
+    // Real integration: push contacts, leads and deals into the same shared
+    // CRM pipeline used by "CRM Pipeline" and "Patagonia Explorer", so they
+    // show up there instantly instead of staying isolated in this panel.
+    // Activities go straight into the shared activity feed used by "Actividad".
+    const raw = partial.raw || {};
+    if (partial.kind === "contact") {
+      addDeal({
+        company: raw.company || raw.name || partial.label,
+        contact: raw.name,
+        phone: raw.phone || undefined,
+        amount: 0,
+        stage: "leads",
+        industry: "Contacto",
+        painPoint: raw.email ? `Email: ${raw.email}` : undefined,
+      } as Partial<CRMDeal> & { company: string });
+    } else if (partial.kind === "lead") {
+      addDeal({
+        company: raw.title || partial.label,
+        amount: Number(raw.value) || 0,
+        stage: "leads",
+        industry: raw.source || "Prospección",
+      } as Partial<CRMDeal> & { company: string });
+    } else if (partial.kind === "deal") {
+      const stageMap: Record<string, CRMDeal["stage"]> = {
+        "Descubrimiento": "leads",
+        "Propuesta": "proposed",
+        "Negociación": "proposed",
+        "Contrato": "proposed",
+        "Ganado": "closed",
+      };
+      addDeal({
+        company: raw.title || partial.label,
+        amount: Number(raw.value) || 0,
+        stage: stageMap[raw.stage] || "leads",
+        industry: "Deal directo",
+      } as Partial<CRMDeal> & { company: string });
+    } else if (partial.kind === "activity") {
+      addActivity({
+        type: (["Llamada", "call"].includes(raw.actType) ? "call"
+          : raw.actType === "Email" ? "email"
+          : raw.actType === "Reunión" ? "meeting"
+          : raw.actType === "Tarea" ? "task"
+          : "note"),
+        title: raw.title || partial.label,
+        notes: raw.notes || undefined,
+      });
+    }
   }
 
   function handleDelete(id: number) {

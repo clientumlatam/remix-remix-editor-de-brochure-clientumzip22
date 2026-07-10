@@ -1,8 +1,0 @@
-{
-  "name": "Remix: Remix: Editor de Brochure Clientum",
-  "description": "Un editor interactivo para personalizar, simular y descargar el brochure corporativo de Clientum 2026. Incluye simulación de CRM, Chatbot de WhatsApp con IA y Generador de contenido por IA.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}

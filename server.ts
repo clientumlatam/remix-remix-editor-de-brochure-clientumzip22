@@ -3,6 +3,10 @@ import path from "path";
 import dotenv from "dotenv";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createServer as createViteServer } from "vite";
+import session from "express-session";
+import connectPgSimple from "connect-pg-simple";
+import bcrypt from "bcryptjs";
+import { Pool } from "pg";
 
 dotenv.config();
 
@@ -10,6 +14,203 @@ const app = express();
 app.use(express.json({ limit: "10mb" }));
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 5000;
+
+// --- Auth: database pool, session store, and user routes ---
+const pgPool = new Pool({ connectionString: process.env.DATABASE_URL });
+const PgSession = connectPgSimple(session);
+
+declare module "express-session" {
+  interface SessionData {
+    userId?: number;
+    username?: string;
+    role?: string;
+  }
+}
+
+if (!process.env.SESSION_SECRET) {
+  throw new Error("SESSION_SECRET no está configurado. Es requerido para las sesiones de autenticación.");
+}
+
+app.use(
+  session({
+    store: new PgSession({ pool: pgPool, tableName: "session" }),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 días
+    },
+  })
+);
+
+const USERNAME_RE = /^[a-zA-Z0-9_.-]{3,32}$/;
+
+function requireAuth(req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "No autenticado." });
+  }
+  next();
+}
+
+async function requireAdmin(req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "No autenticado." });
+  }
+  try {
+    // Re-check the role from the DB on every request instead of trusting the
+    // session snapshot, so a role change/demotion takes effect immediately
+    // without requiring the user to log out and back in.
+    const result = await pgPool.query("SELECT role FROM users WHERE id = $1", [req.session.userId]);
+    const currentRole = result.rows[0]?.role;
+    if (currentRole !== "admin") {
+      return res.status(403).json({ error: "Se requiere rol de administrador." });
+    }
+    req.session.role = currentRole;
+    next();
+  } catch (error) {
+    console.error("Error verificando rol de administrador:", error);
+    return res.status(500).json({ error: "Ocurrió un error al verificar permisos." });
+  }
+}
+
+app.post("/api/auth/register", async (req, res) => {
+  try {
+    const { username, password } = req.body || {};
+    if (typeof username !== "string" || typeof password !== "string") {
+      return res.status(400).json({ error: "Usuario y contraseña son requeridos." });
+    }
+    if (!USERNAME_RE.test(username)) {
+      return res.status(400).json({ error: "El usuario debe tener entre 3 y 32 caracteres (letras, números, . _ -)." });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ error: "La contraseña debe tener al menos 8 caracteres." });
+    }
+
+    const existing = await pgPool.query("SELECT id FROM users WHERE username = $1", [username]);
+    if ((existing.rowCount ?? 0) > 0) {
+      return res.status(409).json({ error: "Ese usuario ya existe." });
+    }
+
+    const passwordHash = await bcrypt.hash(password, 12);
+    // The very first account created becomes admin so there's always someone
+    // who can manage the Brochure/Contenido section; everyone after is "user".
+    // Uses a single transaction with a table-level lock so two concurrent
+    // first-registrations can't both observe count=0 and both become admin.
+    const client = await pgPool.connect();
+    let user: { id: number; username: string; role: string };
+    try {
+      await client.query("BEGIN");
+      await client.query("LOCK TABLE users IN SHARE ROW EXCLUSIVE MODE");
+      const { rows: countRows } = await client.query("SELECT COUNT(*)::int AS count FROM users");
+      const role = countRows[0]?.count === 0 ? "admin" : "user";
+      const inserted = await client.query(
+        "INSERT INTO users (username, password_hash, role) VALUES ($1, $2, $3) RETURNING id, username, role",
+        [username, passwordHash, role]
+      );
+      user = inserted.rows[0];
+      await client.query("COMMIT");
+    } catch (txError) {
+      await client.query("ROLLBACK");
+      throw txError;
+    } finally {
+      client.release();
+    }
+
+    req.session.regenerate((err) => {
+      if (err) {
+        console.error("Error regenerando sesión tras registro:", err);
+        return res.status(500).json({ error: "Error al iniciar sesión tras el registro." });
+      }
+      req.session.userId = user.id;
+      req.session.username = user.username;
+      req.session.role = user.role;
+      req.session.save((saveErr) => {
+        if (saveErr) {
+          console.error("Error guardando sesión tras registro:", saveErr);
+          return res.status(500).json({ error: "Error al iniciar sesión tras el registro." });
+        }
+        return res.status(201).json({ user: { id: user.id, username: user.username, role: user.role } });
+      });
+    });
+  } catch (error: any) {
+    console.error("Error en /api/auth/register:", error);
+    return res.status(500).json({ error: "Ocurrió un error al registrar el usuario." });
+  }
+});
+
+app.post("/api/auth/login", async (req, res) => {
+  try {
+    const { username, password } = req.body || {};
+    if (typeof username !== "string" || typeof password !== "string") {
+      return res.status(400).json({ error: "Usuario y contraseña son requeridos." });
+    }
+
+    const result = await pgPool.query("SELECT id, username, password_hash, role FROM users WHERE username = $1", [username]);
+    const user = result.rows[0];
+    // Always run a hash comparison to reduce username-enumeration timing signal.
+    const validHash = user?.password_hash || "$2a$12$invalidsaltinvalidsaltinvalidsaltinvalidsaltinvalidsal";
+    const isValid = await bcrypt.compare(password, validHash);
+
+    if (!user || !isValid) {
+      return res.status(401).json({ error: "Usuario o contraseña incorrectos." });
+    }
+
+    req.session.regenerate((err) => {
+      if (err) {
+        console.error("Error regenerando sesión tras login:", err);
+        return res.status(500).json({ error: "Error al iniciar sesión." });
+      }
+      req.session.userId = user.id;
+      req.session.username = user.username;
+      req.session.role = user.role;
+      req.session.save((saveErr) => {
+        if (saveErr) {
+          console.error("Error guardando sesión tras login:", saveErr);
+          return res.status(500).json({ error: "Error al iniciar sesión." });
+        }
+        return res.json({ user: { id: user.id, username: user.username, role: user.role } });
+      });
+    });
+  } catch (error: any) {
+    console.error("Error en /api/auth/login:", error);
+    return res.status(500).json({ error: "Ocurrió un error al iniciar sesión." });
+  }
+});
+
+app.post("/api/auth/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error("Error cerrando sesión:", err);
+      return res.status(500).json({ error: "Ocurrió un error al cerrar sesión." });
+    }
+    res.clearCookie("connect.sid");
+    return res.json({ ok: true });
+  });
+});
+
+app.get("/api/auth/me", async (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "No autenticado." });
+  }
+  try {
+    // Re-check the role from the DB instead of trusting the session snapshot,
+    // so a role change/promotion (e.g. to "admin") is reflected in the UI
+    // immediately, without requiring the user to log out and back in.
+    const result = await pgPool.query("SELECT role FROM users WHERE id = $1", [req.session.userId]);
+    const currentRole = result.rows[0]?.role;
+    if (!currentRole) {
+      return res.status(401).json({ error: "No autenticado." });
+    }
+    req.session.role = currentRole;
+    return res.json({ user: { id: req.session.userId, username: req.session.username, role: currentRole } });
+  } catch (error) {
+    console.error("Error en /api/auth/me:", error);
+    return res.status(500).json({ error: "Ocurrió un error al verificar la sesión." });
+  }
+});
 
 // Lazy client initialization for safety
 let aiClient: GoogleGenAI | null = null;
@@ -45,9 +246,9 @@ async function generateContentWithFallback(
     throw new Error("Cliente de IA no inicializado o clave de API faltante. Activando fallback local automático.");
   }
   const modelsToTry = [
-    options.defaultModel || "gemini-3.5-flash",
-    "gemini-3.1-flash-lite",
-    "gemini-3.1-pro-preview"
+    options.defaultModel || "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.5-flash-lite"
   ];
   
   let lastError: any = null;
@@ -994,7 +1195,7 @@ async function fetchApifyGooglePlaces(city: string, industry: string): Promise<a
   });
 }
 
-app.post("/api/scrape-places", async (req, res) => {
+app.post("/api/scrape-places", requireAuth, async (req, res) => {
   try {
     const { city, industry } = req.body;
     if (!city || !industry) {
@@ -1008,7 +1209,28 @@ app.post("/api/scrape-places", async (req, res) => {
   }
 });
 
-app.post("/api/generate", async (req, res) => {
+// Only the public chatbot demo is reachable without a session; every other
+// action here belongs to the CRM/dashboard and requires an authenticated user.
+const PUBLIC_GENERATE_ACTIONS = new Set(["chatbotAnswer"]);
+
+// Brochure & Contenido actions (SidebarEditor) are admin-only.
+const ADMIN_ONLY_GENERATE_ACTIONS = new Set([
+  "generateIndustryCopy",
+  "optimizeCopy",
+  "generateImage",
+  "translateBrochure",
+]);
+
+app.post("/api/generate", async (req, res, next) => {
+  const action = req.body?.action;
+  if (ADMIN_ONLY_GENERATE_ACTIONS.has(action)) {
+    return requireAdmin(req, res, next);
+  }
+  if (!PUBLIC_GENERATE_ACTIONS.has(action)) {
+    return requireAuth(req, res, next);
+  }
+  next();
+}, async (req, res) => {
   try {
     const { action, payload } = req.body;
     const ai = getAI();
@@ -1711,7 +1933,7 @@ Proporciona consejos estratégicos, creativos y prácticos. Usa el voseo argenti
         }
         console.log(`[Gemini Image] Generando imagen con prompt: "${promptText}"`);
         const response = await ai.models.generateContent({
-          model: 'gemini-3.1-flash-lite-image',
+          model: 'gemini-2.5-flash-image',
           contents: {
             parts: [
               {

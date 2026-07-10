@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CRMDeal, BrochureData } from "../types";
 import { INITIAL_DEALS } from "../data";
+import { loadDeals, saveDeals, addActivity, DEALS_EVENT } from "../store/sharedStore";
 import {
   Users,
   DollarSign,
@@ -72,21 +73,26 @@ export default function SidebarCRM({ brochureData, hidePrices, onChange }: Sideb
   // Navigation inside CRM: "pipeline" (Active pipeline) or "prospector" (Find leads in RN/NQ)
   const [crmSubTab, setCrmSubTab] = useState<"pipeline" | "prospector">("pipeline");
 
-  // Load initial deals from brochureData or localStorage or fallback to INITIAL_DEALS
+  // Load initial deals from brochureData or the shared store (synced across
+  // every tab: Pipeline, Patagonia Explorer, Creación Rápida, Actividad).
   const [deals, setDeals] = useState<CRMDeal[]>(() => {
     if (brochureData?.crm?.deals && brochureData.crm.deals.length > 0) {
       return brochureData.crm.deals;
     }
-    const saved = localStorage.getItem("clientum_sim_deals");
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error("Error reading saved deals, using presets.", e);
-      }
-    }
+    const saved = loadDeals();
+    if (saved.length > 0) return saved;
     return INITIAL_DEALS;
   });
+
+  // Live-sync: pick up deals created/edited from other tabs without a reload.
+  useEffect(() => {
+    const handleExternalDealsUpdate = (e: Event) => {
+      const updated = (e as CustomEvent<CRMDeal[]>).detail ?? loadDeals();
+      setDeals((prev) => (JSON.stringify(prev) !== JSON.stringify(updated) ? updated : prev));
+    };
+    window.addEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+    return () => window.removeEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+  }, []);
 
   // Form states (Manual Lead Registration)
   const [showAddForm, setShowAddForm] = useState(false);
@@ -130,9 +136,9 @@ export default function SidebarCRM({ brochureData, hidePrices, onChange }: Sideb
     }
   }, [brochureData?.crm?.deals]);
 
-  // Save to localStorage when deals change and propagate to brochureData
+  // Save to the shared store when deals change and propagate to brochureData
   useEffect(() => {
-    localStorage.setItem("clientum_sim_deals", JSON.stringify(deals));
+    saveDeals(deals);
     if (onChange) {
       const currentDeals = brochureData?.crm?.deals || [];
       if (JSON.stringify(currentDeals) !== JSON.stringify(deals)) {
@@ -224,6 +230,7 @@ export default function SidebarCRM({ brochureData, hidePrices, onChange }: Sideb
 
   const moveDeal = (id: string, direction: "next" | "prev") => {
     const stages: CRMDeal["stage"][] = ["leads", "bot_contact", "proposed", "closed"];
+    let movedDeal: CRMDeal | null = null;
     setDeals((prev) =>
       prev.map((deal) => {
         if (deal.id !== id) return deal;
@@ -234,9 +241,13 @@ export default function SidebarCRM({ brochureData, hidePrices, onChange }: Sideb
         } else if (direction === "prev" && currentIndex > 0) {
           nextIndex = currentIndex - 1;
         }
-        return { ...deal, stage: stages[nextIndex] };
+        movedDeal = { ...deal, stage: stages[nextIndex] };
+        return movedDeal;
       })
     );
+    if (movedDeal) {
+      addActivity({ type: "stage", title: `"${movedDeal.company}" pasó a la etapa "${movedDeal.stage}"` });
+    }
   };
 
   // Run AI Prospector search via Gemini API
