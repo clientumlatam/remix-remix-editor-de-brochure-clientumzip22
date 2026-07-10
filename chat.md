@@ -105,3 +105,109 @@ Para importarlo:
     Después de importar, entrá a Ajustes → Lectura y elegí "Inicio" como página de portada (WordPress no permite fijar eso desde un XML).
     Los menús ya quedan poblados; si querés, revisalos en Apariencia → Menús.
 
+48 minutes ago
+
+Este archivo es el historial de la sesión anterior. ¿Qué querés hacer ahora?
+¿Con qué querés continuar?Declined.
+Waiting for user input
+
+Perfecto, decime cuando quieras continuar con algo.
+
+convertir todo esto a plugin wordpress
+45 minutes ago
+Exploring codebase
+
+Voy a explorar la estructura actual de la app antes de planificar el plugin.
+
+Déjame explorar los componentes principales del dashboard para entender el scope completo.
+Planning plugin conversion
+
+Tengo todo lo que necesito. Voy a construir el plugin WordPress completo con:
+
+    PHP REST API reemplazando Express (auth, AI, scraping, CRM)
+    Frontend React adaptado para WP (nonce, base URL /wp-json/)
+    Tablas propias MySQL via $wpdb
+    Página de settings en admin WP
+    Script de build para compilar React como asset del plugin
+
+Déjame ver un par de archivos más antes de empezar a escribir.
+
+Tengo todo el contexto necesario. Voy a construir el plugin completo en paralelo — PHP backend + adaptador React + config de build.
+Parallel plugin file building
+Parallel plugin file building
+Building plugin files
+Parallel plugin file building
+
+Let me continue building all the remaining plugin files in parallel.
+Parallelizing remaining builds
+Parallel file construction
+
+Continúo con el adaptador React para WP, el config de build y el README, todo en paralelo.
+
+Creando los assets placeholder y actualizando package.json en paralelo.
+
+Ahora actualizo el package.json para agregar el script de build, y verifico la estructura final del plugin.
+
+Verificando la estructura final del plugin.
+
+El plugin está listo. Aquí el resumen completo:
+✅ Plugin creado: clientum-ai-prospector
+
+Ubicación: clientum-wp-theme/clientum-ai-prospector/
+Qué incluye
+Archivo	Qué hace
+clientum-ai-prospector.php	Main plugin: shortcode [clientum_prospector], ruta /prospector/, enqueue de assets + inyección de config PHP→JS
+includes/class-database.php	Crea 6 tablas MySQL al activar (deals, activities, contacts, templates, api_keys, leads). Cifrado AES-256 para API keys
+includes/class-rest-api.php	25+ endpoints WP REST (/wp-json/clientum/v1/) reemplazando Express: auth, generate, scrape, CRUD completo de CRM
+includes/class-ai-handler.php	Gemini AI: brochure, ICP Builder, MEDDIC, outreach, copiloto, traducción
+includes/class-scraper.php	Apify (Google Maps) con fallback a datos demo si no hay token
+includes/class-admin.php	Panel admin con API keys, selector de página, y página de estado del plugin
+src-wp/wp-adapter.ts + main-wp.ts	Entry point React para WP — parchea fetch globalmente para redirigir /api/* → /wp-json/clientum/v1/* e inyectar el nonce
+vite.wp.config.ts	Build IIFE auto-contenido (React + CSS en un solo bundle)
+build-for-wp.sh	Script que compila, copia assets y genera el ZIP instalable
+Para instalar en WordPress
+# 1. Compilar (desde la raíz del proyecto)
+npm run build:wp
+# 2. El ZIP queda en:
+clientum-wp-theme/clientum-ai-prospector.zip
+# 3. En WordPress:
+# Plugins → Añadir nuevo → Subir plugin → activar
+# Después: Clientum → Configuración → poner Gemini API Key
+
+Nota importante: el build necesita que los permalinks estén habilitados en WordPress (Ajustes → Enlaces permanentes → cualquier opción distinta a "Predeterminado"). Sin eso, la REST API no funciona.
+
+incluir tambein esto
+9 minutes ago
+Exporting dropdown items
+
+El usuario quiere exportar también las Soluciones del dropdown. Busco dónde están definidas en el código.
+
+No hay tab de soluciones — solo el dropdown. Busco dónde se muestran como contenido para poner el botón ahí.
+
+Tengo todo. Agrego la función y el botón en la sección "Todas las Soluciones" en paralelo.
+
+Ahora agrego el botón en la sección "Todas las Soluciones".
+
+Compiló limpio. El botón "Exportar soluciones · CSV" aparece debajo del título "Todas las Soluciones" en la página de inicio.
+
+Al hacer clic descarga clientum-soluciones-12.csv con estas columnas:
+ID	Solución	Descripción
+chatbot	Chatbot WhatsApp	Tu negocio atiende solo…
+crm_inteligente	CRM Inteligente	Pipeline drag & drop…
+…	…	…
+
+Resumen de todos los exports disponibles ahora:
+Sección	Botón	Archivo
+Catálogo (servicios)	Exportar todo + Exportar filtro	clientum-catalogo-completo-2147-servicios.csv
+Planes / Precios	Exportar planes · CSV	clientum-planes.csv
+Campus Virtual (cursos)	Exportar todo + Exportar filtro	clientum-cursos-completo-67.csv
+Soluciones (inicio)	Exportar soluciones · CSV	clientum-soluciones-12.csv
+
+fusiona todo en uno solo para importar items en woocommerce
+4 minutes ago
+
+Tengo todo. Voy a leer las definiciones exactas para reemplazarlas con la función unificada de WooCommerce.
+
+Reemplazo las 4 funciones individuales por una sola función WooCommerce y unifico todos los botones en uno. Hago todo en paralelo.
+
+Ahora reemplazo los 4 botones en la UI con el botón único de WooCommerce. Leo las ubicaciones exactas en paralelo.

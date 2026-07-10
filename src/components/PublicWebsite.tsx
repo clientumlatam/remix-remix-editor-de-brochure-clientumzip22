@@ -232,103 +232,125 @@ export default function PublicWebsite({
     { plan: "Especializado",    precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
   ];
 
-  const SOLUCIONES_DATA = [
-    { id: "chatbot",         label: "Chatbot WhatsApp",   desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
-    { id: "crm_inteligente", label: "CRM Inteligente",    desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
-    { id: "asistente_ia",    label: "Asistente IA",       desc: "Tu analista de negocio disponible en todo momento." },
-    { id: "reportes",        label: "Reportes Automáticos", desc: "Dashboards en tiempo real para decisiones basadas en datos." },
-    { id: "automatizacion",  label: "Automatización",     desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
-    { id: "portal_cliente",  label: "Portal del Cliente", desc: "Tus clientes consultan stock, facturas y pedidos solos." },
-    { id: "desarrollo_web",  label: "Desarrollo Web",     desc: "Sitios y e-commerce conectados directamente al CRM." },
-    { id: "integraciones",   label: "Integraciones",      desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-    { id: "catalogo",        label: "Catálogo Completo",  desc: "Más de 2.147 servicios en 13 categorías con precios." },
-    { id: "servicios",       label: "Consultoría & ERP",  desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
-    { id: "planes",          label: "Planes y Precios",   desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
-    { id: "casos",           label: "Casos de Éxito",     desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
-  ];
-
-  const handleExportSolucionesCSV = () => {
-    const headers = ["ID", "Solución", "Descripción"];
-    const escape = (v: string) => {
+  // ── Unified WooCommerce CSV export ────────────────────────────────────────
+  // Combines: servicios (2147) + planes (5) + cursos (67) + soluciones (12)
+  const handleExportWooCommerceCSV = () => {
+    const esc = (v: string | number) => {
       const s = String(v ?? "").replace(/"/g, '""');
       return /[",\n\r]/.test(s) ? `"${s}"` : s;
     };
-    const lines = [
-      headers.join(","),
-      ...SOLUCIONES_DATA.map(s => [s.id, s.label, s.desc].map(escape).join(",")),
+
+    const WC_HEADERS = [
+      "ID", "Type", "SKU", "Name", "Published",
+      "Short description", "Description",
+      "In stock?", "Regular price",
+      "Categories", "Tags",
     ];
+
+    const row = (
+      id: string, sku: string, name: string,
+      shortDesc: string, desc: string,
+      price: string | number, categories: string, tags: string,
+    ) => [
+      "",          // ID — WooCommerce asigna
+      "simple",    // Type
+      sku,
+      name,
+      "1",         // Published
+      shortDesc,
+      desc,
+      "1",         // In stock?
+      String(price),
+      categories,
+      tags,
+    ].map(esc).join(",");
+
+    const lines: string[] = [WC_HEADERS.join(",")];
+
+    // 1 — Servicios (src/data/servicios-catalogo.json)
+    for (const s of ALL_SERVICES) {
+      const priceNum = parseFloat(String(s.price).replace(",", ".")) || 0;
+      lines.push(row(
+        s.id,
+        `SRV-${s.id}`,
+        s.name,
+        s.desc,
+        s.desc,
+        priceNum.toFixed(2),
+        `Servicios > ${s.cat}`,
+        "servicio,clientum",
+      ));
+    }
+
+    // 2 — Planes (hardcoded)
+    const planesData = [
+      { slug: "inicial",     name: "Plan Inicial",    price: 20,  desc: "Para emprendedores y pequeños negocios.",       features: "Web: Landing page responsiva | CRM/ERP: Embudo básico (200 cont.) | Seguridad: Respaldos mensuales | IA & BI: Bot de bienvenida fijo" },
+      { slug: "pyme",        name: "Plan PyME",       price: 45,  desc: "Para comercios con ventas activas.",             features: "Web: Tienda online estándar | CRM/ERP: Stock + AFIP (1.000 cont.) | Seguridad: Cifrado de base de datos | IA & BI: Bot WhatsApp con FAQs" },
+      { slug: "pro",         name: "Plan Pro",        price: 80,  desc: "Para automatizar con IA, bots y facturación.",  features: "Web: E-Commerce premium total | CRM/ERP: Multi-embudo ilimitado | Seguridad: Auditorías de software | IA & BI: Agente IA & BI avanzado" },
+      { slug: "corporativo", name: "Corporativo",     price: 150, desc: "Para empresas con múltiples canales activos.",   features: "Web: Portal B2B + Web integral | CRM/ERP: Pipeline multi-sucursal | Seguridad: Hardening y firewall | IA & BI: Analítica predictiva & bots" },
+      { slug: "especializado",name:"Especializado",   price: 250, desc: "Infraestructura y desarrollos a medida.",        features: "Web: Apps web & mobile infinitas | CRM/ERP: Integraciones ERP legacy | Seguridad: SOC activo 24/7 dedicado | IA & BI: Modelos LLM corporativos" },
+    ];
+    for (const p of planesData) {
+      lines.push(row(
+        p.slug,
+        `PLN-${p.slug}`,
+        p.name,
+        p.desc,
+        `${p.desc} ${p.features}`,
+        p.price.toFixed(2),
+        "Planes > Suscripción mensual",
+        "plan,suscripcion,clientum",
+      ));
+    }
+
+    // 3 — Cursos (src/data/cursos-lms.json)
+    for (const c of (ALL_COURSES as any[])) {
+      lines.push(row(
+        c.id,
+        `CRS-${c.id}`,
+        c.title,
+        c.excerpt,
+        c.excerpt,
+        "0",
+        "Cursos > Campus Virtual",
+        "curso,capacitacion,clientum",
+      ));
+    }
+
+    // 4 — Soluciones (nav items)
+    const solucionesData = [
+      { id: "chatbot",          name: "Chatbot WhatsApp",    desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
+      { id: "crm_inteligente",  name: "CRM Inteligente",     desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
+      { id: "asistente_ia",     name: "Asistente IA",        desc: "Tu analista de negocio disponible en todo momento." },
+      { id: "reportes",         name: "Reportes Automáticos",desc: "Dashboards en tiempo real para decisiones basadas en datos." },
+      { id: "automatizacion",   name: "Automatización",      desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
+      { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes consultan stock, facturas y pedidos solos." },
+      { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Sitios y e-commerce conectados directamente al CRM." },
+      { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
+      { id: "catalogo",         name: "Catálogo Completo",   desc: "Más de 2.147 servicios en 13 categorías con precios." },
+      { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
+      { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
+      { id: "casos",            name: "Casos de Éxito",      desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
+    ];
+    for (const s of solucionesData) {
+      lines.push(row(
+        s.id,
+        `SOL-${s.id}`,
+        s.name,
+        s.desc,
+        s.desc,
+        "0",
+        "Soluciones > Plataforma",
+        "solucion,plataforma,clientum",
+      ));
+    }
+
+    const total = ALL_SERVICES.length + planesData.length + (ALL_COURSES as any[]).length + solucionesData.length;
     const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `clientum-soluciones-${SOLUCIONES_DATA.length}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleExportCursosCSV = (scope: "filtered" | "all") => {
-    const rows = scope === "all" ? ALL_COURSES : filteredCourses;
-    const headers = ["ID", "Título", "Descripción"];
-    const escape = (v: string | number) => {
-      const s = String(v ?? "").replace(/"/g, '""');
-      return /[",\n\r]/.test(s) ? `"${s}"` : s;
-    };
-    const lines = [
-      headers.join(","),
-      ...rows.map((c: any) => [c.id, c.title, c.excerpt].map(escape).join(",")),
-    ];
-    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = scope === "all"
-      ? `clientum-cursos-completo-${rows.length}.csv`
-      : `clientum-cursos-${rows.length}-filtrado.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleExportPlanesCSV = () => {
-    const headers = ["Plan", "Precio USD/mes", "Descripción", "Web", "CRM/ERP", "Seguridad", "IA & BI"];
-    const escape = (v: string | number) => {
-      const s = String(v ?? "").replace(/"/g, '""');
-      return /[",\n\r]/.test(s) ? `"${s}"` : s;
-    };
-    const lines = [
-      headers.join(","),
-      ...PLANES_DATA.map(p =>
-        [p.plan, p.precio_usd_mes, p.descripcion, p.web, p.crm_erp, p.seguridad, p.ia_bi].map(escape).join(",")
-      ),
-    ];
-    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "clientum-planes.csv";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleExportCatalogCSV = (scope: "filtered" | "all") => {
-    const rows = scope === "all" ? ALL_SERVICES : filteredCatalog;
-    const headers = ["ID", "Nombre", "Categoría", "Descripción", "Precio (ARS)"];
-    const escape = (v: string | number) => {
-      const s = String(v ?? "").replace(/"/g, '""');
-      return /[",\n\r]/.test(s) ? `"${s}"` : s;
-    };
-    const lines = [
-      headers.join(","),
-      ...rows.map(s =>
-        [s.id, s.name, s.cat, s.desc, s.price].map(escape).join(",")
-      ),
-    ];
-    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = scope === "all"
-      ? `clientum-catalogo-completo-${rows.length}-servicios.csv`
-      : `clientum-catalogo-${rows.length}-servicios-filtrado.csv`;
+    a.download = `clientum-woocommerce-${total}-productos.csv`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -1264,12 +1286,12 @@ export default function PublicWebsite({
                       <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight mt-2">Todas las Soluciones</h2>
                       <p className="text-slate-500 text-xs mt-2 max-w-xl mx-auto">Cada herramienta diseñada para conectarse entre sí y multiplicar el impacto en tu PyME.</p>
                       <button
-                        onClick={handleExportSolucionesCSV}
+                        onClick={handleExportWooCommerceCSV}
                         className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
-                        title={`Exportar ${SOLUCIONES_DATA.length} soluciones en CSV`}
+                        title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
                       >
                         <Download className="w-3.5 h-3.5" />
-                        Exportar soluciones · CSV
+                        Exportar todo a WooCommerce · CSV
                       </button>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -1708,23 +1730,13 @@ export default function PublicWebsite({
                     {catalogQuery || catalogCat ? ` · ${ALL_SERVICES.length.toLocaleString("es-AR")} total` : ""}
                   </p>
                   <div className="flex items-center gap-2">
-                    {(catalogQuery || catalogCat) && (
-                      <button
-                        onClick={() => handleExportCatalogCSV("filtered")}
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all"
-                        title={`Exportar ${filteredCatalog.length} resultados filtrados`}
-                      >
-                        <Download className="w-3.5 h-3.5" />
-                        Exportar filtro ({filteredCatalog.length.toLocaleString("es-AR")})
-                      </button>
-                    )}
                     <button
-                      onClick={() => handleExportCatalogCSV("all")}
+                      onClick={handleExportWooCommerceCSV}
                       className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
-                      title="Exportar los 2.147 servicios en CSV"
+                      title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
                     >
                       <Download className="w-3.5 h-3.5" />
-                      Exportar todo · {ALL_SERVICES.length.toLocaleString("es-AR")} servicios
+                      Exportar todo a WooCommerce · CSV
                     </button>
                   </div>
                 </div>
@@ -1818,12 +1830,12 @@ export default function PublicWebsite({
                     Ofrecemos soluciones adaptadas a las necesidades de cada cliente. Nuestros planes están diseñados para brindar servicios de alta calidad, asegurando que cada empresa encuentre el soporte adecuado para su crecimiento.
                   </p>
                   <button
-                    onClick={handleExportPlanesCSV}
+                    onClick={handleExportWooCommerceCSV}
                     className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
-                    title="Exportar los 5 planes en CSV"
+                    title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    Exportar planes · CSV
+                    Exportar todo a WooCommerce · CSV
                   </button>
                 </div>
 
@@ -2373,23 +2385,13 @@ export default function PublicWebsite({
                       {coursesQuery ? ` · ${ALL_COURSES.length.toLocaleString("es-AR")} total` : ""}
                     </p>
                     <div className="flex items-center gap-2">
-                      {coursesQuery && (
-                        <button
-                          onClick={() => handleExportCursosCSV("filtered")}
-                          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all"
-                          title={`Exportar ${filteredCourses.length} cursos filtrados`}
-                        >
-                          <Download className="w-3.5 h-3.5" />
-                          Exportar filtro ({filteredCourses.length})
-                        </button>
-                      )}
                       <button
-                        onClick={() => handleExportCursosCSV("all")}
+                        onClick={handleExportWooCommerceCSV}
                         className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
-                        title={`Exportar los ${ALL_COURSES.length} cursos en CSV`}
+                        title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
                       >
                         <Download className="w-3.5 h-3.5" />
-                        Exportar todo · {ALL_COURSES.length} cursos
+                        Exportar todo a WooCommerce · CSV
                       </button>
                     </div>
                   </div>
