@@ -232,6 +232,28 @@ export default function PublicWebsite({
     { plan: "Especializado",    precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
   ];
 
+  const handleExportCursosCSV = (scope: "filtered" | "all") => {
+    const rows = scope === "all" ? ALL_COURSES : filteredCourses;
+    const headers = ["ID", "Título", "Descripción"];
+    const escape = (v: string | number) => {
+      const s = String(v ?? "").replace(/"/g, '""');
+      return /[",\n\r]/.test(s) ? `"${s}"` : s;
+    };
+    const lines = [
+      headers.join(","),
+      ...rows.map((c: any) => [c.id, c.title, c.excerpt].map(escape).join(",")),
+    ];
+    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = scope === "all"
+      ? `clientum-cursos-completo-${rows.length}.csv`
+      : `clientum-cursos-${rows.length}-filtrado.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const handleExportPlanesCSV = () => {
     const headers = ["Plan", "Precio USD/mes", "Descripción", "Web", "CRM/ERP", "Seguridad", "IA & BI"];
     const escape = (v: string | number) => {
@@ -2303,9 +2325,32 @@ export default function PublicWebsite({
                     />
                   </div>
 
-                  <p className="text-center text-xs text-slate-400 font-mono">
-                    {filteredCourses.length.toLocaleString("es-AR")} curso{filteredCourses.length === 1 ? "" : "s"} encontrado{filteredCourses.length === 1 ? "" : "s"}
-                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-3 max-w-xl mx-auto w-full">
+                    <p className="text-xs text-slate-400 font-mono">
+                      {filteredCourses.length.toLocaleString("es-AR")} curso{filteredCourses.length === 1 ? "" : "s"} encontrado{filteredCourses.length === 1 ? "" : "s"}
+                      {coursesQuery ? ` · ${ALL_COURSES.length.toLocaleString("es-AR")} total` : ""}
+                    </p>
+                    <div className="flex items-center gap-2">
+                      {coursesQuery && (
+                        <button
+                          onClick={() => handleExportCursosCSV("filtered")}
+                          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all"
+                          title={`Exportar ${filteredCourses.length} cursos filtrados`}
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                          Exportar filtro ({filteredCourses.length})
+                        </button>
+                      )}
+                      <button
+                        onClick={() => handleExportCursosCSV("all")}
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
+                        title={`Exportar los ${ALL_COURSES.length} cursos en CSV`}
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        Exportar todo · {ALL_COURSES.length} cursos
+                      </button>
+                    </div>
+                  </div>
 
                   {coursesPageItems.length === 0 ? (
                     <p className="text-center text-slate-400 text-sm py-8">
