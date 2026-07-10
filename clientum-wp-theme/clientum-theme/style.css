@@ -1,17 +1,16 @@
 /*
-Theme Name: Clientum CRM
+Theme Name: Clientum
 Theme URI: https://clientum.com.ar
 Author: Clientum
 Author URI: https://clientum.com.ar
-Description: Tema oficial de Clientum — CRM, Chatbots y Tecnología para PyMEs argentinas. Incluye hero, servicios, planes, academia, portafolio, blog, contacto y más.
+Description: Tema oficial de Clientum — Plataforma IA para PyMEs argentinas. Incluye todas las páginas del sitio de marketing con diseño responsive y moderno.
 Version: 1.0.0
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: Proprietary
 Text Domain: clientum
-Tags: business, portfolio, crm, one-page, corporate, dark, responsive
+Tags: business, corporate, one-page, landing-page, custom-colors, custom-logo, full-width-template, responsive-layout
 */
 
-/* Theme styles are in assets/css/main.css */
+/* Importado en functions.php — este archivo solo tiene el header del tema */
