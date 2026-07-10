@@ -324,6 +324,81 @@ table.cmp-full tr:hover td{background:rgba(255,255,255,.02);}
 /* ---------- FAQ preview section ---------- */
 .faq-preview .faq-item summary{font-size:18px;}
 
+/* ---------- Módulos badge ---------- */
+.mod-badge{font-family:var(--mono);font-size:11px;color:var(--cyan);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:10px;}
+
+/* ---------- Chatbot flow ---------- */
+.chatbot-flow{display:flex;flex-direction:column;gap:0;}
+.flow-step{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--line-soft);}
+.flow-step:last-child{border-bottom:none;}
+.flow-num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink);background:var(--lime);width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.flow-step p{color:var(--paper-dim);font-size:15px;margin:0;line-height:1.55;}
+
+/* ---------- AFIP card ---------- */
+.afip-card{background:var(--ink-soft);border:1px solid var(--line-soft);padding:32px;height:100%;}
+.afip-card h3{font-family:var(--serif);font-size:20px;margin:0 0 14px;color:var(--paper);}
+.afip-card p{color:var(--muted);font-size:15px;margin:0 0 20px;line-height:1.55;}
+.afip-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.afip-tag{color:var(--lime)!important;border-color:rgba(200,255,77,.35)!important;}
+
+/* ---------- Service bullets ---------- */
+.svc-bullets{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-direction:column;gap:6px;}
+.svc-bullets li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;}
+.svc-bullets li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700;}
+
+/* ---------- ROI bar ---------- */
+.roi-bar{display:flex;gap:0;margin-top:40px;border:1px solid var(--line-soft);}
+.roi-item{flex:1;padding:24px;border-right:1px solid var(--line-soft);text-align:center;}
+.roi-item:last-child{border-right:none;}
+.roi-item strong{display:block;font-family:var(--serif);font-size:22px;color:var(--lime);margin-bottom:6px;}
+.roi-item span{font-size:13px;color:var(--muted);}
+@media(max-width:700px){.roi-bar{flex-direction:column;}.roi-item{border-right:none;border-bottom:1px solid var(--line-soft);}.roi-item:last-child{border-bottom:none;}}
+
+/* ---------- CRM Plans ---------- */
+.crm-plans{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
+.crm-plan{background:var(--ink-soft);border:1px solid var(--line-soft);padding:24px 20px;display:flex;flex-direction:column;gap:12px;position:relative;}
+.crm-plan.feat{background:var(--ink);border-color:var(--lime);z-index:1;}
+.crm-plan .plan-tier{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);}
+.crm-plan.feat .plan-tier{color:var(--lime);}
+.crm-price{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--paper);line-height:1.1;}
+.crm-price span{font-size:13px;font-weight:400;color:var(--muted);font-family:var(--sans);}
+.crm-plan.feat .crm-price{color:var(--lime);}
+.plan-badge{position:absolute;top:12px;right:12px;background:var(--lime);color:var(--ink);font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;font-weight:700;}
+.crm-plan p{font-size:13px;color:var(--muted);line-height:1.5;margin:0;}
+.crm-plan ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;flex:1;}
+.crm-plan ul li{font-size:12px;color:var(--paper-dim);padding-left:14px;position:relative;}
+.crm-plan ul li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700;}
+.crm-plan.feat ul li{color:var(--paper);}
+@media(max-width:900px){.crm-plans{grid-template-columns:repeat(2,1fr);}.crm-plan.feat{grid-column:span 2;}}
+@media(max-width:600px){.crm-plans{grid-template-columns:1fr;}.crm-plan.feat{grid-column:auto;}}
+
+/* ---------- Results / Garantías ---------- */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:32px;}
+.result-stat{background:var(--ink-soft);border:1px solid var(--line-soft);padding:20px;text-align:center;}
+.result-stat.accent{background:rgba(200,255,77,.06);border-color:rgba(200,255,77,.25);}
+.result-stat strong{display:block;font-family:var(--serif);font-size:28px;font-weight:700;color:var(--paper);line-height:1;}
+.result-stat.accent strong{color:var(--lime);}
+.result-stat span{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:6px;display:block;}
+.garantias-list{display:flex;flex-direction:column;gap:20px;}
+.garantia-item{display:flex;gap:16px;align-items:flex-start;}
+.gi-icon{font-size:22px;line-height:1;flex-shrink:0;margin-top:2px;}
+.garantia-item strong{display:block;font-size:14px;color:var(--paper);margin-bottom:4px;}
+.garantia-item p{font-size:13px;color:var(--muted);margin:0;line-height:1.5;}
+
+/* ---------- Featured testimonial ---------- */
+.testimonial-featured{border:1px solid var(--line-soft);background:var(--ink-soft);padding:28px;margin:0;display:flex;flex-direction:column;gap:16px;}
+.tf-stars{color:var(--amber);font-size:16px;letter-spacing:2px;}
+.testimonial-featured p{font-size:15px;color:var(--paper-dim);font-style:italic;margin:0;line-height:1.6;}
+.testimonial-featured footer{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line-soft);padding-top:16px;}
+.tf-avatar{width:36px;height:36px;background:var(--lime);color:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;}
+.testimonial-featured footer strong{display:block;font-size:13px;color:var(--paper);}
+.testimonial-featured footer span{font-size:12px;color:var(--muted);}
+
+/* ---------- Trial card ---------- */
+.trial-card{background:var(--ink-soft);border:1px solid var(--line-soft);padding:24px;margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+.trial-card strong{font-size:15px;color:var(--paper);}
+.trial-card p{font-size:13px;color:var(--muted);margin:0;}
+
 /* ---------- Catálogo Clientum / service blocks ---------- */
 .svc-block{border:1px solid var(--line-soft);margin-bottom:2px;padding:36px 36px 28px;}
 .svc-block:last-of-type{margin-bottom:0;}
