@@ -1144,12 +1144,6 @@ async function fetchApifyGooglePlaces(city: string, industry: string): Promise<a
     throw lastErr || new Error("No se pudo completar el scraping con ningún actor de Apify.");
   }
 
-  const contactNames = [
-    "Luciana Silva", "Carlos Benítez", "Mariano Gómez", "Sofia Rodriguez", 
-    "Gustavo B.", "Andrés Martínez", "Gabriela López", "Facundo Peralta",
-    "Estela Castro", "Martin Diaz"
-  ];
-
   return items.map((item: any, index: number) => {
     const companyName = item.title || item.name || item.companyName || `Comercio en ${city}`;
     const rating = item.stars || item.rating || item.totalScore || null;
@@ -1185,7 +1179,11 @@ async function fetchApifyGooglePlaces(city: string, industry: string): Promise<a
       city: city,
       address: address,
       phone: phone,
-      contact: contactNames[index % contactNames.length],
+      // contact is null until enriched via Hunter.io
+      contact: null,
+      contactVerified: false,
+      contactEmail: null,
+      contactPosition: null,
       painPoint: painPoint,
       score: score,
       guiacoresUrl: guiacoresUrl,
@@ -1194,6 +1192,78 @@ async function fetchApifyGooglePlaces(city: string, industry: string): Promise<a
     };
   });
 }
+
+// ── Hunter.io contact enrichment ─────────────────────────────────────────────
+
+async function enrichWithHunter(domain: string): Promise<{
+  contacts: Array<{ name: string; email: string; position: string; confidence: number; linkedin?: string | null }>;
+  organization?: string | null;
+} | null> {
+  const apiKey = process.env.HUNTER_API_KEY;
+  if (!apiKey) return null;
+
+  // Normalise domain: strip protocol + www + path
+  const cleanDomain = domain
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .split("/")[0]
+    .split("?")[0]
+    .toLowerCase()
+    .trim();
+
+  if (!cleanDomain || cleanDomain.length < 3) return null;
+
+  try {
+    const url = `https://api.hunter.io/v2/domain-search?domain=${encodeURIComponent(cleanDomain)}&limit=5&api_key=${encodeURIComponent(apiKey)}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) {
+      console.warn(`[Hunter] HTTP ${res.status} for domain ${cleanDomain}`);
+      return null;
+    }
+    const json: any = await res.json();
+    if (!json?.data) return null;
+
+    const contacts = (json.data.emails ?? [])
+      .filter((e: any) => e.first_name || e.last_name)
+      .map((e: any) => ({
+        name:       [e.first_name, e.last_name].filter(Boolean).join(" "),
+        email:      e.value ?? "",
+        position:   e.position ?? "Contacto",
+        confidence: e.confidence ?? 0,
+        linkedin:   e.linkedin ?? null,
+      }));
+
+    return {
+      contacts,
+      organization: json.data.organization ?? null,
+    };
+  } catch (err: any) {
+    console.warn(`[Hunter] Error for domain ${cleanDomain}:`, err.message);
+    return null;
+  }
+}
+
+// POST /api/enrich-contact
+// Body: { domain: string }
+// Returns: { contacts, organization, source } or { contacts: [], source: "none" }
+app.post("/api/enrich-contact", requireAuth, async (req, res) => {
+  const { domain } = req.body ?? {};
+  if (!domain || typeof domain !== "string") {
+    return res.status(400).json({ error: "domain requerido" });
+  }
+
+  const result = await enrichWithHunter(domain);
+
+  if (!result || result.contacts.length === 0) {
+    return res.json({ contacts: [], organization: null, source: "none" });
+  }
+
+  return res.json({
+    contacts:     result.contacts,
+    organization: result.organization,
+    source:       "hunter",
+  });
+});
 
 app.post("/api/scrape-places", requireAuth, async (req, res) => {
   try {
