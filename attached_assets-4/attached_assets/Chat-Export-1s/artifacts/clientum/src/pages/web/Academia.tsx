@@ -1,6 +1,7 @@
 import { Link } from "wouter";
+import { useMemo, useState } from "react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { ArrowRight, BookOpen, Play, Star, Users, CheckCircle2, MessageCircle, Bot, BarChart3, Zap, FileText, Settings, ShieldCheck, Globe, Smartphone, DollarSign, Clock, Award, TrendingUp, Briefcase } from "lucide-react";
+import { ArrowRight, BookOpen, Play, Star, Users, CheckCircle2, MessageCircle, Bot, BarChart3, Zap, FileText, Settings, ShieldCheck, Globe, Smartphone, DollarSign, Clock, Award, TrendingUp, Briefcase, Search } from "lucide-react";
 
 const BRAND_BLUE = "#2467a2";
 
@@ -80,6 +81,14 @@ const CAT_COLORS: Record<string, string> = {
 };
 
 export default function Academia() {
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return COURSES;
+    return COURSES.filter((c) => c.title.toLowerCase().includes(q) || c.cat.toLowerCase().includes(q));
+  }, [query]);
+
   return (
     <SiteLayout>
       {/* Hero */}
@@ -133,8 +142,21 @@ export default function Academia() {
               Organizados de principiante a avanzado. Cada uno incluye video + material descargable.
             </p>
           </div>
+          <div className="max-w-md mx-auto relative">
+            <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Buscar curso (ej: marketing, WhatsApp, ventas)…"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+            />
+          </div>
+          {filtered.length === 0 && (
+            <p className="text-center text-gray-400 text-sm">No encontramos cursos para "{query}". Probá con otra palabra.</p>
+          )}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {COURSES.map((course) => (
+            {filtered.map((course) => (
               <div key={course.title} className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all flex flex-col">
                 <div className="aspect-video flex items-center justify-center text-white" style={{ background: CAT_COLORS[course.cat] ?? BRAND_BLUE }}>
                   {course.icon}

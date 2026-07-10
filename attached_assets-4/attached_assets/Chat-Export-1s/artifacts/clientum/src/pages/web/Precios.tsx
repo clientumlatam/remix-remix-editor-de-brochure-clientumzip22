@@ -194,6 +194,57 @@ export default function Precios() {
         </div>
       </section>
 
+      {/* Comparativa */}
+      <section className="py-20 px-6 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="text-center">
+            <h6 className="text-sm font-semibold uppercase tracking-widest mb-2" style={{ color: BRAND_BLUE }}>Comparativa</h6>
+            <h2 className="text-3xl font-bold text-gray-900">Qué incluye cada plan.</h2>
+          </div>
+          <div className="overflow-x-auto rounded-2xl border border-gray-100">
+            <table className="w-full text-sm min-w-[560px]">
+              <thead className="bg-[#f7f5f4] text-gray-500">
+                <tr>
+                  <th className="text-left px-6 py-3 font-semibold">Funcionalidad</th>
+                  <th className="text-center px-6 py-3 font-semibold">Starter</th>
+                  <th className="text-center px-6 py-3 font-semibold">Pro</th>
+                  <th className="text-center px-6 py-3 font-semibold">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Chatbot WhatsApp", starter: "500 msj/mes", pro: "Ilimitado", ent: "Ilimitado" },
+                  { label: "CRM", starter: "Hasta 500 contactos", pro: "Ilimitado", ent: "Ilimitado" },
+                  { label: "Asistente IA", starter: false, pro: true, ent: true },
+                  { label: "Facturación integrada (AFIP)", starter: false, pro: true, ent: true },
+                  { label: "Automatización de flujos", starter: false, pro: true, ent: true },
+                  { label: "Multi-sucursal / Multi-línea WhatsApp", starter: false, pro: false, ent: true },
+                  { label: "Integraciones a medida (API)", starter: false, pro: false, ent: true },
+                  { label: "Soporte", starter: "Email", pro: "Prioritario", ent: "SLA dedicado" },
+                ].map((row, i) => (
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-[#fbfaf9]"}>
+                    <td className="px-6 py-3 text-gray-700 font-medium border-t border-gray-100">{row.label}</td>
+                    {[row.starter, row.pro, row.ent].map((v, ci) => (
+                      <td key={ci} className="px-6 py-3 text-center border-t border-gray-100">
+                        {typeof v === "boolean" ? (
+                          v ? (
+                            <CheckCircle2 className="w-4 h-4 mx-auto" style={{ color: BRAND_GREEN }} />
+                          ) : (
+                            <span className="text-gray-300">—</span>
+                          )
+                        ) : (
+                          <span className="text-gray-500">{v}</span>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto space-y-8">
