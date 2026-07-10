@@ -224,6 +224,35 @@ export default function PublicWebsite({
     return filteredCatalog.slice(start, start + CATALOG_PAGE_SIZE);
   }, [filteredCatalog, catalogPage]);
 
+  const PLANES_DATA = [
+    { plan: "Plan Inicial",     precio_usd_mes: 20,  descripcion: "Para emprendedores y pequeños negocios.", web: "Landing page responsiva", crm_erp: "Embudo básico (200 cont.)", seguridad: "Respaldos mensuales",        ia_bi: "Bot de bienvenida fijo" },
+    { plan: "Plan PyME",        precio_usd_mes: 45,  descripcion: "Para comercios con ventas activas.",       web: "Tienda online estándar",   crm_erp: "Stock + AFIP (1.000 cont.)", seguridad: "Cifrado de base de datos",   ia_bi: "Bot WhatsApp con FAQs" },
+    { plan: "Plan Pro",         precio_usd_mes: 80,  descripcion: "Para automatizar con IA, bots y facturación.", web: "E-Commerce premium total", crm_erp: "Multi-embudo ilimitado",   seguridad: "Auditorías de software",    ia_bi: "Agente IA & BI avanzado" },
+    { plan: "Corporativo",      precio_usd_mes: 150, descripcion: "Para empresas con múltiples canales activos.", web: "Portal B2B + Web integral", crm_erp: "Pipeline multi-sucursal",  seguridad: "Hardening y firewall",     ia_bi: "Analítica predictiva & bots" },
+    { plan: "Especializado",    precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
+  ];
+
+  const handleExportPlanesCSV = () => {
+    const headers = ["Plan", "Precio USD/mes", "Descripción", "Web", "CRM/ERP", "Seguridad", "IA & BI"];
+    const escape = (v: string | number) => {
+      const s = String(v ?? "").replace(/"/g, '""');
+      return /[",\n\r]/.test(s) ? `"${s}"` : s;
+    };
+    const lines = [
+      headers.join(","),
+      ...PLANES_DATA.map(p =>
+        [p.plan, p.precio_usd_mes, p.descripcion, p.web, p.crm_erp, p.seguridad, p.ia_bi].map(escape).join(",")
+      ),
+    ];
+    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "clientum-planes.csv";
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const handleExportCatalogCSV = (scope: "filtered" | "all") => {
     const rows = scope === "all" ? ALL_SERVICES : filteredCatalog;
     const headers = ["ID", "Nombre", "Categoría", "Descripción", "Precio (ARS)"];
@@ -1716,7 +1745,7 @@ export default function PublicWebsite({
             {/* PLANES Y PRECIOS TAB */}
             {activeTab === "planes" && (
               <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-12">
-                <div className="text-center max-w-2xl mx-auto">
+                <div className="text-center max-w-2xl mx-auto flex flex-col items-center gap-4">
                   <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Oferta Comercial</span>
                   <h1 className="text-3xl md:text-4xl font-display font-black text-slate-950 tracking-tight mt-1">
                     Planes Transparentes para Todos
@@ -1724,6 +1753,14 @@ export default function PublicWebsite({
                   <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
                     Ofrecemos soluciones adaptadas a las necesidades de cada cliente. Nuestros planes están diseñados para brindar servicios de alta calidad, asegurando que cada empresa encuentre el soporte adecuado para su crecimiento.
                   </p>
+                  <button
+                    onClick={handleExportPlanesCSV}
+                    className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
+                    title="Exportar los 5 planes en CSV"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    Exportar planes · CSV
+                  </button>
                 </div>
 
                 {/* INTERACTIVE COMPARATIVE WIDGET (Fulfills the comparative requirement) */}
