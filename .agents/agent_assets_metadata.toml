@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "POwnzQUKxxyfzcD2tTQcv"
+uri = "file://files-6/Catalogo_Servicios_Viaweb.xlsx"
+type = "table"
+title = "Catálogo Servicios Viaweb — con hojas Clientum"
