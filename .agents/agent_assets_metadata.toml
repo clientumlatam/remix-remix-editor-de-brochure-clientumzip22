@@ -6,3 +6,9 @@ id = "POwnzQUKxxyfzcD2tTQcv"
 uri = "file://files-6/Catalogo_Servicios_Viaweb.xlsx"
 type = "table"
 title = "Catálogo Servicios Viaweb — con hojas Clientum"
+
+[[outputs]]
+id = "ydBsLaDJ7mMyPk1WW05eS"
+uri = "file://clientum-wp-theme/clientum-theme.zip"
+type = "unspecified"
+title = "clientum-theme.zip — Tema WordPress de Clientum"
