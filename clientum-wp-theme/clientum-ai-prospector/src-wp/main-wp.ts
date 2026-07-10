@@ -8,8 +8,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 // Importar App normal — las llamadas a la API se redirigen via wp-api.ts
-import App from '../src/App';
-import '../src/index.css';
+import App from '../../../src/App';
+import '../../../src/index.css';
 
 interface WPConfig {
   apiBase: string;
