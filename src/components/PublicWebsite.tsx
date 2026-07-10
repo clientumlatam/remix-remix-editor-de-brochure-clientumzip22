@@ -10,6 +10,7 @@ import {
   Check,
   CheckCircle2,
   ChevronDown,
+  ChevronUp,
   Search,
   BookOpen,
   Video,
@@ -43,7 +44,18 @@ import {
   Workflow,
   LogIn,
   LogOut,
-  UserCircle2
+  UserCircle2,
+  TrendingUp,
+  Quote,
+  Package,
+  Target,
+  Layers,
+  ShoppingCart,
+  Truck,
+  Stethoscope,
+  Coffee,
+  Home,
+  Play
 } from "lucide-react";
 
 import { BrochureData } from "../types";
@@ -838,48 +850,56 @@ export default function PublicWebsite({
             {/* INICIO TAB */}
             {activeTab === "inicio" && (
               <div className="flex flex-col">
-                {/* Hero Section */}
-                <section className="relative bg-slate-900 text-white py-24 px-6 md:px-12 flex items-center overflow-hidden">
-                  <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0d1f3c] via-slate-900 to-[#122442] opacity-90"></div>
+                {/* ═══════════════════════════════════════════════════════
+                    HERO
+                ═══════════════════════════════════════════════════════ */}
+                <section className="relative bg-slate-900 text-white py-24 px-6 md:px-12 flex items-center overflow-hidden min-h-[640px]">
+                  <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#0d1f3c] via-slate-900 to-[#122442]"></div>
                   {/* Subtle Grid Backdrop Overlay */}
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30 z-0"></div>
                   
                   <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
                     <div className="lg:col-span-7 flex flex-col items-start gap-6">
-                      <span className="bg-[#1A3461]/80 text-blue-200 border border-blue-800/50 text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-widest flex items-center gap-1.5 font-mono">
-                        <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-                        Plataforma de Crecimiento Comercial
+                      <span className="bg-emerald-500/10 text-emerald-300 border border-emerald-500/25 text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-full tracking-widest flex items-center gap-2 font-mono">
+                        <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+                        Plataforma All-in-One para PyMEs
                       </span>
-                      <h1 className="text-4xl md:text-5xl font-display font-black tracking-tight leading-tight">
+                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight leading-[1.05]">
                         {brochureData?.cover?.slogan ? (
                           <span>{brochureData.cover.slogan}</span>
                         ) : (
                           <>
-                            Transforma tu Negocio con <br />
+                            Todo lo que tu empresa<br />
+                            necesita,{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-blue-400">
-                              Clientum CRM &amp; IA
+                              en una sola plataforma.
                             </span>
                           </>
                         )}
                       </h1>
                       <p className="text-slate-300 text-sm md:text-base max-w-xl leading-relaxed">
-                        {brochureData?.cover?.sub || "En Clientum, nos especializamos en ofrecer soluciones tecnológicas integrales que optimizan la eficiencia operativa, automatizan procesos, integran WhatsApp y multiplican la facturación en un entorno digital altamente competitivo."}
+                        {brochureData?.cover?.sub || "CRM, Chatbot WhatsApp con IA, E-Commerce, ERP, Business Intelligence, Marketing Digital, Ciberseguridad, Cloud, Apps Móviles y Capacitación — el ecosistema completo de Clientum para hacer crecer tu PyME."}
                       </p>
-                      
                       <div className="flex flex-wrap gap-3 w-full sm:w-auto">
                         <button
                           onClick={() => setActiveTab("servicios")}
-                          className={`bg-gradient-to-r ${theme.btnGradient} text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg cursor-pointer transition-all shadow-md shadow-blue-900/30 flex items-center gap-2`}
+                          className={`bg-gradient-to-r ${theme.btnGradient} text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl cursor-pointer transition-all shadow-md shadow-blue-900/30 flex items-center gap-2`}
                         >
-                          Conoce Servicios
-                          <ArrowRight className="w-4 h-4 text-emerald-400" />
+                          Ver Servicios <ArrowRight className="w-4 h-4 text-emerald-400" />
                         </button>
                         <button
                           onClick={() => setActiveTab("contacto")}
-                          className="bg-slate-800/80 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-lg border border-slate-700 transition-all cursor-pointer"
+                          className="bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-xl border border-white/15 transition-all cursor-pointer flex items-center gap-2"
                         >
-                          Solicitar Demo
+                          <Play className="w-3.5 h-3.5 text-emerald-400" /> Solicitar Demo
                         </button>
+                      </div>
+                      <div className="flex flex-wrap gap-x-6 gap-y-2 pt-1">
+                        {["Sin contrato mínimo", "Implementado en 5 días", "Soporte en español 24/7"].map((t) => (
+                          <span key={t} className="flex items-center gap-1.5 text-slate-400 text-xs">
+                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />{t}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
@@ -952,27 +972,57 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
-                {/* Primary Pillars Cards (Dynamic based on brochureData services) */}
-                <section className="max-w-7xl mx-auto w-full px-6 -mt-20 z-20 relative">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* ═══ SOCIAL PROOF STRIP ═══ */}
+                <section className="bg-slate-950 border-b border-slate-800/60 py-5 px-6">
+                  <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-y-3 gap-x-0 md:divide-x md:divide-slate-800/60">
+                    <span className="text-slate-500 text-[10px] uppercase tracking-widest font-bold font-mono pr-0 md:pr-8 w-full md:w-auto text-center">
+                      Confían en Clientum
+                    </span>
+                    {([
+                      { icon: Truck, label: "Distribuidoras" },
+                      { icon: ShoppingCart, label: "Retail & E-Commerce" },
+                      { icon: Building, label: "Estudios Contables" },
+                      { icon: Stethoscope, label: "Salud & Bienestar" },
+                      { icon: Coffee, label: "Gastronomía" },
+                      { icon: Home, label: "Inmobiliarias" },
+                    ] as const).map(({ icon: Icon, label }) => (
+                      <div key={label} className="flex items-center gap-1.5 px-5 py-1 text-slate-500 hover:text-slate-300 transition-colors cursor-default">
+                        <Icon className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+                        <span className="text-[11px] font-medium whitespace-nowrap">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* ═══ PRIMARY PILLARS ═══ */}
+                <section className="bg-slate-50 border-b border-slate-200 py-20 px-6">
+                  <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                      <span className="text-emerald-600 font-mono text-[10px] uppercase font-bold tracking-widest">Soluciones Principales</span>
+                      <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight mt-2">Nuestros Servicios Más Contratados</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {(brochureData?.services?.slice(0, 3) || []).map((service, idx) => {
-                      const bgColors = ["bg-emerald-50 text-emerald-800", "bg-rose-50 text-rose-600", "bg-indigo-50 text-indigo-600"];
+                      const accents = [
+                        { num: "bg-emerald-50 text-emerald-700 border border-emerald-200", hover: "hover:border-emerald-200" },
+                        { num: "bg-blue-50 text-blue-700 border border-blue-200",     hover: "hover:border-blue-200" },
+                        { num: "bg-violet-50 text-violet-700 border border-violet-200", hover: "hover:border-violet-200" },
+                      ];
+                      const a = accents[idx % accents.length];
                       return (
-                        <div key={idx} className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xl flex flex-col justify-between">
+                        <div key={idx} className={`bg-white rounded-2xl border border-slate-200 ${a.hover} p-7 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group`}>
                           <div>
-                            <div className={`w-12 h-12 ${bgColors[idx % bgColors.length]} rounded-xl flex items-center justify-center font-bold text-xl mb-4 shadow-inner`}>
+                            <div className={`w-12 h-12 ${a.num} rounded-2xl flex items-center justify-center font-black text-lg mb-5`}>
                               0{idx + 1}
                             </div>
-                            <h3 className="font-bold text-base text-slate-900 tracking-tight mb-2">{service.title}</h3>
-                            <p className="text-xs text-slate-500 leading-relaxed">
-                              {service.desc}
-                            </p>
+                            <h3 className="font-bold text-base text-slate-900 tracking-tight mb-3 leading-snug">{service.title}</h3>
+                            <p className="text-xs text-slate-500 leading-relaxed">{service.desc}</p>
                           </div>
                           <button
                             onClick={() => { setActiveTab("servicios"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                            className="text-[#1A3461] hover:text-[#122442] text-xs font-bold flex items-center gap-1 mt-4 self-start cursor-pointer"
+                            className="text-[#1A3461] hover:text-emerald-600 text-xs font-bold flex items-center gap-1.5 mt-5 self-start cursor-pointer transition-all group-hover:gap-2.5"
                           >
-                            Explorar {service.title} →
+                            Ver más <ArrowRight className="w-3.5 h-3.5" />
                           </button>
                         </div>
                       );
@@ -980,8 +1030,11 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
-                {/* Métricas de Éxito Section */}
-                <section className="bg-white border-y border-slate-200 mt-20 py-16 px-6">
+              </div>
+            )}
+
+            {/* SERVICIOS Y CONSULTORIA TAB */}
+            {activeTab === "servicios" && (
                   <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight">
                       Nuestras Métricas Hablan por Nosotros
