@@ -1,6 +1,7 @@
 import { Link } from "wouter";
+import { useMemo, useState } from "react";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { ArrowRight, Settings2, Zap, Wrench, Megaphone, Globe, Code2, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Settings2, Zap, Wrench, Megaphone, Globe, Code2, CheckCircle2, Search } from "lucide-react";
 
 const BRAND_BLUE = "#2467a2";
 const BRAND_GREEN = "#25d366";
@@ -28,6 +29,14 @@ const WHY = [
 ];
 
 export default function Servicios() {
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return SERVICES;
+    return SERVICES.filter((s) => s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
+  }, [query]);
+
   return (
     <SiteLayout>
       <section className="relative overflow-hidden pt-20 pb-24" style={{ background: "linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #0d2b4a 100%)" }}>
@@ -59,12 +68,25 @@ export default function Servicios() {
 
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-black text-gray-900">Nuestros servicios</h2>
             <p className="text-gray-500 mt-3">Elegí los que necesitás o contratá el paquete completo.</p>
           </div>
+          <div className="max-w-md mx-auto mb-10 relative">
+            <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Buscar servicio (ej: ERP, marketing, web)…"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+            />
+          </div>
+          {filtered.length === 0 && (
+            <p className="text-center text-gray-400 text-sm mb-10">No encontramos servicios para "{query}". Probá con otra palabra.</p>
+          )}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((s) => (
+            {filtered.map((s) => (
               <Link key={s.title} href={s.href}>
                 <div className="group p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-lg transition-all cursor-pointer h-full">
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white transition-transform group-hover:scale-110" style={{ background: s.color }}>
