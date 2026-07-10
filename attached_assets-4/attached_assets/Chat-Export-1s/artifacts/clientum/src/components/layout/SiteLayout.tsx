@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { ChevronDown, Menu, X, ArrowRight, MessageCircle, Bot, BarChart3, Users, Zap, Globe, Briefcase, Settings2, Megaphone, Code2, Wrench, BookOpen, HelpCircle, GraduationCap, Star, GitCompare, Handshake, Info, Mail, DollarSign } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, MessageCircle, Bot, BarChart3, Users, Zap, Globe, Briefcase, Settings2, Megaphone, Code2, Wrench, BookOpen, HelpCircle, GraduationCap, Star, GitCompare, Handshake, Info, Mail, DollarSign, Factory, FileCode2 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 
 const BRAND_BLUE = "#2467a2";
@@ -30,6 +30,7 @@ const EMPRESA = [
   { label: "Blog",               href: "/blog",              icon: <BookOpen className="w-4 h-4" /> },
   { label: "Comparativa",        href: "/comparativa",       icon: <GitCompare className="w-4 h-4" /> },
   { label: "Programa de Socios", href: "/programa-socios",   icon: <Handshake className="w-4 h-4" /> },
+  { label: "Trabajá con Nosotros", href: "/empleo",          icon: <Briefcase className="w-4 h-4" /> },
 ];
 
 const RECURSOS = [
@@ -37,6 +38,8 @@ const RECURSOS = [
   { label: "Recursos",  href: "/recursos",  icon: <BookOpen className="w-4 h-4" /> },
   { label: "FAQ",       href: "/faq",       icon: <HelpCircle className="w-4 h-4" /> },
   { label: "Precios",   href: "/precios",   icon: <DollarSign className="w-4 h-4" /> },
+  { label: "Soluciones por Industria", href: "/industria",   icon: <Factory className="w-4 h-4" /> },
+  { label: "Especificaciones", href: "/especificaciones",    icon: <FileCode2 className="w-4 h-4" /> },
   { label: "Contacto",  href: "/contacto",  icon: <Mail className="w-4 h-4" /> },
 ];
 
@@ -51,8 +54,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
 
   const isActive = (href: string) => location === href;
   const isServiceActive = location.startsWith("/servicios");
-  const isEmpresaActive = ["/sobre-nosotros", "/casos-de-exito", "/blog", "/comparativa", "/programa-socios"].some(h => location === h);
-  const isRecursosActive = ["/academia", "/recursos", "/faq", "/precios", "/contacto"].some(h => location === h);
+  const isEmpresaActive = ["/sobre-nosotros", "/casos-de-exito", "/blog", "/comparativa", "/programa-socios", "/empleo"].some(h => location === h);
+  const isRecursosActive = ["/academia", "/recursos", "/faq", "/precios", "/contacto", "/industria", "/especificaciones"].some(h => location === h);
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800">
@@ -284,6 +287,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 { label: "Blog", href: "/blog" },
                 { label: "Comparativa", href: "/comparativa" },
                 { label: "Programa de Socios", href: "/programa-socios" },
+                { label: "Trabajá con Nosotros", href: "/empleo" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block text-sm hover:text-white transition-colors">{l.label}</Link>
               ))}
@@ -297,6 +301,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 { label: "Recursos", href: "/recursos" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Precios", href: "/precios" },
+                { label: "Soluciones por Industria", href: "/industria" },
+                { label: "Especificaciones", href: "/especificaciones" },
                 { label: "Contacto", href: "/contacto" },
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block text-sm hover:text-white transition-colors">{l.label}</Link>
