@@ -1027,15 +1027,12 @@ export default function PublicWebsite({
                         </div>
                       );
                     })}
+                    </div>
                   </div>
                 </section>
 
-              </div>
-            )}
-
-            {/* SERVICIOS Y CONSULTORIA TAB */}
-            {activeTab === "servicios" && (
-                  <div className="max-w-5xl mx-auto text-center">
+                {/* Métricas de impacto */}
+                <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight">
                       Nuestras Métricas Hablan por Nosotros
                     </h2>
@@ -1059,8 +1056,7 @@ export default function PublicWebsite({
                         <p className="text-[11px] text-slate-500 mt-1">Reducción de horas de carga manual de Excel gracias a automatizaciones.</p>
                       </div>
                     </div>
-                  </div>
-                </section>
+                </div>
 
                 {/* Info blocks Section */}
                 <section className="max-w-6xl mx-auto px-6 py-20 flex flex-col gap-20">
