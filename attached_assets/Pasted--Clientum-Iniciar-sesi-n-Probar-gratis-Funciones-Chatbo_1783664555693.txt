@@ -1,0 +1,161 @@
+
+Clientum
+
+Iniciar sesión
+Probar gratis
+
+Funciones
+Chatbot WhatsApp 24/7
+CRM Inteligente
+Asistente IA
+Reportes Automáticos
+Automatización
+Portal del Cliente
+
+Servicios
+🔌 Integración API Gateway
+🤖 Viaweb AI Copilot
+💻 Desarrollo Web Personalizado
+Consultoría y ERP
+📋 Catálogo con precios
+
+Empresa
+Sobre Nosotros
+Casos de Éxito
+Blog
+Comparativa
+Programa de Socios
+
+Recursos
+Academia
+Recursos gratuitos
+FAQ
+Precios
+Iniciar sesión
+Probar gratis 14 días
+Catálogo completo
+Servicios y precios de referencia
+
+Integraciones, IA, desarrollo web y todo lo que tu empresa necesita para escalar — cotizado a medida.
+Solicitar propuesta sin costo
+Ver catálogo completo
+🔌
+Integración API Gateway
+
+Conectá sistemas, apps y plataformas externas sin código. Automatizá el flujo de datos entre tus herramientas con integraciones robustas.
+Ver detalle →
+✓ API REST y webhooks
+✓ Mapeo y transformación de datos
+✓ Monitoreo en tiempo real
+✓ Autenticación OAuth2/JWT
+✓ Documentación técnica incluida
+✓ Retry y gestión de errores
+Planes del servicio principal
+Plan 	Servicio principal 	Implementación 	Mantenimiento 	Soporte 	Tiempo resp. 	
+Basic 	$400.000 – $600.000 	$120.000 – $180.000 	$80.000 – $120.000 	$60.000 – $90.000 	48 hs 	Cotizar →
+Standard 	$600.000 – $900.000 	$180.000 – $270.000 	$120.000 – $180.000 	$90.000 – $135.000 	36 hs 	Cotizar →
+Pro 	$900.000 – $1.300.000 	$270.000 – $390.000 	$180.000 – $260.000 	$135.000 – $195.000 	24 hs 	Cotizar →
+Advanced 	$1.300.000 – $1.700.000 	$390.000 – $510.000 	$260.000 – $340.000 	$195.000 – $255.000 	18 hs 	Cotizar →
+Enterprise 	$1.700.000 – $2.200.000 	$510.000 – $660.000 	$340.000 – $440.000 	$255.000 – $330.000 	12 hs 	Cotizar →
+
+Componentes adicionales disponibles
+Implementación Mantenimiento Soporte Capacitación Customización Consultoría Migración de Datos Seguridad Monitoreo
+
+Cada componente se cotiza según el plan elegido. Consultá precios exactos.
+🤖
+Viaweb AI Copilot
+
+IA y automatización aplicada a tu negocio. Predicciones, flujos automáticos, análisis inteligente y asistentes conversacionales a medida.
+Ver detalle →
+✓ Modelos de lenguaje (LLM) integrados
+✓ Automatización de flujos de trabajo
+✓ Predicciones y recomendaciones
+✓ Chatbots conversacionales
+✓ Análisis de sentimiento
+✓ Integración nativa con CRM
+Planes del servicio principal
+Plan 	Servicio principal 	Implementación 	Mantenimiento 	Soporte 	Tiempo resp. 	
+Basic 	$600.000 – $900.000 	$180.000 – $270.000 	$120.000 – $180.000 	$90.000 – $135.000 	48 hs 	Cotizar →
+Standard 	$900.000 – $1.300.000 	$270.000 – $390.000 	$180.000 – $260.000 	$135.000 – $195.000 	36 hs 	Cotizar →
+Pro 	$1.300.000 – $1.800.000 	$390.000 – $540.000 	$260.000 – $360.000 	$195.000 – $270.000 	24 hs 	Cotizar →
+Advanced 	$1.800.000 – $2.300.000 	$540.000 – $690.000 	$360.000 – $460.000 	$270.000 – $345.000 	18 hs 	Cotizar →
+Enterprise 	$2.300.000 – $3.000.000 	$690.000 – $900.000 	$460.000 – $600.000 	$345.000 – $450.000 	12 hs 	Cotizar →
+
+Componentes adicionales disponibles
+Implementación Mantenimiento Soporte Capacitación Customización Consultoría Migración de Datos Seguridad Monitoreo
+
+Cada componente se cotiza según el plan elegido. Consultá precios exactos.
+💻
+Desarrollo Web Personalizado
+
+Sitios, landing pages y apps a medida que capturan leads y los envían directo al CRM. Diseño + desarrollo + integración en una sola propuesta.
+Ver detalle →
+✓ Diseño UX/UI incluido
+✓ Integración directa con CRM
+✓ SEO técnico desde el inicio
+✓ E-commerce y tiendas online
+✓ Apps web progresivas (PWA)
+✓ Hosting y dominios gestionados
+Planes del servicio principal
+Plan 	Servicio principal 	Implementación 	Mantenimiento 	Soporte 	Tiempo resp. 	
+Basic 	$800.000 – $1.500.000 	$240.000 – $450.000 	$160.000 – $300.000 	$120.000 – $225.000 	48 hs 	Cotizar →
+Standard 	$1.500.000 – $2.000.000 	$450.000 – $600.000 	$300.000 – $400.000 	$225.000 – $300.000 	36 hs 	Cotizar →
+Pro 	$2.000.000 – $3.000.000 	$600.000 – $900.000 	$400.000 – $600.000 	$300.000 – $450.000 	24 hs 	Cotizar →
+Advanced 	$3.000.000 – $4.000.000 	$900.000 – $1.200.000 	$600.000 – $800.000 	$450.000 – $600.000 	18 hs 	Cotizar →
+Enterprise 	$4.000.000 – $5.000.000 	$1.200.000 – $1.500.000 	$800.000 – $1.000.000 	$600.000 – $750.000 	12 hs 	Cotizar →
+
+Componentes adicionales disponibles
+Implementación Mantenimiento Soporte Capacitación Customización Consultoría Migración de Datos Seguridad Monitoreo
+
+Cada componente se cotiza según el plan elegido. Consultá precios exactos.
+
+💡 Precios de referencia en pesos argentinos. Los valores se actualizan periódicamente. Cada proyecto se cotiza a medida según el alcance real, integraciones requeridas y complejidad técnica.
+Solicitar propuesta personalizada
+Ver planes del CRM
+¿Necesitás un pack integrado?
+
+CRM + Integración API + IA + Web en una sola propuesta coordinada. Hablemos 30 minutos sin costo.
+Agendar asesoría gratuita
+Clientum
+
+La plataforma de IA para PyMEs argentinas. Automatizá la atención, gestioná ventas y facturá desde un solo lugar.
+info@clientum.com.ar
++54 298 451-0883
+WhatsApp
+Funciones
+
+    Chatbot WhatsApp 24/7
+    CRM Inteligente
+    Asistente IA
+    Reportes Automáticos
+    Automatización
+    Portal del Cliente
+
+Servicios
+
+    Consultoría Empresarial
+    ERP Personalizado
+    Implementación y Soporte
+    Marketing Digital
+    Integración de Tecnología
+    Desarrollo Web
+
+Empresa
+
+    Sobre Nosotros
+    Casos de Éxito
+    Blog
+    Comparativa
+    Programa de Socios
+
+Recursos
+
+    Academia
+    Recursos gratuitos
+    Preguntas frecuentes
+    Precios
+    Contacto
+
+© 2026 Clientum. Todos los derechos reservados.
+Política de Privacidad
+Términos de Servicio
