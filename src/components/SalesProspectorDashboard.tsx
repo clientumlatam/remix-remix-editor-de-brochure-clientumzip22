@@ -273,6 +273,7 @@ export default function SalesProspectorDashboard({
   const [searchCustom, setSearchCustom] = useState("");
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [enrichingIds, setEnrichingIds] = useState<Set<number>>(new Set());
   const [addedProspectNames, setAddedProspectNames] = useState<string[]>([]);
   const [researchingLeadId, setResearchingLeadId] = useState<string | null>(null);
 
@@ -485,10 +486,13 @@ export default function SalesProspectorDashboard({
             ...p,
             rating,
             priceLevel,
-            distance
+            distance,
+            _idx: index,
           };
         });
         setSearchResults(enriched);
+        // Auto-enrich prospects that have a website domain
+        autoEnrichProspects(enriched);
         if (data.isRealScraped && data.isGooglePlaces) {
           setShowFallbackBanner("¡Éxito total! Se ha utilizado la API oficial de Google Places para obtener prospectos 100% reales de Google Maps en tiempo real.");
         } else if (data.isRealScraped) {
@@ -504,6 +508,57 @@ export default function SalesProspectorDashboard({
       alert("Error al prospectar leads: " + e.message);
     } finally {
       setSearchLoading(false);
+    }
+  };
+
+  // ── Hunter.io enrichment helpers ──────────────────────────────────────────
+
+  const enrichSingleProspect = async (idx: number, domain: string) => {
+    setEnrichingIds(prev => new Set(prev).add(idx));
+    try {
+      const res = await fetch("/api/enrich-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ domain }),
+      });
+      const data = await res.json();
+      if (data.contacts && data.contacts.length > 0) {
+        const best = data.contacts[0]; // highest confidence first
+        setSearchResults(prev =>
+          prev.map(p =>
+            p._idx === idx
+              ? {
+                  ...p,
+                  contact:         best.name,
+                  contactEmail:    best.email,
+                  contactPosition: best.position,
+                  contactLinkedin: best.linkedin ?? null,
+                  contactVerified: true,
+                  _hunterSource:   true,
+                }
+              : p
+          )
+        );
+      }
+    } catch (e) {
+      console.warn("[Enrich] Error for idx", idx, e);
+    } finally {
+      setEnrichingIds(prev => { const s = new Set(prev); s.delete(idx); return s; });
+    }
+  };
+
+  const autoEnrichProspects = (prospects: any[]) => {
+    // Enrich up to 10 prospects that have a website, staggered to avoid rate limits
+    let delay = 0;
+    let count = 0;
+    for (const p of prospects) {
+      if (p.website && count < 10) {
+        const idx = p._idx;
+        const domain = p.website;
+        setTimeout(() => enrichSingleProspect(idx, domain), delay);
+        delay += 600; // 600ms between requests
+        count++;
+      }
     }
   };
 

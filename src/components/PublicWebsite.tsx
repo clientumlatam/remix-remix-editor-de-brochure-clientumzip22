@@ -224,6 +224,30 @@ export default function PublicWebsite({
     return filteredCatalog.slice(start, start + CATALOG_PAGE_SIZE);
   }, [filteredCatalog, catalogPage]);
 
+  const handleExportCatalogCSV = (scope: "filtered" | "all") => {
+    const rows = scope === "all" ? ALL_SERVICES : filteredCatalog;
+    const headers = ["ID", "Nombre", "Categoría", "Descripción", "Precio (ARS)"];
+    const escape = (v: string | number) => {
+      const s = String(v ?? "").replace(/"/g, '""');
+      return /[",\n\r]/.test(s) ? `"${s}"` : s;
+    };
+    const lines = [
+      headers.join(","),
+      ...rows.map(s =>
+        [s.id, s.name, s.cat, s.desc, s.price].map(escape).join(",")
+      ),
+    ];
+    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = scope === "all"
+      ? `clientum-catalogo-completo-${rows.length}-servicios.csv`
+      : `clientum-catalogo-${rows.length}-servicios-filtrado.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   // Full LMS course catalog (377 cursos) — search & pagination
   const ALL_COURSES = cursosLms as LmsCourse[];
   const [coursesQuery, setCoursesQuery] = useState("");
@@ -1584,9 +1608,33 @@ export default function PublicWebsite({
                   </select>
                 </div>
 
-                <p className="text-center text-xs text-slate-400 font-mono">
-                  {filteredCatalog.length.toLocaleString("es-AR")} resultado{filteredCatalog.length === 1 ? "" : "s"}
-                </p>
+                {/* Results count + export buttons */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 max-w-3xl mx-auto w-full">
+                  <p className="text-xs text-slate-400 font-mono">
+                    {filteredCatalog.length.toLocaleString("es-AR")} resultado{filteredCatalog.length === 1 ? "" : "s"}
+                    {catalogQuery || catalogCat ? ` · ${ALL_SERVICES.length.toLocaleString("es-AR")} total` : ""}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    {(catalogQuery || catalogCat) && (
+                      <button
+                        onClick={() => handleExportCatalogCSV("filtered")}
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:border-slate-300 transition-all"
+                        title={`Exportar ${filteredCatalog.length} resultados filtrados`}
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        Exportar filtro ({filteredCatalog.length.toLocaleString("es-AR")})
+                      </button>
+                    )}
+                    <button
+                      onClick={() => handleExportCatalogCSV("all")}
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
+                      title="Exportar los 2.147 servicios en CSV"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      Exportar todo · {ALL_SERVICES.length.toLocaleString("es-AR")} servicios
+                    </button>
+                  </div>
+                </div>
 
                 {/* Results grid */}
                 {catalogPageItems.length === 0 ? (
