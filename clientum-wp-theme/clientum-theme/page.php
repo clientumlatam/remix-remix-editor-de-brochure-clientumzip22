@@ -1,14 +1,16 @@
 <?php get_header(); ?>
 
-<div class="max-w-4xl mx-auto px-6 py-16">
-  <?php if (have_posts()): while (have_posts()): the_post(); ?>
-    <article class="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
-      <h1 class="text-2xl md:text-3xl font-black text-slate-900 mb-6"><?php the_title(); ?></h1>
-      <div class="wp-content prose prose-slate max-w-none text-slate-700 text-sm leading-relaxed">
-        <?php the_content(); ?>
-      </div>
-    </article>
-  <?php endwhile; endif; ?>
-</div>
+<main class="site-main">
+    <?php while ( have_posts() ) : the_post(); ?>
+        <div class="page-hero page-hero--simple">
+            <div class="container">
+                <h1><?php the_title(); ?></h1>
+            </div>
+        </div>
+        <div class="container py-16">
+            <div class="prose"><?php the_content(); ?></div>
+        </div>
+    <?php endwhile; ?>
+</main>
 
 <?php get_footer(); ?>

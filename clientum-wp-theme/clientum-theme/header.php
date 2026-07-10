@@ -1,116 +1,169 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="scroll-smooth">
+<html <?php language_attributes(); ?>>
 <head>
-  <meta charset="<?php bloginfo('charset'); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php wp_head(); ?>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: { DEFAULT: '#1A3461', dark: '#0d1f3c', light: '#254f8f' }
-          },
-          fontFamily: {
-            display: ['Inter', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-slate-50 text-slate-800 antialiased'); ?>>
+<body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<?php
-$phone   = clientum_opt('clientum_phone', '+54 298 451-0883');
-$wa      = clientum_opt('clientum_whatsapp', '5492984510883');
-?>
+<header class="site-header" id="site-header">
+    <div class="header-inner container">
+        <div class="header-brand">
+            <?php clientum_logo(); ?>
+        </div>
 
-<!-- ── HEADER / NAV ─────────────────────────────────────────────────────────── -->
-<header id="site-header" class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-40 px-4 md:px-6 py-3.5 shadow-sm">
-  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <nav class="primary-nav" id="primary-nav" aria-label="Menú principal">
+            <ul class="nav-menu">
 
-    <!-- Logo -->
-    <a href="<?php echo esc_url(home_url('/')); ?>" class="flex items-center gap-2 shrink-0">
-      <div class="w-9 h-9 bg-[#1A3461] rounded-lg flex items-center justify-center shrink-0">
-        <svg width="20" height="20" viewBox="0 0 180 180" fill="none">
-          <rect width="180" height="180" rx="36" fill="#1A3461"/>
-          <line x1="90" y1="28" x2="152" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
-          <line x1="152" y1="90" x2="90" y2="152" stroke="white" stroke-width="11" stroke-linecap="round"/>
-          <line x1="90" y1="152" x2="28" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
-          <line x1="28" y1="90" x2="90" y2="28" stroke="white" stroke-width="11" stroke-linecap="round"/>
-          <circle cx="90" cy="28" r="14" fill="white"/>
-          <circle cx="152" cy="90" r="14" fill="white"/>
-          <circle cx="90" cy="152" r="14" fill="white"/>
-          <circle cx="28" cy="90" r="14" fill="white"/>
-        </svg>
-      </div>
-      <div>
-        <span class="font-black text-lg tracking-tight text-slate-900 leading-none block">CLIENTUM</span>
-        <span class="text-[9px] uppercase tracking-widest text-[#1A3461] font-bold block mt-0.5">CRM, Chatbots &amp; Tecnología PyME</span>
-      </div>
-    </a>
+                <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false">
+                        Funciones <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-grid">
+                            <a href="<?php echo esc_url(home_url('/whatsapp')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#dcfce7">💬</span>
+                                <span class="di-text"><strong>Chatbot WhatsApp 24/7</strong><small>Atención automática sin personal</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/crm-inteligente')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#dbeafe">📊</span>
+                                <span class="di-text"><strong>CRM Inteligente</strong><small>Pipeline visual de ventas</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/asistente-ia')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#ede9fe">🤖</span>
+                                <span class="di-text"><strong>Asistente IA</strong><small>Análisis e insights en tiempo real</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/reportes')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#fff7ed">📈</span>
+                                <span class="di-text"><strong>Reportes Automáticos</strong><small>KPIs y dashboards siempre actualizados</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/automatizacion')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#fef9c3">⚡</span>
+                                <span class="di-text"><strong>Automatización</strong><small>Flujos sin intervención humana</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/portal-cliente')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#cffafe">🌐</span>
+                                <span class="di-text"><strong>Portal del Cliente</strong><small>Self-service con tu marca</small></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-600" id="desktop-nav">
-      <?php
-      $nav_items = [
-        ['url' => home_url('/'), 'label' => 'Inicio'],
-        ['url' => home_url('/#servicios'), 'label' => 'Servicios'],
-        ['url' => home_url('/#planes'), 'label' => 'Precios'],
-        ['url' => home_url('/academia/'), 'label' => 'Academia'],
-        ['url' => home_url('/portafolio/'), 'label' => 'Portafolio'],
-        ['url' => home_url('/blog/'), 'label' => 'Blog'],
-        ['url' => home_url('/#nosotros'), 'label' => 'Nosotros'],
-        ['url' => home_url('/#contacto'), 'label' => 'Contacto'],
-      ];
-      foreach ($nav_items as $item): ?>
-        <a href="<?php echo esc_url($item['url']); ?>"
-           class="px-3 py-2 rounded-lg text-xs uppercase tracking-wider font-extrabold text-slate-600 hover:text-[#1A3461] hover:bg-slate-50 transition-all">
-          <?php echo esc_html($item['label']); ?>
-        </a>
-      <?php endforeach; ?>
-    </nav>
+                <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false">
+                        Servicios <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="nav-dropdown">
+                        <div class="dropdown-grid">
+                            <a href="<?php echo esc_url(home_url('/integracion-api-gateway')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#dbeafe">🔌</span>
+                                <span class="di-text"><strong>Integración API Gateway</strong><small>Conectá todos tus sistemas sin código</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/ai-copilot')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#ede9fe">🤖</span>
+                                <span class="di-text"><strong>Viaweb AI Copilot</strong><small>IA y automatización para tu negocio</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/desarrollo-web-personalizado')); ?>" class="dropdown-item">
+                                <span class="di-icon" style="background:#cffafe">💻</span>
+                                <span class="di-text"><strong>Desarrollo Web Personalizado</strong><small>Sitios, apps y e-commerce con CRM</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/servicios')); ?>#consultoria" class="dropdown-item">
+                                <span class="di-icon" style="background:#dcfce7">💼</span>
+                                <span class="di-text"><strong>Consultoría Empresarial</strong><small>Diagnóstico y plan de mejora</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/servicios')); ?>#erp" class="dropdown-item">
+                                <span class="di-icon" style="background:#fff7ed">⚙️</span>
+                                <span class="di-text"><strong>ERP Personalizado</strong><small>Gestión a medida de tu industria</small></span>
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/catalogo-servicios')); ?>" class="dropdown-item" style="border-top:1px solid var(--g100);grid-column:1/-1;margin-top:4px;padding-top:12px">
+                                <span class="di-icon" style="background:#f0f5ff">📋</span>
+                                <span class="di-text"><strong>Ver catálogo completo con precios →</strong><small>Todos los servicios y planes detallados</small></span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
 
-    <!-- CTA Buttons -->
-    <div class="hidden lg:flex items-center gap-2 shrink-0">
-      <a href="https://wa.me/<?php echo esc_attr($wa); ?>?text=Hola%2C%20quiero%20una%20demo%20de%20Clientum"
-         target="_blank" rel="noopener"
-         class="flex items-center gap-1.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-[10px] px-3 py-2.5 rounded-lg uppercase tracking-wider transition-all">
-        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
-      </a>
-      <a href="<?php echo esc_url(home_url('/#contacto')); ?>"
-         class="bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs uppercase px-4 py-2.5 rounded-lg tracking-wider transition-all flex items-center gap-1.5 shadow-sm">
-        Solicitar Demo
-        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </a>
+                <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false">
+                        Empresa <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="nav-dropdown dropdown-narrow">
+                        <a href="<?php echo esc_url(home_url('/sobre-nosotros')); ?>" class="dropdown-item">Sobre Nosotros</a>
+                        <a href="<?php echo esc_url(home_url('/casos-de-exito')); ?>" class="dropdown-item">Casos de Éxito</a>
+                        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="dropdown-item">Blog</a>
+                        <a href="<?php echo esc_url(home_url('/comparativa')); ?>" class="dropdown-item">Comparativa</a>
+                        <a href="<?php echo esc_url(home_url('/programa-de-socios')); ?>" class="dropdown-item">Programa de Socios</a>
+                    </div>
+                </li>
+
+                <li class="nav-item has-dropdown">
+                    <button class="nav-link dropdown-toggle" aria-expanded="false">
+                        Recursos <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="nav-dropdown dropdown-narrow">
+                        <a href="<?php echo esc_url(home_url('/academia')); ?>" class="dropdown-item">Academia</a>
+                        <a href="<?php echo esc_url(home_url('/recursos')); ?>" class="dropdown-item">Recursos gratuitos</a>
+                        <a href="<?php echo esc_url(home_url('/faq')); ?>" class="dropdown-item">Preguntas frecuentes</a>
+                        <a href="<?php echo esc_url(home_url('/precios')); ?>" class="dropdown-item">Precios</a>
+                        <a href="<?php echo esc_url(home_url('/contacto')); ?>" class="dropdown-item">Contacto</a>
+                    </div>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <a href="<?php echo esc_url(home_url('/login')); ?>" class="btn btn-ghost">Iniciar sesión</a>
+            <a href="<?php echo esc_url(home_url('/register')); ?>" class="btn btn-primary">Probar gratis</a>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </div>
-
-    <!-- Mobile Hamburger -->
-    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg bg-slate-100 text-slate-600 hover:text-slate-900" aria-label="Menú">
-      <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 mt-3 pt-3 pb-2 flex flex-col gap-1.5 px-4">
-    <?php foreach ($nav_items as $item): ?>
-      <a href="<?php echo esc_url($item['url']); ?>"
-         class="py-2.5 px-3 rounded-lg text-xs uppercase tracking-wider font-extrabold text-slate-600 hover:text-[#1A3461] hover:bg-slate-50 transition-all">
-        <?php echo esc_html($item['label']); ?>
-      </a>
-    <?php endforeach; ?>
-    <a href="https://wa.me/<?php echo esc_attr($wa); ?>?text=Hola%2C%20quiero%20una%20demo"
-       target="_blank" rel="noopener"
-       class="mt-2 w-full bg-emerald-500 text-slate-950 font-extrabold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center">
-      WhatsApp — Demo Gratis
-    </a>
-    <a href="<?php echo esc_url(home_url('/#contacto')); ?>"
-       class="w-full bg-[#1A3461] text-white font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center">
-      Solicitar Demo
-    </a>
-  </div>
 </header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+        <div class="mobile-nav-section">
+            <p class="mobile-nav-label">Funciones</p>
+            <a href="<?php echo esc_url(home_url('/whatsapp')); ?>">Chatbot WhatsApp 24/7</a>
+            <a href="<?php echo esc_url(home_url('/crm-inteligente')); ?>">CRM Inteligente</a>
+            <a href="<?php echo esc_url(home_url('/asistente-ia')); ?>">Asistente IA</a>
+            <a href="<?php echo esc_url(home_url('/reportes')); ?>">Reportes Automáticos</a>
+            <a href="<?php echo esc_url(home_url('/automatizacion')); ?>">Automatización</a>
+            <a href="<?php echo esc_url(home_url('/portal-cliente')); ?>">Portal del Cliente</a>
+        </div>
+        <div class="mobile-nav-section">
+            <p class="mobile-nav-label">Servicios</p>
+            <a href="<?php echo esc_url(home_url('/integracion-api-gateway')); ?>">🔌 Integración API Gateway</a>
+            <a href="<?php echo esc_url(home_url('/ai-copilot')); ?>">🤖 Viaweb AI Copilot</a>
+            <a href="<?php echo esc_url(home_url('/desarrollo-web-personalizado')); ?>">💻 Desarrollo Web Personalizado</a>
+            <a href="<?php echo esc_url(home_url('/servicios')); ?>">Consultoría y ERP</a>
+            <a href="<?php echo esc_url(home_url('/catalogo-servicios')); ?>">📋 Catálogo con precios</a>
+        </div>
+        <div class="mobile-nav-section">
+            <p class="mobile-nav-label">Empresa</p>
+            <a href="<?php echo esc_url(home_url('/sobre-nosotros')); ?>">Sobre Nosotros</a>
+            <a href="<?php echo esc_url(home_url('/casos-de-exito')); ?>">Casos de Éxito</a>
+            <a href="<?php echo esc_url(home_url('/blog')); ?>">Blog</a>
+            <a href="<?php echo esc_url(home_url('/comparativa')); ?>">Comparativa</a>
+            <a href="<?php echo esc_url(home_url('/programa-de-socios')); ?>">Programa de Socios</a>
+        </div>
+        <div class="mobile-nav-section">
+            <p class="mobile-nav-label">Recursos</p>
+            <a href="<?php echo esc_url(home_url('/academia')); ?>">Academia</a>
+            <a href="<?php echo esc_url(home_url('/recursos')); ?>">Recursos gratuitos</a>
+            <a href="<?php echo esc_url(home_url('/faq')); ?>">FAQ</a>
+            <a href="<?php echo esc_url(home_url('/precios')); ?>">Precios</a>
+        </div>
+        <div class="mobile-nav-actions">
+            <a href="<?php echo esc_url(home_url('/login')); ?>" class="btn btn-outline w-full">Iniciar sesión</a>
+            <a href="<?php echo esc_url(home_url('/register')); ?>" class="btn btn-primary w-full">Probar gratis 14 días</a>
+        </div>
+    </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
