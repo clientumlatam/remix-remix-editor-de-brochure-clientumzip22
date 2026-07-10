@@ -324,3 +324,29 @@ table.cmp-full tr:hover td{background:rgba(255,255,255,.02);}
 /* ---------- FAQ preview section ---------- */
 .faq-preview .faq-item summary{font-size:18px;}
 
+/* ---------- Catálogo Clientum / service blocks ---------- */
+.svc-block{border:1px solid var(--line-soft);margin-bottom:2px;padding:36px 36px 28px;}
+.svc-block:last-of-type{margin-bottom:0;}
+.svc-block-head{display:flex;align-items:flex-start;gap:20px;margin-bottom:22px;flex-wrap:wrap;}
+.svc-block-icon{font-size:32px;line-height:1;flex-shrink:0;margin-top:2px;}
+.svc-block-title{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);font-weight:600;margin:0 0 8px;}
+.svc-block-desc{color:var(--muted);font-size:15px;margin:0;max-width:60ch;}
+.svc-features{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:4px;}
+.svc-features span{font-family:var(--mono);font-size:12.5px;color:var(--cyan);letter-spacing:.02em;}
+.svc-price-table td{font-size:13px;color:var(--paper-dim);}
+.svc-price-table td.plan-name{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--paper);font-weight:600;}
+.svc-price-table td.resp-time{font-family:var(--mono);font-size:12px;color:var(--lime);}
+.svc-price-table tr.plan-feat-row td{background:rgba(200,255,77,.05);border-color:rgba(200,255,77,.2);}
+.svc-price-table tr.plan-feat-row td.plan-name{color:var(--lime);}
+.btn-table{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--lime);border:1px solid rgba(200,255,77,.3);padding:7px 14px;border-radius:var(--radius);white-space:nowrap;transition:.15s;display:inline-block;}
+.btn-table:hover{background:var(--lime);color:var(--ink);}
+.svc-addons{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.svc-addons-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:4px;}
+.addon-tag{font-family:var(--mono);font-size:10.5px;border:1px solid var(--line-soft);padding:4px 10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+.pack-cta{margin-top:48px;background:var(--ink-soft);border:1px solid var(--line-soft);padding:32px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.pack-cta-text p{color:var(--muted);font-size:15px;margin:10px 0 0;max-width:55ch;}
+@media(max-width:900px){.svc-block{padding:24px 20px;}.svc-block-head{gap:14px;}.pack-cta{padding:24px 20px;}}
+@media(max-width:700px){.svc-price-table th:nth-child(3),.svc-price-table td:nth-child(3),
+  .svc-price-table th:nth-child(4),.svc-price-table td:nth-child(4),
+  .svc-price-table th:nth-child(5),.svc-price-table td:nth-child(5){display:none;}}
+
