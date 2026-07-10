@@ -232,6 +232,40 @@ export default function PublicWebsite({
     { plan: "Especializado",    precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
   ];
 
+  const SOLUCIONES_DATA = [
+    { id: "chatbot",         label: "Chatbot WhatsApp",   desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
+    { id: "crm_inteligente", label: "CRM Inteligente",    desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
+    { id: "asistente_ia",    label: "Asistente IA",       desc: "Tu analista de negocio disponible en todo momento." },
+    { id: "reportes",        label: "Reportes Automáticos", desc: "Dashboards en tiempo real para decisiones basadas en datos." },
+    { id: "automatizacion",  label: "Automatización",     desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
+    { id: "portal_cliente",  label: "Portal del Cliente", desc: "Tus clientes consultan stock, facturas y pedidos solos." },
+    { id: "desarrollo_web",  label: "Desarrollo Web",     desc: "Sitios y e-commerce conectados directamente al CRM." },
+    { id: "integraciones",   label: "Integraciones",      desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
+    { id: "catalogo",        label: "Catálogo Completo",  desc: "Más de 2.147 servicios en 13 categorías con precios." },
+    { id: "servicios",       label: "Consultoría & ERP",  desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
+    { id: "planes",          label: "Planes y Precios",   desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
+    { id: "casos",           label: "Casos de Éxito",     desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
+  ];
+
+  const handleExportSolucionesCSV = () => {
+    const headers = ["ID", "Solución", "Descripción"];
+    const escape = (v: string) => {
+      const s = String(v ?? "").replace(/"/g, '""');
+      return /[",\n\r]/.test(s) ? `"${s}"` : s;
+    };
+    const lines = [
+      headers.join(","),
+      ...SOLUCIONES_DATA.map(s => [s.id, s.label, s.desc].map(escape).join(",")),
+    ];
+    const blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `clientum-soluciones-${SOLUCIONES_DATA.length}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   const handleExportCursosCSV = (scope: "filtered" | "all") => {
     const rows = scope === "all" ? ALL_COURSES : filteredCourses;
     const headers = ["ID", "Título", "Descripción"];
@@ -1225,10 +1259,18 @@ export default function PublicWebsite({
                 {/* ───────── SOLUCIONES HUB ───────── */}
                 <section className="bg-white border-t border-slate-200 py-20 px-6">
                   <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-12 flex flex-col items-center gap-4">
                       <span className="text-[#1A3461] font-mono text-[10px] uppercase font-bold tracking-widest">Plataforma Completa</span>
                       <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight mt-2">Todas las Soluciones</h2>
                       <p className="text-slate-500 text-xs mt-2 max-w-xl mx-auto">Cada herramienta diseñada para conectarse entre sí y multiplicar el impacto en tu PyME.</p>
+                      <button
+                        onClick={handleExportSolucionesCSV}
+                        className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
+                        title={`Exportar ${SOLUCIONES_DATA.length} soluciones en CSV`}
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        Exportar soluciones · CSV
+                      </button>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                       {[
