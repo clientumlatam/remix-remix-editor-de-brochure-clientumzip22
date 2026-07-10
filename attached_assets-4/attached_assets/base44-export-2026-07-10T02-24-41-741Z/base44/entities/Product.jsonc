@@ -1,0 +1,32 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "C\u00f3digo del producto"
+    },
+    "name": {
+      "type": "string",
+      "description": "Nombre del producto"
+    },
+    "price": {
+      "type": "number",
+      "description": "Precio con IVA"
+    },
+    "category": {
+      "type": "string",
+      "description": "Categor\u00eda del producto"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si el producto est\u00e1 activo"
+    }
+  },
+  "required": [
+    "code",
+    "name",
+    "price"
+  ]
+}

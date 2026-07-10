@@ -1,0 +1,642 @@
+ID,Title,Content,Excerpt,Date,Post Type,Permalink,description
+3886,Contact form 1,"<label> Your name
+    [text* your-name autocomplete:name] </label>
+
+<label> Your email
+    [email* your-email autocomplete:email] </label>
+
+<label> Subject
+    [text* your-subject] </label>
+
+<label> Your message (optional)
+    [textarea your-message] </label>
+
+[submit ""Submit""]
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@web.viaweb.net.ar>
+From: [your-name] [your-email]
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+-- 
+This is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).
+[_site_admin_email]
+Reply-To: [your-email]
+
+0
+0
+
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@web.viaweb.net.ar>
+Message Body:
+[your-message]
+
+-- 
+This email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.
+[your-email]
+Reply-To: [_site_admin_email]
+
+0
+0
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+Please fill out this field.
+This field has a too long input.
+This field has a too short input.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The uploaded file is too large.
+There was an error uploading the file.",,2024-10-02 0:06:46,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=3886,"Formulario de contacto con campos para nombre, correo electrónico, asunto y mensaje. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error."
+5044,newsletter,"<div class=""flex-row form-flat medium-flex-wrap"">
+    <div class=""flex-col flex-grow"">
+    	[email* your-email placeholder ""Tu Email (requerido)""]
+    </div>
+    <div class=""flex-col ml-half"">
+    	[submit class:button primary ""Suscribirse""]
+    </div>
+    </div>
+1
+[_site_title] ""[your-subject]""
+[_site_title] <consultas@viaweb.net.ar>
+consultas@viaweb.net.ar
+De: [your-name] [your-email]
+Asunto: [your-subject]
+
+Cuerpo del mensaje:
+
+[your-message]
+
+-- 
+Esta es una notificación de que se envió un formulario de contacto en su sitio web ([_site_title] [_site_url]).
+Reply-To: <consultas@viaweb.net.ar>
+
+
+
+
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@web.viaweb.net.ar>
+[your-email]
+Message Body:
+[your-message]
+
+-- 
+This email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.
+Reply-To: [_site_admin_email]
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+Please fill out this field.
+This field has a too long input.
+This field has a too short input.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The uploaded file is too large.
+There was an error uploading the file.
+Please enter a date in YYYY-MM-DD format.
+This field has a too early date.
+This field has a too late date.
+Please enter a number.
+This field has a too small number.
+This field has a too large number.
+The answer to the quiz is incorrect.
+Please enter an email address.
+Please enter a URL.
+Please enter a telephone number.
+
+
+
+0",,2024-10-03 17:59:03,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=5044,Formulario de suscripción simple con campo de correo electrónico y botón de envío. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error.
+5830,Contact form 1,"<label> Your name
+    [text* your-name autocomplete:name] </label>
+
+<label> Your email
+    [email* your-email autocomplete:email] </label>
+
+<label> Subject
+    [text* your-subject] </label>
+
+<label> Your message (optional)
+    [textarea your-message] </label>
+
+[submit ""Submit""]
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@webvw1-space.wpkubio.com>
+From: [your-name] [your-email]
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+-- 
+This is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).
+[_site_admin_email]
+Reply-To: [your-email]
+
+0
+0
+
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@webvw1-space.wpkubio.com>
+Message Body:
+[your-message]
+
+-- 
+This email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.
+[your-email]
+Reply-To: [_site_admin_email]
+
+0
+0
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+Please fill out this field.
+This field has a too long input.
+This field has a too short input.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The uploaded file is too large.
+There was an error uploading the file.",,2024-10-16 2:28:55,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=5830,"Formulario de contacto similar al primero, con campos para nombre, correo electrónico, asunto y mensaje. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error."
+5831,contact,"<label> Your Name (required)
+    [text* your-name] </label>
+
+<label> Your Email (required)
+    [email* your-email] </label>
+
+<label> Subject
+    [text your-subject] </label>
+
+<label> Your Message
+    [textarea your-message] </label>
+
+[submit ""Send""]
+1
+conta ""[your-subject]""
+conta <wordpress@mihai-ar-work.colibriwp.com>
+mihai.arsene@extendstudio.com
+From: [your-name] <[your-email]>
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on conta (https://colibriwp-work.colibriwp.com/accountant-pro)
+Reply-To: [your-email]
+
+
+
+
+conta ""[your-subject]""
+conta <wordpress@mihai-ar-work.colibriwp.com>
+[your-email]
+Message Body:
+[your-message]
+
+-- 
+This e-mail was sent from a contact form on conta (https://colibriwp-work.colibriwp.com/accountant-pro)
+Reply-To: mihai.arsene@extendstudio.com
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.
+demo_mode: on",,2020-03-11 9:23:13,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=5831,"Formulario de contacto básico con campos para nombre, correo electrónico, asunto y mensaje. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error en inglés."
+16182,Contact Form Flat,"<section id=""demo-request"">
+    <h2>Solicita una demo</h2>
+    <p>Rellena el formulario para obtener una demostración personalizada de nuestros servicios.</p>
+
+    <form action=""/submit-demo-request"" method=""POST"" id=""demo-form"">
+        <div class=""form-field"">
+            <label for=""full-name"">Nombre completo</label>
+            <input type=""text"" id=""full-name"" name=""full_name"" required placeholder=""Escribe tu nombre completo"">
+        </div>
+
+        <div class=""form-field"">
+            <label for=""email"">Correo electrónico</label>
+            <input type=""email"" id=""email"" name=""email"" required placeholder=""Escribe tu correo electrónico"">
+        </div>
+
+        <div class=""form-field"">
+            <label for=""phone"">Teléfono</label>
+            <input type=""tel"" id=""phone"" name=""phone"" placeholder=""Escribe tu teléfono"">
+        </div>
+
+        <div class=""form-field"">
+            <label for=""message"">Mensaje</label>
+            <textarea id=""message"" name=""message"" rows=""4"" placeholder=""Cuéntanos más sobre lo que te gustaría ver en la demo""></textarea>
+        </div>
+
+        <div class=""form-field"">
+            <button type=""submit"" class=""submit-btn"">Solicitar Demo</button>
+        </div>
+    </form>
+</section>
+
+<style>
+    #demo-request {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #demo-request h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    .form-field {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button.submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button.submit-btn:hover {
+        background-color: #45a049;
+    }
+</style>
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.
+
+
+
+0",,2016-08-29 14:03:10,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=16182,"Formulario de solicitud de demostración con campos para nombre completo, correo electrónico, teléfono y mensaje. Incluye estilos CSS para mejorar la apariencia del formulario."
+16183,Newsletter Vertical,"<div class=""form-flat"">
+	[email* your-email placeholder ""Your Email (required)""]
+
+	[submit class:button primary ""Sign Up""]
+</div>
+New signup!
+Flatsome Theme <mail@flatsome.dev>
+New signup: [your-email]
+[your-email]
+
+
+
+
+
+Flatsome ""[your-subject]""
+Flatsome <wordpress@flatsome.dev>
+Message Body:
+[your-message]
+
+--
+This e-mail was sent from a contact form on Flatsome (http://flatsome.dev)
+[your-email]
+Reply-To: email@mail.com
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+Your entered code is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.",,2016-08-25 13:56:17,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=16183,Formulario de suscripción simple con campo de correo electrónico y botón de envío. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error en inglés.
+16184,Newsletter Horizontal,"<div class=""flex-row form-flat medium-flex-wrap"">
+<div class=""flex-col flex-grow"">
+	[email* your-email placeholder ""Your Email (required)""]
+</div>
+<div class=""flex-col ml-half"">
+	[submit class:button primary ""Sign Up""]
+</div>
+</div>
+Flatsome ""[your-subject]""
+[your-name] <wordpress@flatsome.dev>
+From: [your-name] <[your-email]>
+Subject: [your-subject]
+
+Message Body:
+[your-message]
+
+--
+This e-mail was sent from a contact form on Flatsome (http://flatsome.dev)
+email@mail.com
+
+
+
+
+
+Flatsome ""[your-subject]""
+Flatsome <wordpress@flatsome.dev>
+Message Body:
+[your-message]
+
+--
+This e-mail was sent from a contact form on Flatsome (http://flatsome.dev)
+[your-email]
+Reply-To: email@mail.com
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+Your entered code is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.",,2016-04-04 11:38:11,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=16184,"Formulario de suscripción similar al anterior, con diseño en fila flexible. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error en inglés."
+16185,Contact form,"<label>Your Name (required)</label>
+[text* your-name]
+
+<label>Your Email (required)</label>
+[email*  your-email] </p>
+
+<label>Your Message (required)</label>
+[textarea your-message] </p>
+
+[submit class:button primary ""Submit""]
+New Message!
+mail@flatsome.dev
+Message:
+[your-message]
+email@mail.com
+
+
+1
+
+
+Flatsome ""[your-subject]""
+Flatsome <wordpress@flatsome.dev>
+Message Body:
+[your-message]
+
+--
+This e-mail was sent from a contact form on Flatsome (http://flatsome.dev)
+[your-email]
+Reply-To: email@mail.com
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+Your entered code is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.",,2016-04-04 11:33:38,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=16185,"Formulario de contacto básico con campos para nombre, correo electrónico y mensaje. Incluye configuraciones para notificaciones por correo electrónico y mensajes de error en inglés."
+20866,Contact form,"<label>Your Name (required)</label>
+[text* your-name]
+
+<label>Your Email (required)</label>
+[email*  your-email] </p>
+
+<label>Your Message (required)</label>
+[textarea your-message] </p>
+
+[submit class:button primary ""Submit""]
+New Message!
+mail@flatsome.dev
+Message:
+[your-message]
+email@mail.com
+
+
+1
+
+
+Flatsome ""[your-subject]""
+Flatsome <wordpress@flatsome.dev>
+Message Body:
+[your-message]
+
+--
+This e-mail was sent from a contact form on Flatsome (http://flatsome.dev)
+[your-email]
+Reply-To: email@mail.com
+
+
+
+Thank you for your message. It has been sent.
+There was an error trying to send your message. Please try again later.
+One or more fields have an error. Please check and try again.
+There was an error trying to send your message. Please try again later.
+You must accept the terms and conditions before sending your message.
+The field is required.
+The field is too long.
+The field is too short.
+The date format is incorrect.
+The date is before the earliest one allowed.
+The date is after the latest one allowed.
+There was an unknown error uploading the file.
+You are not allowed to upload files of this type.
+The file is too big.
+There was an error uploading the file.
+The number format is invalid.
+The number is smaller than the minimum allowed.
+The number is larger than the maximum allowed.
+The answer to the quiz is incorrect.
+Your entered code is incorrect.
+The e-mail address entered is invalid.
+The URL is invalid.
+The telephone number is invalid.",,2016-04-04 11:33:38,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=20866,"Formulario de contacto idéntico al anterior, con campos para nombre, correo electrónico y mensaje. Incluye las mismas configuraciones para notificaciones y mensajes de error."
+25163,Sin título,"[text* your-name id:your-name placeholder ""Ingresa tu nombre""]
+
+[email* your-email id:your-email placeholder ""Ingresa tu correo electrónico""]
+
+[tel your-phone id:your-phone placeholder ""Ingresa tu teléfono""]
+
+[textarea* your-message id:your-message placeholder ""Escribe tu mensaje""]
+
+[checkbox* terms-and-conditions ""Acepto los términos y condiciones""]
+
+[submit class:button primary ""Solicitar Demo""]
+1
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@web.viaweb.net.ar>
+[_site_admin_email]
+De: [your-name] [your-email]
+Asunto: [your-subject]
+
+Cuerpo del mensaje:
+[your-message]
+
+-- 
+Esta es una notificación de que un formulario de contacto fue enviado en tu sitio web ([_site_title] [_site_url]).
+
+
+
+
+
+[_site_title] ""[your-subject]""
+[_site_title] <wordpress@web.viaweb.net.ar>
+[your-email]
+Cuerpo del mensaje:
+[your-message]
+
+-- 
+Este correo electrónico es un acuse de recibo del envío de tu formulario de contacto en la web ([_site_title] [_site_url]) en la que se usó tu dirección de correo electrónico. Si no fuiste vos, ignorá este mensaje.
+Reply-To: [_site_admin_email]
+
+
+
+Gracias por tu mensaje, ya ha sido enviado.
+Hubo un error al intentar enviar tu mensaje. Intentalo de nuevo después.
+Uno o más campos tienen un error. Por favor, revisá e intentalo de nuevo.
+Hubo un error al intentar enviar tu mensaje. Intentalo de nuevo después.
+Tenés que aceptar los términos y condiciones antes de enviar tu mensaje.
+Por favor, rellená este campo.
+Este campo tiene una entrada demasiado larga.
+Este campo tiene una entrada demasiado corta.
+Hubo un error desconocido subiendo el archivo.
+No tenés permisos para subir archivos de este tipo.
+El archivo subido es demasiado grande.
+Hubo un error al subir el archivo.
+Por favor, ingresá una fecha con el formato YYYY-MM-DD.
+Este campo tiene una fecha demasiado temprana.
+Este campo tiene una fecha demasiado tardía.
+Ingresá un número.
+Esta campo tiene un número demasiado pequeño.
+Este campo tiene un número demasiado grande.
+La respuesta al cuestionario no es correcta.
+Ingresá una dirección de correo electrónico.
+Ingresá una URL.
+Por favor, ingresá un número de teléfono.
+
+
+
+0",,2025-01-31 8:43:27,wpcf7_contact_form,https://web.viaweb.net.ar/?post_type=wpcf7_contact_form&p=25163,"Formulario de solicitud de demostración en español con campos para nombre, correo electrónico, teléfono y mensaje. Incluye casilla de verificación para términos y condiciones, y configuraciones para notificaciones y mensajes de error."

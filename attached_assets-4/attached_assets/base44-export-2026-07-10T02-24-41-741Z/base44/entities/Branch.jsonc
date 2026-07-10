@@ -1,0 +1,37 @@
+{
+  "name": "Branch",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre de la sucursal"
+    },
+    "address": {
+      "type": "string",
+      "description": "Direcci\u00f3n completa"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Tel\u00e9fono de contacto"
+    },
+    "schedule": {
+      "type": "string",
+      "description": "Horarios de atenci\u00f3n"
+    },
+    "city": {
+      "type": "string",
+      "description": "Ciudad"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si la sucursal est\u00e1 activa"
+    }
+  },
+  "required": [
+    "name",
+    "address",
+    "phone",
+    "schedule"
+  ]
+}

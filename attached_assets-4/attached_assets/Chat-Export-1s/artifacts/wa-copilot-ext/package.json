@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/wa-copilot-ext",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Clientum WhatsApp Copilot — Chrome Extension (Manifest V3)",
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.321",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.3"
+  }
+}

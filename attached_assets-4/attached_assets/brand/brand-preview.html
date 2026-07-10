@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clientum Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .fade-in { animation: fadeIn .25s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: translateY(0);} }
+    .line-clamp-2{
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    }
+    input[type="range"] { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 9999px; background: #DDDFE2; }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 9999px; background: #031E43; cursor: pointer; border: 2px solid white;
+    }
+    input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 9999px; background: #031E43; cursor: pointer; border: 2px solid white; }
+  </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+(() => {
+  const BRAND = {
+    prussianBlue: '#031E43',
+    duskBlue: '#3B506D',
+    offWhite: '#FDFDFB',
+    pureWhite: '#FFFFFF',
+    alabasterGrey: '#DDDFE2',
+    accentGreen: '#22D3A5',
+    accentRed: '#FF4757'
+  };
+
+  const BASE_SCENES = [
+    { id: 0, title: 'Apertura de marca', duration: 5, icon: '◆' },
+    { id: 1, title: 'El caos administrativo', duration: 7, icon: '📞' },
+    { id: 2, title: 'El costo real (Stats)', duration: 6, icon: '📊' },
+    { id: 3, title: 'La solución integrada', duration: 7, icon: '🔄' },
+    { id: 4, title: 'Bot de WhatsApp Activo', duration: 5, icon: '🤖' },
+    { id: 5, title: 'Stack de tecnología', duration: 5, icon: '🌐' },
+    { id: 6, title: 'Prueba social y confianza', duration: 5, icon: '★' },
+    { id: 7, title: 'Llamado a la acción (CTA)', duration: 5, icon: '🚀' }
+  ];
+
+  const CAMPAIGN_TONES = {
+    estandar: {
+      name: 'Estándar (Corporativo Seguro)',
+      scripts: [
+        { visual: 'Logo Clientum aparece de forma fluida. Partículas sutiles de conexión tecnológica de fondo.', copy: 'Tu PyME merece trabajar con Inteligencia Artificial. No sin ella.' },
+        { visual: 'Palabras y tareas administrativas se apilan caóticamente (WhatsApp, Facturas, Excel, Stock).', copy: 'Responder WhatsApps, cargar facturas, controlar stock... ¿Cuánto tiempo perdés en esto cada día?' },
+        { visual: 'Aparecen métricas limpias y un cronómetro acelerando. “1.095 horas al año perdidas”.', copy: 'Son más de 3 horas diarias restadas a lo que de verdad hace crecer tu negocio.' },
+        { visual: 'Flujo animado interactivo con flechas de conexión: WhatsApp → IA → CRM → ERP Clientum.', copy: 'Clientum conecta tus herramientas con IA avanzada. Todo automatizado y bajo control.' },
+        { visual: 'Mockup de dispositivo móvil respondiendo un presupuesto automáticamente en 2 segundos.', copy: 'Tu negocio atiende, gestiona y califica clientes las 24 horas del día de forma automática.' },
+        { visual: 'Se despliega la red de herramientas nativas integradas (n8n, WooCommerce, Dolibarr, Gemini).', copy: 'Tecnología de primer nivel optimizada para la realidad de las PyMEs argentinas.' },
+        { visual: 'Tarjeta de testimonio real de cliente en Neuquén con calificación de 5 estrellas.', copy: '“Dejé de responder WhatsApps manualmente. El bot con IA lo hace mucho mejor que yo”.' },
+        { visual: 'Llamado a la acción final con URL de Clientum, WhatsApp de contacto y botón pulsante.', copy: 'Pedí tu diagnóstico gratuito hoy. Diseñamos tu propuesta personalizada en 48 horas.' }
+      ]
+    },
+    dramatico: {
+      name: 'Dramático (Impacto y Dolor)',
+      scripts: [
+        { visual: 'Fondo oscuro con interferencias visuales premium. Logo estático de Clientum imponente.', copy: '¿Seguro que estás controlando tu PyME, o el desorden del día a día te controla a vos?' },
+        { visual: 'Alertas rojas parpadeantes y notificaciones sin responder acumulándose en pantalla.', copy: 'Cada mensaje sin responder es dinero quemándose. Cada planilla manual es un error costoso.' },
+        { visual: 'Frase de gran impacto visual: “El cansancio humano no escala”. Transición cinematográfica.', copy: 'No podés duplicar tus horas, pero sí podés multiplicar tu eficiencia con un sistema inteligente.' },
+        { visual: 'Esquema ultra limpio donde desaparecen los pasos manuales y toma el control el backend inteligente.', copy: 'Inyectá Inteligencia Artificial real y liberá a tu equipo de la rutina operativa repetitiva.' },
+        { visual: 'Un chatbot automatizado cerrando una venta de manera autónoma a las 3:15 AM de un día feriado.', copy: 'Recuperá tus fines de semana mientras tu sistema sigue facturando y respondiendo consultas sin pausa.' },
+        { visual: 'Estructura de arquitectura blindada local sin plataformas costosas de licenciamiento en dólares.', copy: 'Automatización robusta, transparente y adaptada con precisión a la economía local.' },
+        { visual: 'Cita contundente en tipografía destacada sobre el aumento del 200% en ventas automáticas.', copy: '“Pasamos de perder la mitad de los mensajes a procesar todo al instante. Nos cambió la vida”.' },
+        { visual: 'Placa final limpia e imperativa invitando a la acción de auditoría estratégica inmediata.', copy: 'El desorden te cuesta caro. Reservá tu diagnóstico gratuito ahora y frená las pérdidas.' }
+      ]
+    },
+    express: {
+      name: 'Express (15s de Alta Conversión)',
+      scripts: [
+        { visual: 'Entrada directa y veloz con tipografía de alto impacto y transición dinámica.', copy: 'Dejá de contestar los mismos mensajes de WhatsApp una y otra vez.' },
+        { visual: 'Flujo rápido de automatización integrando de forma instantánea el CRM y la Facturación AFIP.', copy: 'Clientum automatiza tus ventas, CRM y stock con Inteligencia Artificial real.' },
+        { visual: 'Iconos de marcas y nubes de herramientas integrándose sin costuras en pantalla.', copy: 'Implementación ágil en 30 días, precios transparentes en pesos y sin sorpresas.' },
+        { visual: 'Sticker interactivo de WhatsApp parpadeando y enlace de contacto directo en bio.', copy: 'Hacé clic abajo y obtené tu diagnóstico 100% gratuito hoy mismo.' },
+        { visual: 'Enlace web de Clientum directo en pantalla.', copy: '¡Obtené tu diagnóstico gratuito hoy!' },
+        { visual: 'Enlace web de Clientum directo en pantalla.', copy: '¡Obtené tu diagnóstico gratuito hoy!' },
+        { visual: 'Enlace web de Clientum directo en pantalla.', copy: '¡Obtené tu diagnóstico gratuito hoy!' },
+        { visual: 'Enlace web de Clientum directo en pantalla.', copy: '¡Obtené tu diagnóstico gratuito hoy!' }
+      ]
+    }
+  };
+
+  const hooksList = [
+    '¿Cuántas horas por semana perdés con tareas de tu PyME que podría hacer una IA?',
+    'Si tu negocio depende de vos para responder cada WhatsApp... no tenés un negocio, tenés un autoempleo.',
+    '¿Sabías que las PyMEs que automatizan con IA crecen hasta 3 veces más rápido en Argentina?',
+    'La forma en la que administrás tu stock y facturación está frenando tus ventas. Así se soluciona.'
+  ];
+
+  const state = {
+    activeTab: 'video',
+    tone: 'estandar',
+    pymeName: 'Clientum',
+    pymePhone: '+54 9 298 412-3456',
+    priceBasic: '38.000',
+    priceFull: '120.000',
+    selectedHook: 0,
+    manualHours: 3,
+    hourlyCost: 4500,
+    automationRate: 70,
+    isPlaying: false,
+    elapsed: 0,
+    toast: { show: false, message: '' }
+  };
+
+  const app = document.getElementById('app');
+  let rafId = null;
+  let lastTime = performance.now();
+  let toastTimeout = null;
+
+  const sceneDurations = () => state.tone === 'express' ? [2,3,3,3,1,1,1,1] : BASE_SCENES.map(s => s.duration);
+  const sceneTimes = () => {
+    const times = [];
+    let acc = 0;
+    sceneDurations().forEach(d => { times.push(acc); acc += d; });
+    return times;
+  };
+  const totalDuration = () => sceneDurations().reduce((a,b) => a + b, 0);
+
+  const yearlyHoursSaved = () => Math.round(Math.round((state.manualHours * (state.automationRate / 100)) * 22) * 12);
+  const monthlyHoursSaved = () => Math.round((state.manualHours * (state.automationRate / 100)) * 22);
+  const dailySavingsInHours = () => (state.manualHours * (state.automationRate / 100)).toFixed(1);
+  const monthlyMoneySaved = () => Math.round(monthlyHoursSaved() * state.hourlyCost);
+  const yearlyMoneySaved = () => Math.round(yearlyHoursSaved() * state.hourlyCost);
+
+  function triggerToast(message) {
+    state.toast = { show: true, message };
+    render();
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      state.toast = { show: false, message: '' };
+      render();
+    }, 2600);
+  }
+
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      triggerToast('¡Copiado con éxito al portapapeles!');
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); triggerToast('¡Copiado con éxito al portapapeles!'); }
+      catch { triggerToast('Error al copiar el texto.'); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function currentSceneIdx() {
+    const times = sceneTimes();
+    let idx = 0;
+    for (let i = times.length - 1; i >= 0; i--) {
+      if (state.elapsed >= times[i]) { idx = i; break; }
+    }
+    return idx;
+  }
+
+  function generatedCaption() {
+    return `Si tu negocio todavía depende de vos para responder cada mensaje, procesar cada pedido y cargar cada factura... estás trabajando para el negocio, no al revés.
+
+${state.pymeName} automatiza eso con Inteligencia Artificial real.
+→ Bot de WhatsApp activo 24/7
+→ CRM + ERP integrado (WooCommerce, AFIP, stock)
+→ Sin plataformas caras de licenciamiento en dólares
+→ Configuración a medida en menos de 30 días
+
+Planes desde $${state.priceBasic}/mes. ¡Setup e implementación única disponible!
+
+Pedí tu diagnóstico gratuito sin costo hoy mismo 👇
+📲 Escribinos directamente por WhatsApp al ${state.pymePhone} o visitá clientum.com.ar`;
+  }
+
+  function handleDownloadPack() {
+    const activeScript = CAMPAIGN_TONES[state.tone].scripts;
+    const dateStr = new Date().toLocaleDateString('es-AR');
+    const times = sceneTimes();
+    const total = totalDuration();
+    const caption = generatedCaption();
+    const priceBasicNum = parseInt(String(state.priceBasic).replace(/\D/g, ''), 10) || 0;
+    const fileContent = `======================================================================
+CLIENTUM STUDIO - PACK DE CAMPAÑA AUTOMÁTICO & REPORTE DE ROI
+Generado el ${dateStr} - Tono: ${CAMPAIGN_TONES[state.tone].name}
+======================================================================
+
+1. DIAGNÓSTICO ESTRATÉGICO Y ANÁLISIS DE ROI:
+----------------------------------------------------------------------
+* PyME Analizada: ${state.pymeName}
+* Horas diarias perdidas en tareas manuales: ${state.manualHours} hs
+* Costo por hora estimado: $${state.hourlyCost} ARS
+* Tasa de automatización proyectada por Clientum: ${state.automationRate}%
+
+* RESULTADOS DE OPTIMIZACIÓN ANUAL:
+  - Tiempo recuperado al mes: ${monthlyHoursSaved()} horas.
+  - Tiempo recuperado al año: ${yearlyHoursSaved()} horas de trabajo operativo.
+  - Retorno económico mensual (Dinero recuperado): $${monthlyMoneySaved().toLocaleString('es-AR')} ARS
+  - Retorno económico anual: $${yearlyMoneySaved().toLocaleString('es-AR')} ARS
+
+* ANÁLISIS COMPARATIVO DE COSTOS:
+  - Inversión mensual en Plan Básico: $${state.priceBasic}/mes
+  - Retorno neto mensual estimado: $${(monthlyMoneySaved() - priceBasicNum).toLocaleString('es-AR')} ARS
+  - Conclusión: El sistema se auto-financia en su primer mes de implementación.
+
+======================================================================
+2. GUION & STORYBOARD COMPLETO (Duración: ${total}s)
+======================================================================
+${BASE_SCENES.map((scene, idx) => {
+  const sceneScript = activeScript[idx] || { visual: '', copy: '' };
+  const actualCopy = idx === 0 ? hooksList[state.selectedHook] : sceneScript.copy;
+  const startTime = times[idx];
+  const endTime = times[idx] + sceneDurations()[idx];
+  return `[ESCENA ${idx + 1}]: ${scene.title}
+Tiempos: 0:${String(startTime).padStart(2, '0')}s a 0:${String(endTime).padStart(2, '0')}s
+----------------------------------------------------------------------
+- Acción Visual / B-Roll Sugerido: 
+  ${sceneScript.visual}
+
+- Texto en pantalla / Locución: 
+  "${actualCopy}"
+
+`;
+}).join('\n')}
+
+======================================================================
+3. COPY/CAPTION SUGERIDO PARA INSTAGRAM / TIKTOK
+======================================================================
+${caption}
+
+Hashtags recomendados:
+#AutomatizacionIA #PyMEArgentina #WhatsAppBusiness #n8n #Patagonia #Clientum #EstrategiaDigital #CRM #ERP
+
+======================================================================
+Generado de forma oficial por Clientum Studio 2026.
+clientum.com.ar - Tu PyME merece trabajar con IA. No sin ella.
+======================================================================`;
+
+    const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Propuesta_Clientum_${state.pymeName.replace(/\s+/g, '_')}_${state.tone}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    triggerToast('¡Propuesta con ROI y Pack de Campaña descargados con éxito!');
+  }
+
+  function setField(key, value) {
+    state[key] = value;
+    render();
+  }
+
+  function handlePrevScene() {
+    const times = sceneTimes();
+    const idx = currentSceneIdx();
+    const prev = idx > 0 ? idx - 1 : times.length - 1;
+    state.elapsed = times[prev];
+    render();
+  }
+
+  function handleNextScene() {
+    const times = sceneTimes();
+    const idx = currentSceneIdx();
+    const next = idx < times.length - 1 ? idx + 1 : 0;
+    state.elapsed = times[next];
+    render();
+  }
+
+  function renderIcon(name, cls='w-4 h-4') {
+    return `<i data-lucide="${name}" class="${cls}"></i>`;
+  }
+
+  function logoSVG(cls='w-8 h-8') {
+    return `
+      <svg viewBox="0 0 100 100" class="${cls}" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="24" fill="${BRAND.prussianBlue}" />
+        <path d="M50 25 L75 50 L50 75 L25 50 Z" stroke="${BRAND.pureWhite}" stroke-width="6" stroke-linejoin="round" />
+        <circle cx="50" cy="25" r="8" fill="${BRAND.pureWhite}" />
+        <circle cx="75" cy="50" r="8" fill="${BRAND.pureWhite}" />
+        <circle cx="50" cy="75" r="8" fill="${BRAND.pureWhite}" />
+        <circle cx="25" cy="50" r="8" fill="${BRAND.pureWhite}" />
+      </svg>`;
+  }
+
+  function toastHTML() {
+    if (!state.toast.show) return '';
+    return `
+      <div class="fixed bottom-5 right-5 z-50 flex items-center gap-2 px-4 py-3 rounded-xl shadow-lg border text-sm font-semibold text-white fade-in" style="background:${BRAND.prussianBlue}; border-color:${BRAND.duskBlue}">
+        ${renderIcon('check-circle-2', 'w-4 h-4')}
+        ${state.toast.message}
+      </div>`;
+  }
+
+  function videoPanel() {
+    const idx = currentSceneIdx();
+    const times = sceneTimes();
+    const total = totalDuration();
+    const activeScript = CAMPAIGN_TONES[state.tone].scripts;
+    const currentCopy = idx === 0 ? hooksList[state.selectedHook] : activeScript[idx].copy;
+
+    return `
+      <div class="flex flex-col gap-6 fade-in">
+        <div class="rounded-2xl overflow-hidden border shadow-lg" style="background:${BRAND.prussianBlue}; border-color:${BRAND.duskBlue}">
+          <div id="player" class="relative w-full aspect-video flex flex-col items-center justify-center p-6 md:p-12 text-center select-none cursor-pointer overflow-hidden transition-all duration-300" style="background: radial-gradient(circle, ${BRAND.duskBlue} 0%, ${BRAND.prussianBlue} 90%)">
+            <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+            <div class="absolute top-4 left-4 flex items-center gap-2 opacity-85">
+              ${logoSVG('w-6 h-6')}
+              <span class="text-xs font-extrabold tracking-widest text-white uppercase">${escapeHTML(state.pymeName)} IA</span>
+            </div>
+
+            <div class="absolute top-4 right-4 text-[10px] font-mono px-2 py-1 rounded bg-black bg-opacity-30 text-white">Escena ${idx + 1}/8 · ${formatTime(state.elapsed)}s</div>
+
+            <div class="flex flex-col items-center gap-4 max-w-xl transition-all duration-300">
+              ${idx === 0 ? `
+                <div class="space-y-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider text-white uppercase bg-white bg-opacity-20 animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    ${escapeHTML(state.pymeName)} AUTOMATIZACIONES
+                  </span>
+                  <h2 class="text-xl md:text-3xl font-extrabold text-white leading-tight">${escapeHTML(currentCopy)}</h2>
+                  <p class="text-xs text-white opacity-70 italic">[Logo Clientum animándose y flotando en pantalla]</p>
+                </div>` : ''}
+
+              ${idx === 1 ? `
+                <div class="space-y-4 w-full">
+                  <h3 class="text-xs font-bold tracking-widest uppercase text-white opacity-90">EL CAOS COTIDIANO EN TU PyME</h3>
+                  <div class="grid grid-cols-3 gap-2 text-[10px] font-bold text-white">
+                    ${['📞 Responder Consultas','📑 Cargar Facturas AFIP','📊 Controlar Planillas','📦 Sincronizar Stock','📱 WhatsApp Colapsado','⏱️ Tiempo Perdido'].map(t=>`<div class="p-2.5 rounded-lg bg-red-950 bg-opacity-40 border border-red-500 border-opacity-30">${t}</div>`).join('')}
+                  </div>
+                  <p class="text-xs text-red-300 font-semibold">${escapeHTML(currentCopy)}</p>
+                </div>` : ''}
+
+              ${idx === 2 ? `
+                <div class="space-y-2">
+                  <span class="text-xs font-bold text-red-400 uppercase tracking-wide">EL COSTO ADMINISTRATIVO</span>
+                  <div class="text-4xl md:text-5xl font-black text-white leading-none">${yearlyHoursSaved()} Horas</div>
+                  <p class="text-sm font-bold text-white opacity-90">perdidas al año en tareas que podría hacer una IA.</p>
+                  <p class="text-xs text-white opacity-70 italic">[Métrica y cronómetro en pantalla simulando el tiempo muerto]</p>
+                </div>` : ''}
+
+              ${idx === 3 ? `
+                <div class="space-y-4 w-full">
+                  <span class="text-xs font-bold tracking-wider text-green-300 uppercase">La Solución Integrada</span>
+                  <div class="flex items-center justify-center gap-2 text-xs font-bold text-white">
+                    <div class="px-3 py-1.5 rounded bg-white bg-opacity-10 border border-white border-opacity-20">WhatsApp</div>
+                    <span class="opacity-50">→</span>
+                    <div class="px-3 py-1.5 rounded bg-white bg-opacity-25 border border-white">IA</div>
+                    <span class="opacity-50">→</span>
+                    <div class="px-3 py-1.5 rounded bg-white bg-opacity-10 border border-white border-opacity-20">CRM</div>
+                  </div>
+                  <p class="text-sm font-bold text-white leading-relaxed">${escapeHTML(currentCopy)}</p>
+                </div>` : ''}
+
+              ${idx === 4 ? `
+                <div class="space-y-3 w-full max-w-xs bg-black bg-opacity-40 p-3.5 rounded-2xl border border-white border-opacity-10 text-left">
+                  <div class="flex items-center gap-2 border-b border-white border-opacity-10 pb-1.5 mb-1.5">
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span class="text-[10px] text-white font-bold">Bot Clientum IA Activo</span>
+                  </div>
+                  <div class="space-y-1.5">
+                    <div class="bg-white bg-opacity-10 text-white p-2 rounded-lg rounded-tl-none text-[10px] max-w-[80%]">¿Tienen stock disponible en este momento?</div>
+                    <div class="bg-[#3B506D] text-white p-2 rounded-lg rounded-tr-none text-[10px] max-w-[80%] ml-auto text-right">¡Sí! Stock sincronizado en tiempo real. ¿Querés reservar?</div>
+                  </div>
+                </div>` : ''}
+
+              ${idx === 5 ? `
+                <div class="space-y-3">
+                  <h3 class="text-xs font-bold tracking-widest text-white uppercase">TECNOLOGÍA REAL SIN HUMO</h3>
+                  <div class="flex flex-wrap gap-1.5 justify-center max-w-sm">
+                    ${['n8n','WooCommerce','AFIP','Evolution API','Gemini'].map(t=>`<span class="px-2.5 py-1 bg-white bg-opacity-15 rounded text-[9px] font-bold text-white border border-white border-opacity-10">${t}</span>`).join('')}
+                  </div>
+                  <p class="text-xs text-white opacity-80 leading-relaxed">${escapeHTML(currentCopy)}</p>
+                </div>` : ''}
+
+              ${idx === 6 ? `
+                <div class="space-y-1 bg-white bg-opacity-10 p-4 rounded-xl border border-white border-opacity-10 max-w-xs">
+                  <div class="text-yellow-400 text-xs">★★★★★</div>
+                  <p class="text-[10px] italic text-white leading-normal">${escapeHTML(currentCopy)}</p>
+                  <span class="block text-[8px] uppercase font-bold text-white opacity-60">— Distribuidora Patagónica, Neuquén</span>
+                </div>` : ''}
+
+              ${idx === 7 ? `
+                <div class="space-y-3">
+                  <h3 class="text-xl font-extrabold text-white">Diagnóstico Gratuito</h3>
+                  <p class="text-[11px] text-white opacity-85 leading-normal max-w-xs mx-auto">${escapeHTML(currentCopy)}</p>
+                  <div class="inline-block px-3 py-1.5 bg-white text-[#031E43] text-[10px] font-extrabold rounded-full shadow-md uppercase tracking-wide">📲 WhatsApp: ${escapeHTML(state.pymePhone)}</div>
+                </div>` : ''}
+            </div>
+          </div>
+
+          <div id="progressBar" class="h-1.5 w-full cursor-pointer relative" style="background-color: rgba(255,255,255,0.1)">
+            <div class="h-full transition-all duration-100" style="width:${(state.elapsed / total) * 100}%; background:${BRAND.pureWhite}"></div>
+            ${times.slice(1).map(t => `<div class="absolute top-0 w-0.5 h-full bg-black bg-opacity-30" style="left:${(t / total) * 100}%"></div>`).join('')}
+          </div>
+
+          <div class="px-6 py-4 flex items-center justify-between gap-4 text-white">
+            <div class="flex items-center gap-3">
+              <button id="playBtn" class="p-2 rounded-full hover:bg-white hover:bg-opacity-10 transition text-white">${state.isPlaying ? renderIcon('pause', 'w-4 h-4') : renderIcon('play', 'w-4 h-4')}</button>
+              <button id="resetBtn" class="p-2 rounded-full hover:bg-white hover:bg-opacity-10 transition text-white" title="Reiniciar">${renderIcon('rotate-ccw', 'w-3.5 h-3.5')}</button>
+              <div class="text-xs font-mono opacity-85">${formatTime(state.elapsed)} / ${formatTime(total)}</div>
+            </div>
+            <div class="flex items-center gap-1.5">${sceneDurations().map((_, i)=>`<button data-scene-dot="${i}" class="w-2 h-2 rounded-full transition-all" style="background:${idx===i?BRAND.pureWhite:'rgba(255,255,255,0.3)'}; transform:${idx===i?'scale(1.2)':'scale(1)'}"></button>`).join('')}</div>
+            <div class="flex items-center gap-2">
+              <button id="prevScene" class="text-xs font-bold px-2.5 py-1 rounded hover:bg-white hover:bg-opacity-10 transition border border-white border-opacity-10">Anterior</button>
+              <button id="nextScene" class="text-xs font-bold px-2.5 py-1 rounded hover:bg-white hover:bg-opacity-10 transition border border-white border-opacity-10">Siguiente</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border p-6" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+          <div class="flex items-center gap-2 mb-4">${renderIcon('file-check', 'w-5 h-5')}<h3 class="text-sm font-bold uppercase tracking-wider">Plan de Grabación y Tiempos</h3></div>
+          <div class="space-y-2.5">
+            ${BASE_SCENES.map((scene, idx2) => {
+              const isActive = idx === idx2;
+              const sceneScript = CAMPAIGN_TONES[state.tone].scripts[idx2] || { visual:'', copy:'' };
+              return `
+              <div data-scene-row="${idx2}" class="p-3.5 rounded-xl border transition-all cursor-pointer grid md:grid-cols-12 gap-4 items-start" style="border-color:${isActive?BRAND.prussianBlue:BRAND.alabasterGrey}; background:${isActive?BRAND.offWhite:BRAND.pureWhite}">
+                <div class="md:col-span-3 flex items-center gap-2">
+                  <span class="text-base">${scene.icon}</span>
+                  <div>
+                    <h4 class="text-xs font-bold uppercase" style="color:${isActive?BRAND.prussianBlue:BRAND.duskBlue}">Sc ${idx2 + 1} · ${scene.title}</h4>
+                    <span class="text-[10px] opacity-60 font-mono">0:${String(times[idx2]).padStart(2,'0')} - 0:${String(times[idx2] + sceneDurations()[idx2]).padStart(2,'0')}s</span>
+                  </div>
+                </div>
+                <div class="md:col-span-4 text-xs space-y-0.5">
+                  <span class="block font-bold text-[8px] uppercase tracking-wider opacity-40">B-Roll / Detalle</span>
+                  <p style="color:${BRAND.duskBlue}">${escapeHTML(sceneScript.visual)}</p>
+                </div>
+                <div class="md:col-span-5 text-xs space-y-0.5">
+                  <span class="block font-bold text-[8px] uppercase tracking-wider opacity-40">Copy de Locución</span>
+                  <p class="font-semibold italic" style="color:${BRAND.prussianBlue}">"${escapeHTML(idx2===0?hooksList[state.selectedHook]:sceneScript.copy)}"</p>
+                </div>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function contentPanel() {
+    const idx = currentSceneIdx();
+    const activeScript = CAMPAIGN_TONES[state.tone].scripts;
+    return `
+      <div class="grid md:grid-cols-12 gap-6 fade-in">
+        <div class="md:col-span-5 flex flex-col items-center">
+          <div class="w-full max-w-[250px] rounded-[36px] p-3 border-4 shadow-xl relative aspect-[9/16] flex flex-col justify-between overflow-hidden text-white" style="background:${BRAND.prussianBlue}; border-color:${BRAND.duskBlue}">
+            <div class="absolute top-2.5 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full z-20"></div>
+            <div class="z-10 flex items-center justify-between pt-4 px-2">
+              <span class="text-[9px] font-bold tracking-widest text-white opacity-80">@clientum.ar</span>
+              <span class="text-[8px] bg-red-500 text-white font-extrabold px-1.5 py-0.5 rounded">REEL</span>
+            </div>
+            <div class="z-10 flex-1 flex flex-col justify-center px-4 py-8 text-center">
+              <span class="text-[9px] font-bold tracking-wider uppercase opacity-70" style="color:${BRAND.alabasterGrey}">Escena ${idx + 1} de ${BASE_SCENES.length}</span>
+              <h4 class="text-sm font-black leading-tight mt-2 text-white">${idx===0?escapeHTML(hooksList[state.selectedHook]):escapeHTML(activeScript[idx].copy)}</h4>
+            </div>
+            <div class="z-10 bg-black bg-opacity-45 p-3 rounded-2xl mx-1 mb-2 text-left space-y-1">
+              <div class="flex items-center gap-1.5">${logoSVG('w-4.5 h-4.5 rounded-full')}<span class="text-[8px] font-extrabold text-white">clientum.ar</span></div>
+              <p class="text-[7.5px] opacity-90 line-clamp-2 text-white">${escapeHTML(generatedCaption())}</p>
+            </div>
+          </div>
+          <span class="text-[10px] mt-3 font-semibold text-center" style="color:${BRAND.duskBlue}">Avanzá en el reproductor de video para previsualizar los cambios de este Reel.</span>
+        </div>
+
+        <div class="md:col-span-7 flex flex-col gap-6">
+          <div class="rounded-2xl border p-6" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-2">${renderIcon('message-square', 'w-5 h-5')}<h3 class="text-sm font-bold uppercase tracking-wider">Caption para Redes</h3></div>
+              <div class="flex items-center gap-2">
+                <button id="copyCaptionBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold hover:bg-slate-50 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}">${renderIcon('copy', 'w-3.5 h-3.5')} Copiar Caption</button>
+                <button id="downloadPackBtn2" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-bold hover:bg-slate-50 transition" style="border-color:${BRAND.prussianBlue}; color:${BRAND.prussianBlue}">${renderIcon('download', 'w-3.5 h-3.5')} Descargar Pack</button>
+              </div>
+            </div>
+            <div class="p-4 rounded-xl text-xs leading-relaxed font-mono whitespace-pre-wrap border max-h-72 overflow-y-auto" style="background:${BRAND.offWhite}; border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}">${escapeHTML(generatedCaption())}</div>
+            <div class="mt-4 pt-4 border-t space-y-2" style="border-color:${BRAND.alabasterGrey}">
+              <span class="text-[10px] font-bold uppercase tracking-wider opacity-60">Hashtags Recomendados:</span>
+              <div class="text-[11px] font-medium leading-relaxed" style="color:${BRAND.duskBlue}">#AutomatizacionIA #PyMEArgentina #WhatsAppBusiness #n8n #Patagonia #Clientum #EstrategiaDigital #CRM #ERP</div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border p-6" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+            <h4 class="text-xs font-bold uppercase tracking-wider mb-2">Segmentación Patagónica Sugerida</h4>
+            <p class="text-xs leading-relaxed mb-3" style="color:${BRAND.duskBlue}">Las PyMEs de la Patagonia (distribuidoras, mayoristas, prestadores de servicios de Neuquén y Río Negro) valoran:</p>
+            <ul class="text-xs space-y-2" style="color:${BRAND.prussianBlue}">
+              <li class="flex gap-2">✓ <strong>Precios en Pesos:</strong> Sin sorpresas de cotización en dólares.</li>
+              <li class="flex gap-2">✓ <strong>Atención local y soporte prioritario:</strong> Implementación garantizada en menos de 30 días.</li>
+              <li class="flex gap-2">✓ <strong>Integración WooCommerce:</strong> El bot con IA actualiza el catálogo y precios automáticamente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function plansPanel() {
+    return `
+      <div class="grid md:grid-cols-3 gap-6 fade-in">
+        <div class="rounded-2xl border p-6 flex flex-col justify-between" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-1 rounded-full uppercase bg-slate-100" style="color:${BRAND.duskBlue}">Plan Inicial</span>
+            <div class="text-3xl font-black mt-4 mb-2" style="color:${BRAND.prussianBlue}">${escapeHTML(state.priceBasic)}<span class="text-xs font-medium opacity-60">/mes</span></div>
+            <p class="text-xs opacity-75 mb-4">Ideal para profesionales independientes y PyMEs que inician en automatizaciones.</p>
+            <ul class="text-xs space-y-2 border-t pt-4" style="border-color:${BRAND.alabasterGrey}">
+              <li class="flex items-center gap-2">✓ Bot de WhatsApp Básico</li>
+              <li class="flex items-center gap-2">✓ CRM Automático</li>
+              <li class="flex items-center gap-2">✓ Reporte mensual básico</li>
+              <li class="flex items-center gap-2">✓ Soporte vía email</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rounded-2xl border-2 p-6 flex flex-col justify-between relative shadow-lg" style="background:${BRAND.pureWhite}; border-color:${BRAND.prussianBlue}">
+          <span class="absolute -top-3.5 right-6 text-[9px] font-black tracking-wider uppercase text-white px-3 py-1 rounded-full" style="background:${BRAND.prussianBlue}">★ Más Elegido</span>
+          <div>
+            <span class="text-[10px] font-bold px-2 py-1 rounded-full uppercase bg-blue-50" style="color:${BRAND.prussianBlue}">CRM + Bot</span>
+            <div class="text-3xl font-black mt-4 mb-2" style="color:${BRAND.prussianBlue}">${escapeHTML(state.priceFull)}<span class="text-xs font-medium opacity-60">/mes</span></div>
+            <p class="text-xs opacity-75 mb-4">Perfecto para distribuidoras y mayoristas que requieren CRM conectado e IA.</p>
+            <ul class="text-xs space-y-2 border-t pt-4" style="border-color:${BRAND.alabasterGrey}">
+              <li class="flex items-center gap-2 font-bold text-green-600">✓ Bot WhatsApp con IA Integrada</li>
+              <li class="flex items-center gap-2">✓ CRM & Pipeline Automatizado</li>
+              <li class="flex items-center gap-2">✓ Conexión con WooCommerce/Dolibarr</li>
+              <li class="flex items-center gap-2">✓ Soporte prioritario 24/7</li>
+              <li class="flex items-center gap-2">✓ ROI Asegurado en 30 días</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-6 flex flex-col justify-between" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+          <div>
+            <span class="text-[10px] font-bold px-2 py-1 rounded-full uppercase bg-slate-100" style="color:${BRAND.duskBlue}">Enterprise</span>
+            <div class="text-3xl font-black mt-4 mb-2" style="color:${BRAND.prussianBlue}">A medida</div>
+            <p class="text-xs opacity-75 mb-4">Para corporaciones que requieren implementaciones de workflows AFIP complejos.</p>
+            <ul class="text-xs space-y-2 border-t pt-4" style="border-color:${BRAND.alabasterGrey}">
+              <li class="flex items-center gap-2">✓ Workflows ilimitados con n8n</li>
+              <li class="flex items-center gap-2">✓ Integración con ERPs tradicionales</li>
+              <li class="flex items-center gap-2">✓ Hosting Dedicado y Base de Datos</li>
+              <li class="flex items-center gap-2">✓ Ejecución por especialistas dedicados</li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function mainHTML() {
+    return `
+    <div class="min-h-screen font-sans transition-colors duration-300 pb-12" style="background:${BRAND.offWhite}; color:${BRAND.prussianBlue}">
+      <header class="border-b px-4 py-4 md:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+        <div class="flex items-center gap-3">
+          ${logoSVG('w-10 h-10 shadow-sm')}
+          <div>
+            <h1 class="text-2xl font-bold tracking-tight uppercase" style="color:${BRAND.prussianBlue}">Clientum Studio</h1>
+            <p class="text-xs font-medium uppercase tracking-wider" style="color:${BRAND.duskBlue}">Suite de Ventas, Storyboard & Calculadora de Retorno de Inversión (ROI)</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="flex items-center gap-2 bg-opacity-10 rounded-lg p-1.5 border" style="background:${BRAND.offWhite}; border-color:${BRAND.alabasterGrey}">
+            <span class="text-xs font-bold px-2 uppercase" style="color:${BRAND.duskBlue}">Tono de Campaña:</span>
+            <select id="toneSelect" class="text-xs font-semibold bg-transparent border-none focus:outline-none focus:ring-0 cursor-pointer pr-4" style="color:${BRAND.prussianBlue}">
+              <option value="estandar">Estándar (Corporativo)</option>
+              <option value="dramatico">Dramático (Impacto)</option>
+              <option value="express">Express (15 Segundos)</option>
+            </select>
+          </div>
+          <button id="downloadPackBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-extrabold tracking-wider uppercase text-white shadow-md transition hover:scale-[1.02] active:scale-[0.98]" style="background:${BRAND.prussianBlue}">${renderIcon('download', 'w-4 h-4')} Descargar Propuesta + Guion</button>
+        </div>
+      </header>
+      ${toastHTML()}
+      <main class="max-w-7xl mx-auto p-4 md:p-8 grid lg:grid-cols-12 gap-8">
+        <section class="lg:col-span-4 flex flex-col gap-6">
+          <div class="rounded-2xl p-6 border shadow-sm" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+            <div class="flex items-center gap-2 mb-4">${renderIcon('calculator', 'w-5 h-5')}<h2 class="text-sm font-bold uppercase tracking-wider">Calculadora de Ahorro Real</h2></div>
+            <p class="text-xs mb-4" style="color:${BRAND.duskBlue}">Proyectá el ahorro de tiempo y costo laboral que generará la implementación de Clientum en tu negocio:</p>
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1"><span style="color:${BRAND.duskBlue}">Admin. Manual Diaria</span><span class="font-extrabold" style="color:${BRAND.prussianBlue}">${state.manualHours} Horas</span></div>
+                <input id="manualHours" type="range" min="1" max="8" value="${state.manualHours}" class="w-full" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase mb-1" style="color:${BRAND.duskBlue}">Costo de hora laboral (ARS)</label>
+                <div class="relative"><span class="absolute left-3 top-2.5 text-xs font-bold" style="color:${BRAND.duskBlue}">$</span><input id="hourlyCost" type="number" value="${state.hourlyCost}" class="w-full text-sm pl-7 pr-3 py-2 rounded-lg border focus:outline-none focus:ring-1 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}; background:${BRAND.offWhite}" /></div>
+              </div>
+              <div class="p-4 rounded-xl space-y-3 mt-4" style="background:${BRAND.offWhite}; border:1px solid ${BRAND.alabasterGrey}">
+                <div class="flex items-center justify-between"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">${renderIcon('clock-3', 'w-3.5 h-3.5 text-blue-500')} Tiempo Recuperado / Año</span><span class="text-xs font-extrabold" style="color:${BRAND.prussianBlue}">${yearlyHoursSaved()} hs</span></div>
+                <div class="flex items-center justify-between border-t pt-2" style="border-color:${BRAND.alabasterGrey}"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">${renderIcon('dollar-sign', 'w-3.5 h-3.5 text-green-500')} Ahorro Mensual Neto</span><span class="text-xs font-extrabold text-green-600">$${monthlyMoneySaved().toLocaleString('es-AR')}</span></div>
+                <div class="flex items-center justify-between border-t pt-2" style="border-color:${BRAND.alabasterGrey}"><span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">${renderIcon('trending-up', 'w-3.5 h-3.5 text-indigo-500')} Ahorro Anual Proyectado</span><span class="text-sm font-black" style="color:${BRAND.prussianBlue}">$${yearlyMoneySaved().toLocaleString('es-AR')}</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl p-6 border shadow-sm" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+            <div class="flex items-center gap-2 mb-4">${renderIcon('sliders', 'w-5 h-5')}<h2 class="text-sm font-bold uppercase tracking-wider">Ajustes de la Propuesta</h2></div>
+            <div class="space-y-4">
+              <div><label class="block text-xs font-bold uppercase mb-1" style="color:${BRAND.duskBlue}">Nombre de la PyME</label><input id="pymeName" type="text" value="${escapeAttr(state.pymeName)}" class="w-full text-sm px-3 py-2 rounded-lg border focus:outline-none focus:ring-1 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}; background:${BRAND.offWhite}" /></div>
+              <div><label class="block text-xs font-bold uppercase mb-1" style="color:${BRAND.duskBlue}">WhatsApp de Contacto</label><input id="pymePhone" type="text" value="${escapeAttr(state.pymePhone)}" class="w-full text-sm px-3 py-2 rounded-lg border focus:outline-none focus:ring-1 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}; background:${BRAND.offWhite}" /></div>
+              <div class="grid grid-cols-2 gap-3">
+                <div><label class="block text-xs font-bold uppercase mb-1" style="color:${BRAND.duskBlue}">Plan Básico ($)</label><input id="priceBasic" type="text" value="${escapeAttr(state.priceBasic)}" class="w-full text-sm px-3 py-2 rounded-lg border focus:outline-none focus:ring-1 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}; background:${BRAND.offWhite}" /></div>
+                <div><label class="block text-xs font-bold uppercase mb-1" style="color:${BRAND.duskBlue}">Plan Full ($)</label><input id="priceFull" type="text" value="${escapeAttr(state.priceFull)}" class="w-full text-sm px-3 py-2 rounded-lg border focus:outline-none focus:ring-1 transition" style="border-color:${BRAND.alabasterGrey}; color:${BRAND.prussianBlue}; background:${BRAND.offWhite}" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl p-6 border shadow-sm" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}">
+            <div class="flex items-center gap-2 mb-4">${renderIcon('sparkles', 'w-5 h-5')}<h2 class="text-sm font-bold uppercase tracking-wider">Hooks de Conversión (Reels)</h2></div>
+            <div class="space-y-2">
+              ${hooksList.map((h, idx) => `<button data-hook="${idx}" class="w-full text-left p-3 rounded-xl border text-xs leading-relaxed transition flex gap-2 items-start" style="border-color:${state.selectedHook===idx?BRAND.prussianBlue:BRAND.alabasterGrey}; background:${state.selectedHook===idx?BRAND.offWhite:BRAND.pureWhite}; font-weight:${state.selectedHook===idx?'600':'400'}"><span class="font-bold shrink-0 text-indigo-500">#${idx + 1}</span><span>${escapeHTML(h)}</span></button>`).join('')}
+            </div>
+          </div>
+        </section>
+
+        <section class="lg:col-span-8 flex flex-col gap-6">
+          <div class="flex border-b" style="border-color:${BRAND.alabasterGrey}">
+            <button data-tab="video" class="flex items-center gap-2 px-6 py-3 font-bold text-sm tracking-wide uppercase transition border-b-2 -mb-px" style="color:${state.activeTab==='video'?BRAND.prussianBlue:BRAND.duskBlue}; border-color:${state.activeTab==='video'?BRAND.prussianBlue:'transparent'}">${renderIcon('video', 'w-4 h-4')} Video & Storyboard</button>
+            <button data-tab="content" class="flex items-center gap-2 px-6 py-3 font-bold text-sm tracking-wide uppercase transition border-b-2 -mb-px" style="color:${state.activeTab==='content'?BRAND.prussianBlue:BRAND.duskBlue}; border-color:${state.activeTab==='content'?BRAND.prussianBlue:'transparent'}">${renderIcon('file-text', 'w-4 h-4')} Copys & Reels Verticales</button>
+            <button data-tab="planes" class="flex items-center gap-2 px-6 py-3 font-bold text-sm tracking-wide uppercase transition border-b-2 -mb-px" style="color:${state.activeTab==='planes'?BRAND.prussianBlue:BRAND.duskBlue}; border-color:${state.activeTab==='planes'?BRAND.prussianBlue:'transparent'}">${renderIcon('briefcase', 'w-4 h-4')} Planes & Estructura</button>
+          </div>
+          ${state.activeTab === 'video' ? videoPanel() : ''}
+          ${state.activeTab === 'content' ? contentPanel() : ''}
+          ${state.activeTab === 'planes' ? plansPanel() : ''}
+        </section>
+      </main>
+      <footer class="mt-12 border-t px-4 py-6 text-center text-xs font-medium max-w-7xl mx-auto" style="background:${BRAND.pureWhite}; border-color:${BRAND.alabasterGrey}; color:${BRAND.duskBlue}">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="flex items-center justify-center gap-2">${logoSVG('w-5 h-5')}<span>© 2026 ${escapeHTML(state.pymeName)} IA. Suite de Automatización de Marca. Todos los derechos reservados.</span></div>
+          <div class="flex items-center justify-center gap-4 text-[11px]"><a href="#player" class="hover:underline">Editor de Video</a><span>·</span><a href="#" class="hover:underline">Calculadora de ROI</a><span>·</span><a href="#" class="hover:underline">Comparador de Planes</a></div>
+        </div>
+      </footer>
+    </div>`;
+  }
+
+  function escapeHTML(str) {
+    return String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;')
+      .replace(/'/g,'&#39;');
+  }
+  function escapeAttr(str){ return escapeHTML(str); }
+  function formatTime(s){ return `0:${String(Math.floor(s)).padStart(2,'0')}`; }
+
+  function bindEvents() {
+    document.querySelectorAll('[data-tab]').forEach(btn => btn.onclick = () => { state.activeTab = btn.dataset.tab; render(); });
+    document.querySelectorAll('[data-hook]').forEach(btn => btn.onclick = () => { state.selectedHook = Number(btn.dataset.hook); state.elapsed = 0; triggerToast(`Hook #${state.selectedHook + 1} seleccionado en el reproductor`); render(); });
+    document.getElementById('toneSelect').onchange = (e) => { state.tone = e.target.value; state.elapsed = 0; render(); };
+    document.getElementById('downloadPackBtn').onclick = handleDownloadPack;
+    const download2 = document.getElementById('downloadPackBtn2'); if (download2) download2.onclick = handleDownloadPack;
+    const copyBtn = document.getElementById('copyCaptionBtn'); if (copyBtn) copyBtn.onclick = () => copyToClipboard(generatedCaption());
+
+    const manualHours = document.getElementById('manualHours'); if (manualHours) manualHours.oninput = (e) => { state.manualHours = Number(e.target.value || 0); render(); };
+    const hourlyCost = document.getElementById('hourlyCost'); if (hourlyCost) hourlyCost.oninput = (e) => { state.hourlyCost = Number(e.target.value || 0); render(); };
+    const pymeName = document.getElementById('pymeName'); if (pymeName) pymeName.oninput = (e) => { state.pymeName = e.target.value; render(); };
+    const pymePhone = document.getElementById('pymePhone'); if (pymePhone) pymePhone.oninput = (e) => { state.pymePhone = e.target.value; render(); };
+    const priceBasic = document.getElementById('priceBasic'); if (priceBasic) priceBasic.oninput = (e) => { state.priceBasic = e.target.value; render(); };
+    const priceFull = document.getElementById('priceFull'); if (priceFull) priceFull.oninput = (e) => { state.priceFull = e.target.value; render(); };
+
+    const player = document.getElementById('player'); if (player) player.onclick = () => { state.isPlaying = !state.isPlaying; render(); };
+    const progressBar = document.getElementById('progressBar'); if (progressBar) progressBar.onclick = (e) => { const rect = progressBar.getBoundingClientRect(); const pct = (e.clientX - rect.left) / rect.width; state.elapsed = pct * totalDuration(); render(); };
+    const playBtn = document.getElementById('playBtn'); if (playBtn) playBtn.onclick = () => { state.isPlaying = !state.isPlaying; render(); };
+    const resetBtn = document.getElementById('resetBtn'); if (resetBtn) resetBtn.onclick = () => { state.elapsed = 0; state.isPlaying = false; render(); };
+    const prevScene = document.getElementById('prevScene'); if (prevScene) prevScene.onclick = handlePrevScene;
+    const nextScene = document.getElementById('nextScene'); if (nextScene) nextScene.onclick = handleNextScene;
+    document.querySelectorAll('[data-scene-dot]').forEach(btn => btn.onclick = () => { state.elapsed = sceneTimes()[Number(btn.dataset.sceneDot)]; render(); });
+    document.querySelectorAll('[data-scene-row]').forEach(row => row.onclick = () => { state.elapsed = sceneTimes()[Number(row.dataset.sceneRow)]; render(); });
+  }
+
+  function animate(now) {
+    if (state.isPlaying) {
+      const delta = (now - lastTime) / 1000;
+      state.elapsed += delta;
+      if (state.elapsed >= totalDuration()) state.elapsed = 0;
+      render();
+    }
+    lastTime = now;
+    rafId = requestAnimationFrame(animate);
+  }
+
+  function render(rebind = true) {
+    app.innerHTML = mainHTML() + toastHTML();
+    if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+    if (rebind) bindEvents();
+  }
+
+  render();
+  rafId = requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>

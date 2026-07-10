@@ -1,0 +1,145 @@
+Term ID,Term Name,Term Slug,Description,Parent ID,Parent Name,Parent Slug,Count
+259,Eligendi,eligendi,"Voluptas voluptates dolor aliquid facilis aut labore debitis labore quia unde ipsam recusandae tenetur voluptatem soluta nostrum veritatis quaerat suscipit quos dolore voluptates accusamus quas incidunt aspernatur recusandae architecto totam est quaerat autem nisi quia molestias cupiditate et temporibus doloremque enim et maiores reprehenderit dicta ex id.",,,,,
+260,Eos,eos,"Rerum molestiae non et id minima quo quaerat minima expedita voluptatum eum.",,,,,
+261,Eos doloribus,eos-doloribus,"Quis perferendis minus voluptatibus exercitationem laborum voluptate atque provident ut dicta ab unde amet in facere qui dolor dolores qui sed dolores vitae eveniet.",,,,,
+262,Est ea,est-ea,"Earum omnis aperiam aut fugit asperiores ea cum porro rerum rerum numquam sit eum possimus eos neque molestiae rem sequi dolorem iste aspernatur iure suscipit provident quibusdam rerum rerum dicta omnis quia quia.",,,,,
+263,Molestias officia,molestias-officia,"Iusto ipsa qui aut sed et reiciendis officia cupiditate dolorem itaque blanditiis et repellendus aut facilis.",,,,,
+264,Mollitia,mollitia,"Fugiat ex odio soluta sint exercitationem quasi ratione quis qui iure numquam veritatis voluptas et in odio repellat vero vel repudiandae est occaecati et mollitia autem velit.",,,,,
+265,Natus,natus,"Quod occaecati officia quam at illum aperiam dicta consequuntur aut magni sint voluptate totam unde dicta sed ex et exercitationem dignissimos qui et.",,,,,
+266,Qui,qui,"Nostrum ut est ipsa quia optio a odit accusamus sunt odit eos perferendis unde adipisci pariatur aut cupiditate omnis amet autem reprehenderit aut et ut nam iste quia iure voluptatem assumenda blanditiis eum quod minus magni ipsa sunt eum ut animi illo nostrum tenetur neque quia reiciendis.",,,,,
+267,Sed,sed,"Inventore et ipsa voluptas ut sequi eligendi omnis fugit impedit modi veritatis aut tempore voluptas qui consequatur dignissimos fuga aliquid numquam quo quia id sed ipsum velit dolorem dolores quo dolore possimus error temporibus ab magni earum harum a quae incidunt porro qui quod ut culpa nemo id et odit non quaerat ipsa.",,,,,
+268,Ut,ut,"Quod cumque quibusdam quae quia dolores sint odio modi tenetur minima odit.",,,,,
+4391,brooklyn,brooklyn,,,,,,,,,1
+4392,fashion,fashion,,,,,,,,,1
+4393,style,style-2,,,,,,,,,1
+4394,women,women-3,,,,,,,,,1
+7708,Inicio,inicio,,,,,,,,,1
+7709,Servicios,servicios,,,,,,,,,1
+7710,ERP,erp,,,,,,7709,Servicios,servicios,1
+7711,CRM,crm,,,,,,7709,Servicios,servicios,1
+7712,Desarrollo Web,desarrollo-web,,,,,,7709,Servicios,servicios,1
+7716,Contacto,contacto,,,,,,,,,1
+7717,Información,informacion,,,,,,7716,Contacto,contacto,1
+7718,Información de la empresa,informacion-de-la-empresa,,,,,,7717,Información,informacion,1
+7722,Sobre Nosotros,sobre-nosotros,,,,,,7717,Información,informacion,1
+7723,Llamado a la acción,llamado-a-la-accion,,,,,,,,,1
+7731,E-Commerce,e-commerce,,,,,,7709,Servicios,servicios,1
+7732,ventas en línea,ventas-en-linea,,,,,,7731,E-Commerce,e-commerce,1
+7733,plataformas personalizadas,plataformas-personalizadas,,,,,,7731,E-Commerce,e-commerce,1
+7736,Dropshipping,dropshipping,,,,,,7731,E-Commerce,e-commerce,1
+7737,gestión de negocios,gestion-de-negocios,,,,,,7709,Servicios,servicios,1
+7741,Marketing Digital,marketing-digital,,,,,,7709,Servicios,servicios,1
+7742,visibilidad,visibilidad,,,,,,7741,Marketing Digital,marketing-digital,1
+7743,ROI,roi,,,,,,7741,Marketing Digital,marketing-digital,1
+7746,Soluciones,soluciones,,,,,,,,,1
+7747,Gestión Empresarial,gestion-empresarial,,,,,,7746,Soluciones,soluciones,1
+7748,ciberseguridad,ciberseguridad,,,,,,7746,Soluciones,soluciones,1
+7751,Business Intelligence,business-intelligence,,,,,,7746,Soluciones,soluciones,1
+7752,análisis de datos,analisis-de-datos,,,,,,7751,Business Intelligence,business-intelligence,1
+7753,reportes,reportes,,,,,,7751,Business Intelligence,business-intelligence,1
+7754,SEO y Marketing de Contenidos,seo-y-marketing-de-contenidos,,,,,,7709,Servicios,servicios,1
+7755,SEO,seo,,,,,,7754,SEO y Marketing de Contenidos,seo-y-marketing-de-contenidos,1
+7756,marketing de contenidos,marketing-de-contenidos,,,,,,7754,SEO y Marketing de Contenidos,seo-y-marketing-de-contenidos,1
+7757,posicionamiento,posicionamiento,,,,,,7754,SEO y Marketing de Contenidos,seo-y-marketing-de-contenidos,1
+7761,Casos de Éxito,casos-de-exito,,,,,,,,,1
+7762,Testimonios,testimonios,,,,,,7761,Casos de Éxito,casos-de-exito,1
+7763,clientes satisfechos,clientes-satisfechos,,,,,,7761,Casos de Éxito,casos-de-exito,1
+7768,Planes y Precios,planes-y-precios,,,,,,,,,1
+7769,Licencias,licencias,,,,,,7768,Planes y Precios,planes-y-precios,1
+7770,precios,precios,,,,,,7768,Planes y Precios,planes-y-precios,1
+7771,planes,planes,,,,,,7768,Planes y Precios,planes-y-precios,1
+7776,ERP Personalizado,erp-personalizado,,,,,,7709,Servicios,servicios,1
+7777,implementación,implementacion,,,,,,7776,ERP Personalizado,erp-personalizado,1
+7778,personalización,personalizacion,,,,,,7776,ERP Personalizado,erp-personalizado,1
+7779,automatización,automatizacion,,,,,,7776,ERP Personalizado,erp-personalizado,1
+7780,análisis,analisis,,,,,,7776,ERP Personalizado,erp-personalizado,1
+7781,escalabilidad,escalabilidad,,,,,,7776,ERP Personalizado,erp-personalizado,1
+7784,diseño,diseno,,,,,,7709,Servicios,servicios,1
+7785,aplicaciones móviles,aplicaciones-moviles,,,,,,7709,Servicios,servicios,1
+7789,consultoría,consultoria,,,,,,7709,Servicios,servicios,1
+7790,branding,branding,,,,,,7709,Servicios,servicios,1
+7791,desarrollo,desarrollo,,,,,,7709,Servicios,servicios,1
+7797,Consultoría Empresarial,consultoria-empresarial,,,,,,7709,Servicios,servicios,1
+7798,estrategia,estrategia,,,,,,7797,Consultoría Empresarial,consultoria-empresarial,1
+7799,optimización,optimizacion,,,,,,7797,Consultoría Empresarial,consultoria-empresarial,1
+7800,gestión del cambio,gestion-del-cambio,,,,,,7797,Consultoría Empresarial,consultoria-empresarial,1
+7801,formación,formacion,,,,,,7797,Consultoría Empresarial,consultoria-empresarial,1
+7803,Recursos,recursos,,,,,,,,,1
+7804,Centro de Recursos,centro-de-recursos,,,,,,7803,Recursos,recursos,1
+7805,Ebooks,ebooks,,,,,,7804,Centro de Recursos,centro-de-recursos,1
+7806,guías,guias,,,,,,7804,Centro de Recursos,centro-de-recursos,1
+7807,videos educativos,videos-educativos,,,,,,7804,Centro de Recursos,centro-de-recursos,1
+7809,Proyectos,proyectos,,,,,,,,,1
+7810,Implementación ERP,implementacion-erp,,,,,,7809,Proyectos,proyectos,1
+7811,BI,bi,,,,,,7809,Proyectos,proyectos,1
+7812,Soporte,soporte,,,,,,,,,1
+7813,Centro de Ayuda,centro-de-ayuda,,,,,,7812,Soporte,soporte,1
+7814,FAQ,faq,,,,,,7812,Soporte,soporte,1
+7815,envíos,envios,,,,,,7812,Soporte,soporte,1
+7816,pagos,pagos,,,,,,7812,Soporte,soporte,1
+7817,devoluciones,devoluciones,,,,,,7812,Soporte,soporte,1
+7818,pedidos,pedidos,,,,,,7812,Soporte,soporte,1
+7819,cuenta,cuenta,,,,,,7812,Soporte,soporte,1
+7823,Formulario de Contacto,formulario-de-contacto,,,,,,7716,Contacto,contacto,1
+7824,Dirección,direccion,,,,,,7716,Contacto,contacto,1
+7825,email,email,,,,,,7716,Contacto,contacto,1
+7826,redes sociales,redes-sociales,,,,,,7716,Contacto,contacto,1
+7829,Comparativa de Servicios,comparativa-de-servicios,,,,,,,,,1
+7830,características,caracteristicas,,,,,,7829,Comparativa de Servicios,comparativa-de-servicios,1
+7831,Cultura y Metodología,cultura-y-metodologia,,,,,,,,,1
+7832,Cultura,cultura,,,,,,7831,Cultura y Metodología,cultura-y-metodologia,1
+7833,valores,valores,,,,,,7831,Cultura y Metodología,cultura-y-metodologia,1
+7834,metodología,metodologia,,,,,,7831,Cultura y Metodología,cultura-y-metodologia,1
+7835,equipo,equipo,,,,,,7831,Cultura y Metodología,cultura-y-metodologia,1
+7836,Hero,hero,,,,,,,,,1
+7837,Bienvenida,bienvenida,,,,,,7836,Hero,hero,1
+7838,CTA,cta,,,,,,7836,Hero,hero,1
+7839,Formulario,formulario,,,,,,,,,1
+7840,Servicios Principales,servicios-principales,,,,,,,,,1
+7843,Web,web,,,,,,7709,Servicios,servicios,1
+7844,Omnicanal,omnicanal,,,,,,7709,Servicios,servicios,1
+7847,Analíticas,analiticas,,,,,,7709,Servicios,servicios,1
+7849,Beneficios,beneficios,,,,,,,,,1
+7850,Mini,mini,,,,,,7768,Planes y Precios,planes-y-precios,1
+7851,Pequeño,pequeno,,,,,,7768,Planes y Precios,planes-y-precios,1
+7852,Grande,grande,,,,,,7768,Planes y Precios,planes-y-precios,1
+7855,Especificaciones del ERP,especificaciones-del-erp,,,,,,,,,1
+7856,Especificaciones,especificaciones,,,,,,7855,Especificaciones del ERP,especificaciones-del-erp,1
+7857,Características ERP,caracteristicas-erp,,,,,,7855,Especificaciones del ERP,especificaciones-del-erp,1
+7861,Soluciones por Industria,soluciones-por-industria,,,,,,,,,1
+7862,Minoristas,minoristas,,,,,,7861,Soluciones por Industria,soluciones-por-industria,1
+7863,Manufactura,manufactura,,,,,,7861,Soluciones por Industria,soluciones-por-industria,1
+7864,Agroindustria,agroindustria,,,,,,7861,Soluciones por Industria,soluciones-por-industria,1
+7865,Nuestros Servicios,nuestros-servicios,,,,,,,,,1
+7866,Mantenimiento,mantenimiento,,,,,,7865,Nuestros Servicios,nuestros-servicios,1
+7867,Integración,integracion,,,,,,7865,Nuestros Servicios,nuestros-servicios,1
+7871,Boletín,boletin,,,,,,,,,1
+7872,Suscripción,suscripcion,,,,,,7871,Boletín,boletin,1
+7873,Comunidad,comunidad,,,,,,,,,1
+7874,Preguntas Frecuentes,preguntas-frecuentes,,,,,,7812,Soporte,soporte,1
+7875,Soporte técnico,soporte-tecnico,,,,,,7812,Soporte,soporte,1
+7876,Post-implementación,post-implementacion,,,,,,7812,Soporte,soporte,1
+7877,Plan Premium,plan-premium,,,,,,,,,1
+7881,Asociación,asociacion,,,,,,,,,1
+7882,colaboración,colaboracion,,,,,,,,,1
+7883,crecimiento empresarial,crecimiento-empresarial,,,,,,,,,1
+7885,Impulso de Negocios,impulso-de-negocios,,,,,,,,,1
+7886,innovación,innovacion,,,,,,,,,1
+7887,crecimiento,crecimiento,,,,,,,,,1
+7889,Nosotros,nosotros,,,,,,,,,1
+7890,Nuestra Diferencia,nuestra-diferencia,,,,,,7889,Nosotros,nosotros,1
+7891,cultura empresarial,cultura-empresarial,,,,,,7889,Nosotros,nosotros,1
+7892,desarrollo de software,desarrollo-de-software,,,,,,,,,1
+7893,Academia,academia,,,,,,,,,1
+7894,Cursos en Línea,cursos-en-linea,,,,,,7893,Academia,academia,1
+7895,educación empresarial,educacion-empresarial,,,,,,7893,Academia,academia,1
+7897,Sobre Viaweb,sobre-viaweb,,,,,,,,,1
+7898,servicios tecnológicos,servicios-tecnologicos,,,,,,,,,1
+7902,Servicios Generales,servicios-generales,,,,,,7902,Servicios Generales,servicios-generales,1
+7903,soluciones empresariales,soluciones-empresariales,,,,,,7902,Servicios Generales,servicios-generales,1
+7906,eficiencia,eficiencia,,,,,,,,,1
+7912,Noticias,noticias,,,,,,,,,1
+7913,actualizaciones,actualizaciones,,,,,,7912,Noticias,noticias,1
+7914,blog,blog,,,,,,7912,Noticias,noticias,1
+7917,Capacitación,capacitacion,,,,,,,,,1
+7918,entrenamiento,entrenamiento,,,,,,7917,Capacitación,capacitacion,1

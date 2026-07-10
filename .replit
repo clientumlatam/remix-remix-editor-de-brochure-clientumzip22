@@ -1,0 +1,55 @@
+modules = ["nodejs-24", "python-base-3.13"]
+[nix]
+channel = "stable-25_05"
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 5000
+
+[[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
+localPort = 8081
+externalPort = 8081
+
+[[ports]]
+localPort = 21496
+externalPort = 3000
+
+[[ports]]
+localPort = 24678
+externalPort = 80
+
+[deployment]
+deploymentTarget = "static"
+build = ["bash", "-c", "cd attached_assets-4/attached_assets/Chat-Export-1s && pnpm install --frozen-lockfile && PORT=5000 BASE_PATH=/ NODE_ENV=production pnpm --filter @workspace/clientum run build"]
+publicDir = "attached_assets-4/attached_assets/Chat-Export-1s/artifacts/clientum/dist/public"

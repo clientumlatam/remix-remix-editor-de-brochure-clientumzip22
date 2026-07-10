@@ -1,0 +1,45 @@
+{
+  "name": "Seller",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nombre del vendedor"
+    },
+    "phone": {
+      "type": "string",
+      "description": "WhatsApp del vendedor"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email del vendedor"
+    },
+    "specialty": {
+      "type": "string",
+      "enum": [
+        "plomeria",
+        "electricidad",
+        "pintura",
+        "construccion",
+        "ceramicos",
+        "herramientas",
+        "general"
+      ],
+      "description": "Especialidad del vendedor"
+    },
+    "branch": {
+      "type": "string",
+      "description": "Sucursal asignada"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Si el vendedor est\u00e1 activo"
+    }
+  },
+  "required": [
+    "name",
+    "phone",
+    "specialty"
+  ]
+}

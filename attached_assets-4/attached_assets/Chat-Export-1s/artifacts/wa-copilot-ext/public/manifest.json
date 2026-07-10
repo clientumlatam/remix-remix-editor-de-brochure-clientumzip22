@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Clientum Copilot",
+  "version": "1.0.0",
+  "description": "Asistente de ventas con IA para WhatsApp Web — integrado con Clientum CRM",
+  "permissions": ["storage", "debugger", "tabs", "activeTab"],
+  "host_permissions": [
+    "https://web.whatsapp.com/*",
+    "https://*.replit.app/*",
+    "https://*.replit.dev/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Clientum Copilot"
+  },
+  "web_accessible_resources": []
+}

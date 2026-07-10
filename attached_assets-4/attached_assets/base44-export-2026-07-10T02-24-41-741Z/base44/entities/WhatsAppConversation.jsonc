@@ -1,0 +1,82 @@
+{
+  "name": "WhatsAppConversation",
+  "type": "object",
+  "properties": {
+    "customer_phone": {
+      "type": "string",
+      "description": "Tel\u00e9fono del cliente"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Nombre del cliente"
+    },
+    "query_type": {
+      "type": "string",
+      "enum": [
+        "precios",
+        "horarios",
+        "sucursales",
+        "derivacion",
+        "reclamo",
+        "otro"
+      ],
+      "description": "Tipo de consulta"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "activa",
+        "derivada",
+        "resuelta",
+        "cerrada"
+      ],
+      "default": "activa",
+      "description": "Estado de la conversaci\u00f3n"
+    },
+    "assigned_seller": {
+      "type": "string",
+      "description": "Vendedor asignado"
+    },
+    "assigned_branch": {
+      "type": "string",
+      "description": "Sucursal asignada"
+    },
+    "budget_generated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se gener\u00f3 un presupuesto"
+    },
+    "budget_approved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si el presupuesto fue aprobado por el cliente"
+    },
+    "visit_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha y hora de la visita t\u00e9cnica agendada"
+    },
+    "visit_scheduled": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si se cre\u00f3 el evento en Google Calendar para la visita"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Resumen de la conversaci\u00f3n"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "web"
+      ],
+      "default": "whatsapp",
+      "description": "Canal de la conversaci\u00f3n"
+    }
+  },
+  "required": [
+    "customer_phone",
+    "query_type"
+  ]
+}
