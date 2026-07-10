@@ -53,7 +53,8 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../../src'),
+      // Debe reflejar el alias del proyecto principal (vite.config.ts): "@" = raíz del repo
+      '@': path.resolve(__dirname, '../../'),
     },
   },
 
