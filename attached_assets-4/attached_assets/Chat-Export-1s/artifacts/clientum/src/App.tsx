@@ -56,7 +56,11 @@ import ProgramaSocios from "@/pages/web/ProgramaSocios";
 import Blog from "@/pages/web/Blog";
 import SobreNosotros from "@/pages/web/SobreNosotros";
 import Privacidad from "@/pages/web/Privacidad";
+import Terminos from "@/pages/web/Terminos";
 import Comparativa from "@/pages/web/Comparativa";
+import Industria from "@/pages/web/Industria";
+import Especificaciones from "@/pages/web/Especificaciones";
+import Empleo from "@/pages/web/Empleo";
 
 // Funciones pages
 import WhatsAppPage from "@/pages/web/funciones/WhatsAppPage";
@@ -119,7 +123,11 @@ function Router() {
       <Route path="/blog" component={Blog} />
       <Route path="/sobre-nosotros" component={SobreNosotros} />
       <Route path="/privacidad" component={Privacidad} />
+      <Route path="/terminos" component={Terminos} />
       <Route path="/comparativa" component={Comparativa} />
+      <Route path="/industria" component={Industria} />
+      <Route path="/especificaciones" component={Especificaciones} />
+      <Route path="/empleo" component={Empleo} />
 
       {/* Funciones */}
       <Route path="/funciones/whatsapp" component={WhatsAppPage} />
