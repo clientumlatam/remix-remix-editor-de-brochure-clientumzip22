@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CRMDeal, BrochureData } from "../types";
 import { INITIAL_DEALS } from "../data";
+import { loadDeals, saveDeals, addActivity, DEALS_EVENT } from "../store/sharedStore";
 import {
   CheckCircle2,
   TrendingUp,
@@ -67,19 +68,14 @@ export default function InteractiveCRMKanban({ brochureData, onChange }: Interac
   // Navigation inside the component: "pipeline" or "prospector"
   const [activeTab, setActiveTab] = useState<"pipeline" | "prospector">("pipeline");
 
-  // Load and manage deals synchronized with global state or localStorage fallback
+  // Load and manage deals synchronized with global state, shared across all
+  // tabs (Pipeline, Patagonia Explorer, Creación Rápida, Actividad).
   const [deals, setDeals] = useState<CRMDeal[]>(() => {
     if (brochureData?.crm?.deals && brochureData.crm.deals.length > 0) {
       return brochureData.crm.deals;
     }
-    const saved = localStorage.getItem("clientum_sim_deals");
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error("Error reading saved deals, using presets.", e);
-      }
-    }
+    const saved = loadDeals();
+    if (saved.length > 0) return saved;
     return INITIAL_DEALS;
   });
 
@@ -93,10 +89,21 @@ export default function InteractiveCRMKanban({ brochureData, onChange }: Interac
     }
   }, [brochureData?.crm?.deals]);
 
+  // Live-sync: pick up deals created/edited from other tabs (e.g. Creación
+  // Rápida) without requiring a full page reload.
+  useEffect(() => {
+    const handleExternalDealsUpdate = (e: Event) => {
+      const updated = (e as CustomEvent<CRMDeal[]>).detail ?? loadDeals();
+      setDeals((prev) => (JSON.stringify(prev) !== JSON.stringify(updated) ? updated : prev));
+    };
+    window.addEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+    return () => window.removeEventListener(DEALS_EVENT, handleExternalDealsUpdate);
+  }, []);
+
   // Propagate state changes back to parent
   const updateDealsState = (newDeals: CRMDeal[]) => {
     setDeals(newDeals);
-    localStorage.setItem("clientum_sim_deals", JSON.stringify(newDeals));
+    saveDeals(newDeals);
     if (onChange && brochureData) {
       onChange({
         ...brochureData,
@@ -111,6 +118,7 @@ export default function InteractiveCRMKanban({ brochureData, onChange }: Interac
   // Simple and accessible stage movement
   const moveDeal = (id: string, direction: "next" | "prev") => {
     const stages: CRMDeal["stage"][] = ["leads", "bot_contact", "proposed", "closed"];
+    let movedDeal: CRMDeal | null = null;
     const updated = deals.map((deal) => {
       if (deal.id !== id) return deal;
       const currentIndex = stages.indexOf(deal.stage);
@@ -120,9 +128,16 @@ export default function InteractiveCRMKanban({ brochureData, onChange }: Interac
       } else if (direction === "prev" && currentIndex > 0) {
         nextIndex = currentIndex - 1;
       }
-      return { ...deal, stage: stages[nextIndex] };
+      movedDeal = { ...deal, stage: stages[nextIndex] };
+      return movedDeal;
     });
     updateDealsState(updated);
+    if (movedDeal) {
+      addActivity({
+        type: "stage",
+        title: `"${movedDeal.company}" pasó a la etapa "${movedDeal.stage}"`,
+      });
+    }
   };
 
   const handleDeleteDeal = (id: string) => {

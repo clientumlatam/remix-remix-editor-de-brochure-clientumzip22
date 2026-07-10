@@ -10,22 +10,17 @@ import {
   ListChecks,
   Plus,
   Clock,
+  TrendingUp,
+  Briefcase,
 } from "lucide-react";
+import { loadActivities, saveActivities, addActivity, ActivityLogItem, ACTIVITY_EVENT } from "../../store/sharedStore";
 
 /* ------------------------------------------------------------------ */
 /* Types                                                                */
 /* ------------------------------------------------------------------ */
 
-type ActivityType = "call" | "email" | "meeting" | "task" | "note";
-
-interface Activity {
-  id: number;
-  type: ActivityType;
-  title: string;
-  date: string;
-  notes?: string;
-  completed: boolean;
-}
+type ActivityType = ActivityLogItem["type"];
+type Activity = ActivityLogItem;
 
 /* ------------------------------------------------------------------ */
 /* Activity type config                                                 */
@@ -37,55 +32,19 @@ const ACTIVITY_TYPES: {
   Icon: React.ElementType;
   color: string;
 }[] = [
-  { id: "call",    label: "Llamada",  Icon: Phone,       color: "bg-blue-100 text-blue-600"     },
-  { id: "email",   label: "Email",    Icon: Mail,        color: "bg-violet-100 text-violet-600" },
-  { id: "meeting", label: "Reunión",  Icon: Users,       color: "bg-amber-100 text-amber-600"   },
-  { id: "task",    label: "Tarea",    Icon: CheckSquare, color: "bg-green-100 text-green-600"   },
-  { id: "note",    label: "Nota",     Icon: FileText,    color: "bg-gray-100 text-gray-600"     },
+  { id: "call",     label: "Llamada",  Icon: Phone,       color: "bg-blue-100 text-blue-600"     },
+  { id: "email",    label: "Email",    Icon: Mail,        color: "bg-violet-100 text-violet-600" },
+  { id: "meeting",  label: "Reunión",  Icon: Users,       color: "bg-amber-100 text-amber-600"   },
+  { id: "task",     label: "Tarea",    Icon: CheckSquare, color: "bg-green-100 text-green-600"   },
+  { id: "note",     label: "Nota",     Icon: FileText,    color: "bg-gray-100 text-gray-600"     },
+  { id: "lead",     label: "Lead",     Icon: TrendingUp,  color: "bg-fuchsia-100 text-fuchsia-600" },
+  { id: "deal",     label: "Deal",     Icon: Briefcase,   color: "bg-teal-100 text-teal-600"     },
+  { id: "contact",  label: "Contacto", Icon: Users,       color: "bg-blue-100 text-blue-600"     },
+  { id: "stage",    label: "Cambio de etapa", Icon: TrendingUp, color: "bg-indigo-100 text-indigo-600" },
 ];
 
 function activityConfig(type: string) {
   return ACTIVITY_TYPES.find((t) => t.id === type) ?? ACTIVITY_TYPES[4];
-}
-
-/* ------------------------------------------------------------------ */
-/* Seed data                                                            */
-/* ------------------------------------------------------------------ */
-
-function generateSeedActivities(): Activity[] {
-  const now = Date.now();
-  const h = (hrs: number) => new Date(now - hrs * 3600000).toISOString();
-  return [
-    { id: 1, type: "email",   title: "Email de bienvenida enviado a Martina Rodríguez",  date: h(1),   notes: "Adjuntamos el brochure en PDF y la propuesta inicial.",   completed: true  },
-    { id: 2, type: "call",    title: "Llamada de seguimiento — Constructora del Sur",     date: h(3),   notes: "Interesados en plan anual. Piden demo la próxima semana.", completed: false },
-    { id: 3, type: "note",    title: "Lead generado: Bodega El Quebracho (Mendoza)",      date: h(8),   notes: "Llegó desde formulario web. Rubro vitivinícola.",           completed: true  },
-    { id: 4, type: "meeting", title: "Reunión virtual con Tech Patagonia S.R.L.",         date: h(24),  notes: "Presentamos módulo de automatización WhatsApp.",            completed: true  },
-    { id: 5, type: "task",    title: "Preparar propuesta para Clínica Dental Nordeste",   date: h(48),  notes: "Revisar precios y condiciones del plan Pyme.",              completed: false },
-    { id: 6, type: "email",   title: "Brochure generado y enviado — Agro Los Álamos",     date: h(72),  notes: "El cliente solicitó personalización con colores de marca.", completed: true  },
-    { id: 7, type: "call",    title: "Llamada en frío — Distribuidora Patagónica",        date: h(96),  notes: "Dejamos mensaje de voz. Reprogramar para el martes.",       completed: false },
-    { id: 8, type: "note",    title: "Lead calificado: Estudio Jurídico Moreno & Asociados", date: h(120), completed: true },
-  ];
-}
-
-const STORAGE_KEY = "clientum_activity_log";
-
-function loadActivities(): Activity[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw) as Activity[];
-      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-    }
-  } catch {
-    // ignore
-  }
-  const seed = generateSeedActivities();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(seed));
-  return seed;
-}
-
-function saveActivities(list: Activity[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
 /* ------------------------------------------------------------------ */
@@ -113,6 +72,17 @@ export default function ActivityTab() {
   useEffect(() => {
     saveActivities(activities);
   }, [activities]);
+
+  // Live-sync: reflect activities logged automatically from other tabs
+  // (Creación Rápida, CRM Pipeline stage changes) without a reload.
+  useEffect(() => {
+    const handleExternalUpdate = (e: Event) => {
+      const updated = (e as CustomEvent<Activity[]>).detail ?? loadActivities();
+      setActivities((prev) => (JSON.stringify(prev) !== JSON.stringify(updated) ? updated : prev));
+    };
+    window.addEventListener(ACTIVITY_EVENT, handleExternalUpdate);
+    return () => window.removeEventListener(ACTIVITY_EVENT, handleExternalUpdate);
+  }, []);
 
   const sorted = [...activities].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -161,9 +131,9 @@ export default function ActivityTab() {
       {/* Add form / button */}
       {adding ? (
         <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 flex flex-col gap-2.5">
-          {/* Type selector */}
+          {/* Type selector — manual entries only; lead/deal/contact/stage are logged automatically */}
           <div className="flex gap-1.5 flex-wrap">
-            {ACTIVITY_TYPES.map((t) => (
+            {ACTIVITY_TYPES.filter((t) => ["call", "email", "meeting", "task", "note"].includes(t.id)).map((t) => (
               <button
                 key={t.id}
                 onClick={() => setType(t.id)}

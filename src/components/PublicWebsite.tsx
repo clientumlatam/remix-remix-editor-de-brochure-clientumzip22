@@ -40,10 +40,33 @@ import {
   LayoutGrid,
   Code2,
   Monitor,
-  Workflow
+  Workflow,
+  LogIn,
+  LogOut,
+  UserCircle2
 } from "lucide-react";
 
 import { BrochureData } from "../types";
+import serviciosCatalogo from "../data/servicios-catalogo.json";
+import categoriasServicios from "../data/categorias-servicios.json";
+import cursosLms from "../data/cursos-lms.json";
+
+interface CatalogService {
+  id: string;
+  name: string;
+  cat: string;
+  desc: string;
+  price: string;
+}
+interface CatalogCategory {
+  name: string;
+  count: number;
+}
+interface LmsCourse {
+  id: string;
+  title: string;
+  excerpt: string;
+}
 
 interface PublicWebsiteProps {
   onBackToEditor: () => void;
@@ -57,6 +80,9 @@ interface PublicWebsiteProps {
     github?: string;
   };
   hidePrices?: boolean;
+  authUser?: string | null;
+  onOpenLogin?: () => void;
+  onLogout?: () => void;
 }
 
 export default function PublicWebsite({
@@ -65,6 +91,9 @@ export default function PublicWebsite({
   colorTheme = "navy",
   contactInfo,
   hidePrices = false,
+  authUser = null,
+  onOpenLogin,
+  onLogout,
 }: PublicWebsiteProps) {
   const [activeTab, setActiveTab] = useState<string>("inicio");
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
@@ -159,6 +188,47 @@ export default function PublicWebsite({
 
   // Course enrollment state
   const [enrolledCourse, setEnrolledCourse] = useState<string | null>(null);
+
+  // Full services catalog (2.147 servicios) — search, category filter & pagination
+  const ALL_SERVICES = serviciosCatalogo as CatalogService[];
+  const SERVICE_CATEGORIES = categoriasServicios as CatalogCategory[];
+  const [catalogQuery, setCatalogQuery] = useState("");
+  const [catalogCat, setCatalogCat] = useState<string>("");
+  const [catalogPage, setCatalogPage] = useState(1);
+  const CATALOG_PAGE_SIZE = 24;
+
+  const filteredCatalog = useMemo(() => {
+    const q = catalogQuery.trim().toLowerCase();
+    return ALL_SERVICES.filter((s) => {
+      const matchesCat = !catalogCat || s.cat === catalogCat;
+      const matchesQuery = !q || s.name.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q);
+      return matchesCat && matchesQuery;
+    });
+  }, [catalogQuery, catalogCat]);
+
+  const catalogTotalPages = Math.max(1, Math.ceil(filteredCatalog.length / CATALOG_PAGE_SIZE));
+  const catalogPageItems = useMemo(() => {
+    const start = (catalogPage - 1) * CATALOG_PAGE_SIZE;
+    return filteredCatalog.slice(start, start + CATALOG_PAGE_SIZE);
+  }, [filteredCatalog, catalogPage]);
+
+  // Full LMS course catalog (377 cursos) — search & pagination
+  const ALL_COURSES = cursosLms as LmsCourse[];
+  const [coursesQuery, setCoursesQuery] = useState("");
+  const [coursesPage, setCoursesPage] = useState(1);
+  const COURSES_PAGE_SIZE = 12;
+
+  const filteredCourses = useMemo(() => {
+    const q = coursesQuery.trim().toLowerCase();
+    if (!q) return ALL_COURSES;
+    return ALL_COURSES.filter((c) => c.title.toLowerCase().includes(q) || c.excerpt.toLowerCase().includes(q));
+  }, [coursesQuery]);
+
+  const coursesTotalPages = Math.max(1, Math.ceil(filteredCourses.length / COURSES_PAGE_SIZE));
+  const coursesPageItems = useMemo(() => {
+    const start = (coursesPage - 1) * COURSES_PAGE_SIZE;
+    return filteredCourses.slice(start, start + COURSES_PAGE_SIZE);
+  }, [filteredCourses, coursesPage]);
 
   // Interactive Pricing Configurator
   const [projectCount, setProjectCount] = useState<number>(30);
@@ -420,8 +490,8 @@ export default function PublicWebsite({
   const menuConfig = useMemo(() => [
     { id: "inicio", label: "Inicio", type: "link" as const },
     {
-      id: "funciones",
-      label: "Funciones",
+      id: "soluciones",
+      label: "Soluciones",
       type: "dropdown" as const,
       children: [
         { id: "chatbot", label: "Chatbot WhatsApp", desc: "Tu negocio atiende solo, las 24 horas", icon: Bot, color: "text-green-500 bg-green-50" },
@@ -431,14 +501,8 @@ export default function PublicWebsite({
         { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
         { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
         { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
-      ]
-    },
-    {
-      id: "soluciones",
-      label: "Soluciones",
-      type: "dropdown" as const,
-      children: [
         { id: "servicios", label: "Servicios", desc: "Consultoría de negocio y ERP personalizado", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
+        { id: "catalogo", label: "Catálogo Completo", desc: "Más de 2.147 servicios en 13 categorías", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
         { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
         { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" }
       ]
@@ -592,6 +656,27 @@ export default function PublicWebsite({
             <ArrowLeftRight className="w-3 h-3" />
             Ir al AI Client Prospector
           </button>
+          {authUser ? (
+            <div className="flex items-center gap-2 bg-slate-100 rounded-lg pl-3 pr-1.5 py-1.5">
+              <UserCircle2 className="w-4 h-4 text-[#1A3461]" />
+              <span className="text-xs font-bold text-slate-700 max-w-[110px] truncate">{authUser}</span>
+              <button
+                onClick={onLogout}
+                title="Cerrar sesión"
+                className="p-1.5 rounded-md hover:bg-slate-200 text-slate-500 hover:text-red-600 transition-all cursor-pointer"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={onOpenLogin}
+              className="bg-white border border-slate-300 hover:border-[#1A3461] text-[#1A3461] font-bold text-xs uppercase px-4 py-2.5 rounded-lg tracking-wider transition-all cursor-pointer flex items-center gap-1.5"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              Login / Registro
+            </button>
+          )}
           <button
             onClick={() => {
               setActiveTab("contacto");
@@ -693,11 +778,44 @@ export default function PublicWebsite({
             })}
             <button
               onClick={() => {
+                onBackToEditor();
+                setMobileMenuOpen(false);
+              }}
+              className="mt-3 w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5"
+            >
+              <ArrowLeftRight className="w-3.5 h-3.5" />
+              Ir al AI Client Prospector
+            </button>
+            {authUser ? (
+              <button
+                onClick={() => {
+                  onLogout?.();
+                  setMobileMenuOpen(false);
+                }}
+                className="mt-2 w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Cerrar sesión ({authUser})
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  onOpenLogin?.();
+                  setMobileMenuOpen(false);
+                }}
+                className="mt-2 w-full bg-white border border-slate-300 text-[#1A3461] font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                Login / Registro
+              </button>
+            )}
+            <button
+              onClick={() => {
                 setActiveTab("contacto");
                 setMobileMenuOpen(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="mt-3 w-full bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5 shadow-sm"
+              className="mt-2 w-full bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5 shadow-sm"
             >
               Solicitar Demo Gratuita
               <ArrowUpRight className="w-3.5 h-3.5 text-emerald-400" />
@@ -980,6 +1098,160 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
+                {/* ───────── SOLUCIONES HUB ───────── */}
+                <section className="bg-white border-t border-slate-200 py-20 px-6">
+                  <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                      <span className="text-[#1A3461] font-mono text-[10px] uppercase font-bold tracking-widest">Plataforma Completa</span>
+                      <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight mt-2">Todas las Soluciones</h2>
+                      <p className="text-slate-500 text-xs mt-2 max-w-xl mx-auto">Cada herramienta diseñada para conectarse entre sí y multiplicar el impacto en tu PyME.</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                      {[
+                        { id: "chatbot",        icon: Bot,          color: "bg-green-50 text-green-600 border-green-100",   accent: "group-hover:text-green-600",  label: "Chatbot WhatsApp",      desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
+                        { id: "crm_inteligente",icon: Briefcase,    color: "bg-blue-50 text-blue-600 border-blue-100",     accent: "group-hover:text-blue-600",   label: "CRM Inteligente",       desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
+                        { id: "asistente_ia",   icon: Sparkles,     color: "bg-violet-50 text-violet-600 border-violet-100",accent: "group-hover:text-violet-600", label: "Asistente IA",          desc: "Tu analista de negocio disponible en todo momento." },
+                        { id: "reportes",       icon: BarChart2,    color: "bg-orange-50 text-orange-600 border-orange-100",accent: "group-hover:text-orange-600", label: "Reportes Automáticos",  desc: "Dashboards en tiempo real para decisiones basadas en datos." },
+                        { id: "automatizacion", icon: Zap,          color: "bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Automatización",        desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
+                        { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes consultan stock, facturas y pedidos solos." },
+                        { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Sitios y e-commerce conectados directamente al CRM." },
+                        { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
+                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "Más de 2.147 servicios en 13 categorías con precios." },
+                        { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
+                        { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
+                        { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
+                      ].map(({ id, icon: Icon, color, accent, label, desc }) => (
+                        <button
+                          key={id}
+                          onClick={() => { setActiveTab(id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="group text-left bg-white border border-slate-200 hover:border-slate-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col gap-3"
+                        >
+                          <div className={`w-10 h-10 rounded-xl border flex items-center justify-center ${color}`}>
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h3 className={`font-bold text-sm text-slate-900 tracking-tight transition-colors ${accent}`}>{label}</h3>
+                            <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{desc}</p>
+                          </div>
+                          <span className={`text-[11px] font-bold flex items-center gap-1 text-slate-400 transition-colors ${accent}`}>
+                            Ver más <ChevronRight className="w-3.5 h-3.5" />
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* ───────── ECOSISTEMA HUB ───────── */}
+                <section className="bg-slate-900 text-white py-20 px-6">
+                  <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                      <span className="text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-widest">Comunidad & Recursos</span>
+                      <h2 className="text-2xl font-display font-black tracking-tight mt-2">El Ecosistema Clientum</h2>
+                      <p className="text-slate-400 text-xs mt-2 max-w-xl mx-auto">Capacitación, red de partners, contenidos y soporte: todo lo que necesitás para crecer.</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {[
+                        {
+                          id: "academia", icon: GraduationCap, accent: "from-indigo-600 to-violet-600",
+                          label: "Academia Clientum",
+                          desc: "Cursos gratuitos de CRM, automatización y ventas para tu equipo.",
+                          cta: "Ir a la Academia"
+                        },
+                        {
+                          id: "asociacion", icon: Users, accent: "from-violet-600 to-pink-600",
+                          label: "Programa de Partners",
+                          desc: "Sumate a la red de revendedores y afiliados. Comisiones del 20% recurrente.",
+                          cta: "Ver Programa"
+                        },
+                        {
+                          id: "blog", icon: BookOpen, accent: "from-rose-600 to-orange-500",
+                          label: "Recursos & Blog",
+                          desc: "Tácticas de ventas, marketing digital y automatizaciones para PyMEs.",
+                          cta: "Leer Artículos"
+                        },
+                        {
+                          id: "casos", icon: Building, accent: "from-emerald-600 to-teal-500",
+                          label: "Casos de Éxito",
+                          desc: "Cómo distribuidoras, estudios y comercios escalaron con Clientum.",
+                          cta: "Ver Historias"
+                        },
+                        {
+                          id: "nosotros", icon: Compass, accent: "from-blue-600 to-cyan-500",
+                          label: "Sobre Clientum",
+                          desc: "Nuestro equipo, cultura y por qué más de 200 PyMEs nos eligieron.",
+                          cta: "Conocernos"
+                        },
+                        {
+                          id: "ayuda", icon: HelpCircle, accent: "from-slate-600 to-slate-500",
+                          label: "Centro de Ayuda",
+                          desc: "FAQs, tutoriales y soporte técnico especializado en español.",
+                          cta: "Obtener Soporte"
+                        },
+                      ].map(({ id, icon: Icon, accent, label, desc, cta }) => (
+                        <button
+                          key={id}
+                          onClick={() => { setActiveTab(id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="group text-left bg-slate-950/60 border border-slate-800 hover:border-slate-600 rounded-2xl p-6 transition-all cursor-pointer flex flex-col gap-4 hover:bg-slate-800/60"
+                        >
+                          <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${accent} flex items-center justify-center shadow-lg`}>
+                            <Icon className="w-5 h-5 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="font-bold text-sm text-white tracking-tight">{label}</h3>
+                            <p className="text-[11px] text-slate-400 mt-1.5 leading-relaxed">{desc}</p>
+                          </div>
+                          <span className="text-[11px] font-bold text-slate-400 group-hover:text-emerald-400 flex items-center gap-1 transition-colors">
+                            {cta} <ArrowRight className="w-3.5 h-3.5" />
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
+                {/* ───────── CTA FINAL ───────── */}
+                <section className="bg-gradient-to-br from-[#0d1f3c] to-[#1A3461] text-white py-20 px-6">
+                  <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div>
+                      <span className="text-emerald-400 font-mono text-[10px] uppercase font-bold tracking-widest">Próximos pasos</span>
+                      <h2 className="text-2xl font-display font-black tracking-tight mt-2 leading-snug">
+                        Elegí tu plan e implementá en 5 días hábiles
+                      </h2>
+                      <p className="text-slate-300 text-xs mt-3 leading-relaxed max-w-md">
+                        Sin costos de setup ocultos. Sin contratos largos. Cancelás cuando querés. El equipo de Clientum te acompaña desde el primer día.
+                      </p>
+                      <div className="flex flex-wrap gap-3 mt-6">
+                        <button
+                          onClick={() => { setActiveTab("planes"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-xs uppercase tracking-wider px-6 py-3 rounded-lg transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-emerald-900/30"
+                        >
+                          Ver Planes y Precios <ArrowRight className="w-4 h-4" />
+                        </button>
+                        <button
+                          onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-lg border border-white/20 transition-all cursor-pointer"
+                        >
+                          Contactar un Asesor
+                        </button>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { value: "+200", label: "PyMEs implementadas" },
+                        { value: "5 días", label: "Tiempo de implementación" },
+                        { value: "24/7", label: "Soporte técnico" },
+                        { value: "2.147+", label: "Servicios en catálogo" },
+                      ].map(({ value, label }) => (
+                        <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
+                          <div className="text-2xl font-extrabold font-mono text-emerald-400 tracking-tight">{value}</div>
+                          <div className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">{label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+
                 {/* License Pricing Section (Licencia Personal vs Extendida) */}
                 <section className="bg-slate-100 py-20 px-6 border-t border-slate-200">
                   <div className="max-w-5xl mx-auto">
@@ -1172,6 +1444,174 @@ export default function PublicWebsite({
                       <div className="w-0 h-0 border-y-8 border-y-transparent border-l-12 border-l-white ml-1"></div>
                     </div>
                   </div>
+                </div>
+              </div>
+            )}
+
+            {/* CATÁLOGO COMPLETO DE SERVICIOS TAB */}
+            {activeTab === "catalogo" && (
+              <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-8">
+                <div className="text-center max-w-2xl mx-auto">
+                  <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">
+                    Catálogo completo · {ALL_SERVICES.length.toLocaleString("es-AR")} servicios
+                  </span>
+                  <h1 className="text-3xl md:text-4xl font-display font-black text-slate-950 tracking-tight mt-2">
+                    Todo lo que hacemos, en un solo lugar
+                  </h1>
+                  <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
+                    Filtrá por categoría o buscá por palabra clave. Cada servicio se cotiza según el alcance real del proyecto — los precios de referencia son orientativos.
+                  </p>
+                </div>
+
+                {/* Funciones & Soluciones — curated category shortcuts */}
+                <div>
+                  <h2 className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+                    Funciones y Soluciones de la Plataforma
+                  </h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {[
+                      { id: "chatbot", label: "Chatbot WhatsApp", desc: "Tu negocio atiende solo, las 24 horas", icon: Bot, color: "text-green-500 bg-green-50" },
+                      { id: "crm_inteligente", label: "CRM Inteligente", desc: "Nunca más perdas una venta", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
+                      { id: "asistente_ia", label: "Asistente IA", desc: "Tu analista de negocio, siempre disponible", icon: Sparkles, color: "text-violet-500 bg-violet-50" },
+                      { id: "reportes", label: "Reportes Automáticos", desc: "Tomá decisiones con datos reales", icon: BarChart2, color: "text-orange-500 bg-orange-50" },
+                      { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
+                      { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
+                      { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
+                      { id: "servicios", label: "Servicios", desc: "Consultoría de negocio y ERP personalizado", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
+                      { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
+                      { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
+                      { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" },
+                    ].map((item) => {
+                      const ItemIcon = item.icon;
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => {
+                            setActiveTab(item.id);
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                          className="text-left bg-white border border-slate-200 rounded-xl p-4 flex flex-col gap-2 hover:border-blue-300 hover:shadow-sm transition-all cursor-pointer"
+                        >
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}>
+                            <ItemIcon className="w-4 h-4" />
+                          </div>
+                          <span className="font-bold text-xs text-slate-950">{item.label}</span>
+                          <span className="text-[10px] text-slate-500 leading-snug">{item.desc}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Search + category filter */}
+                <div className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto w-full">
+                  <div className="relative flex-1">
+                    <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input
+                      type="text"
+                      value={catalogQuery}
+                      onChange={(e) => {
+                        setCatalogQuery(e.target.value);
+                        setCatalogPage(1);
+                      }}
+                      placeholder="Buscar servicio (ej: ERP, e-commerce, ciberseguridad)…"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+                    />
+                  </div>
+                  <select
+                    value={catalogCat}
+                    onChange={(e) => {
+                      setCatalogCat(e.target.value);
+                      setCatalogPage(1);
+                    }}
+                    className="px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 sm:w-64 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+                  >
+                    <option value="">Todas las categorías</option>
+                    {SERVICE_CATEGORIES.map((c) => (
+                      <option key={c.name} value={c.name}>
+                        {c.name} ({c.count})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <p className="text-center text-xs text-slate-400 font-mono">
+                  {filteredCatalog.length.toLocaleString("es-AR")} resultado{filteredCatalog.length === 1 ? "" : "s"}
+                </p>
+
+                {/* Results grid */}
+                {catalogPageItems.length === 0 ? (
+                  <p className="text-center text-slate-400 text-sm py-10">
+                    No encontramos servicios para tu búsqueda. Probá con otra palabra o categoría.
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {catalogPageItems.map((s) => (
+                      <div key={s.id} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col gap-3">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full self-start">
+                          {s.cat || "General"}
+                        </span>
+                        <h3 className="font-bold text-sm text-slate-950 leading-snug">{s.name}</h3>
+                        {s.desc && <p className="text-[11px] text-slate-500 leading-relaxed">{s.desc}</p>}
+                        <div className="flex items-center justify-between mt-auto pt-2 border-t border-slate-100">
+                          <span className="text-xs font-bold text-slate-700">
+                            {(() => {
+                              const n = Number((s.price || "").replace(",", "."));
+                              return Number.isFinite(n) && n > 0
+                                ? `Desde ${n.toLocaleString("es-AR")}`
+                                : "Cotización a medida";
+                            })()}
+                          </span>
+                          <button
+                            onClick={() => {
+                              setActiveTab("contacto");
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                            className="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                          >
+                            Consultar <ArrowRight className="w-3 h-3" />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Pagination */}
+                {catalogTotalPages > 1 && (
+                  <div className="flex items-center justify-center gap-2 flex-wrap">
+                    <button
+                      disabled={catalogPage <= 1}
+                      onClick={() => setCatalogPage((p) => Math.max(1, p - 1))}
+                      className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                    >
+                      ← Anterior
+                    </button>
+                    <span className="text-xs text-slate-500 font-mono px-2">
+                      Página {catalogPage} de {catalogTotalPages}
+                    </span>
+                    <button
+                      disabled={catalogPage >= catalogTotalPages}
+                      onClick={() => setCatalogPage((p) => Math.min(catalogTotalPages, p + 1))}
+                      className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                    >
+                      Siguiente →
+                    </button>
+                  </div>
+                )}
+
+                <div className="bg-[#1A3461] rounded-2xl p-10 text-center text-white">
+                  <h2 className="text-xl font-display font-black">¿No encontrás lo que necesitás?</h2>
+                  <p className="text-blue-100 text-xs mt-2 mb-5">Armamos algo a medida para tu negocio.</p>
+                  <button
+                    onClick={() => {
+                      setActiveTab("contacto");
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs px-6 py-3 rounded-lg uppercase tracking-wider cursor-pointer"
+                  >
+                    Contanos tu caso →
+                  </button>
                 </div>
               </div>
             )}
@@ -1702,6 +2142,76 @@ export default function PublicWebsite({
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Full LMS course catalog */}
+                <div className="border-t border-slate-200 pt-10 flex flex-col gap-6">
+                  <div className="text-center max-w-xl mx-auto">
+                    <span className="text-indigo-600 font-mono text-xs uppercase tracking-widest font-bold">
+                      Catálogo completo · {ALL_COURSES.length.toLocaleString("es-AR")} cursos
+                    </span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-1">
+                      Explorá todo nuestro campus virtual
+                    </h2>
+                  </div>
+
+                  <div className="relative max-w-xl mx-auto w-full">
+                    <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <input
+                      type="text"
+                      value={coursesQuery}
+                      onChange={(e) => {
+                        setCoursesQuery(e.target.value);
+                        setCoursesPage(1);
+                      }}
+                      placeholder="Buscar curso (ej: marketing, ventas, finanzas)…"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:border-indigo-300"
+                    />
+                  </div>
+
+                  <p className="text-center text-xs text-slate-400 font-mono">
+                    {filteredCourses.length.toLocaleString("es-AR")} curso{filteredCourses.length === 1 ? "" : "s"} encontrado{filteredCourses.length === 1 ? "" : "s"}
+                  </p>
+
+                  {coursesPageItems.length === 0 ? (
+                    <p className="text-center text-slate-400 text-sm py-8">
+                      No encontramos cursos para tu búsqueda.
+                    </p>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {coursesPageItems.map((c) => (
+                        <div key={c.id} className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col gap-2">
+                          <div className="w-8 h-8 bg-indigo-50 text-indigo-600 rounded-lg flex items-center justify-center">
+                            <BookOpen className="w-4 h-4" />
+                          </div>
+                          <h4 className="font-bold text-xs text-slate-950 leading-snug">{c.title}</h4>
+                          {c.excerpt && <p className="text-[11px] text-slate-500 leading-relaxed">{c.excerpt}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {coursesTotalPages > 1 && (
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        disabled={coursesPage <= 1}
+                        onClick={() => setCoursesPage((p) => Math.max(1, p - 1))}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                      >
+                        ← Anterior
+                      </button>
+                      <span className="text-xs text-slate-500 font-mono px-2">
+                        Página {coursesPage} de {coursesTotalPages}
+                      </span>
+                      <button
+                        disabled={coursesPage >= coursesTotalPages}
+                        onClick={() => setCoursesPage((p) => Math.min(coursesTotalPages, p + 1))}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                      >
+                        Siguiente →
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {/* Student Testimonials */}

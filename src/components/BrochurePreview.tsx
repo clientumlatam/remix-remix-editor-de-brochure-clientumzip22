@@ -784,8 +784,10 @@ export default function BrochurePreview({
                 </div>
               )}
 
-              {/* 5 Pricing Cards (Fulfilling the 5 plans with all services included requirement) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-stretch">
+              {/* Pricing Cards — one per service. Column count adapts so cards wrap into even
+                  rows instead of leaving an orphan row with a single item (e.g. 8 services
+                  now fills two full rows of 4 instead of 5 + 3). */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-stretch">
                 {data.services[0]?.price !== undefined ? (
                   data.services.map((serv, idx) => {
                     const hasSetup = serv.price !== undefined;

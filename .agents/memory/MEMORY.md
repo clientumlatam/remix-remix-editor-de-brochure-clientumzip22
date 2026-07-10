@@ -1,0 +1,2 @@
+- [Brochure PDF export](brochure-pdf-export.md) — PDF must be captured from the live DOM preview, not hand-drawn separately, or it silently drifts from the on-screen design.
+- [Session role staleness](session-role-staleness.md) — role changes made directly in the DB don't propagate to already-logged-in sessions unless the read path re-queries the DB.
