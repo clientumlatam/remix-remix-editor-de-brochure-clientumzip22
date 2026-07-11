@@ -98,6 +98,59 @@ class CAP_REST_API {
             [ 'methods' => 'GET', 'callback' => [ __CLASS__, 'apikey_get' ],  'permission_callback' => [ __CLASS__, 'require_auth' ] ],
             [ 'methods' => 'POST','callback' => [ __CLASS__, 'apikey_save' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
         ] );
+
+        /* ── Enrich contact (Hunter.io) ───────────────────────────────────── */
+        register_rest_route( self::NS, '/enrich-contact', [
+            'methods'             => 'POST',
+            'callback'            => [ __CLASS__, 'enrich_contact' ],
+            'permission_callback' => [ __CLASS__, 'require_auth' ],
+        ] );
+
+        /* ── Products (Productos) ──────────────────────────────────────── */
+        register_rest_route( self::NS, '/products', [
+            [ 'methods' => 'GET',  'callback' => [ __CLASS__, 'products_list' ],   'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'POST', 'callback' => [ __CLASS__, 'products_create' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+        register_rest_route( self::NS, '/products/(?P<id>\d+)', [
+            [ 'methods' => 'PUT',    'callback' => [ __CLASS__, 'products_update' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'DELETE', 'callback' => [ __CLASS__, 'products_delete' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+
+        /* ── Sellers (Vendedores) ─────────────────────────────────────────── */
+        register_rest_route( self::NS, '/sellers', [
+            [ 'methods' => 'GET',  'callback' => [ __CLASS__, 'sellers_list' ],   'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'POST', 'callback' => [ __CLASS__, 'sellers_create' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+        register_rest_route( self::NS, '/sellers/(?P<id>\d+)', [
+            [ 'methods' => 'PUT',    'callback' => [ __CLASS__, 'sellers_update' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'DELETE', 'callback' => [ __CLASS__, 'sellers_delete' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+
+        /* ── Branches (Sucursales) ────────────────────────────────────────── */
+        register_rest_route( self::NS, '/branches', [
+            [ 'methods' => 'GET',  'callback' => [ __CLASS__, 'branches_list' ],   'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'POST', 'callback' => [ __CLASS__, 'branches_create' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+        register_rest_route( self::NS, '/branches/(?P<id>\d+)', [
+            [ 'methods' => 'PUT',    'callback' => [ __CLASS__, 'branches_update' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'DELETE', 'callback' => [ __CLASS__, 'branches_delete' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+
+        /* ── Conversations (Bot WhatsApp) ────────────────────────────────── */
+        register_rest_route( self::NS, '/conversations', [
+            [ 'methods' => 'GET',  'callback' => [ __CLASS__, 'conversations_list' ],   'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'POST', 'callback' => [ __CLASS__, 'conversations_create' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+        register_rest_route( self::NS, '/conversations/(?P<id>\d+)', [
+            [ 'methods' => 'PUT',    'callback' => [ __CLASS__, 'conversations_update' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'DELETE', 'callback' => [ __CLASS__, 'conversations_delete' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
+
+        /* ── Bot settings ───────────────────────────────────────────────── */
+        register_rest_route( self::NS, '/bot-settings', [
+            [ 'methods' => 'GET',  'callback' => [ __CLASS__, 'bot_settings_get' ],  'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+            [ 'methods' => 'POST', 'callback' => [ __CLASS__, 'bot_settings_save' ], 'permission_callback' => [ __CLASS__, 'require_auth' ] ],
+        ] );
     }
 
     /* ════════════════════════════════════════════════════════════════════════
@@ -201,6 +254,7 @@ class CAP_REST_API {
             'meddic'               => CAP_AI_Handler::handle_meddic( $payload ),
             'outreach'             => CAP_AI_Handler::handle_outreach( $payload ),
             'copilot'              => CAP_AI_Handler::handle_copilot( $payload ),
+            'prospectLeads'        => CAP_AI_Handler::handle_prospect_leads( $payload ),
             default                => new WP_Error( 'unknown_action', "Acción desconocida: $action" ),
         };
 
@@ -209,7 +263,7 @@ class CAP_REST_API {
         $text = $result['text'] ?? '';
 
         // Si esperamos JSON, intentar parsear
-        $json_actions = [ 'generateIndustryCopy', 'translateBrochure', 'icp', 'meddic', 'outreach' ];
+        $json_actions = [ 'generateIndustryCopy', 'translateBrochure', 'icp', 'meddic', 'outreach', 'prospectLeads' ];
         if ( in_array( $action, $json_actions, true ) ) {
             $parsed = json_decode( $text, true );
             if ( $parsed !== null ) return self::ok( [ 'result' => $parsed ] );
@@ -234,6 +288,60 @@ class CAP_REST_API {
         if ( is_wp_error( $result ) ) return self::wp_err( $result, 500 );
 
         return self::ok( [ 'places' => $result ] );
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       ENRICH CONTACT (Hunter.io)
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function enrich_contact( WP_REST_Request $req ) {
+        $body   = $req->get_json_params();
+        $domain = sanitize_text_field( $body['domain'] ?? '' );
+        if ( ! $domain ) return self::error( 'domain requerido', 400 );
+
+        $api_key = get_option( 'cap_hunter_api_key', '' );
+        if ( empty( $api_key ) ) {
+            return self::ok( [ 'contacts' => [], 'organization' => null, 'source' => 'none' ] );
+        }
+
+        $clean = strtolower( trim( preg_replace( '#^https?://(www\.)?#', '', $domain ) ) );
+        $clean = explode( '/', $clean )[0];
+        $clean = explode( '?', $clean )[0];
+        if ( strlen( $clean ) < 3 ) {
+            return self::ok( [ 'contacts' => [], 'organization' => null, 'source' => 'none' ] );
+        }
+
+        $url = 'https://api.hunter.io/v2/domain-search?domain=' . rawurlencode( $clean )
+             . '&limit=5&api_key=' . rawurlencode( $api_key );
+
+        $response = wp_remote_get( $url, [ 'timeout' => 8 ] );
+        if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
+            return self::ok( [ 'contacts' => [], 'organization' => null, 'source' => 'none' ] );
+        }
+
+        $data = json_decode( wp_remote_retrieve_body( $response ), true );
+        if ( empty( $data['data'] ) ) {
+            return self::ok( [ 'contacts' => [], 'organization' => null, 'source' => 'none' ] );
+        }
+
+        $emails   = $data['data']['emails'] ?? [];
+        $contacts = [];
+        foreach ( $emails as $e ) {
+            if ( empty( $e['first_name'] ) && empty( $e['last_name'] ) ) continue;
+            $contacts[] = [
+                'name'       => trim( ( $e['first_name'] ?? '' ) . ' ' . ( $e['last_name'] ?? '' ) ),
+                'email'      => $e['value'] ?? '',
+                'position'   => $e['position'] ?? 'Contacto',
+                'confidence' => $e['confidence'] ?? 0,
+                'linkedin'   => $e['linkedin'] ?? null,
+            ];
+        }
+
+        return self::ok( [
+            'contacts'     => $contacts,
+            'organization' => $data['data']['organization'] ?? null,
+            'source'       => 'hunter',
+        ] );
     }
 
     /* ════════════════════════════════════════════════════════════════════════
@@ -543,6 +651,229 @@ class CAP_REST_API {
         $id  = intval( $req['id'] );
         $wpdb->delete( "{$wpdb->prefix}cap_leads", [ 'id' => $id, 'user_id' => $uid ] );
         return self::ok( [ 'deleted' => true ] );
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       PRODUCTS (Catálogo)
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function products_list( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $rows = $wpdb->get_results( $wpdb->prepare(
+            "SELECT * FROM {$wpdb->prefix}cap_products WHERE user_id = %d ORDER BY category ASC, code ASC",
+            $uid
+        ), ARRAY_A );
+        return self::ok( [ 'products' => $rows ] );
+    }
+
+    public static function products_create( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $data = self::sanitize_product( $req->get_json_params(), $uid );
+        $wpdb->insert( "{$wpdb->prefix}cap_products", $data );
+        return self::ok( [ 'product' => array_merge( $data, [ 'id' => $wpdb->insert_id ] ) ], 201 );
+    }
+
+    public static function products_update( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $id   = intval( $req['id'] );
+        $data = self::sanitize_product( $req->get_json_params(), $uid );
+        $wpdb->update( "{$wpdb->prefix}cap_products", $data, [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'product' => array_merge( $data, [ 'id' => $id ] ) ] );
+    }
+
+    public static function products_delete( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid = get_current_user_id();
+        $id  = intval( $req['id'] );
+        $wpdb->delete( "{$wpdb->prefix}cap_products", [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'deleted' => true ] );
+    }
+
+    private static function sanitize_product( array $b, int $uid ): array {
+        return [
+            'user_id'     => $uid,
+            'code'        => sanitize_text_field( $b['code']        ?? '' ),
+            'name'        => sanitize_text_field( $b['name']        ?? '' ),
+            'price'       => isset( $b['price'] ) && $b['price'] !== '' ? floatval( $b['price'] ) : null,
+            'category'    => sanitize_text_field( $b['category']    ?? '' ),
+            'subcategory' => sanitize_text_field( $b['subcategory'] ?? '' ),
+            'unit'        => sanitize_text_field( $b['unit']        ?? '' ),
+            'active'      => ! isset( $b['active'] ) || $b['active'] ? 1 : 0,
+        ];
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       SELLERS (Vendedores)
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function sellers_list( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $rows = $wpdb->get_results( $wpdb->prepare(
+            "SELECT * FROM {$wpdb->prefix}cap_sellers WHERE user_id = %d ORDER BY name ASC",
+            $uid
+        ), ARRAY_A );
+        return self::ok( [ 'sellers' => $rows ] );
+    }
+
+    public static function sellers_create( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $data = self::sanitize_seller( $req->get_json_params(), $uid );
+        $wpdb->insert( "{$wpdb->prefix}cap_sellers", $data );
+        return self::ok( [ 'seller' => array_merge( $data, [ 'id' => $wpdb->insert_id ] ) ], 201 );
+    }
+
+    public static function sellers_update( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $id   = intval( $req['id'] );
+        $data = self::sanitize_seller( $req->get_json_params(), $uid );
+        $wpdb->update( "{$wpdb->prefix}cap_sellers", $data, [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'seller' => array_merge( $data, [ 'id' => $id ] ) ] );
+    }
+
+    public static function sellers_delete( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid = get_current_user_id();
+        $id  = intval( $req['id'] );
+        $wpdb->delete( "{$wpdb->prefix}cap_sellers", [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'deleted' => true ] );
+    }
+
+    private static function sanitize_seller( array $b, int $uid ): array {
+        return [
+            'user_id'   => $uid,
+            'name'      => sanitize_text_field( $b['name']      ?? '' ),
+            'phone'     => sanitize_text_field( $b['phone']     ?? '' ),
+            'email'     => sanitize_email( $b['email']          ?? '' ),
+            'specialty' => sanitize_text_field( $b['specialty'] ?? 'general' ),
+            'branch'    => sanitize_text_field( $b['branch']    ?? '' ),
+            'active'    => ! isset( $b['active'] ) || $b['active'] ? 1 : 0,
+        ];
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       BRANCHES (Sucursales)
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function branches_list( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $rows = $wpdb->get_results( $wpdb->prepare(
+            "SELECT * FROM {$wpdb->prefix}cap_branches WHERE user_id = %d ORDER BY name ASC",
+            $uid
+        ), ARRAY_A );
+        return self::ok( [ 'branches' => $rows ] );
+    }
+
+    public static function branches_create( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $data = self::sanitize_branch( $req->get_json_params(), $uid );
+        $wpdb->insert( "{$wpdb->prefix}cap_branches", $data );
+        return self::ok( [ 'branch' => array_merge( $data, [ 'id' => $wpdb->insert_id ] ) ], 201 );
+    }
+
+    public static function branches_update( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $id   = intval( $req['id'] );
+        $data = self::sanitize_branch( $req->get_json_params(), $uid );
+        $wpdb->update( "{$wpdb->prefix}cap_branches", $data, [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'branch' => array_merge( $data, [ 'id' => $id ] ) ] );
+    }
+
+    public static function branches_delete( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid = get_current_user_id();
+        $id  = intval( $req['id'] );
+        $wpdb->delete( "{$wpdb->prefix}cap_branches", [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'deleted' => true ] );
+    }
+
+    private static function sanitize_branch( array $b, int $uid ): array {
+        return [
+            'user_id'  => $uid,
+            'name'     => sanitize_text_field( $b['name']     ?? '' ),
+            'address'  => sanitize_text_field( $b['address']  ?? '' ),
+            'city'     => sanitize_text_field( $b['city']     ?? '' ),
+            'phone'    => sanitize_text_field( $b['phone']    ?? '' ),
+            'schedule' => sanitize_text_field( $b['schedule'] ?? '' ),
+            'active'   => ! isset( $b['active'] ) || $b['active'] ? 1 : 0,
+        ];
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       CONVERSATIONS (Bot WhatsApp)
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function conversations_list( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $rows = $wpdb->get_results( $wpdb->prepare(
+            "SELECT * FROM {$wpdb->prefix}cap_conversations WHERE user_id = %d ORDER BY created_date DESC LIMIT 200",
+            $uid
+        ), ARRAY_A );
+        return self::ok( [ 'conversations' => $rows ] );
+    }
+
+    public static function conversations_create( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $data = self::sanitize_conversation( $req->get_json_params(), $uid );
+        $wpdb->insert( "{$wpdb->prefix}cap_conversations", $data );
+        return self::ok( [ 'conversation' => array_merge( $data, [ 'id' => $wpdb->insert_id ] ) ], 201 );
+    }
+
+    public static function conversations_update( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid  = get_current_user_id();
+        $id   = intval( $req['id'] );
+        $data = self::sanitize_conversation( $req->get_json_params(), $uid );
+        $wpdb->update( "{$wpdb->prefix}cap_conversations", $data, [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'conversation' => array_merge( $data, [ 'id' => $id ] ) ] );
+    }
+
+    public static function conversations_delete( WP_REST_Request $req ) {
+        global $wpdb;
+        $uid = get_current_user_id();
+        $id  = intval( $req['id'] );
+        $wpdb->delete( "{$wpdb->prefix}cap_conversations", [ 'id' => $id, 'user_id' => $uid ] );
+        return self::ok( [ 'deleted' => true ] );
+    }
+
+    private static function sanitize_conversation( array $b, int $uid ): array {
+        return [
+            'user_id'         => $uid,
+            'customer_name'   => sanitize_text_field( $b['customer_name']   ?? '' ),
+            'customer_phone'  => sanitize_text_field( $b['customer_phone']  ?? '' ),
+            'channel'         => sanitize_text_field( $b['channel']         ?? 'whatsapp' ),
+            'status'          => sanitize_text_field( $b['status']         ?? 'activa' ),
+            'query_type'      => sanitize_text_field( $b['query_type']     ?? 'otro' ),
+            'summary'         => sanitize_textarea_field( $b['summary']    ?? '' ),
+            'assigned_seller' => sanitize_text_field( $b['assigned_seller'] ?? '' ),
+        ];
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       BOT SETTINGS
+    ════════════════════════════════════════════════════════════════════════ */
+
+    public static function bot_settings_get( WP_REST_Request $req ) {
+        $uid      = get_current_user_id();
+        $settings = get_user_meta( $uid, 'cap_bot_settings', true );
+        return self::ok( [ 'settings' => $settings ?: new stdClass() ] );
+    }
+
+    public static function bot_settings_save( WP_REST_Request $req ) {
+        $uid  = get_current_user_id();
+        $body = $req->get_json_params();
+        update_user_meta( $uid, 'cap_bot_settings', $body );
+        return self::ok( [ 'settings' => $body ] );
     }
 
     /* ════════════════════════════════════════════════════════════════════════

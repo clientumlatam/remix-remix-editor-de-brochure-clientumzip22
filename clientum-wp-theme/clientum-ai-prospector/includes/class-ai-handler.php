@@ -167,4 +167,58 @@ class CAP_AI_Handler {
 
         return self::generate( $prompt );
     }
+
+    /* ── Patagonia Explorer: prospección de leads ─────────────────────────── */
+
+    public static function handle_prospect_leads( array $payload ) {
+        $city     = sanitize_text_field( $payload['city']     ?? '' );
+        $industry = sanitize_text_field( $payload['industry'] ?? '' );
+        if ( ! $city || ! $industry ) return new WP_Error( 'missing_params', 'city e industry requeridos' );
+
+        // 1) Apify Google Maps scraper (datos reales o demo si no hay token)
+        $query   = "{$industry} en {$city}";
+        $scraped = CAP_Scraper::scrape_places( $query, 20, 'es' );
+        if ( ! is_wp_error( $scraped ) && ! empty( $scraped ) ) {
+            $is_demo   = ! empty( $scraped[0]['_demo'] );
+            $prospects = array_map( function ( $place ) use ( $city, $industry ) {
+                $website    = $place['website'] ?? '';
+                $rating     = $place['rating']  ?? 0;
+                $phone      = $place['phone']   ?: 'Sin teléfono';
+                $pain_point = 'Falta de automatización en la respuesta de consultas comerciales.';
+                $score      = 7;
+                if ( ! $website ) {
+                    $pain_point = 'No cuenta con página web institucional ni catálogo digital.';
+                    $score = 9;
+                } elseif ( $rating && $rating < 4.2 ) {
+                    $pain_point = "Calificación de {$rating} estrellas en Google Maps por demoras en atención.";
+                    $score = 8;
+                }
+                return [
+                    'company'      => $place['name'] ?? 'Empresa sin nombre',
+                    'industry'     => $industry,
+                    'amount'       => 180000,
+                    'city'         => $city,
+                    'address'      => $place['address'] ?: "Dirección en {$city}",
+                    'phone'        => $phone,
+                    'contact'      => null,
+                    'painPoint'    => $pain_point,
+                    'score'        => $score,
+                    'guiacoresUrl' => 'https://www.google.com/search?q=' . rawurlencode( ( $place['name'] ?? '' ) . ' ' . $city ),
+                    'rating'       => $rating,
+                    'website'      => $website,
+                ];
+            }, $scraped );
+
+            return [ 'text' => wp_json_encode( [ 'prospects' => $prospects ] ), 'isRealScraped' => ! $is_demo ];
+        }
+
+        // 2) Fallback: buscarlos vía Gemini con Google Search grounding
+        $prompt = "Actúa como un agente experto en prospección de datos reales (sales intelligence) en Argentina. "
+            . "Busca 10 empresas reales en la ciudad de '{$city}' del rubro '{$industry}'. "
+            . "Para cada una devolvé: company, industry, amount (monto mensual estimado en ARS entre 120000 y 480000), "
+            . "city, address, phone, contact, painPoint, score (0-10), guiacoresUrl. "
+            . "Devuelve exclusivamente un JSON con la forma { \"prospects\": [ ... ] }, sin markdown.";
+
+        return self::generate( $prompt, true );
+    }
 }

@@ -37,6 +37,7 @@ class CAP_Admin {
         register_setting( 'cap_settings_group', 'cap_gemini_api_key',    [ 'sanitize_callback' => 'sanitize_text_field' ] );
         register_setting( 'cap_settings_group', 'cap_apify_token',       [ 'sanitize_callback' => 'sanitize_text_field' ] );
         register_setting( 'cap_settings_group', 'cap_maps_api_key',      [ 'sanitize_callback' => 'sanitize_text_field' ] );
+        register_setting( 'cap_settings_group', 'cap_hunter_api_key',    [ 'sanitize_callback' => 'sanitize_text_field' ] );
         register_setting( 'cap_settings_group', 'cap_app_page_id',       [ 'sanitize_callback' => 'absint' ] );
         register_setting( 'cap_settings_group', 'cap_allow_registration',[ 'sanitize_callback' => 'absint', 'default' => 1 ] );
 
@@ -51,6 +52,9 @@ class CAP_Admin {
 
         add_settings_field( 'cap_maps_api_key', 'Google Maps API Key (opcional)',
             [ __CLASS__, 'field_maps' ], 'clientum-prospector-settings', 'cap_api_section' );
+
+        add_settings_field( 'cap_hunter_api_key', 'Hunter.io API Key (Enriquecer contactos)',
+            [ __CLASS__, 'field_hunter' ], 'clientum-prospector-settings', 'cap_api_section' );
 
         /* ── Sección: App ──────────────────────────────────────────────── */
         add_settings_section( 'cap_app_section', '⚙️ Configuración de la App', null, 'clientum-prospector-settings' );
@@ -80,6 +84,12 @@ class CAP_Admin {
         $val = get_option( 'cap_maps_api_key', '' );
         echo '<input type="password" name="cap_maps_api_key" value="' . esc_attr( $val ) . '" class="regular-text" />';
         echo '<p class="description">Opcional. Para mostrar mapa interactivo en Patagonia Explorer.</p>';
+    }
+
+    public static function field_hunter() {
+        $val = get_option( 'cap_hunter_api_key', '' );
+        echo '<input type="password" name="cap_hunter_api_key" value="' . esc_attr( $val ) . '" class="regular-text" />';
+        echo '<p class="description">Obtené tu key en <a href="https://hunter.io/api-keys" target="_blank">Hunter.io</a>. Se usa para buscar contactos por dominio en el CRM Pipeline.</p>';
     }
 
     public static function field_app_page() {
@@ -141,6 +151,12 @@ class CAP_Admin {
                         <li><code>GET|POST /wp-json/clientum/v1/activities</code></li>
                         <li><code>GET|POST /wp-json/clientum/v1/templates</code></li>
                         <li><code>GET|POST /wp-json/clientum/v1/leads</code></li>
+                        <li><code>GET|POST /wp-json/clientum/v1/products</code></li>
+                        <li><code>GET|POST /wp-json/clientum/v1/sellers</code></li>
+                        <li><code>GET|POST /wp-json/clientum/v1/branches</code></li>
+                        <li><code>GET|POST /wp-json/clientum/v1/conversations</code></li>
+                        <li><code>GET|POST /wp-json/clientum/v1/bot-settings</code></li>
+                        <li><code>POST /wp-json/clientum/v1/enrich-contact</code></li>
                     </ul>
                     <hr>
                     <h3>📊 Estado</h3>
@@ -162,7 +178,7 @@ class CAP_Admin {
         $js_exists  = file_exists( CAP_PLUGIN_DIR . 'assets/js/clientum-prospector.js' );
         $css_exists = file_exists( CAP_PLUGIN_DIR . 'assets/css/clientum-prospector.css' );
 
-        $tables = [ 'cap_deals', 'cap_activities', 'cap_contacts', 'cap_templates', 'cap_api_keys', 'cap_leads' ];
+        $tables = [ 'cap_deals', 'cap_activities', 'cap_contacts', 'cap_templates', 'cap_api_keys', 'cap_leads', 'cap_products', 'cap_sellers', 'cap_branches', 'cap_conversations' ];
 
         function check( $ok ) { return $ok ? '✅' : '❌'; }
         ?>
