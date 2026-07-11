@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot } from 'lucide-react';
+import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot, Database } from 'lucide-react';
 import CrmFullDashboard from './CrmFullDashboard';
 import CrmFullPipeline from './CrmFullPipeline';
 import CrmFullProducts from './CrmFullProducts';
@@ -7,6 +7,7 @@ import CrmFullSellers from './CrmFullSellers';
 import CrmFullBranches from './CrmFullBranches';
 import CrmFullConversations from './CrmFullConversations';
 import CrmFullBotConfig from './CrmFullBotConfig';
+import CrmFullCMDB from './CrmFullCMDB';
 import { Conversation, Seller, Branch, Product } from './crmTypes';
 import {
   initialConversations,
@@ -15,7 +16,7 @@ import {
   initialProducts,
 } from './crmInitialData';
 
-type SubTab = 'dashboard' | 'crm' | 'products' | 'sellers' | 'branches' | 'conversations' | 'bot';
+type SubTab = 'dashboard' | 'crm' | 'products' | 'sellers' | 'branches' | 'conversations' | 'bot' | 'cmdb';
 
 const tabs: { id: SubTab; label: string; icon: React.ReactNode }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
@@ -25,6 +26,7 @@ const tabs: { id: SubTab; label: string; icon: React.ReactNode }[] = [
   { id: 'branches', label: 'Sucursales', icon: <Building2 className="w-4 h-4" /> },
   { id: 'conversations', label: 'Conversaciones', icon: <MessageSquare className="w-4 h-4" /> },
   { id: 'bot', label: 'Bot', icon: <Bot className="w-4 h-4" /> },
+  { id: 'cmdb', label: 'Infraestructura', icon: <Database className="w-4 h-4" /> },
 ];
 
 function loadOrDefault<T>(key: string, defaultValue: T): T {
@@ -115,6 +117,8 @@ export default function CrmFullApp({ activeTabOverride, hideNav = false }: CrmFu
         return <CrmFullConversations conversations={conversations} />;
       case 'bot':
         return <CrmFullBotConfig />;
+      case 'cmdb':
+        return <CrmFullCMDB />;
       default:
         return null;
     }
