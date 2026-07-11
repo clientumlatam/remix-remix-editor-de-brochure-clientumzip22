@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 class CAP_Database {
 
-    const DB_VERSION = '1.0';
+    const DB_VERSION = '1.1';
     const OPTION_KEY = 'cap_db_version';
 
     public static function install() {
@@ -112,6 +112,74 @@ class CAP_Database {
             meddic_data LONGTEXT,
             status      VARCHAR(50)  NOT NULL DEFAULT 'new',
             created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (id),
+            KEY user_id (user_id),
+            KEY status (status)
+        ) $charset;" );
+
+        /* ── products (Productos) ──────────────────────────────────────────── */
+        dbDelta( "CREATE TABLE {$wpdb->prefix}cap_products (
+            id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id     BIGINT UNSIGNED NOT NULL DEFAULT 0,
+            code        VARCHAR(100) NOT NULL DEFAULT '',
+            name        VARCHAR(255) NOT NULL DEFAULT '',
+            price       DECIMAL(14,2) DEFAULT NULL,
+            category    VARCHAR(150) NOT NULL DEFAULT '',
+            subcategory VARCHAR(150) NOT NULL DEFAULT '',
+            unit        VARCHAR(50)  NOT NULL DEFAULT '',
+            active      TINYINT(1)   NOT NULL DEFAULT 1,
+            created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY (id),
+            KEY user_id (user_id),
+            KEY category (category)
+        ) $charset;" );
+
+        /* ── sellers (Vendedores) ───────────────────────────────────────────── */
+        dbDelta( "CREATE TABLE {$wpdb->prefix}cap_sellers (
+            id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id     BIGINT UNSIGNED NOT NULL DEFAULT 0,
+            name        VARCHAR(255) NOT NULL DEFAULT '',
+            phone       VARCHAR(80)  NOT NULL DEFAULT '',
+            email       VARCHAR(255) NOT NULL DEFAULT '',
+            specialty   VARCHAR(50)  NOT NULL DEFAULT 'general',
+            branch      VARCHAR(255) NOT NULL DEFAULT '',
+            active      TINYINT(1)   NOT NULL DEFAULT 1,
+            created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY (id),
+            KEY user_id (user_id)
+        ) $charset;" );
+
+        /* ── branches (Sucursales) ────────────────────────────────────────── */
+        dbDelta( "CREATE TABLE {$wpdb->prefix}cap_branches (
+            id          BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id     BIGINT UNSIGNED NOT NULL DEFAULT 0,
+            name        VARCHAR(255) NOT NULL DEFAULT '',
+            address     VARCHAR(500) NOT NULL DEFAULT '',
+            city        VARCHAR(150) NOT NULL DEFAULT '',
+            phone       VARCHAR(80)  NOT NULL DEFAULT '',
+            schedule    VARCHAR(500) NOT NULL DEFAULT '',
+            active      TINYINT(1)   NOT NULL DEFAULT 1,
+            created_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY (id),
+            KEY user_id (user_id)
+        ) $charset;" );
+
+        /* ── conversations (WhatsApp bot) ────────────────────────────────── */
+        dbDelta( "CREATE TABLE {$wpdb->prefix}cap_conversations (
+            id              BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            user_id         BIGINT UNSIGNED NOT NULL DEFAULT 0,
+            customer_name   VARCHAR(255) NOT NULL DEFAULT '',
+            customer_phone  VARCHAR(80)  NOT NULL DEFAULT '',
+            channel         VARCHAR(50)  NOT NULL DEFAULT 'whatsapp',
+            status          VARCHAR(50)  NOT NULL DEFAULT 'activa',
+            query_type      VARCHAR(50)  NOT NULL DEFAULT 'otro',
+            summary         TEXT,
+            assigned_seller VARCHAR(255) NOT NULL DEFAULT '',
+            created_date    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            updated_at      DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
             PRIMARY KEY (id),
             KEY user_id (user_id),
             KEY status (status)
