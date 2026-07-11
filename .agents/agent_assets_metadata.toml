@@ -18,3 +18,9 @@ id = "USlQsU4lzmByWmVCgwDeg"
 uri = "file://clientum-wp-theme/clientum-theme-content.xml"
 type = "unspecified"
 title = "Clientum — Contenido para importar (WXR)"
+
+[[outputs]]
+id = "e93cNHLdkpwG_HG_tlxFX"
+uri = "file://clientum-paginas-sitio-web.csv"
+type = "table"
+title = "Clientum – Contenido de páginas del sitio web"
