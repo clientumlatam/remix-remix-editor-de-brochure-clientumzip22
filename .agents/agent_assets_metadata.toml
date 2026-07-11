@@ -24,3 +24,9 @@ id = "e93cNHLdkpwG_HG_tlxFX"
 uri = "file://clientum-paginas-sitio-web.csv"
 type = "table"
 title = "Clientum – Contenido de páginas del sitio web"
+
+[[outputs]]
+id = "s6amMwnNd1RRLvGNNrZS1"
+uri = "file://clientum-ai-client-prospector.csv"
+type = "table"
+title = "Clientum — AI Client Prospector (CSV)"
