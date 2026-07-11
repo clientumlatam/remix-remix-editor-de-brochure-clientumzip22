@@ -62,6 +62,138 @@ get_header(); ?>
   </div>
 </section>
 
+<!-- ─── INFO BLOCKS ───────────────────────────────────────────── -->
+<div class="info-block">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+    <div class="info-block-content">
+      <span class="section-label">Enfoque de Negocios</span>
+      <h2>Enfocate en lo estratégico, nosotros automatizamos el resto</h2>
+      <p>Olvidate de perseguir cobros, actualizar stocks en tres planillas distintas y procesar pedidos manuales. Conectamos tus bases con sistemas automáticos para que tu equipo rinda al máximo.</p>
+      <a href="<?php echo esc_url(home_url('/servicios')); ?>" class="btn btn-primary" style="margin-top:8px">Ver Herramientas E-commerce</a>
+    </div>
+    <div class="info-visual">
+      <div class="info-visual-inner">
+        <div class="info-visual-icon">⚙️</div>
+        <div class="info-visual-title">Automatización de procesos</div>
+        <div class="info-visual-sub">Pedidos, cobros y stock sin intervención manual</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="info-block">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+    <div class="info-visual" style="order:1">
+      <div class="info-visual-inner">
+        <div class="info-visual-icon">📊</div>
+        <div class="info-visual-title">Dashboards en tiempo real</div>
+        <div class="info-visual-sub">Márgenes, costos y cuellos de botella a la vista</div>
+      </div>
+    </div>
+    <div class="info-block-content" style="order:2">
+      <span class="section-label">Medición &amp; BI</span>
+      <h2>Medir es conocer: Inteligencia de Negocios accionable</h2>
+      <p>Nuestras implementaciones ERP te brindan dashboards limpios en tiempo real. Visualizá qué productos te generan mejor margen de ganancia, cuál es el costo real de tus adquisiciones y dónde hay cuellos de botella.</p>
+      <a href="<?php echo esc_url(home_url('/planes')); ?>" class="btn btn-outline" style="margin-top:8px">Ver Planes de Implementación</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CULTURA CORPORATIVA ────────────────────────────────────── -->
+<section class="section" style="background:var(--s900)">
+  <div class="container" style="max-width:900px">
+    <div class="section-header centered">
+      <h2 style="color:#fff">Nuestra Cultura Corporativa</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6)">Los tres pilares esenciales bajo los cuales construimos código y forjamos relaciones duraderas.</p>
+    </div>
+    <div class="grid-3">
+      <?php
+      $culture = [
+        ['✅','Lealtad','Comprometidos a largo plazo con el éxito de nuestros clientes. Tu infraestructura tecnológica y tus secretos comerciales están seguros con nosotros.'],
+        ['🧭','Versatilidad','Ofrecemos soluciones sumamente personalizables. Nos adaptamos a diferentes industrias, escalas de facturación y requerimientos reglamentarios AFIP.'],
+        ['🤝','Personalidad','No somos un robot empaquetador. Nos encanta sentarnos a tomar mate o coordinar videollamadas, prestando atención humana y detallista a cada lead.'],
+      ];
+      foreach ($culture as $c) {
+        echo '<div class="card" style="background:var(--s950);border:1px solid rgba(255,255,255,.08)">
+          <div style="font-size:1.75rem;margin-bottom:14px">' . $c[0] . '</div>
+          <h3 style="color:#fff">' . esc_html($c[1]) . '</h3>
+          <p style="color:rgba(255,255,255,.6)">' . esc_html($c[2]) . '</p>
+        </div>';
+      }
+      ?>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TODAS LAS SOLUCIONES ───────────────────────────────────── -->
+<section class="section" id="soluciones">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label">Plataforma Completa</span>
+      <h2>Todas las Soluciones</h2>
+      <p class="section-subtitle">Cada herramienta diseñada para conectarse entre sí y multiplicar el impacto en tu PyME.</p>
+    </div>
+    <div class="grid-4">
+      <?php
+      $soluciones = [
+        ['💬','Chatbot WhatsApp','Tu negocio atiende solo, las 24 horas, con IA en castellano.','/whatsapp'],
+        ['💼','CRM Inteligente','Pipeline drag & drop, facturación AFIP y seguimiento automático.','/crm-inteligente'],
+        ['✨','Asistente IA','Tu analista de negocio disponible en todo momento.','/asistente-ia'],
+        ['📈','Reportes Automáticos','Dashboards en tiempo real para decisiones basadas en datos.','/reportes'],
+        ['⚡','Automatización','Flujos que procesan pedidos, cobros y envíos sin intervención.','/automatizacion'],
+        ['🌐','Portal del Cliente','Tus clientes consultan stock, facturas y pedidos solos.','/portal-cliente'],
+        ['💻','Desarrollo Web','Sitios y e-commerce conectados directamente al CRM.','/desarrollo-web'],
+        ['🔗','Integraciones','WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios.','/servicios'],
+        ['📦','Catálogo Completo','Más de 2.147 servicios en 13 categorías con precios.','/catalogo'],
+        ['💼','Consultoría &amp; ERP','Auditoría de procesos, ERP personalizado y hoja de ruta.','/servicios'],
+        ['✅','Planes y Precios','Desde $49 USD/mes. Implementación en 5 días hábiles.','/precios'],
+        ['⭐','Casos de Éxito','Historias reales de PyMEs que multiplicaron sus ventas.','/casos'],
+      ];
+      foreach ($soluciones as $s) {
+        echo '<a href="' . esc_url(home_url($s[3])) . '" class="feature-card" style="text-decoration:none">
+          <div class="card-icon">' . $s[0] . '</div>
+          <h3>' . $s[1] . '</h3>
+          <p>' . esc_html($s[2]) . '</p>
+        </a>';
+      }
+      ?>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ECOSISTEMA CLIENTUM ────────────────────────────────────── -->
+<section class="section" style="background:var(--s900)">
+  <div class="container">
+    <div class="section-header centered">
+      <span class="section-label" style="color:var(--emerald-lt)">Comunidad &amp; Recursos</span>
+      <h2 style="color:#fff">El Ecosistema Clientum</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.6)">Capacitación, red de partners, contenidos y soporte: todo lo que necesitás para crecer.</p>
+    </div>
+    <div class="grid-3">
+      <?php
+      $ecosistema = [
+        ['🎓','Academia Clientum','Cursos gratuitos de CRM, automatización y ventas para tu equipo.','Ir a la Academia','/academia'],
+        ['🤝','Programa de Partners','Sumate a la red de revendedores y afiliados. Comisiones del 20% recurrente.','Ver Programa','/socios'],
+        ['📰','Recursos &amp; Blog','Tácticas de ventas, marketing digital y automatizaciones para PyMEs.','Leer Artículos','/blog'],
+        ['🏢','Casos de Éxito','Cómo distribuidoras, estudios y comercios escalaron con Clientum.','Ver Historias','/casos'],
+        ['🧭','Sobre Clientum','Nuestro equipo, cultura y por qué más de 200 PyMEs nos eligieron.','Conocernos','/sobre-nosotros'],
+        ['❓','Centro de Ayuda','FAQs, tutoriales y soporte técnico especializado en español.','Obtener Soporte','/faq'],
+      ];
+      foreach ($ecosistema as $e) {
+        echo '<a href="' . esc_url(home_url($e[4])) . '" style="text-decoration:none;display:flex;flex-direction:column;gap:14px;background:var(--s950);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px">
+          <div style="font-size:1.75rem">' . $e[0] . '</div>
+          <div>
+            <h3 style="color:#fff;margin-bottom:6px">' . $e[1] . '</h3>
+            <p style="color:rgba(255,255,255,.6)">' . esc_html($e[2]) . '</p>
+          </div>
+          <span style="color:var(--emerald-lt);font-weight:700;font-size:.85rem">' . esc_html($e[3]) . ' →</span>
+        </a>';
+      }
+      ?>
+    </div>
+  </div>
+</section>
+
 <!-- ─── FUNCIONES ─────────────────────────────────────────────── -->
 <section class="section" id="funciones">
   <div class="container">
