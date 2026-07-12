@@ -1101,6 +1101,98 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
+                {/* ═══ POR QUÉ CLIENTUM ═══ */}
+                <section className="bg-white border-b border-slate-200 py-20 px-6">
+                  <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-12">
+                      <span className="text-rose-600 font-mono text-[10px] uppercase font-bold tracking-widest">Por qué Clientum</span>
+                      <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight mt-2">Tu negocio pierde ventas mientras alguien no contesta el WhatsApp</h2>
+                      <p className="text-slate-500 text-xs mt-3 max-w-2xl mx-auto leading-relaxed">
+                        Clientum automatiza la atención, el seguimiento de leads y la gestión de tu PyME con inteligencia artificial: sin perfil técnico, sin vueltas, funcionando en días.
+                      </p>
+                    </div>
+
+                    {/* Problems */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+                      {[
+                        { emoji: "⏱", title: "Respuestas lentas = ventas perdidas", desc: "Los leads que entran por WhatsApp e Instagram se enfrían si no reciben respuesta al toque. La velocidad define quién cierra la venta." },
+                        { emoji: "📋", title: "Presupuestos y stock a mano", desc: "Horas armando presupuestos uno por uno y controlando stock con papeles. Errores costosos que se repiten cada semana." },
+                        { emoji: "📉", title: "Cero seguimiento", desc: "Sin un sistema de follow-up automático, la mayoría de los contactos simplemente se pierden en el camino." },
+                      ].map(({ emoji, title, desc }) => (
+                        <div key={title} className="bg-rose-50 border border-rose-100 rounded-2xl p-6 flex flex-col gap-3">
+                          <span className="text-3xl">{emoji}</span>
+                          <h3 className="font-bold text-sm text-slate-950">{title}</h3>
+                          <p className="text-[11px] text-slate-500 leading-relaxed">{desc}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Solutions */}
+                    <div className="text-center mb-8">
+                      <span className="text-emerald-600 font-mono text-[10px] uppercase font-bold tracking-widest">Qué resuelve Clientum</span>
+                      <h3 className="text-xl font-display font-black text-slate-950 tracking-tight mt-2">La solución para cada problema</h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+                      {[
+                        { icon: Bot, color: "bg-green-50 text-green-600 border-green-100", title: "Chatbot con IA 24/7", desc: "Atiende WhatsApp Business API las 24 horas y responde las consultas más frecuentes al instante." },
+                        { icon: BarChart2, color: "bg-blue-50 text-blue-600 border-blue-100", title: "CRM + reportes en vivo", desc: "Seguimiento automático de cada lead y reportes con datos reales de tu operación, sin planillas sueltas." },
+                        { icon: FileText, color: "bg-violet-50 text-violet-600 border-violet-100", title: "Presupuestos automáticos", desc: "Se generan solos y el follow-up lo maneja la IA, liberando horas de trabajo manual por semana." },
+                        { icon: Zap, color: "bg-amber-50 text-amber-600 border-amber-100", title: "Integraciones que ya usás", desc: "Se conecta con WooCommerce, Shopify, PrestaShop y ERPs como Dolibarr sin instalar nada extra." },
+                      ].map(({ icon: Icon, color, title, desc }) => (
+                        <div key={title} className={`border rounded-2xl p-5 flex flex-col gap-3 ${color}`}>
+                          <div className={`w-10 h-10 rounded-xl border flex items-center justify-center ${color}`}>
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <h3 className="font-bold text-sm text-slate-950">{title}</h3>
+                          <p className="text-[11px] text-slate-600 leading-relaxed">{desc}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Testimonial */}
+                    <div className="bg-slate-900 text-white rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start">
+                      <Quote className="w-8 h-8 text-emerald-400 shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-slate-200 text-sm leading-relaxed italic">
+                          "Ahora sabemos exactamente qué repuestos tenemos sin revisar papeles. Las facturas salen solas y evitamos errores que antes nos costaban tiempo y plata."
+                        </p>
+                        <span className="block text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold mt-3">— Estudio Méndez &amp; Asoc., General Roca</span>
+                      </div>
+                    </div>
+
+                    {/* Quick stats */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                      {[
+                        { value: "24/7", label: "Atención automática por IA" },
+                        { value: "5-7", label: "Días hábiles para arrancar (Plan Starter)" },
+                        { value: "30", label: "Días de soporte incluido, ajustes sin costo" },
+                        { value: "0", label: "Conocimiento técnico requerido" },
+                      ].map(({ value, label }) => (
+                        <div key={label} className="bg-[#1A3461] text-white rounded-2xl p-5 text-center">
+                          <div className="text-2xl font-black font-mono text-emerald-400">{value}</div>
+                          <div className="text-[10px] text-slate-300 mt-1 leading-tight">{label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Diagnóstico CTA */}
+                    <div className="mt-8 bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center flex flex-col items-center gap-4">
+                      <h3 className="text-lg font-display font-black text-slate-950">Pedí tu diagnóstico gratuito</h3>
+                      <p className="text-slate-500 text-xs max-w-md leading-relaxed">
+                        60 minutos para mostrarte cuánto tiempo y dinero podés ahorrar con IA en tu PyME.<br />
+                        <span className="text-emerald-700 font-bold">Sin costo · Sin compromiso</span>
+                      </p>
+                      <button
+                        onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                        className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black text-xs uppercase tracking-wider px-7 py-3 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-md shadow-emerald-200"
+                      >
+                        Solicitar Diagnóstico Gratuito <ArrowRight className="w-4 h-4" />
+                      </button>
+                      <span className="text-[10px] text-slate-400">Neuquén · General Roca · Buenos Aires · Todo el país</span>
+                    </div>
+                  </div>
+                </section>
+
                 {/* ═══ SOCIAL PROOF STRIP ═══ */}
                 <section className="bg-slate-950 border-b border-slate-800/60 py-5 px-6">
                   <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-y-3 gap-x-0 md:divide-x md:divide-slate-800/60">
@@ -1588,8 +1680,8 @@ export default function PublicWebsite({
                       },
                       {
                         emoji: "🤖",
-                        title: "Viaweb AI Copilot",
-                        desc: "IA y automatización aplicada a tu negocio. Predicciones, flujos automáticos y análisis inteligente.",
+                        title: "Clientum AI Copilot",
+                        desc: "IA y automatización aplicada a tu negocio: automatización de procesos repetitivos, predicciones, IA conversacional a medida e integración directa con el CRM.",
                         bullets: ["Automatización de procesos repetitivos", "Predicciones y recomendaciones", "IA conversacional a medida", "Integración con el CRM"],
                         color: "bg-indigo-50 border-indigo-100",
                         badge: "text-indigo-700 bg-indigo-100",
@@ -1655,6 +1747,32 @@ export default function PublicWebsite({
                   </div>
                 </div>
 
+                {/* ── SECTORES QUE ATENDEMOS ── */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Sectores que atendemos</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Una solución simple para tareas complejas</h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {[
+                      { emoji: "🛒", sector: "Minoristas", desc: "Stock multicanal, ventas por WhatsApp y facturación integrada." },
+                      { emoji: "🏭", sector: "Manufactura", desc: "Control de producción y presupuestos conectados al ERP." },
+                      { emoji: "🌾", sector: "Agroindustria", desc: "Trazabilidad de lote y costos por campaña." },
+                      { emoji: "🚚", sector: "Distribuidores", desc: "Ruteo, inventario en tiempo real y cobranzas automáticas." },
+                      { emoji: "💼", sector: "Servicios", desc: "CRM para seguimiento y automatización de la atención." },
+                      { emoji: "🔐", sector: "Tecnología", desc: "Gestión de proyectos, incidentes y clientes para consultoras IT." },
+                    ].map(({ emoji, sector, desc }) => (
+                      <div key={sector} className="bg-white border border-slate-200 rounded-2xl p-5 flex items-start gap-4 shadow-xs hover:shadow-md transition-all">
+                        <span className="text-2xl shrink-0">{emoji}</span>
+                        <div>
+                          <h4 className="font-bold text-sm text-slate-950">{sector}</h4>
+                          <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">{desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* ── TABLA DE PRECIOS DE REFERENCIA ── */}
                 <div>
                   <div className="text-center mb-8">
@@ -1683,7 +1801,7 @@ export default function PublicWebsite({
                             ]
                           },
                           {
-                            emoji: "🤖", name: "Viaweb AI Copilot", sub: "IA y automatización para tu negocio",
+                            emoji: "🤖", name: "Clientum AI Copilot", sub: "IA y automatización para tu negocio",
                             tiers: [
                               { label: "IA Básica", sla: "48 hs", price: "$600.000 – $1.000.000", desc: "Automatización simple" },
                               { label: "IA Avanzada", sla: "24 hs", price: "$1.000.000 – $1.800.000", desc: "Predicciones" },
@@ -2236,77 +2354,158 @@ export default function PublicWebsite({
             {/* SOBRE NOSOTROS TAB */}
             {activeTab === "nosotros" && (
               <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-16">
+
+                {/* Hero intro */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   <div>
-                    <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Trayectoria</span>
-                    <h1 className="text-3xl md:text-4xl font-display font-black text-slate-950 tracking-tight mt-1">
-                      ¿Quiénes somos? Conoce la Historia de Clientum
+                    <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">Nuestra Trayectoria · Desde 2016</span>
+                    <h1 className="text-3xl md:text-4xl font-display font-black text-slate-950 tracking-tight mt-2 leading-snug">
+                      Diez años construyendo tecnología a medida para las PyMEs de la Patagonia.
                     </h1>
                     <p className="text-slate-500 text-xs md:text-sm mt-4 leading-relaxed">
-                      Desde nuestros inicios en 2010, Clientum ha estado a la vanguardia de la transformación digital, ayudando a empresas de todos los tamaños a establecer su presencia en línea y optimizar sus operaciones comerciales.
+                      Nacimos en 2016 en una oficina de General Roca, Río Negro. Hoy somos Clientum: CRM, IA, integraciones y desarrollo web en una sola plataforma, con más de 35 empresas e instituciones del Alto Valle como clientes activos.
                     </p>
                     <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
-                      Comenzamos nuestra historia en <strong>General Roca, Río Negro</strong>, arraigados en el Alto Valle patagónico, y desde entonces nos hemos expandido proactivamente brindando servicios en mercados internacionales como <strong>México y Chile</strong>.
-                    </p>
-                    <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
-                      Nuestra misión es proporcionar soluciones de software innovadoras, guiadas por valores firmes de compromiso, transparencia e integridad en cada línea de código.
+                      Anteriormente conocidos como <strong>Viaweb</strong>, consolidamos todo lo aprendido en una plataforma propia con facturación integrada a AFIP, cobros por MercadoPago y metodologías ágiles.
                     </p>
                   </div>
-                  <div className="bg-slate-200 rounded-2xl h-80 overflow-hidden relative border border-slate-300 shadow-md">
+                  <div className="bg-slate-200 rounded-2xl h-72 overflow-hidden relative border border-slate-300 shadow-md">
                     <img
                       src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
-                      alt="Clientum office Team"
+                      alt="Equipo Clientum"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
 
-                {/* Team Grid */}
-                <div>
-                  <div className="text-center max-w-xl mx-auto mb-10">
-                    <h2 className="text-xl font-display font-black text-slate-950">Expertos a tu Servicio</h2>
-                    <p className="text-slate-500 text-xs mt-1">Nuestros profesionales lideran con pasión para materializar tus objetivos digitales.</p>
-                  </div>
+                {/* Numbers bar */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { value: "4", label: "Partners de comercialización" },
+                    { value: "+10", label: "Colaboradores" },
+                    { value: "+35", label: "Clientes activos" },
+                    { value: "+5M", label: "Pesos en facturación anual" },
+                  ].map(({ value, label }) => (
+                    <div key={label} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-xs">
+                      <div className="text-3xl font-display font-black text-[#1A3461] font-mono">{value}</div>
+                      <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-1">{label}</div>
+                    </div>
+                  ))}
+                </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Timeline */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">De un estudio de desarrollo web a una plataforma SaaS</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Nuestra Historia</h2>
+                  </div>
+                  <div className="relative flex flex-col gap-0">
                     {[
-                      { name: "Laura Martínez", role: "CEO y Fundadora", desc: "Visionaria de la transformación digital, experta en optimización de flotas agrícolas patagónicas y logística internacional." },
-                      { name: "Javier Torres", role: "Desarrollador Core Senior", desc: "Especialista en arquitecturas en la nube, integraciones de facturación AFIP complejas y bases de datos seguras." },
-                      { name: "Claudia Ruiz", role: "Especialista en Marketing Digital", desc: "Diseñadora de embudos de captación de leads en redes sociales con un ROI medible superior al 200%." }
-                    ].map((member, idx) => (
-                      <div key={idx} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm text-center flex flex-col items-center">
-                        <div className="w-16 h-16 bg-[#1A3461]/10 text-[#1A3461] rounded-full flex items-center justify-center font-bold text-lg mb-4">
-                          {member.name.split(" ").map(n => n[0]).join("")}
+                      {
+                        year: "2016",
+                        title: "Primera oficina, Maipú 1438",
+                        desc: "Abrimos como Viaweb en la calle Maipú al 1438, of. N.º 2, General Roca. Empezamos ofreciendo desarrollos web a medida, identidad corporativa y multimedia. Se suman los primeros dos colaboradores.",
+                        color: "bg-[#1A3461]",
+                      },
+                      {
+                        year: "2017",
+                        title: "Infraestructura propia",
+                        desc: "Armamos una red interna para alojar los sitios de nuestros clientes y empezamos a incorporar el uso interno de ERP y CRM.",
+                        color: "bg-indigo-600",
+                      },
+                      {
+                        year: "2018",
+                        title: "Cloud y primeros partners",
+                        desc: "Sumamos infraestructura Cloud para alojar sitios de clientes e iniciamos el esquema de partnership, con dos partners comerciales. Mudamos la oficina a Chacabuco 1302, of. N.º 1, y se incorporan dos colaboradores más.",
+                        color: "bg-violet-600",
+                      },
+                      {
+                        year: "2020",
+                        title: "Datos y crecimiento del equipo",
+                        desc: "Se suman cinco colaboradores más e implementamos análisis de datos y Business Intelligence para nuestros clientes, con reportes de conversión y optimización de campañas. Nueva oficina en Av. Pte. J. A. Roca 1884, of. N.º 1.",
+                        color: "bg-emerald-600",
+                      },
+                      {
+                        year: "2021",
+                        title: "Remoto y expansión regional",
+                        desc: "Cerramos la oficina física para enfocarnos en el trabajo remoto, avanzamos en abstraer nuestros servicios de ERP/CRM y comenzamos a vender en México y Chile.",
+                        color: "bg-teal-600",
+                      },
+                      {
+                        year: "Hoy",
+                        title: "Nace Clientum",
+                        desc: "Consolidamos todo lo aprendido en una plataforma propia: CRM, WhatsApp con IA, integraciones vía API Gateway, Business Intelligence y desarrollo web, con facturación integrada a AFIP y cobros por MercadoPago. Seguimos con base en la Patagonia y metodologías ágiles.",
+                        color: "bg-amber-500",
+                      },
+                    ].map(({ year, title, desc, color }, idx) => (
+                      <div key={year} className="flex gap-6 pb-10 relative">
+                        <div className="flex flex-col items-center shrink-0">
+                          <div className={`w-10 h-10 rounded-full ${color} flex items-center justify-center text-white font-black text-[10px] font-mono tracking-tight shrink-0 z-10`}>
+                            {year === "Hoy" ? "🏠" : year.slice(2)}
+                          </div>
+                          {idx < 5 && <div className="w-0.5 flex-1 bg-slate-200 mt-1" />}
                         </div>
-                        <h4 className="font-bold text-sm text-slate-950">{member.name}</h4>
-                        <span className="text-[10px] text-emerald-600 font-mono uppercase tracking-widest font-bold block mt-1">{member.role}</span>
-                        <p className="text-xs text-slate-500 mt-3 leading-relaxed">{member.desc}</p>
+                        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex-1 mb-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`text-[10px] font-black font-mono uppercase tracking-widest px-2 py-0.5 rounded-full text-white ${color}`}>{year}</span>
+                          </div>
+                          <h3 className="font-bold text-sm text-slate-950 mt-1">{title}</h3>
+                          <p className="text-[11px] text-slate-500 mt-2 leading-relaxed">{desc}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Certifications and Recognitions */}
-                <div className="bg-slate-100 border border-slate-200 rounded-2xl p-8">
-                  <div className="text-center mb-8">
-                    <h3 className="font-display font-bold text-slate-900 text-base uppercase tracking-wider">Certificaciones y Reconocimientos</h3>
-                    <p className="text-slate-500 text-xs mt-1">Comprometidos firmemente con la calidad de software y seguridad informática.</p>
+                {/* Mission & Vision */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-[#1A3461] text-white rounded-2xl p-8 flex flex-col gap-4">
+                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                      <Target className="w-5 h-5 text-emerald-400" />
+                    </div>
+                    <div>
+                      <span className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold">Misión</span>
+                      <h3 className="text-lg font-display font-black mt-1">Excelencia empresarial, un cliente a la vez</h3>
+                    </div>
+                    <p className="text-slate-300 text-xs leading-relaxed">
+                      El éxito de nuestra misión se sustenta en un equipo de profesionales calificados y una apuesta permanente a generar alianzas de excelencia con nuestros clientes.
+                    </p>
+                    <p className="text-slate-300 text-xs leading-relaxed">
+                      Desde hace más de diez años propiciamos un buen clima de trabajo en Clientum, de la mano de un equipo que se destaca por el compañerismo, el trabajo en equipo y la colaboración.
+                    </p>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
-                    <div className="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-slate-700 text-xs w-full shadow-xs">
-                      AWS Cloud Certified
+                  <div className="bg-slate-900 text-white rounded-2xl p-8 flex flex-col gap-4">
+                    <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
+                      <TrendingUp className="w-5 h-5 text-amber-400" />
                     </div>
-                    <div className="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-slate-700 text-xs w-full shadow-xs">
-                      Official Meta Partner
+                    <div>
+                      <span className="text-amber-400 font-mono text-[10px] uppercase tracking-widest font-bold">Visión</span>
+                      <h3 className="text-lg font-display font-black mt-1">Anticiparnos a lo que las PyMEs van a necesitar</h3>
                     </div>
-                    <div className="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-slate-700 text-xs w-full shadow-xs">
-                      AFIP Integrator API
-                    </div>
-                    <div className="bg-white p-4 rounded-xl border border-slate-200 text-center font-bold text-slate-700 text-xs w-full shadow-xs">
-                      ISO 27001 Security
-                    </div>
+                    <p className="text-slate-300 text-xs leading-relaxed">
+                      Nuestros valores: invertir en las personas y su desarrollo profesional, construir relaciones basadas en confianza responsabilizándonos por los compromisos asumidos, y lograr resultados sustentables.
+                    </p>
+                    <p className="text-slate-300 text-xs leading-relaxed">
+                      Esa visión se cristaliza en una plataforma y un conjunto de herramientas tecnológicas pensadas para satisfacer la demanda de nuestros clientes y anticiparse a las necesidades del mercado.
+                    </p>
                   </div>
                 </div>
+
+                {/* CTA */}
+                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center flex flex-col items-center gap-4">
+                  <span className="text-emerald-700 font-mono text-[10px] uppercase tracking-widest font-bold">General Roca · Río Negro · Argentina — antes Viaweb (2016–2026)</span>
+                  <h2 className="text-xl font-display font-black text-slate-950 tracking-tight">¿Querés trabajar con nosotros?</h2>
+                  <p className="text-slate-500 text-xs max-w-md leading-relaxed">
+                    Neuquén · General Roca · Buenos Aires · Todo el país
+                  </p>
+                  <button
+                    onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs px-7 py-3 rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    Contactarnos <ArrowRight className="w-4 h-4 text-emerald-400" />
+                  </button>
+                </div>
+
               </div>
             )}
 
@@ -2328,7 +2527,7 @@ export default function PublicWebsite({
                 {/* Stats strip */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
-                    { value: "+40", label: "Clientes activos" },
+                    { value: "+35", label: "Clientes activos" },
                     { value: "4", label: "Organismos públicos" },
                     { value: "3", label: "Sectores de medios" },
                     { value: "2016", label: "Primer cliente" },
@@ -2355,8 +2554,9 @@ export default function PublicWebsite({
                     {[
                       { name: "Canal 10 TV",               rubro: "Medios Públicos",            url: "canal10rn.tv",          icon: Monitor },
                       { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen },
-                      { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro", url: "generalroca.gob.ar", icon: Building },
-                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",  url: "25demayo.gob.ar",   icon: Building },
+                      { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro",  url: "generalroca.gob.ar", icon: Building },
+                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building },
+                      { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building },
                     ].map(({ name, rubro, url, icon: Icon }) => (
                       <div key={name} className="bg-white border-2 border-[#1A3461]/10 hover:border-[#1A3461]/30 rounded-2xl p-5 flex flex-col gap-3 transition-all shadow-xs hover:shadow-md">
                         <div className="flex items-start justify-between">
