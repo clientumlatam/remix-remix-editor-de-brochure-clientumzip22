@@ -1617,23 +1617,23 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
-                {/* Facts facts from shortcodes */}
+                {/* Clientum en números */}
                 <div className="bg-slate-900 text-white rounded-2xl p-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center border border-slate-800">
                   <div>
-                    <span className="text-3xl font-extrabold font-mono tracking-tight text-[#1A3461]">15</span>
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Países Atendidos</p>
+                    <span className="text-3xl font-extrabold font-mono tracking-tight text-emerald-400">4</span>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Partners de comercialización</p>
                   </div>
                   <div>
-                    <span className="text-3xl font-extrabold font-mono tracking-tight text-emerald-400">172</span>
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Clientes Corporativos</p>
+                    <span className="text-3xl font-extrabold font-mono tracking-tight text-indigo-400">+10</span>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Colaboradores</p>
                   </div>
                   <div>
-                    <span className="text-3xl font-extrabold font-mono tracking-tight text-indigo-400">472</span>
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Integraciones Exitosas</p>
+                    <span className="text-3xl font-extrabold font-mono tracking-tight text-amber-400">+35</span>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Clientes activos</p>
                   </div>
                   <div>
-                    <span className="text-3xl font-extrabold font-mono tracking-tight text-amber-400">10+</span>
-                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Años de Trayectoria</p>
+                    <span className="text-3xl font-extrabold font-mono tracking-tight text-rose-400">10+</span>
+                    <p className="text-[10px] uppercase font-bold tracking-widest text-slate-400 mt-1">Años de trayectoria</p>
                   </div>
                 </div>
 
@@ -1673,52 +1673,70 @@ export default function PublicWebsite({
                       {
                         emoji: "🔌",
                         title: "Integración API Gateway",
-                        desc: "Conectá sistemas, apps y plataformas externas sin código. Automatizá el flujo de datos entre tus herramientas.",
+                        desc: "Conectá sistemas, apps y plataformas externas sin código. Automatizá el flujo de datos entre tus herramientas: API REST, webhooks, mapeo de datos y monitoreo en tiempo real.",
+                        price: "Desde $400.000",
+                        priceSub: "integración básica entre 2 sistemas",
                         bullets: ["Integración entre múltiples sistemas", "API REST y webhooks", "Mapeo y transformación de datos", "Monitoreo en tiempo real"],
                         color: "bg-violet-50 border-violet-100",
                         badge: "text-violet-700 bg-violet-100",
+                        priceColor: "text-violet-700 bg-violet-100 border-violet-200",
                       },
                       {
                         emoji: "🤖",
                         title: "Clientum AI Copilot",
                         desc: "IA y automatización aplicada a tu negocio: automatización de procesos repetitivos, predicciones, IA conversacional a medida e integración directa con el CRM.",
+                        price: "Desde $600.000",
+                        priceSub: "IA básica y automatización",
                         bullets: ["Automatización de procesos repetitivos", "Predicciones y recomendaciones", "IA conversacional a medida", "Integración con el CRM"],
                         color: "bg-indigo-50 border-indigo-100",
                         badge: "text-indigo-700 bg-indigo-100",
+                        priceColor: "text-indigo-700 bg-indigo-100 border-indigo-200",
                       },
                       {
                         emoji: "💻",
-                        title: "Desarrollo Web Personalizado",
-                        desc: "Sitios, landing pages y apps a medida que capturan leads y los envían directo al CRM.",
+                        title: "Desarrollo web a medida",
+                        desc: "Sitios, landing pages y apps que capturan leads y los envían directo al CRM. Incluye e-commerce con sincronización de stock, PWA, diseño y UX.",
+                        price: "Desde $800.000",
+                        priceSub: "desarrollo web básico",
                         bullets: ["Landing pages con integración CRM", "E-commerce con sincronización de stock", "Apps web progresivas (PWA)", "Diseño y UX incluidos"],
                         color: "bg-blue-50 border-blue-100",
                         badge: "text-blue-700 bg-blue-100",
+                        priceColor: "text-blue-700 bg-blue-100 border-blue-200",
                       },
                       {
                         emoji: "📦",
-                        title: "Pack Integrado",
-                        desc: "CRM + API + IA + Web en una sola propuesta. La solución más completa para empresas que quieren escalar.",
+                        title: "Pack integrado",
+                        desc: "CRM + API + IA + Web en una sola propuesta: implementación coordinada, un solo punto de contacto y soporte unificado para empresas que quieren escalar.",
+                        price: "Desde $960.000",
+                        priceSub: "pack básico integrado",
                         bullets: ["Todo incluido en un precio", "Implementación coordinada", "Un solo punto de contacto", "Soporte unificado"],
                         color: "bg-emerald-50 border-emerald-100",
                         badge: "text-emerald-700 bg-emerald-100",
+                        priceColor: "text-emerald-700 bg-emerald-100 border-emerald-200",
                       },
                       {
                         emoji: "📊",
                         title: "Business Intelligence",
-                        desc: "Dashboards y analytics para tomar decisiones con datos reales. Conectamos tus fuentes y construimos el tablero.",
+                        desc: "Dashboards y analytics para tomar decisiones con datos reales: KPIs de negocio, predicciones y tendencias, reportes automáticos.",
+                        price: "Desde $800.000",
+                        priceSub: "análisis de datos básico",
                         bullets: ["Dashboards en tiempo real", "KPIs y métricas de negocio", "Predicciones y tendencias", "Reportes automáticos"],
                         color: "bg-orange-50 border-orange-100",
                         badge: "text-orange-700 bg-orange-100",
+                        priceColor: "text-orange-700 bg-orange-100 border-orange-200",
                       },
                       {
                         emoji: "⚙️",
-                        title: "Consultoría Empresarial",
-                        desc: "Diagnóstico de procesos y plan de mejora con KPIs medibles para tu empresa.",
+                        title: "Consultoría empresarial",
+                        desc: "Diagnóstico de procesos y plan de mejora con KPIs medibles: diagnóstico sin costo inicial, plan de acción a 90 días y seguimiento de resultados.",
+                        price: "Sin costo inicial",
+                        priceSub: "plan a 90 días",
                         bullets: ["Diagnóstico sin costo inicial", "Plan de acción 90 días", "Seguimiento de resultados", "Gestión del cambio"],
                         color: "bg-slate-50 border-slate-200",
                         badge: "text-slate-700 bg-slate-100",
+                        priceColor: "text-slate-700 bg-slate-100 border-slate-200",
                       },
-                    ].map(({ emoji, title, desc, bullets, color, badge }) => (
+                    ].map(({ emoji, title, desc, price, priceSub, bullets, color, badge, priceColor }) => (
                       <div key={title} className={`border rounded-2xl p-6 flex flex-col gap-4 ${color}`}>
                         <div className="flex items-center gap-3">
                           <span className="text-2xl">{emoji}</span>
@@ -1727,6 +1745,10 @@ export default function PublicWebsite({
                         <div>
                           <h3 className="font-bold text-sm text-slate-950 leading-tight">{title}</h3>
                           <p className="text-[11px] text-slate-500 mt-1.5 leading-relaxed">{desc}</p>
+                        </div>
+                        <div className={`border rounded-xl px-3 py-2 flex flex-col gap-0.5 ${priceColor}`}>
+                          <span className="font-black text-sm font-mono">{price}</span>
+                          <span className="text-[10px] font-medium opacity-75">· {priceSub}</span>
                         </div>
                         <ul className="flex flex-col gap-1.5 mt-auto">
                           {bullets.map(b => (
@@ -1745,6 +1767,9 @@ export default function PublicWebsite({
                       </div>
                     ))}
                   </div>
+                  <p className="text-center text-[10px] text-slate-400 font-mono mt-4">
+                    Valores orientativos en pesos argentinos · cada proyecto se cotiza a medida.
+                  </p>
                 </div>
 
                 {/* ── SECTORES QUE ATENDEMOS ── */}
@@ -2368,6 +2393,16 @@ export default function PublicWebsite({
                     <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
                       Anteriormente conocidos como <strong>Viaweb</strong>, consolidamos todo lo aprendido en una plataforma propia con facturación integrada a AFIP, cobros por MercadoPago y metodologías ágiles.
                     </p>
+                    <a
+                      href="/brochure-clientum.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg transition-all"
+                    >
+                      <Download className="w-3.5 h-3.5 text-emerald-400" />
+                      Descargar brochure
+                      <ArrowUpRight className="w-3.5 h-3.5 text-emerald-400" />
+                    </a>
                   </div>
                   <div className="bg-slate-200 rounded-2xl h-72 overflow-hidden relative border border-slate-300 shadow-md">
                     <img
@@ -2654,15 +2689,16 @@ export default function PublicWebsite({
                     color: "bg-indigo-600",
                     icon: Briefcase,
                     clientes: [
-                      { name: "AFP Service",           rubro: "Servicios Técnicos",      url: "afpservice.com.ar" },
-                      { name: "YendoApp",              rubro: "Tecnología / App Móvil",  url: "yendoapp.com.ar" },
-                      { name: "Saitt",                 rubro: "Tecnología / Servicios",  url: null },
-                      { name: "Estudio Integra",       rubro: "Estudio Profesional",     url: null },
-                      { name: "Grupo de Asesores",     rubro: "Consultoría",             url: null },
-                      { name: "Anmerica",              rubro: "Servicios",               url: null },
-                      { name: "Agua Wass",             rubro: "Agua / Servicios",        url: null },
-                      { name: "SCT Patagonia",         rubro: "Servicios / Construcción",url: null },
-                      { name: "Poliservice Suministros", rubro: "Suministros Industriales", url: null },
+                      { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar" },
+                      { name: "YendoApp",                rubro: "Tecnología / App Móvil",    url: "yendoapp.com.ar" },
+                      { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null },
+                      { name: "Estudio Integra",         rubro: "Estudio Profesional",       url: null },
+                      { name: "Estudio Méndez & Asoc.",  rubro: "Estudio / Consultoría",     url: null },
+                      { name: "Grupo de Asesores",       rubro: "Consultoría",               url: null },
+                      { name: "Anmerica",                rubro: "Servicios",                 url: null },
+                      { name: "Agua Wass",               rubro: "Agua / Servicios",          url: null },
+                      { name: "SCT Patagonia",           rubro: "Servicios / Construcción",  url: null },
+                      { name: "Poliservice Suministros", rubro: "Suministros Industriales",  url: null },
                     ]
                   },
                   {
@@ -4184,11 +4220,34 @@ export default function PublicWebsite({
               </li>
             </ul>
           </div>
+
+          {/* Newsletter */}
+          <div className="flex flex-col gap-3">
+            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-1">Newsletter</h4>
+            <p className="text-[10px] text-slate-400 font-medium leading-relaxed">Suscribite y enterate primero de las novedades de Clientum.</p>
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <input
+                type="email"
+                required
+                placeholder="tu@empresa.com"
+                className="bg-slate-900 border border-slate-800 text-white rounded p-2 text-[10px] focus:outline-none focus:border-emerald-500 w-full"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+              />
+              <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 py-1.5 rounded text-[10px] cursor-pointer whitespace-nowrap">
+                Suscribirme
+              </button>
+            </form>
+            {newsletterSubscribed && (
+              <span className="text-emerald-400 text-[10px]">¡Suscripción registrada con éxito!</span>
+            )}
+          </div>
         </div>
 
         <div className="max-w-6xl mx-auto border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-slate-500 font-medium">
-          <span>© {new Date().getFullYear()} - Clientum S.R.L. Todos los derechos reservados.</span>
+          <span>© {new Date().getFullYear()} - Clientum S.R.L. Todos los derechos reservados. — <span className="text-slate-600">antes Viaweb (2016–2026)</span></span>
           <div className="flex gap-4">
+            <span className="text-slate-600">General Roca, Río Negro, Argentina</span>
             <a href="https://github.com/clientumlatam/clientum" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1 font-mono">
               GitHub Repo
               <ExternalLink className="w-2.5 h-2.5" />
