@@ -1,0 +1,173 @@
+Servicios
+Acompañamiento integral
+para tu PyME
+Consultoría, implementación, IA, BI y desarrollo web — todo integrado con Clientum CRM.
+
+Consultar disponibilidad
+🔌
+Integración API Gateway
+Conectá sistemas, apps y plataformas externas sin código. Automatizá el flujo de datos entre tus herramientas.
+
+Integración entre múltiples sistemas
+API REST y webhooks
+Mapeo y transformación de datos
+Monitoreo en tiempo real
+🤖
+Viaweb AI Copilot
+IA y automatización aplicada a tu negocio. Predicciones, flujos automáticos y análisis inteligente.
+
+Automatización de procesos repetitivos
+Predicciones y recomendaciones
+IA conversacional a medida
+Integración con el CRM
+💻
+Desarrollo Web Personalizado
+Sitios, landing pages y apps a medida que capturan leads y los envían directo al CRM.
+
+Landing pages con integración CRM
+E-commerce con sincronización de stock
+Apps web progresivas (PWA)
+Diseño y UX incluidos
+📦
+Pack Integrado
+CRM + API + IA + Web en una sola propuesta. La solución más completa para empresas que quieren escalar.
+
+Todo incluido en un precio
+Implementación coordinada
+Un solo punto de contacto
+Soporte unificado
+📊
+Business Intelligence
+Dashboards y analytics para tomar decisiones con datos reales. Conectamos tus fuentes y construimos el tablero.
+
+Dashboards en tiempo real
+KPIs y métricas de negocio
+Predicciones y tendencias
+Reportes automáticos
+⚙️
+Consultoría Empresarial
+Diagnóstico de procesos y plan de mejora con KPIs medibles para tu empresa.
+
+Diagnóstico sin costo inicial
+Plan de acción 90 días
+Seguimiento de resultados
+Gestión del cambio
+Catálogo de precios de referencia
+Valores orientativos en pesos argentinos. Cada proyecto se cotiza a medida.
+
+🔌
+Integración API Gateway
+Conectá sistemas y apps sin código
+Basic
+48 hs
+$400.000 – $800.000
+Integración básica entre 2 sistemas
+
+Pro
+24 hs
+$800.000 – $1.400.000
+Integración múltiples sistemas
+
+Enterprise
+12 hs
+$1.400.000 – $2.000.000
+Integración empresarial completa
+
+🤖
+Viaweb AI Copilot
+IA y automatización para tu negocio
+Basic
+48 hs
+$600.000 – $1.000.000
+IA básica y automatización
+
+Advanced
+24 hs
+$1.000.000 – $1.800.000
+IA avanzada y predicciones
+
+Enterprise
+12 hs
+$1.800.000 – $2.500.000
+IA empresarial completa
+
+💻
+Desarrollo Web
+Sitios y apps a medida con CRM
+Basic
+48 hs
+$800.000 – $1.500.000
+Desarrollo web básico
+
+Advanced
+24 hs
+$1.500.000 – $2.500.000
+Desarrollo web avanzado
+
+Enterprise
+12 hs
+$2.500.000 – $4.000.000
+Desarrollo web empresarial
+
+📦
+Pack Integrado
+Solución completa CRM+API+IA+Web
+Starter
+48 hs
+$960.000 – $1.250.000
+Pack básico integrado
+
+Business
+24 hs
+$1.750.000 – $2.000.000
+Pack empresarial completo
+
+Enterprise
+12 hs
+$2.450.000 – $3.000.000
+Pack corporativo total
+
+📊
+Business Intelligence
+Dashboards y analytics con datos reales
+Basic
+48 hs
+$800.000 – $1.500.000
+Análisis de datos básico
+
+Advanced
+24 hs
+$1.500.000 – $2.500.000
+BI y predicciones avanzadas
+
+Enterprise
+12 hs
+$2.500.000 – $4.000.000
+BI empresarial completo
+
+Precios en ARS · Cada proyecto se cotiza según alcance real · Solicitá propuesta sin costo
+
+Sectores que atendemos
+🛒
+Minoristas
+Gestión de stock multicanal, ventas por WhatsApp y facturación integrada.
+
+🏭
+Manufactura
+Control de producción, trazabilidad de materiales y presupuestos conectados al ERP.
+
+🌾
+Agroindustria
+Trazabilidad de lote desde el campo hasta la entrega, costos por campaña.
+
+🚚
+Distribuidores
+Ruteo de entregas, inventario en tiempo real y cobranzas automáticas.
+
+💼
+Servicios
+CRM para seguimiento de clientes y automatización del flujo de atención.
+
+🔐
+Tecnología
+Gestión de proyectos, incidentes y clientes para consultoras IT.
