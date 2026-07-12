@@ -649,35 +649,40 @@ export default function PublicWebsite({
         { id: "chatbot", label: "Chatbot WhatsApp", desc: "Tu negocio atiende solo, las 24 horas", icon: Bot, color: "text-green-500 bg-green-50" },
         { id: "crm_inteligente", label: "CRM Inteligente", desc: "Nunca más perdas una venta", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
         { id: "asistente_ia", label: "Asistente IA", desc: "Tu analista de negocio, siempre disponible", icon: Sparkles, color: "text-violet-500 bg-violet-50" },
-        { id: "reportes", label: "Reportes Automáticos", desc: "Tomá decisiones con datos reales", icon: BarChart2, color: "text-orange-500 bg-orange-50" },
         { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
         { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
         { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
-        { id: "servicios", label: "Servicios", desc: "Consultoría de negocio y ERP personalizado", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
-        { id: "catalogo", label: "Catálogo Completo", desc: "Más de 2.147 servicios en 13 categorías", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
-        { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
-        { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" }
       ]
     },
     { id: "planes", label: "Precios", type: "link" as const },
-    { id: "clientes", label: "Clientes", type: "link" as const },
     {
-      id: "comunidad",
-      label: "Ecosistema",
+      id: "empresa",
+      label: "Empresa",
+      type: "dropdown" as const,
+      children: [
+        { id: "nosotros", label: "Nosotros", desc: "Quiénes somos y nuestra misión", icon: Building, color: "text-[#1A3461] bg-slate-100" },
+        { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Star, color: "text-amber-500 bg-amber-50" },
+        { id: "clientes", label: "Clientes", desc: "Empresas que ya confían en Clientum", icon: Users, color: "text-teal-500 bg-teal-50" },
+      ]
+    },
+    {
+      id: "recursos",
+      label: "Recursos",
       type: "dropdown" as const,
       children: [
         { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
-        { id: "asociacion", label: "Asociación", desc: "Programa de Afiliados y Partners", icon: Users, color: "text-violet-500 bg-violet-50" },
-        { id: "blog", label: "Recursos & Blog", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" }
+        { id: "blog", label: "Blog & Recursos", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" },
+        { id: "catalogo", label: "Catálogo de Servicios", desc: "Más de 2.147 servicios en 13 categorías", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
+        { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
       ]
     },
-    { id: "nosotros", label: "Nosotros", type: "link" as const },
     {
       id: "ayuda_soporte",
       label: "Soporte",
       type: "dropdown" as const,
       children: [
         { id: "ayuda", label: "Centro de Ayuda", desc: "Preguntas frecuentes y soporte técnico", icon: HelpCircle, color: "text-slate-800 bg-slate-100" },
+        { id: "asociacion", label: "Partners & Afiliados", desc: "Programa de Afiliados y Partners", icon: Users, color: "text-violet-500 bg-violet-50" },
         { id: "contacto", label: "Contacto", desc: "Escríbenos o visita nuestras oficinas", icon: MapPin, color: "text-teal-500 bg-teal-50" }
       ]
     }
@@ -802,13 +807,6 @@ export default function PublicWebsite({
  
         {/* Right CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <button
-            onClick={onBackToEditor}
-            className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-[10px] px-3 py-2.5 rounded-lg uppercase tracking-wider flex items-center gap-1.5 transition-all cursor-pointer"
-          >
-            <ArrowLeftRight className="w-3 h-3" />
-            Ir al AI Client Prospector
-          </button>
           {authUser ? (
             <div className="flex items-center gap-2 bg-slate-100 rounded-lg pl-3 pr-1.5 py-1.5">
               <UserCircle2 className="w-4 h-4 text-[#1A3461]" />
@@ -929,16 +927,6 @@ export default function PublicWebsite({
                 );
               }
             })}
-            <button
-              onClick={() => {
-                onBackToEditor();
-                setMobileMenuOpen(false);
-              }}
-              className="mt-3 w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold text-xs uppercase py-2.5 rounded-lg tracking-wider text-center flex items-center justify-center gap-1.5"
-            >
-              <ArrowLeftRight className="w-3.5 h-3.5" />
-              Ir al AI Client Prospector
-            </button>
             {authUser ? (
               <button
                 onClick={() => {
@@ -1457,76 +1445,6 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
-                {/* License Pricing Section (Licencia Personal vs Extendida) */}
-                <section className="bg-slate-100 py-20 px-6 border-t border-slate-200">
-                  <div className="max-w-5xl mx-auto">
-                    <div className="text-center mb-12">
-                      <h2 className="text-2xl font-display font-black text-slate-900 tracking-tight">Licencias de Software</h2>
-                      <p className="text-slate-500 text-xs mt-1">Si buscás comprar el código base propietario para tu propio hosting e integraciones permanentes.</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                      <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-md hover:shadow-lg transition-all flex flex-col justify-between">
-                        <div>
-                          <span className="text-[10px] font-bold text-[#1A3461] uppercase tracking-widest font-mono">Uso Individual</span>
-                          <h3 className="text-lg font-bold text-slate-950 mt-1">Licencia Personal</h3>
-                          <div className="mt-4 flex items-baseline gap-1">
-                            <span className="text-3xl font-extrabold text-slate-950 font-mono">$69</span>
-                            <span className="text-xs text-slate-400 font-semibold uppercase">USD</span>
-                          </div>
-                          <ul className="mt-6 flex flex-col gap-2.5 text-xs text-slate-500">
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Un solo sitio web activo para tu cliente
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Soporte amigable por 6 meses vía email
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Actualizaciones futuras del core sin cargo
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-500 shrink-0" /> Garantía de devolución de 30 días
-                            </li>
-                          </ul>
-                        </div>
-                        <button onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="mt-8 w-full bg-[#1A3461] hover:bg-[#0d1f3c] text-white font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider transition-all">
-                          Comprar Licencia
-                        </button>
-                      </div>
-
-                      <div className="bg-slate-900 border border-slate-800 text-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between relative overflow-hidden">
-                        <div className="absolute top-0 right-0 transform translate-x-8 translate-y-2 rotate-45 bg-amber-500 text-slate-950 text-[8px] font-bold uppercase tracking-widest py-1 px-8 text-center">
-                          Ilimitado
-                        </div>
-                        <div>
-                          <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest font-mono">Agencias &amp; SaaS</span>
-                          <h3 className="text-lg font-bold text-white mt-1">Licencia Extendida</h3>
-                          <div className="mt-4 flex items-baseline gap-1">
-                            <span className="text-3xl font-extrabold text-white font-mono">$2,950</span>
-                            <span className="text-xs text-slate-400 font-semibold uppercase">USD</span>
-                          </div>
-                          <ul className="mt-6 flex flex-col gap-2.5 text-xs text-slate-300">
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0" /> Múltiples sitios para ilimitados clientes
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0" /> Soporte prioritario 24/7 por 12 meses
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0" /> Acceso al repositorio privado de GitHub
-                            </li>
-                            <li className="flex items-center gap-2">
-                              <Check className="w-4 h-4 text-emerald-400 shrink-0" /> Contrato de SLA e integraciones ad-hoc
-                            </li>
-                          </ul>
-                        </div>
-                        <button onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="mt-8 w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs uppercase py-2.5 rounded-lg tracking-wider transition-all">
-                          Adquirir Ilimitada
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </section>
               </div>
             )}
 
@@ -3990,16 +3908,16 @@ export default function PublicWebsite({
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Funciones</h4>
+            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Soluciones</h4>
             <ul className="flex flex-col gap-2">
               {[
                 { id: "chatbot", label: "Chatbot WhatsApp" },
                 { id: "crm_inteligente", label: "CRM Inteligente" },
                 { id: "asistente_ia", label: "Asistente IA" },
-                { id: "reportes", label: "Reportes Automáticos" },
                 { id: "automatizacion", label: "Automatización" },
                 { id: "portal_cliente", label: "Portal del Cliente" },
                 { id: "desarrollo_web", label: "Desarrollo Web" },
+                { id: "planes", label: "Planes & Precios" },
               ].map((item) => (
                 <li key={item.id}>
                   <button onClick={() => { setActiveTab(item.id); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
@@ -4011,33 +3929,7 @@ export default function PublicWebsite({
           </div>
 
           <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Secciones</h4>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <button onClick={() => { setActiveTab("inicio"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Inicio
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("servicios"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Servicios de Software
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("planes"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Planes &amp; Precios
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("academia"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Clientum Academia
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Compañía</h4>
+            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Empresa</h4>
             <ul className="flex flex-col gap-2">
               <li>
                 <button onClick={() => { setActiveTab("nosotros"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
@@ -4050,6 +3942,16 @@ export default function PublicWebsite({
                 </button>
               </li>
               <li>
+                <button onClick={() => { setActiveTab("clientes"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Clientes
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setActiveTab("blog"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Blog &amp; Recursos
+                </button>
+              </li>
+              <li>
                 <button onClick={() => { setActiveTab("privacidad"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
                   Política de Privacidad
                 </button>
@@ -4057,25 +3959,30 @@ export default function PublicWebsite({
             </ul>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-1">Suscríbete al Boletín</h4>
-            <p className="text-[10px] text-slate-400 font-medium">Recibe novedades digitales gratis en tu correo.</p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-              <input
-                type="email"
-                required
-                placeholder="martin@empresa.com"
-                className="bg-slate-900 border border-slate-800 text-white rounded p-2 text-[10px] focus:outline-none w-full"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-              />
-              <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 py-1.5 rounded text-[10px] cursor-pointer">
-                OK
-              </button>
-            </form>
-            {newsletterSubscribed && (
-              <span className="text-emerald-400 text-[10px]">¡Suscripción registrada con éxito!</span>
-            )}
+          <div>
+            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Soporte</h4>
+            <ul className="flex flex-col gap-2">
+              <li>
+                <button onClick={() => { setActiveTab("ayuda"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Centro de Ayuda
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setActiveTab("academia"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Academia
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setActiveTab("asociacion"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Partners &amp; Afiliados
+                </button>
+              </li>
+              <li>
+                <button onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  Contacto
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
 
