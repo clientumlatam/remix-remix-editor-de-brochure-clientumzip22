@@ -76,6 +76,17 @@ async function requireAdmin(req: express.Request, res: express.Response, next: e
   }
 }
 
+// ---------------------------------------------------------------------------
+// Santi SDR — API key middleware (server-to-server, Hermes → AI Prospector)
+// ---------------------------------------------------------------------------
+function requireApiKey(req: express.Request, res: express.Response, next: express.NextFunction) {
+  const key = req.header("x-api-key");
+  if (!key || key !== process.env.SANTI_API_KEY) {
+    return res.status(401).json({ error: "unauthorized" });
+  }
+  next();
+}
+
 app.post("/api/auth/register", async (req, res) => {
   try {
     const { username, password } = req.body || {};
@@ -2059,8 +2070,160 @@ Proporciona consejos estratégicos, creativos y prácticos. Usa el voseo argenti
   }
 });
 
+// ---------------------------------------------------------------------------
+// Santi SDR — DB migration: create tables if they don't exist yet
+// ---------------------------------------------------------------------------
+async function initSantiTables() {
+  await pgPool.query(`
+    CREATE TABLE IF NOT EXISTS santi_leads (
+      id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      company_name TEXT NOT NULL,
+      industry     VARCHAR(120),
+      city         VARCHAR(120),
+      address      TEXT,
+      contact_name TEXT,
+      contact_phone VARCHAR(30),
+      contact_role  VARCHAR(120),
+      pain_point    TEXT,
+      fit_score     INTEGER,
+      amount_ars    INTEGER DEFAULT 180000,
+      meddic_score  INTEGER,
+      guiacores_url TEXT,
+      status        VARCHAR(20) NOT NULL DEFAULT 'pendiente',
+      source        VARCHAR(60) DEFAULT 'patagonia_explorer',
+      created_at    TIMESTAMP NOT NULL DEFAULT NOW(),
+      updated_at    TIMESTAMP NOT NULL DEFAULT NOW()
+    );
+
+    CREATE TABLE IF NOT EXISTS santi_brochures (
+      id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      lead_id    UUID NOT NULL REFERENCES santi_leads(id) ON DELETE CASCADE,
+      content    TEXT NOT NULL,
+      hook       TEXT,
+      created_at TIMESTAMP NOT NULL DEFAULT NOW()
+    );
+
+    CREATE TABLE IF NOT EXISTS santi_notes (
+      id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      lead_id    UUID NOT NULL REFERENCES santi_leads(id) ON DELETE CASCADE,
+      summary    TEXT NOT NULL,
+      author     VARCHAR(60) NOT NULL DEFAULT 'santi',
+      created_at TIMESTAMP NOT NULL DEFAULT NOW()
+    );
+  `);
+  console.log("[Santi] Tablas santi_leads / santi_brochures / santi_notes listas.");
+}
+
+// ---------------------------------------------------------------------------
+// Santi SDR — endpoints de ingesta (requireAuth: solo el CRM los llama)
+// ---------------------------------------------------------------------------
+
+// POST /api/leads
+// Body: { company_name, industry, city, address, contact_name, contact_phone,
+//         contact_role, pain_point, fit_score, amount_ars, meddic_score, guiacores_url }
+// Crea un lead nuevo; devuelve el id generado.
+app.post("/api/leads", requireAuth, async (req, res) => {
+  const {
+    company_name, industry, city, address,
+    contact_name, contact_phone, contact_role,
+    pain_point, fit_score, amount_ars, meddic_score, guiacores_url,
+  } = req.body ?? {};
+  if (!company_name) return res.status(400).json({ error: "company_name requerido" });
+  const result = await pgPool.query(
+    `INSERT INTO santi_leads
+       (company_name, industry, city, address, contact_name, contact_phone,
+        contact_role, pain_point, fit_score, amount_ars, meddic_score, guiacores_url)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)
+     RETURNING id`,
+    [company_name, industry ?? null, city ?? null, address ?? null,
+     contact_name ?? null, contact_phone ?? null, contact_role ?? null,
+     pain_point ?? null, fit_score ?? null, amount_ars ?? 180000,
+     meddic_score ?? null, guiacores_url ?? null],
+  );
+  res.status(201).json({ ok: true, id: result.rows[0].id });
+});
+
+// POST /api/leads/:id/brochure
+// Body: { content, hook? }
+// Guarda (o reemplaza) el brochure generado por IA para ese lead.
+app.post("/api/leads/:id/brochure", requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const { content, hook } = req.body ?? {};
+  if (!content) return res.status(400).json({ error: "content requerido" });
+  // Upsert: un lead tiene a lo sumo un brochure vigente
+  await pgPool.query(`DELETE FROM santi_brochures WHERE lead_id = $1`, [id]);
+  await pgPool.query(
+    `INSERT INTO santi_brochures (lead_id, content, hook) VALUES ($1, $2, $3)`,
+    [id, content, hook ?? null],
+  );
+  res.json({ ok: true });
+});
+
+// ---------------------------------------------------------------------------
+// Santi SDR — endpoints de consumo (requireApiKey: solo Hermes los llama)
+// ---------------------------------------------------------------------------
+
+// GET /api/leads?status=pendiente&limit=20
+app.get("/api/leads", requireApiKey, async (req, res) => {
+  const status = (req.query.status as string) || "pendiente";
+  const limit  = Math.min(Number(req.query.limit) || 20, 100);
+  const result = await pgPool.query(
+    `SELECT id, company_name, industry, city, contact_name, contact_phone,
+            contact_role, pain_point, fit_score, amount_ars, status, created_at
+     FROM santi_leads
+     WHERE status = $1
+     ORDER BY created_at ASC
+     LIMIT $2`,
+    [status, limit],
+  );
+  res.json({ leads: result.rows });
+});
+
+// GET /api/leads/:id/brochure
+app.get("/api/leads/:id/brochure", requireApiKey, async (req, res) => {
+  const { id } = req.params;
+  const result = await pgPool.query(
+    `SELECT * FROM santi_brochures WHERE lead_id = $1 LIMIT 1`,
+    [id],
+  );
+  if (!result.rows[0]) return res.status(404).json({ error: "brochure not found" });
+  res.json({ brochure: result.rows[0] });
+});
+
+// PATCH /api/leads/:id
+// Body: { status: "pendiente"|"contactado"|"caliente"|"tibio"|"frio"|"agendado" }
+app.patch("/api/leads/:id", requireApiKey, async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body ?? {};
+  const VALID = ["pendiente","contactado","caliente","tibio","frio","agendado"];
+  if (!VALID.includes(status)) return res.status(400).json({ error: "status inválido" });
+  const result = await pgPool.query(
+    `UPDATE santi_leads SET status = $1, updated_at = NOW() WHERE id = $2 RETURNING id`,
+    [status, id],
+  );
+  if (!result.rows[0]) return res.status(404).json({ error: "lead not found" });
+  res.json({ ok: true, id, status });
+});
+
+// POST /api/leads/:id/notes
+// Body: { summary: string }
+app.post("/api/leads/:id/notes", requireApiKey, async (req, res) => {
+  const { id } = req.params;
+  const { summary } = req.body ?? {};
+  if (!summary) return res.status(400).json({ error: "summary requerido" });
+  const check = await pgPool.query(`SELECT id FROM santi_leads WHERE id = $1`, [id]);
+  if (!check.rows[0]) return res.status(404).json({ error: "lead not found" });
+  await pgPool.query(
+    `INSERT INTO santi_notes (lead_id, summary) VALUES ($1, $2)`,
+    [id, summary],
+  );
+  res.json({ ok: true, id });
+});
+
 // Configure Vite or Static Files
 async function setupServer() {
+  await initSantiTables();
+
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
       server: { middlewareMode: true },
