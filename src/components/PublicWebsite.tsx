@@ -426,25 +426,11 @@ export default function PublicWebsite({
   // Content Data structures
   const OFFICES = useMemo(() => ({
     roca: {
-      name: "Sede Central Roca, Argentina",
+      name: "Sede — General Roca, Patagonia",
       address: contact.address,
       phone: contact.phone,
       email: contact.email,
-      desc: "Nuestra cuna fundacional en la Patagonia Norte. Desde aquí coordinamos la ingeniería para toda Latinoamérica."
-    },
-    berlin: {
-      name: "Sede Europa - Alexanderplatz, Berlín",
-      address: "Habsburgerstraße 10, 10781 Berlin, Alemania",
-      phone: "+49 30 1247890",
-      email: contact.email,
-      desc: "Nexo estratégico para operaciones en Europa central y captación de talento en desarrollo omnicanal avanzada."
-    },
-    london: {
-      name: "Sede Financiera - Canary Wharf, Londres",
-      address: "86-90 Paul Street, EC2A 4NE, London, Reino Unido",
-      phone: "+44 20 7820 4422",
-      email: contact.email,
-      desc: "Oficina corporativa y enlace internacional para integraciones complejas de dropshipping y ERP globales."
+      desc: "Nacimos en 2016 en esta ciudad y seguimos operando desde la Patagonia Norte. Atendemos clientes en todo el país en modalidad 100% remota."
     }
   }), [contact]);
 
@@ -620,7 +606,7 @@ export default function PublicWebsite({
     },
     {
       q: "¿Qué ventajas tiene Clientum sobre otras agencias tradicionales?",
-      a: "Clientum combina un equipo creativo multidisciplinario con ingeniería de software rigurosa. Nacimos en General Roca, Río Negro, lo que nos da un entendimiento directo de las PyMEs del interior argentino, pero hoy expandimos soluciones con estándares y oficinas de alcance internacional."
+      a: "Clientum combina un equipo multidisciplinario con ingeniería de software rigurosa. Nacimos en General Roca, Río Negro en 2016 — antes como Viaweb — lo que nos da un entendimiento directo de las PyMEs del interior argentino. Operamos 100% de forma remota y atendemos clientes en todo el país."
     }
   ];
 
@@ -1464,7 +1450,7 @@ export default function PublicWebsite({
                         {
                           id: "nosotros", icon: Compass, accent: "from-blue-600 to-cyan-500",
                           label: "Sobre Clientum",
-                          desc: "Nuestro equipo, cultura y por qué más de 200 PyMEs nos eligieron.",
+                          desc: "Nuestro equipo, cultura y por qué más de 35 empresas e instituciones del Alto Valle nos eligieron.",
                           cta: "Conocernos"
                         },
                         {
@@ -1908,6 +1894,76 @@ export default function PublicWebsite({
                         <span className="text-3xl mx-auto">{emoji}</span>
                         <div className="font-bold text-sm text-slate-900 group-hover:text-[#1A3461] transition-colors">{label}</div>
                         <p className="text-[10px] text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ── PRODUCTOS PARA GRANDES EMPRESAS ── */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-slate-500 font-mono text-[10px] uppercase tracking-widest font-bold">Infraestructura y plataforma para organizaciones de mayor escala</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Productos para Grandes Empresas</h2>
+                    <p className="text-slate-500 text-xs mt-2 max-w-xl mx-auto">Soluciones de infraestructura, movilidad y comunicación que complementan el stack principal para organizaciones con mayor demanda técnica.</p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {[
+                      {
+                        emoji: "📱",
+                        title: "App Mobile",
+                        desc: "Aplicación nativa o híbrida para iOS y Android, conectada al CRM y a los procesos de tu empresa.",
+                        bullets: ["iOS + Android", "Sincronización en tiempo real", "Push notifications", "Integración CRM"],
+                        color: "bg-indigo-50 border-indigo-100 text-indigo-700",
+                        dot: "bg-indigo-500",
+                      },
+                      {
+                        emoji: "🖥️",
+                        title: "Servidores Virtuales Privados",
+                        desc: "VPS dedicados en infraestructura Cloud con recursos garantizados, backups automáticos y monitoreo.",
+                        bullets: ["Recursos dedicados", "Backups diarios automáticos", "Panel de control incluido", "Soporte técnico 24/7"],
+                        color: "bg-slate-50 border-slate-200 text-slate-700",
+                        dot: "bg-slate-500",
+                      },
+                      {
+                        emoji: "🌐",
+                        title: "Hosting Administrado",
+                        desc: "Alojamiento optimizado para sitios WordPress, e-commerce y apps web con alta disponibilidad.",
+                        bullets: ["99.9% uptime garantizado", "SSL incluido", "CDN y caché automático", "Actualizaciones de seguridad"],
+                        color: "bg-blue-50 border-blue-100 text-blue-700",
+                        dot: "bg-blue-500",
+                      },
+                      {
+                        emoji: "✉️",
+                        title: "Correos Corporativos",
+                        desc: "Casillas de correo con tu dominio empresarial, anti-spam profesional y acceso desde cualquier dispositivo.",
+                        bullets: ["Dominio propio (@tuempresa)", "Anti-spam avanzado", "Webmail + apps móviles", "Almacenamiento ampliado"],
+                        color: "bg-amber-50 border-amber-100 text-amber-700",
+                        dot: "bg-amber-500",
+                      },
+                    ].map(({ emoji, title, desc, bullets, color, dot }) => (
+                      <div key={title} className={`border rounded-2xl p-6 flex flex-col gap-4 ${color.split(" ").slice(0,2).join(" ")}`}>
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{emoji}</span>
+                          <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${color}`}>Infraestructura</span>
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-sm text-slate-950 leading-tight">{title}</h3>
+                          <p className="text-[11px] text-slate-500 mt-1.5 leading-relaxed">{desc}</p>
+                        </div>
+                        <ul className="flex flex-col gap-1.5 mt-auto">
+                          {bullets.map(b => (
+                            <li key={b} className="flex items-center gap-1.5 text-[11px] text-slate-600 font-medium">
+                              <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${dot}`} />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="mt-2 text-xs font-bold text-[#1A3461] hover:text-emerald-700 transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                          Consultar →
+                        </button>
                       </div>
                     ))}
                   </div>
@@ -2413,6 +2469,23 @@ export default function PublicWebsite({
                   </div>
                 </div>
 
+                {/* Motto */}
+                <div className="bg-[#1A3461] rounded-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div>
+                    <p className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold">Nuestro objetivo desde el primer día</p>
+                    <h2 className="text-white font-display font-black text-xl md:text-2xl tracking-tight mt-1">
+                      "Alcanzar la Excelencia Empresarial"
+                    </h2>
+                  </div>
+                  <div className="flex gap-3 shrink-0">
+                    {["Sistemas", "Desarrollos", "Promoción Digital"].map(pilar => (
+                      <span key={pilar} className="bg-white/10 text-white text-[10px] font-bold px-3 py-1.5 rounded-full border border-white/20 uppercase tracking-wider">
+                        {pilar}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Numbers bar */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
@@ -2555,7 +2628,7 @@ export default function PublicWebsite({
                     Nuestros Principales Clientes
                   </h1>
                   <p className="text-slate-500 text-xs mt-3 leading-relaxed max-w-xl mx-auto">
-                    Más de 40 organizaciones de la Patagonia y Argentina llevan adelante su transformación digital con Clientum — desde municipios y canales de TV hasta ferreterías, farmacias, propiedades e inmobiliarias.
+                    Más de 35 organizaciones del Alto Valle de Río Negro y Neuquén llevan adelante su transformación digital con Clientum — desde municipios y canales de TV hasta ferreterías, farmacias, propiedades e inmobiliarias.
                   </p>
                 </div>
 
@@ -2572,6 +2645,52 @@ export default function PublicWebsite({
                       <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-1">{stat.label}</div>
                     </div>
                   ))}
+                </div>
+
+                {/* Tres patrones de adopción tecnológica */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Cómo adoptan tecnología nuestros clientes</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Tres patrones de transformación digital</h2>
+                    <p className="text-slate-500 text-xs mt-2 max-w-2xl mx-auto">
+                      La diversidad de sectores que atendemos exige enfoques distintos. Identificamos tres estrategias según el tipo de organización.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-[#1A3461] text-white rounded-2xl p-6 flex flex-col gap-4">
+                      <span className="text-2xl">🏛️</span>
+                      <div>
+                        <h3 className="font-bold text-sm leading-tight">Transformación Institucional</h3>
+                        <p className="text-[10px] font-mono text-white/60 uppercase tracking-wider mt-0.5">Sector público y gremial</p>
+                      </div>
+                      <p className="text-slate-300 text-xs leading-relaxed">
+                        Organismos como Canal 10 y el Municipio de General Roca pasaron de ser portales informativos a centros de servicios digitales que requieren alta disponibilidad, seguridad y gestión de contenidos permanente.
+                      </p>
+                    </div>
+                    <div className="bg-emerald-700 text-white rounded-2xl p-6 flex flex-col gap-4">
+                      <span className="text-2xl">🌾</span>
+                      <div>
+                        <h3 className="font-bold text-sm leading-tight">Digitalización de la Cadena de Valor</h3>
+                        <p className="text-[10px] font-mono text-white/60 uppercase tracking-wider mt-0.5">Agroindustria y distribución</p>
+                      </div>
+                      <p className="text-slate-300 text-xs leading-relaxed">
+                        El Consorcio de Riego y el Frigorífico J.J. Gómez representan la columna vertebral de la economía del Alto Valle. La integración tecnológica aquí es operativa: ERP, trazabilidad de lote, logística y comercialización mayorista.
+                      </p>
+                    </div>
+                    <div className="bg-slate-800 text-white rounded-2xl p-6 flex flex-col gap-4">
+                      <span className="text-2xl">🛒</span>
+                      <div>
+                        <h3 className="font-bold text-sm leading-tight">Potenciación del Retail y Servicios</h3>
+                        <p className="text-[10px] font-mono text-white/60 uppercase tracking-wider mt-0.5">Comercio B2C y servicios</p>
+                      </div>
+                      <p className="text-slate-300 text-xs leading-relaxed">
+                        Lubrano Hogar, Morgado Hogar y Growlife Patagonia ejemplifican el paso al comercio omnicanal: e-commerce, integración con MercadoPago, analítica de conversión y automatización de campañas de marketing digital.
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-center text-[10px] text-slate-400 font-mono mt-5">
+                    Todos los sectores requieren infraestructura resiliente (hosting, correos corporativos) y una capa estratégica de datos (Business Intelligence) — Clientum lo centraliza en una sola plataforma.
+                  </p>
                 </div>
 
                 {/* Sector Público */}
@@ -3209,7 +3328,7 @@ export default function PublicWebsite({
                         <CheckCircle2 className="w-12 h-12 text-emerald-600" />
                         <h4 className="font-bold text-slate-900">¡Tu consulta ha sido enviada con éxito!</h4>
                         <p className="text-xs text-slate-500 leading-relaxed max-w-sm">
-                          Gracias por ponerte en contacto con Clientum. Uno de nuestros consultores de General Roca o Berlín se comunicará contigo en las próximas 24 horas hábiles.
+                          Gracias por ponerte en contacto con Clientum. Uno de nuestros consultores se comunicará contigo en las próximas 24 horas hábiles.
                         </p>
                         <button
                           onClick={() => {
@@ -3315,25 +3434,11 @@ export default function PublicWebsite({
                     <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
                       <h3 className="font-display font-bold text-sm text-slate-950 mb-4">Nuestras Oficinas Oficiales</h3>
                       
-                      {/* Tabs Offices selection */}
+                      {/* Office badge */}
                       <div className="flex gap-2 border-b border-slate-100 pb-3 mb-4">
-                        {[
-                          { id: "roca", label: "Patagonia" },
-                          { id: "berlin", label: "Berlín" },
-                          { id: "london", label: "Londres" }
-                        ].map(o => (
-                          <button
-                            key={o.id}
-                            onClick={() => setSelectedOffice(o.id)}
-                            className={`px-3 py-1 rounded text-[11px] font-bold transition-all cursor-pointer ${
-                              selectedOffice === o.id
-                                ? "bg-slate-900 text-white"
-                                : "bg-slate-100 text-slate-500 hover:bg-slate-200"
-                            }`}
-                          >
-                            {o.label}
-                          </button>
-                        ))}
+                        <span className="px-3 py-1 rounded text-[11px] font-bold bg-slate-900 text-white">
+                          Patagonia, Argentina
+                        </span>
                       </div>
 
                       {/* Display Office Card */}
@@ -3365,12 +3470,12 @@ export default function PublicWebsite({
                     <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 text-xs">
                       <h4 className="font-bold mb-2">Clientum S.R.L.</h4>
                       <p className="text-slate-400 leading-relaxed text-[11px]">
-                        CIF de registro societario internacional registrado bajo regulaciones impositivas y de comercio omnicanal.
+                        Empresa con base en General Roca, Río Negro, Argentina. Antes Viaweb (2016–2026). Atendemos clientes en todo el país en modalidad 100% remota.
                       </p>
                       <div className="mt-4 flex gap-3 text-slate-300 font-bold uppercase tracking-wider text-[9px]">
-                        <span>CIF: BL1247890</span>
+                        <span>General Roca, Río Negro</span>
                         <span>•</span>
-                        <span>Postbox 71090 Berlín</span>
+                        <span>Argentina</span>
                       </div>
                     </div>
                   </div>
