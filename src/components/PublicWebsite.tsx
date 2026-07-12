@@ -1650,6 +1650,208 @@ export default function PublicWebsite({
                     </div>
                   </div>
                 </div>
+
+                {/* ── SOLUCIONES ADICIONALES ── */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Acompañamiento integral para tu PyME</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Soluciones a medida</h2>
+                    <p className="text-slate-500 text-xs mt-2 max-w-xl mx-auto">Consultoría, implementación, IA, BI y desarrollo web — todo integrado con Clientum CRM.</p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      {
+                        emoji: "🔌",
+                        title: "Integración API Gateway",
+                        desc: "Conectá sistemas, apps y plataformas externas sin código. Automatizá el flujo de datos entre tus herramientas.",
+                        bullets: ["Integración entre múltiples sistemas", "API REST y webhooks", "Mapeo y transformación de datos", "Monitoreo en tiempo real"],
+                        color: "bg-violet-50 border-violet-100",
+                        badge: "text-violet-700 bg-violet-100",
+                      },
+                      {
+                        emoji: "🤖",
+                        title: "Viaweb AI Copilot",
+                        desc: "IA y automatización aplicada a tu negocio. Predicciones, flujos automáticos y análisis inteligente.",
+                        bullets: ["Automatización de procesos repetitivos", "Predicciones y recomendaciones", "IA conversacional a medida", "Integración con el CRM"],
+                        color: "bg-indigo-50 border-indigo-100",
+                        badge: "text-indigo-700 bg-indigo-100",
+                      },
+                      {
+                        emoji: "💻",
+                        title: "Desarrollo Web Personalizado",
+                        desc: "Sitios, landing pages y apps a medida que capturan leads y los envían directo al CRM.",
+                        bullets: ["Landing pages con integración CRM", "E-commerce con sincronización de stock", "Apps web progresivas (PWA)", "Diseño y UX incluidos"],
+                        color: "bg-blue-50 border-blue-100",
+                        badge: "text-blue-700 bg-blue-100",
+                      },
+                      {
+                        emoji: "📦",
+                        title: "Pack Integrado",
+                        desc: "CRM + API + IA + Web en una sola propuesta. La solución más completa para empresas que quieren escalar.",
+                        bullets: ["Todo incluido en un precio", "Implementación coordinada", "Un solo punto de contacto", "Soporte unificado"],
+                        color: "bg-emerald-50 border-emerald-100",
+                        badge: "text-emerald-700 bg-emerald-100",
+                      },
+                      {
+                        emoji: "📊",
+                        title: "Business Intelligence",
+                        desc: "Dashboards y analytics para tomar decisiones con datos reales. Conectamos tus fuentes y construimos el tablero.",
+                        bullets: ["Dashboards en tiempo real", "KPIs y métricas de negocio", "Predicciones y tendencias", "Reportes automáticos"],
+                        color: "bg-orange-50 border-orange-100",
+                        badge: "text-orange-700 bg-orange-100",
+                      },
+                      {
+                        emoji: "⚙️",
+                        title: "Consultoría Empresarial",
+                        desc: "Diagnóstico de procesos y plan de mejora con KPIs medibles para tu empresa.",
+                        bullets: ["Diagnóstico sin costo inicial", "Plan de acción 90 días", "Seguimiento de resultados", "Gestión del cambio"],
+                        color: "bg-slate-50 border-slate-200",
+                        badge: "text-slate-700 bg-slate-100",
+                      },
+                    ].map(({ emoji, title, desc, bullets, color, badge }) => (
+                      <div key={title} className={`border rounded-2xl p-6 flex flex-col gap-4 ${color}`}>
+                        <div className="flex items-center gap-3">
+                          <span className="text-2xl">{emoji}</span>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${badge}`}>Servicio</span>
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-sm text-slate-950 leading-tight">{title}</h3>
+                          <p className="text-[11px] text-slate-500 mt-1.5 leading-relaxed">{desc}</p>
+                        </div>
+                        <ul className="flex flex-col gap-1.5 mt-auto">
+                          {bullets.map(b => (
+                            <li key={b} className="flex items-center gap-1.5 text-[11px] text-slate-600 font-medium">
+                              <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
+                        <button
+                          onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="mt-2 text-xs font-bold text-[#1A3461] hover:text-emerald-700 transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                          Consultar disponibilidad <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ── TABLA DE PRECIOS DE REFERENCIA ── */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-slate-400 font-mono text-[10px] uppercase tracking-widest font-bold">Valores orientativos en pesos argentinos</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Catálogo de precios de referencia</h2>
+                    <p className="text-slate-500 text-xs mt-2">Cada proyecto se cotiza a medida según alcance real.</p>
+                  </div>
+                  <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="bg-slate-900 text-white">
+                          <th className="text-left px-5 py-4 font-bold text-[11px] uppercase tracking-wider w-52">Servicio</th>
+                          {["Basic / Starter", "Pro / Advanced / Business", "Enterprise"].map(tier => (
+                            <th key={tier} className="px-4 py-4 font-bold text-[11px] uppercase tracking-wider text-center">{tier}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          {
+                            emoji: "🔌", name: "Integración API Gateway", sub: "Conectá sistemas y apps sin código",
+                            tiers: [
+                              { label: "Básica", sla: "48 hs", price: "$400.000 – $800.000", desc: "2 sistemas" },
+                              { label: "Múltiple", sla: "24 hs", price: "$800.000 – $1.400.000", desc: "Multi-sistema" },
+                              { label: "Completa", sla: "12 hs", price: "$1.400.000 – $2.000.000", desc: "Empresarial" },
+                            ]
+                          },
+                          {
+                            emoji: "🤖", name: "Viaweb AI Copilot", sub: "IA y automatización para tu negocio",
+                            tiers: [
+                              { label: "IA Básica", sla: "48 hs", price: "$600.000 – $1.000.000", desc: "Automatización simple" },
+                              { label: "IA Avanzada", sla: "24 hs", price: "$1.000.000 – $1.800.000", desc: "Predicciones" },
+                              { label: "IA Empresarial", sla: "12 hs", price: "$1.800.000 – $2.500.000", desc: "LLM corporativo" },
+                            ]
+                          },
+                          {
+                            emoji: "💻", name: "Desarrollo Web", sub: "Sitios y apps a medida con CRM",
+                            tiers: [
+                              { label: "Web Básica", sla: "48 hs", price: "$800.000 – $1.500.000", desc: "Landing + CRM" },
+                              { label: "Web Avanzada", sla: "24 hs", price: "$1.500.000 – $2.500.000", desc: "E-commerce + PWA" },
+                              { label: "App Empresarial", sla: "12 hs", price: "$2.500.000 – $4.000.000", desc: "Full-stack a medida" },
+                            ]
+                          },
+                          {
+                            emoji: "📦", name: "Pack Integrado", sub: "CRM + API + IA + Web todo incluido",
+                            tiers: [
+                              { label: "Starter", sla: "48 hs", price: "$960.000 – $1.250.000", desc: "Pack básico" },
+                              { label: "Business", sla: "24 hs", price: "$1.750.000 – $2.000.000", desc: "Pack completo" },
+                              { label: "Corporativo", sla: "12 hs", price: "$2.450.000 – $3.000.000", desc: "Pack total" },
+                            ]
+                          },
+                          {
+                            emoji: "📊", name: "Business Intelligence", sub: "Dashboards y analytics con datos reales",
+                            tiers: [
+                              { label: "BI Básico", sla: "48 hs", price: "$800.000 – $1.500.000", desc: "Análisis de datos" },
+                              { label: "BI Avanzado", sla: "24 hs", price: "$1.500.000 – $2.500.000", desc: "Predicciones" },
+                              { label: "BI Empresarial", sla: "12 hs", price: "$2.500.000 – $4.000.000", desc: "BI corporativo" },
+                            ]
+                          },
+                        ].map((row, rIdx) => (
+                          <tr key={row.name} className={rIdx % 2 === 0 ? "bg-white" : "bg-slate-50/70"}>
+                            <td className="px-5 py-4 border-r border-slate-100">
+                              <div className="flex items-center gap-2">
+                                <span className="text-base">{row.emoji}</span>
+                                <div>
+                                  <div className="font-bold text-slate-900 text-[11px]">{row.name}</div>
+                                  <div className="text-[9px] text-slate-400 mt-0.5">{row.sub}</div>
+                                </div>
+                              </div>
+                            </td>
+                            {row.tiers.map(tier => (
+                              <td key={tier.label} className="px-4 py-4 text-center border-r border-slate-100 last:border-0">
+                                <div className="font-bold text-slate-800 text-[11px]">{tier.price}</div>
+                                <div className="text-[9px] text-slate-400 mt-0.5">{tier.desc}</div>
+                                <div className="text-[9px] text-emerald-600 font-semibold mt-1">SLA {tier.sla}</div>
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                      <tfoot>
+                        <tr className="bg-slate-50 border-t border-slate-200">
+                          <td colSpan={4} className="px-5 py-3 text-[10px] text-slate-400 italic">
+                            Precios en ARS · Cada proyecto se cotiza según alcance real · <button onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="text-[#1A3461] font-semibold hover:underline cursor-pointer">Solicitá propuesta sin costo →</button>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+
+                {/* ── SECTORES QUE ATENDEMOS ── */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-emerald-600 font-mono text-[10px] uppercase tracking-widest font-bold">Experiencia sectorial</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Sectores que atendemos</h2>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    {[
+                      { emoji: "🛒", label: "Minoristas",     desc: "Gestión de stock multicanal, ventas por WhatsApp y facturación integrada." },
+                      { emoji: "🏭", label: "Manufactura",    desc: "Control de producción, trazabilidad de materiales y presupuestos conectados al ERP." },
+                      { emoji: "🌾", label: "Agroindustria",  desc: "Trazabilidad de lote desde el campo hasta la entrega, costos por campaña." },
+                      { emoji: "🚚", label: "Distribuidores", desc: "Ruteo de entregas, inventario en tiempo real y cobranzas automáticas." },
+                      { emoji: "💼", label: "Servicios",      desc: "CRM para seguimiento de clientes y automatización del flujo de atención." },
+                      { emoji: "🔐", label: "Tecnología",     desc: "Gestión de proyectos, incidentes y clientes para consultoras IT." },
+                    ].map(({ emoji, label, desc }) => (
+                      <div key={label} className="bg-white border border-slate-200 hover:border-[#1A3461]/30 hover:shadow-md rounded-2xl p-5 flex flex-col gap-3 text-center transition-all group cursor-default">
+                        <span className="text-3xl mx-auto">{emoji}</span>
+                        <div className="font-bold text-sm text-slate-900 group-hover:text-[#1A3461] transition-colors">{label}</div>
+                        <p className="text-[10px] text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             )}
 
