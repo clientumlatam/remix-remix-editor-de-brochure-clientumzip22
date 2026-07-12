@@ -502,66 +502,75 @@ export default function PublicWebsite({
   const PROJECTS = [
     {
       id: "p1",
-      name: "WeWork Latam",
-      year: "2019",
-      type: "Rebranding & SEO",
-      industry: "servicios",
-      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
-      desc: "Reestructuración de marca digital y optimización de presencia local en motores de búsqueda."
+      name: "Morgado Hogar",
+      year: "2023",
+      type: "E-Commerce + CRM Inteligente",
+      industry: "retail",
+      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
+      desc: "Tienda online con catálogo de muebles y deco sincronizado con stock físico. Pipeline de ventas y seguimiento automático de presupuestos por WhatsApp."
     },
     {
       id: "p2",
-      name: "Vans Store",
-      year: "2018",
-      type: "Aplicación iOS / Android",
-      industry: "retail",
-      img: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=600&q=80",
-      desc: "Desarrollo de una experiencia de compra móvil fluida e integraciones de fidelización digital."
+      name: "Farmacia San Martín",
+      year: "2023",
+      type: "Bot WhatsApp + Gestión de Stock",
+      industry: "salud",
+      img: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=600&q=80",
+      desc: "Bot 24/7 que responde consultas de disponibilidad de medicamentos, agenda turnos y envía recordatorios. Stock integrado con facturación AFIP."
     },
     {
       id: "p3",
-      name: "Apple Campus",
-      year: "2018",
-      type: "Diseño de Interfaces & ERP",
+      name: "Mafacha Ferretería Pinturería",
+      year: "2022",
+      type: "E-Commerce + Facturación AFIP",
       industry: "retail",
-      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80",
-      desc: "Plataforma e-commerce premium intuitiva con control unificado de stock y logística omnicanal."
+      img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80",
+      desc: "Catálogo online de más de 3.000 productos con precios actualizados, carrito de compras y emisión automática de facturas A/B/C desde el CRM."
     },
     {
       id: "p4",
-      name: "Coca Cola Local",
-      year: "2018",
-      type: "Social Media & Marketing",
-      industry: "servicios",
-      img: "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?auto=format&fit=crop&w=600&q=80",
-      desc: "Estrategias creativas de marketing local automatizado segmentado por geolocalización."
+      name: "Terbay Propiedades",
+      year: "2023",
+      type: "CRM Inmobiliario + Bot WhatsApp",
+      industry: "inmobiliaria",
+      img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+      desc: "Bot califica interesados, envía planos y fotos, y agenda visitas automáticamente. Pipeline de operaciones con seguimiento de cada cliente hasta el cierre."
     },
     {
       id: "p5",
-      name: "Cereales del Limay",
-      year: "2021",
-      type: "Implementación ERP & AFIP",
+      name: "Forestal Norte",
+      year: "2022",
+      type: "ERP + AFIP + Cartas de Porte",
       industry: "agroindustria",
-      img: "https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=600&q=80",
-      desc: "Digitalización agrícola integral. Sincronización de balanzas, cartas de porte y liquidación automática en pesos."
+      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80",
+      desc: "Digitalización de operaciones forestales: cartas de porte electrónicas, liquidaciones automáticas y trazabilidad de carga desde el campo hasta la planta."
     },
     {
       id: "p6",
-      name: "Metalúrgica Morgado",
-      year: "2020",
-      type: "Gestión de Manufactura CRM",
-      industry: "manufactura",
-      img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80",
-      desc: "Optimización de la cadena de montaje y control de calidad con reportes avanzados de Business Intelligence."
+      name: "Canal 10 TV",
+      year: "2022",
+      type: "Portal Web + Streaming Digital",
+      industry: "medios",
+      img: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=600&q=80",
+      desc: "Rediseño del portal de noticias con integración de streaming en vivo, gestión de contenidos y automatización de publicaciones en redes sociales."
     },
     {
       id: "p7",
-      name: "Uber Eats Seguridad",
-      year: "2022",
-      type: "Consultoría Ciberseguridad",
-      industry: "ciberseguridad",
-      img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80",
-      desc: "Implementación de protocolos criptográficos que elevaron la seguridad de transacciones de reparto."
+      name: "Cabarcos Motores SRL",
+      year: "2023",
+      type: "E-Commerce + CRM Automotriz",
+      industry: "automotriz",
+      img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80",
+      desc: "Catálogo de vehículos y repuestos online con reservas digitales. CRM con seguimiento de consultas, test drives y posventa integrado a WhatsApp."
+    },
+    {
+      id: "p8",
+      name: "KJ Logística",
+      year: "2023",
+      type: "ERP + Rastreo de Flota",
+      industry: "logística",
+      img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80",
+      desc: "Sistema de gestión de viajes, control de flota y liquidación de conductores. Reportes automáticos de kilómetros, combustible y rentabilidad por unidad."
     }
   ];
 
@@ -651,6 +660,7 @@ export default function PublicWebsite({
       ]
     },
     { id: "planes", label: "Precios", type: "link" as const },
+    { id: "clientes", label: "Clientes", type: "link" as const },
     {
       id: "comunidad",
       label: "Ecosistema",
@@ -1308,6 +1318,7 @@ export default function PublicWebsite({
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
                         { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
+                        { id: "clientes",       icon: Users,        color: "bg-cyan-50 text-cyan-600 border-cyan-100",     accent: "group-hover:text-cyan-600",   label: "Nuestros Clientes",     desc: "Más de 40 empresas de la Patagonia que ya confían en nosotros." },
                       ].map(({ id, icon: Icon, color, accent, label, desc }) => (
                         <button
                           key={id}
@@ -1363,6 +1374,12 @@ export default function PublicWebsite({
                           label: "Casos de Éxito",
                           desc: "Cómo distribuidoras, estudios y comercios escalaron con Clientum.",
                           cta: "Ver Historias"
+                        },
+                        {
+                          id: "clientes", icon: Users, accent: "from-cyan-600 to-blue-500",
+                          label: "Nuestros Clientes",
+                          desc: "Las empresas de la Patagonia y Argentina que ya trabajan con Clientum.",
+                          cta: "Ver Clientes"
                         },
                         {
                           id: "nosotros", icon: Compass, accent: "from-blue-600 to-cyan-500",
@@ -2173,6 +2190,220 @@ export default function PublicWebsite({
               </div>
             )}
 
+            {/* NUESTROS CLIENTES TAB */}
+            {activeTab === "clientes" && (
+              <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-14">
+
+                {/* Header */}
+                <div className="text-center max-w-2xl mx-auto">
+                  <span className="text-cyan-600 font-mono text-xs uppercase tracking-widest font-bold">Ecosistema empresarial del Alto Valle</span>
+                  <h1 className="text-3xl font-display font-black text-slate-950 tracking-tight mt-1">
+                    Nuestros Principales Clientes
+                  </h1>
+                  <p className="text-slate-500 text-xs mt-3 leading-relaxed max-w-xl mx-auto">
+                    Más de 40 organizaciones de la Patagonia y Argentina llevan adelante su transformación digital con Clientum — desde municipios y canales de TV hasta ferreterías, farmacias, propiedades e inmobiliarias.
+                  </p>
+                </div>
+
+                {/* Stats strip */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { value: "+40", label: "Clientes activos" },
+                    { value: "4", label: "Organismos públicos" },
+                    { value: "3", label: "Sectores de medios" },
+                    { value: "2016", label: "Primer cliente" },
+                  ].map(stat => (
+                    <div key={stat.label} className="bg-white border border-slate-200 rounded-2xl p-5 text-center shadow-xs">
+                      <div className="text-2xl font-display font-black text-[#1A3461]">{stat.value}</div>
+                      <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-1">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Sector Público */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-lg bg-[#1A3461] flex items-center justify-center shrink-0">
+                      <Building className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="font-display font-black text-slate-900 text-lg tracking-tight">Sector Público</h2>
+                      <p className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Municipios, medios públicos y organismos estatales</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {[
+                      { name: "Canal 10 TV",               rubro: "Medios Públicos",            url: "canal10rn.tv",          icon: Monitor },
+                      { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen },
+                      { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro", url: "generalroca.gob.ar", icon: Building },
+                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",  url: "25demayo.gob.ar",   icon: Building },
+                    ].map(({ name, rubro, url, icon: Icon }) => (
+                      <div key={name} className="bg-white border-2 border-[#1A3461]/10 hover:border-[#1A3461]/30 rounded-2xl p-5 flex flex-col gap-3 transition-all shadow-xs hover:shadow-md">
+                        <div className="flex items-start justify-between">
+                          <div className="w-9 h-9 rounded-xl bg-[#1A3461]/10 flex items-center justify-center">
+                            <Icon className="w-4 h-4 text-[#1A3461]" />
+                          </div>
+                          <a
+                            href={`https://${url}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[9px] text-slate-400 hover:text-[#1A3461] flex items-center gap-0.5 transition-colors"
+                            onClick={e => e.stopPropagation()}
+                          >
+                            {url} <ExternalLink className="w-2.5 h-2.5" />
+                          </a>
+                        </div>
+                        <div>
+                          <div className="font-bold text-sm text-slate-900 leading-tight">{name}</div>
+                          <div className="text-[10px] text-[#1A3461] font-semibold mt-1 uppercase tracking-wider">{rubro}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Sector Privado — agrupado por rubro */}
+                {[
+                  {
+                    label: "Medios & Comunicación",
+                    color: "bg-violet-600",
+                    icon: Monitor,
+                    clientes: [
+                      { name: "Frecuencia Urbana 887 FM", rubro: "Radio / Medios",         url: "frecuenciaurbana.com.ar" },
+                    ]
+                  },
+                  {
+                    label: "Real Estate & Propiedades",
+                    color: "bg-blue-600",
+                    icon: Home,
+                    clientes: [
+                      { name: "Aitue Propiedades",  rubro: "Inmobiliaria",   url: "aitue.com.ar" },
+                      { name: "Terbay Propiedades", rubro: "Inmobiliaria",   url: "terbaypropiedades.com.ar" },
+                      { name: "Habitar Sur",         rubro: "Real Estate / Construcción", url: null },
+                    ]
+                  },
+                  {
+                    label: "Agroindustria & Producción",
+                    color: "bg-green-700",
+                    icon: Layers,
+                    clientes: [
+                      { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",   url: "consorcioderiegoroca.com.ar" },
+                      { name: "Cooperativa Frigorífico J.J. Gómez",       rubro: "Frigorífico / Agroindustria", url: "frigorificojpgomez.com.ar" },
+                      { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria", url: null },
+                    ]
+                  },
+                  {
+                    label: "Retail & Comercio",
+                    color: "bg-orange-500",
+                    icon: ShoppingCart,
+                    clientes: [
+                      { name: "Lubrano Hogar",              rubro: "Electrodomésticos / Retail", url: "lubranohogar.com.ar" },
+                      { name: "Morgado Hogar",              rubro: "Hogar / Retail",             url: null },
+                      { name: "Mafacha Ferretería Pinturería", rubro: "Ferretería / Retail",    url: null },
+                      { name: "Growlife Patagonia",         rubro: "Comercio / Growshop",        url: "growlifepatagonia.com.ar" },
+                      { name: "Bauleras Roca",              rubro: "Guardamuebles / Almacenaje", url: null },
+                      { name: "AKBAR SRL",                  rubro: "Comercio",                  url: null },
+                      { name: "LP SRL",                     rubro: "Comercio",                  url: null },
+                      { name: "AMBAR",                      rubro: "Comercio / Servicios",       url: null },
+                    ]
+                  },
+                  {
+                    label: "Salud & Bienestar",
+                    color: "bg-rose-500",
+                    icon: Stethoscope,
+                    clientes: [
+                      { name: "Farmacia San Martín",  rubro: "Farmacia",          url: null },
+                      { name: "Coe Consultorio",       rubro: "Consultorio Médico", url: null },
+                      { name: "Consultorio Cerol",     rubro: "Consultorio Médico", url: null },
+                      { name: "Grupo Bio",             rubro: "Salud / Bienestar", url: null },
+                    ]
+                  },
+                  {
+                    label: "Automotriz & Logística",
+                    color: "bg-slate-700",
+                    icon: Truck,
+                    clientes: [
+                      { name: "Cabarcos Motores SRL",  rubro: "Automotriz / Industrial", url: "cabarcosmotores.com.ar" },
+                      { name: "Patagonia Remolques",   rubro: "Remolques / Automotriz",  url: null },
+                      { name: "KJ Logística",          rubro: "Logística / Transporte",  url: null },
+                      { name: "Naval Patagonia",       rubro: "Náutica / Servicios",     url: null },
+                    ]
+                  },
+                  {
+                    label: "Servicios Profesionales & Tech",
+                    color: "bg-indigo-600",
+                    icon: Briefcase,
+                    clientes: [
+                      { name: "AFP Service",           rubro: "Servicios Técnicos",      url: "afpservice.com.ar" },
+                      { name: "YendoApp",              rubro: "Tecnología / App Móvil",  url: "yendoapp.com.ar" },
+                      { name: "Saitt",                 rubro: "Tecnología / Servicios",  url: null },
+                      { name: "Estudio Integra",       rubro: "Estudio Profesional",     url: null },
+                      { name: "Grupo de Asesores",     rubro: "Consultoría",             url: null },
+                      { name: "Anmerica",              rubro: "Servicios",               url: null },
+                      { name: "Agua Wass",             rubro: "Agua / Servicios",        url: null },
+                      { name: "SCT Patagonia",         rubro: "Servicios / Construcción",url: null },
+                      { name: "Poliservice Suministros", rubro: "Suministros Industriales", url: null },
+                    ]
+                  },
+                  {
+                    label: "Institucional & Gremial",
+                    color: "bg-teal-600",
+                    icon: Users,
+                    clientes: [
+                      { name: "Centro Empleados de Comercio", rubro: "Gremio / Institucional", url: "cecgroca.com.ar" },
+                    ]
+                  },
+                ].map(({ label, color, icon: SectorIcon, clientes }) => (
+                  <div key={label}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`w-7 h-7 rounded-lg ${color} flex items-center justify-center shrink-0`}>
+                        <SectorIcon className="w-3.5 h-3.5 text-white" />
+                      </div>
+                      <h2 className="font-display font-black text-slate-900 text-base tracking-tight">{label}</h2>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                      {clientes.map(({ name, rubro, url }) => (
+                        <div
+                          key={name}
+                          className="bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-xl px-4 py-3 flex flex-col gap-1.5 transition-all shadow-xs"
+                        >
+                          <span className="text-[11px] font-bold text-slate-800 leading-tight">{name}</span>
+                          <span className="text-[9px] text-slate-400 font-semibold uppercase tracking-wide">{rubro}</span>
+                          {url && (
+                            <a
+                              href={`https://${url}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[9px] text-cyan-600 hover:text-cyan-800 flex items-center gap-0.5 transition-colors mt-0.5"
+                              onClick={e => e.stopPropagation()}
+                            >
+                              {url} <ExternalLink className="w-2 h-2" />
+                            </a>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                {/* CTA */}
+                <div className="bg-[#1A3461] text-white rounded-2xl p-10 text-center flex flex-col items-center gap-4">
+                  <span className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold">¿Querés unirte?</span>
+                  <h2 className="text-2xl font-display font-black tracking-tight">Tu empresa podría ser la próxima</h2>
+                  <p className="text-slate-300 text-xs max-w-md leading-relaxed">
+                    Implementación en 5 días hábiles, soporte en español 24/7 y tecnología que se adapta a tu rubro. Sin contratos mínimos.
+                  </p>
+                  <button
+                    onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="mt-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs px-8 py-3 rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                  >
+                    Solicitar Demo Gratuita <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+
+              </div>
+            )}
+
             {/* CASOS DE EXITO / INDUSTRIAS TAB */}
             {activeTab === "casos" && (
               <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-12">
@@ -2191,10 +2422,12 @@ export default function PublicWebsite({
                   {[
                     { id: "todos", label: "Ver Todos" },
                     { id: "retail", label: "Retail" },
-                    { id: "manufactura", label: "Manufactura" },
+                    { id: "salud", label: "Salud" },
+                    { id: "inmobiliaria", label: "Inmobiliaria" },
                     { id: "agroindustria", label: "Agroindustria" },
-                    { id: "servicios", label: "Servicios" },
-                    { id: "ciberseguridad", label: "Ciberseguridad" }
+                    { id: "medios", label: "Medios" },
+                    { id: "automotriz", label: "Automotriz" },
+                    { id: "logística", label: "Logística" }
                   ].map(ind => (
                     <button
                       key={ind.id}
@@ -2273,24 +2506,24 @@ export default function PublicWebsite({
                   </div>
                 )}
 
-                {/* Brief cases testimonials (Cliente A, B, C) */}
+                {/* Brief cases testimonials — clientes reales */}
                 <div className="bg-slate-100 border border-slate-200 rounded-2xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                   <div className="flex flex-col gap-2">
-                    <span className="text-xs font-bold text-[#1A3461]">Cliente A - Pizzería Don Corleone</span>
+                    <span className="text-xs font-bold text-[#1A3461]">Terbay Propiedades</span>
                     <p className="text-xs text-slate-500 leading-relaxed italic">
-                      "Rediseñamos la tienda online con un bot integrador. Vendimos un 150% más de pizza los fines de semana en General Roca."
+                      "El bot califica los interesados, les envía las fotos y los planos, y agenda las visitas solo. Nosotros entramos a cerrar. Fue un cambio total en la forma de trabajar."
                     </p>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="text-xs font-bold text-[#1A3461]">Cliente B - Inmobiliaria Pilar</span>
+                    <span className="text-xs font-bold text-[#1A3461]">Farmacia San Martín</span>
                     <p className="text-xs text-slate-500 leading-relaxed italic">
-                      "El bot de WhatsApp califica los interesados, envía planos de departamentos y agenda visitas automáticamente. Espectacular."
+                      "Antes el teléfono no paraba. Ahora el bot responde si tenemos el medicamento, da el precio y reserva. Liberamos horas de mostrador que usamos para atención personalizada."
                     </p>
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="text-xs font-bold text-[#1A3461]">Cliente C - Clínica Vital</span>
+                    <span className="text-xs font-bold text-[#1A3461]">Forestal Norte</span>
                     <p className="text-xs text-slate-500 leading-relaxed italic">
-                      "Redujimos el ausentismo de turnos médicos en un 45% con los recordatorios automáticos de WhatsApp de Clientum."
+                      "Las cartas de porte y la liquidación AFIP se hacen solas. Lo que nos llevaba medio día de oficina ahora tarda minutos. Clientum nos ahorró un empleado administrativo."
                     </p>
                   </div>
                 </div>
