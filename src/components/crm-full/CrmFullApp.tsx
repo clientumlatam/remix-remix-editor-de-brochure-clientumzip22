@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot, Database } from 'lucide-react';
+import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot, Database, Blocks } from 'lucide-react';
 import CrmFullDashboard from './CrmFullDashboard';
 import CrmFullPipeline from './CrmFullPipeline';
 import CrmFullProducts from './CrmFullProducts';
@@ -8,6 +8,7 @@ import CrmFullBranches from './CrmFullBranches';
 import CrmFullConversations from './CrmFullConversations';
 import CrmFullBotConfig from './CrmFullBotConfig';
 import CrmFullCMDB from './CrmFullCMDB';
+import CrmFullUseCases from './CrmFullUseCases';
 import { Conversation, Seller, Branch, Product } from './crmTypes';
 import {
   initialConversations,
@@ -16,12 +17,13 @@ import {
   initialProducts,
 } from './crmInitialData';
 
-type SubTab = 'dashboard' | 'crm' | 'products' | 'sellers' | 'branches' | 'conversations' | 'bot' | 'cmdb';
+type SubTab = 'dashboard' | 'crm' | 'products' | 'usecases' | 'sellers' | 'branches' | 'conversations' | 'bot' | 'cmdb';
 
 const tabs: { id: SubTab; label: string; icon: React.ReactNode }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
   { id: 'crm', label: 'CRM', icon: <MessagesSquare className="w-4 h-4" /> },
   { id: 'products', label: 'Productos', icon: <Package className="w-4 h-4" /> },
+  { id: 'usecases', label: 'Casos de Uso', icon: <Blocks className="w-4 h-4" /> },
   { id: 'sellers', label: 'Vendedores', icon: <Users className="w-4 h-4" /> },
   { id: 'branches', label: 'Sucursales', icon: <Building2 className="w-4 h-4" /> },
   { id: 'conversations', label: 'Conversaciones', icon: <MessageSquare className="w-4 h-4" /> },
@@ -113,6 +115,8 @@ export default function CrmFullApp({ activeTabOverride, hideNav = false }: CrmFu
         );
       case 'products':
         return <CrmFullProducts products={products} onSave={handleSaveProduct} />;
+      case 'usecases':
+        return <CrmFullUseCases products={products} />;
       case 'sellers':
         return <CrmFullSellers sellers={sellers} onSave={handleSaveSeller} />;
       case 'branches':
