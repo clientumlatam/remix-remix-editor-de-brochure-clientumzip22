@@ -7,22 +7,22 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Seller } from './crmTypes';
 
 const specialties = [
-  { value: 'plomeria', label: '🔧 Plomería' },
-  { value: 'electricidad', label: '⚡ Electricidad' },
-  { value: 'pintura', label: '🎨 Pintura' },
-  { value: 'construccion', label: '🏗️ Construcción' },
-  { value: 'ceramicos', label: '🪟 Cerámicos' },
-  { value: 'herramientas', label: '🛠️ Herramientas' },
+  { value: 'crm', label: '💼 CRM & Ventas' },
+  { value: 'chatbot', label: '🤖 Chatbot & IA' },
+  { value: 'ecommerce', label: '🛒 E-Commerce' },
+  { value: 'marketing', label: '📣 Marketing Digital' },
+  { value: 'cloud', label: '☁️ Cloud & Infraestructura' },
+  { value: 'capacitacion', label: '🎓 Capacitación' },
   { value: 'general', label: '📋 General' },
 ];
 
 const specialtyColors: Record<string, string> = {
-  plomeria: 'bg-blue-100 text-blue-700',
-  electricidad: 'bg-yellow-100 text-yellow-800',
-  pintura: 'bg-red-100 text-red-700',
-  construccion: 'bg-orange-100 text-orange-700',
-  ceramicos: 'bg-purple-100 text-purple-700',
-  herramientas: 'bg-slate-100 text-slate-700',
+  crm: 'bg-blue-100 text-blue-700',
+  chatbot: 'bg-violet-100 text-violet-700',
+  ecommerce: 'bg-orange-100 text-orange-700',
+  marketing: 'bg-pink-100 text-pink-700',
+  cloud: 'bg-sky-100 text-sky-700',
+  capacitacion: 'bg-green-100 text-green-700',
   general: 'bg-gray-100 text-gray-600',
 };
 

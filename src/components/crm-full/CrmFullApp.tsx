@@ -54,15 +54,19 @@ export default function CrmFullApp({ activeTabOverride, hideNav = false }: CrmFu
   const [conversations, setConversations] = useState<Conversation[]>(() =>
     loadOrDefault('clientum_crmfull_conversations', initialConversations)
   );
-  const [sellers, setSellers] = useState<Seller[]>(() =>
-    loadOrDefault('clientum_crmfull_sellers', initialSellers)
-  );
-  const [branches, setBranches] = useState<Branch[]>(() =>
-    loadOrDefault('clientum_crmfull_branches', initialBranches)
-  );
-  const [products, setProducts] = useState<Product[]>(() =>
-    loadOrDefault('clientum_crmfull_products', initialProducts)
-  );
+  const [sellers, setSellers] = useState<Seller[]>(() => {
+    const saved = loadOrDefault('clientum_crmfull_sellers', initialSellers);
+    return saved.length > 0 ? saved : initialSellers;
+  });
+  const [branches, setBranches] = useState<Branch[]>(() => {
+    const saved = loadOrDefault('clientum_crmfull_branches', initialBranches);
+    return saved.length > 0 ? saved : initialBranches;
+  });
+  const [products, setProducts] = useState<Product[]>(() => {
+    const saved = loadOrDefault('clientum_crmfull_products', initialProducts);
+    // If localStorage had an empty array (first visit or reset), seed from catalog
+    return saved.length > 0 ? saved : initialProducts;
+  });
 
   // Persist to localStorage
   useEffect(() => { localStorage.setItem('clientum_crmfull_conversations', JSON.stringify(conversations)); }, [conversations]);

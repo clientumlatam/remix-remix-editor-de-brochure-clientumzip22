@@ -543,6 +543,33 @@ export default function PublicWebsite({
       desc: "Digitalización de operaciones forestales: cartas de porte electrónicas, liquidaciones automáticas y trazabilidad de carga desde el campo hasta la planta."
     },
     {
+      id: "p13",
+      name: "Consorcio de Riego General Roca",
+      year: "2023",
+      type: "Portal Institucional + Gestión de Turnos",
+      industry: "agroindustria",
+      img: "/clientes/consorcio-riego-web.png",
+      desc: "Portal institucional con gestión de turnos de agua, calendario de riegos, pagos online integrados y comunicaciones automáticas a los regantes del Alto Valle."
+    },
+    {
+      id: "p14",
+      name: "Hábitat Sur",
+      year: "2024",
+      type: "Sitio Web + CRM Inmobiliario",
+      industry: "inmobiliaria",
+      img: "/clientes/habitat-sur-web.png",
+      desc: "Sitio inmobiliario con listado de propiedades, filtros avanzados y formulario de contacto conectado al CRM. Automatización de seguimiento de interesados por WhatsApp."
+    },
+    {
+      id: "p15",
+      name: "Municipio de 25 de Mayo",
+      year: "2024",
+      type: "Portal Municipal + Gestión de Trámites",
+      industry: "institucional",
+      img: "/clientes/municipio-25-de-mayo-web.png",
+      desc: "Portal de gobierno digital con acceso a trámites, novedades municipales, contacto ciudadano y gestión de contenidos desde un panel administrable."
+    },
+    {
       id: "p6",
       name: "Canal 10 TV",
       year: "2022",
@@ -2910,9 +2937,9 @@ export default function PublicWebsite({
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
                       { name: "Canal 10 TV",               rubro: "Medios Públicos",            url: "canal10rn.tv",          icon: Monitor,   logo: "/logos/canal10.webp" },
-                      { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen,  logo: null },
+                      { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen,  logo: "/logos/diario-10.webp" },
                       { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro",  url: "generalroca.gob.ar", icon: Building, logo: null },
-                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building, logo: null },
+                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building, logo: "/logos/municipio-25-de-mayo.png" },
                       { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building, logo: "/logos/maquinchao.png" },
                     ].map(({ name, rubro, url, icon: Icon, logo }) => (
                       <div key={name} className="bg-white border-2 border-[#1A3461]/10 hover:border-[#1A3461]/30 rounded-2xl p-5 flex flex-col gap-3 transition-all shadow-xs hover:shadow-md">
@@ -2962,9 +2989,9 @@ export default function PublicWebsite({
                     color: "bg-blue-600",
                     icon: Home,
                     clientes: [
-                       { name: "Aitue Propiedades",  rubro: "Inmobiliaria",   url: "aitue.com.ar",             logo: null,                      darkLogo: false },
-                       { name: "Terbay Propiedades", rubro: "Inmobiliaria",   url: "terbaypropiedades.com.ar", logo: "/logos/terbay.png",        darkLogo: false },
-                       { name: "Habitar Sur",         rubro: "Real Estate / Construcción", url: null,         logo: null,                      darkLogo: false },
+                       { name: "Aitue Propiedades",  rubro: "Inmobiliaria",   url: "aitue.com.ar",             logo: null,                        darkLogo: false },
+                       { name: "Terbay Propiedades", rubro: "Inmobiliaria",   url: "terbaypropiedades.com.ar", logo: "/logos/terbay.png",          darkLogo: false },
+                       { name: "Hábitat Sur",         rubro: "Real Estate / Construcción", url: null,         logo: "/logos/habitat-sur.jpg",     darkLogo: false },
                     ]
                   },
                   {
@@ -2972,7 +2999,7 @@ export default function PublicWebsite({
                     color: "bg-green-700",
                     icon: Layers,
                     clientes: [
-                       { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",       url: "consorcioderiegoroca.com.ar", logo: null, darkLogo: false },
+                       { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",       url: "consorcioderiegoroca.com.ar", logo: "/logos/consorcio-riego-general-roca.png", darkLogo: false },
                        { name: "Cooperativa Frigorífico J.J. Gómez",       rubro: "Frigorífico / Agroindustria", url: "frigorificojpgomez.com.ar",   logo: null, darkLogo: false },
                        { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria",   url: null,                          logo: "/logos/forestal-norte.jpg", darkLogo: false },
                     ]
@@ -2982,7 +3009,7 @@ export default function PublicWebsite({
                     color: "bg-orange-500",
                     icon: ShoppingCart,
                     clientes: [
-                       { name: "Lubrano Hogar",              rubro: "Electrodomésticos / Retail", url: "lubranohogar.com.ar",      logo: null,                        darkLogo: false },
+                       { name: "Lubrano Hogar",              rubro: "Electrodomésticos / Retail", url: "lubranohogar.com.ar",      logo: "/logos/lubrano-hogar.png",  darkLogo: false },
                        { name: "Morgado Hogar",              rubro: "Hogar / Retail",             url: "morgadohogar.com.ar",      logo: "/logos/morgado-hogar.webp", darkLogo: false },
                        { name: "Mafacha Ferretería Pinturería", rubro: "Ferretería / Retail",    url: "mafacha.com.ar",           logo: "/logos/mafacha.png",        darkLogo: false },
                        { name: "Growlife Patagonia",         rubro: "Comercio / Growshop",        url: "growlifepatagonia.com.ar", logo: null,                        darkLogo: false },
@@ -3021,7 +3048,7 @@ export default function PublicWebsite({
                     clientes: [
                        { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar", logo: "/logos/afp-service.png", darkLogo: false },
                        { name: "YendoApp",                rubro: "Tecnología / App Móvil",    url: "yendoapp.com.ar",   logo: null, darkLogo: false },
-                       { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null,                logo: null, darkLogo: false },
+                       { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null,                logo: "/logos/saitt.png", darkLogo: false },
                        { name: "Estudio Integra",         rubro: "Estudio Profesional",       url: null,                logo: null, darkLogo: false },
                        { name: "Estudio Méndez & Asoc.",  rubro: "Estudio / Consultoría",     url: null,                logo: null, darkLogo: false },
                        { name: "Grupo de Asesores",       rubro: "Consultoría",               url: null,                logo: null, darkLogo: false },
@@ -3824,9 +3851,24 @@ export default function PublicWebsite({
                   <h1 className="text-3xl font-display font-black text-slate-950 tracking-tight mt-1">
                     Asociate y potenciá tu negocio con Clientum
                   </h1>
-                  <p className="text-slate-500 text-xs mt-2">
+                  <p className="text-slate-500 text-sm mt-2 leading-relaxed">
                     Sumate a nuestro ecosistema y ganá dinero ayudando a digitalizar PyMEs de la Patagonia y toda Latinoamérica.
                   </p>
+                </div>
+
+                {/* Stats strip */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { value: "30%", label: "Comisión recurrente", color: "text-emerald-600" },
+                    { value: "+120", label: "Partners activos", color: "text-[#1A3461]" },
+                    { value: "500+", label: "PyMEs digitalizadas", color: "text-[#1A3461]" },
+                    { value: "24 hs", label: "Soporte al partner", color: "text-emerald-600" },
+                  ].map(({ value, label, color }) => (
+                    <div key={label} className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
+                      <p className={`text-2xl font-black font-display ${color}`}>{value}</p>
+                      <p className="text-slate-500 text-xs mt-1">{label}</p>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -4790,93 +4832,126 @@ export default function PublicWebsite({
       </main>
 
       {/* Corporate Footer (Maps directly to Footer layout in shortcodes) */}
-      <footer className="bg-slate-950 text-white py-12 px-6 border-t border-slate-900 shrink-0">
-        {/* Sitemap — Productos por segmento (legado Viaweb) */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-slate-900 text-xs text-slate-400 font-semibold">
-          {[
-            {
-              title: "Productos principales para PYMES",
-              items: [
-                { label: "Minoristas", query: "minorista" },
-                { label: "Manufactura", query: "manufactura" },
-                { label: "Agroindustria", query: "agroindustria" },
-                { label: "Distribuidores y mayoristas", query: "distribuidor" },
-                { label: "Servicios", tab: "servicios" },
-                { label: "Solución para minoristas (B2C)", query: "b2c" },
-                { label: "Solución para mayoristas (B2B)", query: "b2b" },
-                { label: "Integraciones (MercadoPago, Facebook Pixel, WooCommerce)", tab: "integraciones" },
-              ],
-            },
-            {
-              title: "Productos principales para Grandes empresas",
-              items: [
-                { label: "App Mobile", query: "aplicación móvil" },
-                { label: "Business Intelligence", tab: "reportes" },
-                { label: "Servidores virtuales privados", query: "vps" },
-                { label: "Hosting", query: "hosting" },
-                { label: "Correos corporativos", query: "correo" },
-              ],
-            },
-            {
-              title: "Búsquedas frecuentes",
-              items: [
-                { label: "Atención al cliente", tab: "ayuda" },
-                { label: "Atención al cliente para Grandes empresas", tab: "ayuda" },
-                { label: "Blog", tab: "blog" },
-              ],
-            },
-            {
-              title: "Nuevos Productos",
-              items: [
-                { label: "Viaweb Storage", query: "nube" },
-                { label: "Viaweb Cloud", query: "cloud" },
-                { label: "Webmail", query: "correo" },
-              ],
-            },
-          ].map((col) => (
-            <div key={col.title}>
-              <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3 leading-snug">{col.title}</h4>
-              <ul className="flex flex-col gap-2">
-                {col.items.map((item) => (
-                  <li key={item.label}>
-                    <button
-                      onClick={() => {
-                        if (item.tab) {
-                          setActiveTab(item.tab);
-                        } else {
-                          setActiveTab("catalogo");
-                          setCatalogQuery(item.query);
-                          setCatalogCat("");
-                          setCatalogPage(1);
-                        }
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                      className="text-left hover:text-white transition-colors cursor-pointer leading-snug"
-                    >
-                      {item.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      <footer className="bg-slate-950 text-white shrink-0">
+
+        {/* ── QUICK-LINKS SITEMAP ── */}
+        <div className="border-b border-slate-800/60">
+          <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Por industria",
+                items: [
+                  { label: "Minoristas y retail", query: "minorista" },
+                  { label: "Manufactura", query: "manufactura" },
+                  { label: "Agroindustria", query: "agroindustria" },
+                  { label: "Distribuidores y mayoristas", query: "distribuidor" },
+                  { label: "Servicios profesionales", tab: "servicios" },
+                  { label: "PyMEs B2C", query: "b2c" },
+                  { label: "Empresas B2B", query: "b2b" },
+                ],
+              },
+              {
+                title: "Por solución",
+                items: [
+                  { label: "Chatbot WhatsApp IA", tab: "chatbot" },
+                  { label: "CRM Inteligente", tab: "crm_inteligente" },
+                  { label: "E-Commerce", query: "ecommerce" },
+                  { label: "Marketing Digital", query: "marketing" },
+                  { label: "App Mobile", query: "aplicación móvil" },
+                  { label: "Business Intelligence", tab: "reportes" },
+                  { label: "Cloud & Hosting", query: "cloud" },
+                ],
+              },
+              {
+                title: "Recursos",
+                items: [
+                  { label: "Blog & Novedades", tab: "blog" },
+                  { label: "Academia Clientum", tab: "academia" },
+                  { label: "Casos de Éxito", tab: "casos" },
+                  { label: "Centro de Ayuda", tab: "ayuda" },
+                  { label: "Planes & Precios", tab: "planes" },
+                  { label: "Partners & Afiliados", tab: "asociacion" },
+                ],
+              },
+              {
+                title: "Nuevos lanzamientos",
+                items: [
+                  { label: "🤖 Copiloto IA", tab: "asistente_ia" },
+                  { label: "📱 Clientum Mobile", query: "aplicación móvil" },
+                  { label: "📊 BI Dashboard", tab: "reportes" },
+                  { label: "🔗 WhatsApp API v2", tab: "chatbot" },
+                  { label: "🏪 Portal del Cliente", tab: "portal_cliente" },
+                  { label: "⚙️ Automatización", tab: "automatizacion" },
+                ],
+              },
+            ].map((col) => (
+              <div key={col.title}>
+                <h4 className="text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-4">{col.title}</h4>
+                <ul className="flex flex-col gap-2.5">
+                  {col.items.map((item) => (
+                    <li key={item.label}>
+                      <button
+                        onClick={() => {
+                          if (item.tab) {
+                            setActiveTab(item.tab);
+                          } else {
+                            setActiveTab("catalogo");
+                            setCatalogQuery(item.query);
+                            setCatalogCat("");
+                            setCatalogPage(1);
+                          }
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className="text-left text-slate-400 hover:text-emerald-400 transition-colors text-xs leading-snug"
+                      >
+                        {item.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs text-slate-400 font-semibold">
-          <div className="flex flex-col gap-3">
-            <span className="font-display font-black text-white text-base tracking-tight">CLIENTUM</span>
-            <p className="text-[11px] text-slate-400 font-medium leading-relaxed">
-              Consultoría integrada de marketing digital e ingeniería de software omnicanal para potenciar PyMEs.
+        {/* ── MAIN FOOTER BODY ── */}
+        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-12 gap-10">
+
+          {/* Brand col — 3 cols */}
+          <div className="md:col-span-3 flex flex-col gap-4">
+            <span className="font-display font-black text-white text-lg tracking-tight">CLIENTUM</span>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Plataforma integral de CRM, chatbots IA y marketing digital para potenciar PyMEs de la Patagonia y toda Latinoamérica.
             </p>
-            <div className="flex items-center gap-1.5 text-[10px] text-slate-500 font-mono mt-1">
-              <MapPin className="w-3.5 h-3.5" />
-              <span>General Roca, Río Negro</span>
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-1">
+              <MapPin className="w-3.5 h-3.5 shrink-0" />
+              <span>General Roca, Río Negro, Argentina</span>
+            </div>
+            {/* Social links */}
+            <div className="flex gap-3 mt-1">
+              {[
+                { href: "https://wa.me/5492994110000", label: "WhatsApp", emoji: "💬" },
+                { href: "https://instagram.com/clientumlatam", label: "Instagram", emoji: "📸" },
+                { href: "https://linkedin.com/company/clientum", label: "LinkedIn", emoji: "💼" },
+              ].map(({ href, label, emoji }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-emerald-500/20 hover:border-emerald-500/40 border border-slate-700 flex items-center justify-center text-sm transition-all"
+                >
+                  {emoji}
+                </a>
+              ))}
             </div>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Soluciones</h4>
-            <ul className="flex flex-col gap-2">
+          {/* Soluciones — 2 cols */}
+          <div className="md:col-span-2">
+            <h4 className="text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-4">Soluciones</h4>
+            <ul className="flex flex-col gap-2.5">
               {[
                 { id: "chatbot", label: "Chatbot WhatsApp" },
                 { id: "crm_inteligente", label: "CRM Inteligente" },
@@ -4887,7 +4962,10 @@ export default function PublicWebsite({
                 { id: "planes", label: "Planes & Precios" },
               ].map((item) => (
                 <li key={item.id}>
-                  <button onClick={() => { setActiveTab(item.id); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
+                  <button
+                    onClick={() => { setActiveTab(item.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="text-slate-400 hover:text-emerald-400 transition-colors text-xs cursor-pointer"
+                  >
                     {item.label}
                   </button>
                 </li>
@@ -4895,96 +4973,100 @@ export default function PublicWebsite({
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Empresa</h4>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <button onClick={() => { setActiveTab("nosotros"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Sobre Nosotros
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("casos"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Casos de Éxito
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("clientes"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Clientes
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("blog"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Blog &amp; Recursos
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("privacidad"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Política de Privacidad
-                </button>
-              </li>
+          {/* Empresa — 2 cols */}
+          <div className="md:col-span-2">
+            <h4 className="text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-4">Empresa</h4>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { id: "nosotros", label: "Sobre Nosotros" },
+                { id: "casos", label: "Casos de Éxito" },
+                { id: "clientes", label: "Clientes" },
+                { id: "blog", label: "Blog & Recursos" },
+                { id: "asociacion", label: "Partners & Afiliados" },
+                { id: "privacidad", label: "Política de Privacidad" },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => { setActiveTab(item.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="text-slate-400 hover:text-emerald-400 transition-colors text-xs cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3">Soporte</h4>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <button onClick={() => { setActiveTab("ayuda"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Centro de Ayuda
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("academia"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Academia
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("asociacion"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Partners &amp; Afiliados
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="hover:text-white transition-colors cursor-pointer">
-                  Contacto
-                </button>
-              </li>
+          {/* Soporte — 2 cols */}
+          <div className="md:col-span-2">
+            <h4 className="text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-4">Soporte</h4>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { id: "ayuda", label: "Centro de Ayuda" },
+                { id: "academia", label: "Academia" },
+                { id: "asociacion", label: "Partners & Afiliados" },
+                { id: "contacto", label: "Contacto" },
+              ].map((item) => (
+                <li key={item.id}>
+                  <button
+                    onClick={() => { setActiveTab(item.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    className="text-slate-400 hover:text-emerald-400 transition-colors text-xs cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div className="flex flex-col gap-3">
-            <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-1">Newsletter</h4>
-            <p className="text-[10px] text-slate-400 font-medium leading-relaxed">Suscribite y enterate primero de las novedades de Clientum.</p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+          {/* Newsletter — 3 cols */}
+          <div className="md:col-span-3 flex flex-col gap-3">
+            <h4 className="text-slate-300 font-bold uppercase tracking-widest text-[10px] mb-1">Newsletter</h4>
+            <p className="text-slate-400 text-xs leading-relaxed">Novedades, lanzamientos y recursos para hacer crecer tu empresa.</p>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2 mt-1">
               <input
                 type="email"
                 required
                 placeholder="tu@empresa.com"
-                className="bg-slate-900 border border-slate-800 text-white rounded p-2 text-[10px] focus:outline-none focus:border-emerald-500 w-full"
+                className="bg-slate-900 border border-slate-700 text-white rounded-lg px-3 py-2 text-xs focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/30 w-full placeholder:text-slate-600 transition-all"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
               />
-              <button type="submit" className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-3 py-1.5 rounded text-[10px] cursor-pointer whitespace-nowrap">
-                Suscribirme
+              <button
+                type="submit"
+                className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs cursor-pointer transition-colors"
+              >
+                Suscribirme →
               </button>
             </form>
             {newsletterSubscribed && (
-              <span className="text-emerald-400 text-[10px]">¡Suscripción registrada con éxito!</span>
+              <span className="text-emerald-400 text-xs flex items-center gap-1.5">✓ ¡Suscripción registrada!</span>
             )}
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto border-t border-slate-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] text-slate-500 font-medium">
-          <span>© {new Date().getFullYear()} - Clientum S.R.L. Todos los derechos reservados. — <span className="text-slate-600">antes Viaweb (2016–2026)</span></span>
-          <div className="flex gap-4">
-            <span className="text-slate-600">General Roca, Río Negro, Argentina</span>
-            <a href="https://github.com/clientumlatam/clientum" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-1 font-mono">
-              GitHub Repo
-              <ExternalLink className="w-2.5 h-2.5" />
-            </a>
+        {/* ── BOTTOM BAR ── */}
+        <div className="border-t border-slate-800/60">
+          <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+            <span>© {new Date().getFullYear()} Clientum S.R.L. — Todos los derechos reservados.</span>
+            <div className="flex items-center gap-5">
+              <span>General Roca, Río Negro, Argentina</span>
+              <button
+                onClick={() => { setActiveTab("privacidad"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className="hover:text-slate-300 transition-colors"
+              >
+                Privacidad
+              </button>
+              <button
+                onClick={() => { setActiveTab("contacto"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className="hover:text-slate-300 transition-colors"
+              >
+                Contacto
+              </button>
+            </div>
           </div>
         </div>
+
       </footer>
     </div>
   );
