@@ -201,7 +201,7 @@ export default function PublicWebsite({
   // Course enrollment state
   const [enrolledCourse, setEnrolledCourse] = useState<string | null>(null);
 
-  // Full services catalog (2.147 servicios) — search, category filter & pagination
+  // Full services catalog (2.231 servicios) — search, category filter & pagination
   const ALL_SERVICES = serviciosCatalogo as CatalogService[];
   const SERVICE_CATEGORIES = categoriasServicios as CatalogCategory[];
   const [catalogQuery, setCatalogQuery] = useState("");
@@ -233,7 +233,7 @@ export default function PublicWebsite({
   ];
 
   // ── Unified WooCommerce CSV export ────────────────────────────────────────
-  // Combines: servicios (2147) + planes (5) + cursos (67) + soluciones (12)
+  // Combines: servicios (2231) + planes (5) + cursos (67) + soluciones (12)
   const handleExportWooCommerceCSV = () => {
     const esc = (v: string | number) => {
       const s = String(v ?? "").replace(/"/g, '""');
@@ -327,7 +327,7 @@ export default function PublicWebsite({
       { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes consultan stock, facturas y pedidos solos." },
       { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Sitios y e-commerce conectados directamente al CRM." },
       { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-      { id: "catalogo",         name: "Catálogo Completo",   desc: "Más de 2.147 servicios en 13 categorías con precios." },
+      { id: "catalogo",         name: "Catálogo Completo",   desc: "Más de 2.231 servicios en 14 categorías con precios." },
       { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
       { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
       { id: "casos",            name: "Casos de Éxito",      desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
@@ -658,7 +658,7 @@ export default function PublicWebsite({
       children: [
         { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
         { id: "blog", label: "Blog & Recursos", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" },
-        { id: "catalogo", label: "Catálogo de Servicios", desc: "Más de 2.147 servicios en 13 categorías", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
+        { id: "catalogo", label: "Catálogo de Servicios", desc: "Más de 2.231 servicios en 14 categorías", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
         { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
       ]
     },
@@ -1380,7 +1380,7 @@ export default function PublicWebsite({
                         { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes consultan stock, facturas y pedidos solos." },
                         { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Sitios y e-commerce conectados directamente al CRM." },
                         { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "Más de 2.147 servicios en 13 categorías con precios." },
+                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "Más de 2.231 servicios en 14 categorías con precios." },
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
                         { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
@@ -1512,7 +1512,7 @@ export default function PublicWebsite({
                         { value: "+200", label: "PyMEs implementadas" },
                         { value: "5 días", label: "Tiempo de implementación" },
                         { value: "24/7", label: "Soporte técnico" },
-                        { value: "2.147+", label: "Servicios en catálogo" },
+                        { value: "2.231+", label: "Servicios en catálogo" },
                       ].map(({ value, label }) => (
                         <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                           <div className="text-2xl font-extrabold font-mono text-emerald-400 tracking-tight">{value}</div>
@@ -3602,10 +3602,10 @@ export default function PublicWebsite({
                 <div className="text-center max-w-xl mx-auto">
                   <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">Programa de Alianzas</span>
                   <h1 className="text-3xl font-display font-black text-slate-950 tracking-tight mt-1">
-                    Asociación y Partners de Clientum
+                    Asociate y potenciá tu negocio con Clientum
                   </h1>
                   <p className="text-slate-500 text-xs mt-2">
-                    Únete a nuestro ecosistema y gana dinero ayudando a digitalizar las PyMEs de la Patagonia y toda Latinoamérica.
+                    Sumate a nuestro ecosistema y ganá dinero ayudando a digitalizar PyMEs de la Patagonia y toda Latinoamérica.
                   </p>
                 </div>
 
@@ -3684,6 +3684,70 @@ export default function PublicWebsite({
                     </button>
                   </div>
                 </div>
+
+                {/* Niveles de partnership */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Niveles</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Del primer referido a partner preferente</h2>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {[
+                      {
+                        nivel: "Nivel 01",
+                        title: "Afiliado",
+                        desc: "Sin requisitos técnicos. Compartís tu link, cobrás comisión recurrente y accedés al material de marketing.",
+                        color: "border-slate-200 bg-white",
+                        labelColor: "text-slate-500",
+                      },
+                      {
+                        nivel: "Nivel 02",
+                        title: "Partner Certificado",
+                        desc: "Agencias e implementadores con onboarding técnico aprobado. Precios de revendedor y soporte prioritario.",
+                        color: "border-[#1A3461]/20 bg-[#1A3461]/5",
+                        labelColor: "text-[#1A3461]",
+                      },
+                      {
+                        nivel: "Nivel 03",
+                        title: "Partner Preferente",
+                        desc: "Volumen sostenido de clientes activos. Marca blanca completa, derivación de leads y presencia destacada en clientum.com.ar.",
+                        color: "border-amber-200 bg-amber-50",
+                        labelColor: "text-amber-600",
+                      },
+                    ].map(({ nivel, title, desc, color, labelColor }) => (
+                      <div key={nivel} className={`border rounded-2xl p-6 flex flex-col gap-3 ${color}`}>
+                        <span className={`font-mono text-[10px] uppercase tracking-widest font-bold ${labelColor}`}>{nivel}</span>
+                        <h3 className="font-display font-bold text-base text-slate-950">{title}</h3>
+                        <p className="text-[11px] text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 4 pasos para sumarse */}
+                <div>
+                  <div className="text-center mb-8">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Cómo sumarte</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Cuatro pasos para empezar</h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {[
+                      { n: "1", title: "Postulate", desc: "Contanos tu perfil: si sos afiliado o partner de implementación." },
+                      { n: "2", title: "Reunión inicial", desc: "Revisamos condiciones, comisiones y alcance juntos sin compromiso." },
+                      { n: "3", title: "Onboarding", desc: "Capacitación en la plataforma y, si aplica, certificación técnica." },
+                      { n: "4", title: "A vender", desc: "Accedés a tu panel, material de marketing y empezás a generar comisiones." },
+                    ].map(({ n, title, desc }) => (
+                      <div key={n} className="flex flex-col gap-3">
+                        <div className="w-8 h-8 rounded-full border border-[#1A3461]/30 flex items-center justify-center font-mono text-xs font-bold text-[#1A3461]">
+                          {n}
+                        </div>
+                        <h4 className="font-display font-bold text-sm text-slate-950">{title}</h4>
+                        <p className="text-[11px] text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             )}
 
