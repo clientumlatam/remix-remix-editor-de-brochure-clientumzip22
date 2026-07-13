@@ -4546,6 +4546,77 @@ export default function PublicWebsite({
 
       {/* Corporate Footer (Maps directly to Footer layout in shortcodes) */}
       <footer className="bg-slate-950 text-white py-12 px-6 border-t border-slate-900 shrink-0">
+        {/* Sitemap — Productos por segmento (legado Viaweb) */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-slate-900 text-xs text-slate-400 font-semibold">
+          {[
+            {
+              title: "Productos principales para PYMES",
+              items: [
+                { label: "Minoristas", query: "minorista" },
+                { label: "Manufactura", query: "manufactura" },
+                { label: "Agroindustria", query: "agroindustria" },
+                { label: "Distribuidores y mayoristas", query: "distribuidor" },
+                { label: "Servicios", tab: "servicios" },
+                { label: "Solución para minoristas (B2C)", query: "b2c" },
+                { label: "Solución para mayoristas (B2B)", query: "b2b" },
+                { label: "Integraciones (MercadoPago, Facebook Pixel, WooCommerce)", tab: "integraciones" },
+              ],
+            },
+            {
+              title: "Productos principales para Grandes empresas",
+              items: [
+                { label: "App Mobile", query: "aplicación móvil" },
+                { label: "Business Intelligence", tab: "reportes" },
+                { label: "Servidores virtuales privados", query: "vps" },
+                { label: "Hosting", query: "hosting" },
+                { label: "Correos corporativos", query: "correo" },
+              ],
+            },
+            {
+              title: "Búsquedas frecuentes",
+              items: [
+                { label: "Atención al cliente", tab: "ayuda" },
+                { label: "Atención al cliente para Grandes empresas", tab: "ayuda" },
+                { label: "Blog", tab: "blog" },
+              ],
+            },
+            {
+              title: "Nuevos Productos",
+              items: [
+                { label: "Viaweb Storage", query: "nube" },
+                { label: "Viaweb Cloud", query: "cloud" },
+                { label: "Webmail", query: "correo" },
+              ],
+            },
+          ].map((col) => (
+            <div key={col.title}>
+              <h4 className="text-white font-bold uppercase tracking-wider text-[10px] mb-3 leading-snug">{col.title}</h4>
+              <ul className="flex flex-col gap-2">
+                {col.items.map((item) => (
+                  <li key={item.label}>
+                    <button
+                      onClick={() => {
+                        if (item.tab) {
+                          setActiveTab(item.tab);
+                        } else {
+                          setActiveTab("catalogo");
+                          setCatalogQuery(item.query);
+                          setCatalogCat("");
+                          setCatalogPage(1);
+                        }
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className="text-left hover:text-white transition-colors cursor-pointer leading-snug"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 text-xs text-slate-400 font-semibold">
           <div className="flex flex-col gap-3">
             <span className="font-display font-black text-white text-base tracking-tight">CLIENTUM</span>
