@@ -1,58 +1,66 @@
 [
   {
-    "name": "Business Intelligence",
-    "count": 369
-  },
-  {
     "name": "ERP y CRM",
-    "count": 364
+    "count": 75
   },
   {
     "name": "Desarrollo Web y E-Commerce",
-    "count": 352
+    "count": 64
+  },
+  {
+    "name": "Business Intelligence",
+    "count": 57
   },
   {
     "name": "Marketing Digital",
-    "count": 290
+    "count": 53
   },
   {
     "name": "Atención al Cliente",
-    "count": 172
+    "count": 41
   },
   {
     "name": "Soluciones por Industria",
-    "count": 142
-  },
-  {
-    "name": "Formación y Capacitación",
-    "count": 106
-  },
-  {
-    "name": "Automatización de Procesos",
-    "count": 87
-  },
-  {
-    "name": "Ciberseguridad",
-    "count": 80
-  },
-  {
-    "name": "Cloud Computing",
-    "count": 80
+    "count": 39
   },
   {
     "name": "Campus Virtual",
-    "count": 67
+    "count": 32
   },
   {
-    "name": "Aplicaciones Móviles",
-    "count": 50
+    "name": "Formación y Capacitación",
+    "count": 30
+  },
+  {
+    "name": "Automatización de Procesos",
+    "count": 20
+  },
+  {
+    "name": "Ciberseguridad",
+    "count": 17
+  },
+  {
+    "name": "Cloud Computing",
+    "count": 16
   },
   {
     "name": "Servicios de Hosting",
-    "count": 34
+    "count": 13
+  },
+  {
+    "name": "Plataforma",
+    "count": 12
+  },
+  {
+    "name": "Aplicaciones Móviles",
+    "count": 8
   },
   {
     "name": "Plataformas de Comunicación",
-    "count": 21
+    "count": 7
+  },
+  {
+    "name": "Suscripción mensual",
+    "count": 4
   }
 ]
