@@ -1138,6 +1138,63 @@ export default function PublicWebsite({
                   </div>
                 </section>
 
+                {/* ═══ PANELES DESTACADOS (legado Viaweb) ═══ */}
+                <section className="bg-slate-50 border-b border-slate-200 py-16 px-6">
+                  <div className="max-w-6xl mx-auto flex flex-col gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {[
+                        { icon: Briefcase, eyebrow: "Software de Gestión", desc: "Un software completo para gestionar todos sus negocios. Sistemas integrados de gestión necesarios para las distintas áreas de su empresa en una única plataforma.", tab: "crm_inteligente" },
+                        { icon: Code2, eyebrow: "E-Commerce", desc: "Desarrollo de sitios web con tecnología omnicanal. Digitalización de su negocio con herramientas analíticas, marketing y diseño.", tab: "desarrollo_web" },
+                        { icon: BarChart2, eyebrow: "Business Intelligence", desc: "Seguimiento de las principales métricas de negocio y gestión. Puesta en marcha de campañas efectivas orientadas a objetivos planteados.", tab: "reportes" },
+                      ].map(({ icon: Icon, eyebrow, desc, tab }) => (
+                        <div key={eyebrow} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col gap-3 shadow-xs hover:shadow-md transition-all">
+                          <div className="w-9 h-9 rounded-xl bg-[#1A3461]/10 flex items-center justify-center">
+                            <Icon className="w-4 h-4 text-[#1A3461]" />
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-[#1A3461]">{eyebrow}</span>
+                          <p className="text-[11px] text-slate-500 leading-relaxed flex-1">{desc}</p>
+                          <button
+                            onClick={() => { setActiveTab(tab); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                            className="text-xs font-bold text-[#1A3461] hover:text-emerald-700 transition-colors flex items-center gap-1 cursor-pointer mt-1"
+                          >
+                            Ver más <ArrowRight className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="bg-[#1A3461] text-white rounded-2xl p-8 flex flex-col gap-3">
+                        <span className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold">Nube Viaweb</span>
+                        <h3 className="text-lg font-display font-black tracking-tight">¿Está preparada tu empresa para migrar a la nube?</h3>
+                        <p className="text-slate-300 text-xs leading-relaxed">Hacé tu Autodiagnóstico Cloud sin costo.</p>
+                        <button
+                          onClick={() => {
+                            setDemoForm({ ...demoForm, mensaje: "Hola, quiero hacer el Autodiagnóstico Cloud sin costo para evaluar la migración de mi empresa a la nube." });
+                            setActiveTab("contacto");
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                          className="mt-2 self-start bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-2"
+                        >
+                          Hacelo ahora <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                      <div className="bg-slate-900 text-white rounded-2xl p-8 flex flex-col gap-3 relative overflow-hidden">
+                        <span className="absolute top-4 right-4 bg-emerald-500/20 text-emerald-400 text-[9px] font-bold px-2 py-0.5 rounded-full font-mono uppercase tracking-wider">Próximamente</span>
+                        <span className="text-emerald-400 font-mono text-[10px] uppercase tracking-widest font-bold">Ciclo de charlas</span>
+                        <h3 className="text-lg font-display font-black tracking-tight">La transformación digital en tiempos de incertidumbre</h3>
+                        <p className="text-slate-300 text-xs leading-relaxed">Ciclo de charlas sobre transformación digital para empresas.</p>
+                        <button
+                          onClick={() => { setActiveTab("academia"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                          className="mt-2 self-start bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-all cursor-pointer flex items-center gap-2"
+                        >
+                          Ingresá ahora <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 {/* ═══ POR QUÉ CLIENTUM ═══ */}
                 <section className="bg-white border-b border-slate-200 py-20 px-6">
                   <div className="max-w-6xl mx-auto">
@@ -1950,6 +2007,70 @@ export default function PublicWebsite({
                   </div>
                 </div>
 
+                {/* ── SOLUCIONES PARA PYMES POR INDUSTRIA ── */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Te ayudamos a que tu negocio crezca</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Soluciones para Pymes por industria</h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      {
+                        emoji: "🛒",
+                        label: "Minoristas",
+                        desc: "El motor del crecimiento de un comercio son sus clientes, por eso desarrollamos soluciones tecnológicas específicas para que puedas conocerlos en profundidad y mejorar su experiencia, potenciando tu negocio. Te ofrecemos una solución de eCommerce 100% integrada a tu Software de Gestión.",
+                        query: "minorista",
+                      },
+                      {
+                        emoji: "🏭",
+                        label: "Manufactura",
+                        desc: "En manufactura la clave está en optimizar los procesos de producción, por eso desarrollamos soluciones tecnológicas específicas para capitalizar la información y potenciar tu negocio.",
+                        query: "manufactura",
+                      },
+                      {
+                        emoji: "🌾",
+                        label: "Agroindustria",
+                        desc: "Podrás conocer al detalle los gastos imputados a cada campaña, manejar diferentes centros de costos para conocer la rentabilidad de cada unidad de negocio de forma simple y con acceso a la información en tiempo real.",
+                        query: "agroindustria",
+                      },
+                      {
+                        emoji: "🚚",
+                        label: "Distribuidores y mayoristas",
+                        desc: "Algunos de los módulos con los que contamos son Logística y Reparto, Gestión de Precios por Proveedor, Generación de Órdenes de Compra y Cálculo de Niveles de Stock, entre otros.",
+                        query: "distribuidor",
+                      },
+                      {
+                        emoji: "💼",
+                        label: "Servicios",
+                        desc: "Nuestros módulos para el sector: Manejo de Centros de Costos, Balance General Mensual, Cash Flow, Facturación de Abonos, Factura Electrónica, Presupuesto Contable.",
+                        tab: "servicios",
+                      },
+                    ].map(({ emoji, label, desc, query, tab }) => (
+                      <div key={label} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col gap-3 shadow-xs hover:shadow-md transition-all">
+                        <span className="text-3xl">{emoji}</span>
+                        <h3 className="font-bold text-sm text-slate-950">{label}</h3>
+                        <p className="text-[11px] text-slate-500 leading-relaxed flex-1">{desc}</p>
+                        <button
+                          onClick={() => {
+                            if (tab) {
+                              setActiveTab(tab);
+                            } else {
+                              setActiveTab("catalogo");
+                              setCatalogQuery(query);
+                              setCatalogCat("");
+                              setCatalogPage(1);
+                            }
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }}
+                          className="text-xs font-bold text-[#1A3461] hover:text-emerald-700 transition-colors flex items-center gap-1 cursor-pointer mt-1"
+                        >
+                          Ver más <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* ── PRODUCTOS PARA GRANDES EMPRESAS ── */}
                 <div>
                   <div className="text-center mb-8">
@@ -2550,6 +2671,30 @@ export default function PublicWebsite({
                       <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider mt-1">{label}</div>
                     </div>
                   ))}
+                </div>
+
+                {/* ¿Por qué Viaweb? */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-emerald-600 font-mono text-[10px] uppercase tracking-widest font-bold">Legado Viaweb (2016), hoy Clientum</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">¿Por qué Viaweb?</h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {[
+                      { icon: Zap, title: "Rápida respuesta", desc: "Contamos con un equipo capacitado y dispuesto a concretar sus requisitos existentes." },
+                      { icon: Sparkles, title: "Innovación", desc: "Pensamos propuestas para satisfacer las necesidades particulares de cada industria en específico." },
+                      { icon: CheckCircle2, title: "Satisfacción del cliente", desc: "Ayudamos a nuestros clientes a imaginar lo imposible y acelerar su futura innovación en los negocios digitales." },
+                      { icon: ArrowLeftRight, title: "Transformación Digital", desc: "Acompañamos como proveedor de soluciones tecnológicas, siendo consultor y socio estratégico de las empresas." },
+                    ].map(({ icon: Icon, title, desc }) => (
+                      <div key={title} className="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col gap-3 shadow-xs hover:shadow-md transition-all">
+                        <div className="w-9 h-9 rounded-xl bg-[#1A3461]/10 flex items-center justify-center">
+                          <Icon className="w-4 h-4 text-[#1A3461]" />
+                        </div>
+                        <h3 className="font-bold text-sm text-slate-950">{title}</h3>
+                        <p className="text-[11px] text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Timeline */}

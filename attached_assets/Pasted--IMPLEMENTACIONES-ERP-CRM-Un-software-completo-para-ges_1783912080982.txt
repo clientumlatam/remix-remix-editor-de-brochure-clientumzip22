@@ -1,0 +1,435 @@
+
+IMPLEMENTACIONES ERP / CRM
+Un software completo para gestionar todos sus negocios
+ERP: Los sistemas de planificación de recursos de la empresa (Enterprise Resource Planning), son sistemas de gestión de información que integran y automatizan muchas de las prácticas de negocio asociadas con los aspectos operativos o productivos de una empresa.
+CRM: Software para la administración de la relación con los clientes; sistemas informáticos de apoyo a la gestión de las relaciones con los clientes, a la venta y al marketing (Customer Relationship Management).
+El propósito fundamental de un ERP es otorgar apoyo a los clientes del negocio; tiempos rápidos de respuesta a sus problemas así como un eficiente manejo de información que permita la toma oportuna de decisiones y disminución de costes de operación. Con este significado, CRM se refiere al almacén de datos (Data Warehouse) con la información de la gestión de ventas, y de los clientes de la empresa.
+Finalmente, ERP / CRM es un software completamente modular (sólo activamos las funciones deseadas) para gestión empresarial de PYMES, profesionales independientes, autoemprendedores o asociaciones. En términos más técnicos, tu negocio se ejecuta dentro de un servidor web. siendo pues accesible desde cualquier lugar disponiendo de una conexión a internet.
+IMPLEMENTACIONES
+ERP / CRM
+Un programa web completo para gestionar todos sus negocios
+ERP: Los sistemas de planificación de recursos de la empresa (Enterprise Resource Planning), son sistemas de gestión de información que integran y automatizan muchas de las prácticas de negocio asociadas con los aspectos operativos o productivos de una empresa. El propósito fundamental de un ERP es otorgar apoyo a los clientes del negocio, tiempos rápidos de respuesta a sus problemas así como un eficiente manejo de información que permita la toma oportuna de decisiones y disminución de costes de operación.
+CRM: Software para la administración de la relación con los clientes; sistemas informáticos de apoyo a la gestión de las relaciones con los clientes, a la venta y al marketing. Con este significado CRM se refiere al almacén de datos (Data Warehouse) con la información de la gestión de ventas, y de los clientes de la empresa.
+Finalmente, ERP/CRM es un software completamente modular (sólo activaremos las funciones que deseemos) para gestión empresarial de PYMES, profesionales independientes, auto emprendedores o asociaciones. En términos más técnicos, es un proyecto que se ejecuta dentro de un servidor web. siendo pues accesible desde cualquier lugar disponiendo de una conexión a internet.
+Módulos
+Disponibles
+CRM &
+Ventas
+
+SEGUIMIENTO CLIENTES CRM
+ SEGUIMIENTO A LOS TERCEROS
+CRM con todas las entidades: presupuestos, intervenciones, pedidos, facturas, proyectos, tareas, contactos, etc; a simple vista, para su visualización completa de todo lo requerido.
+Seguimiento de contactos realizados con terceros.
+Registro de las acciones de un usuario a través del “LOG de Viaweb” (siempre que esté activado, donde se descubrirá todas las acciones de los usuarios del sistema, pero se ha de tener en cuenta el crecimiento del fichero dedicado para tal caso en el sitio web contratado, se trata de un sistema de AUDITORÍA).
+Envíos de correos registrados por el envío de presupuestos, pedidos y facturas desde la aplicación.
+Gestión de contactos, clientes y clientes potenciales.
+Búsqueda terceros, contactos y productos de forma sencilla y rápida, gracias a el menú situado en la izquierda del sistema, que realizará una búsqueda de los mismos siguiendo una relación próxima a las entidades de búsqueda. Es decir, podemos buscar el correo de un tercero a través del campo de búsqueda “empresa”, y este campo no incluir el nombre de la empresa, pero si incluir ese dato en su campo de email.
+Registro automático de acciones y eventos en la agenda automáticamente.
+Visualización agrupada y rápida de todo lo relacionado con un tercero.
+Gestión de agenda según usuario y grupo con distinción por color.
+Anotaciones privadas.
+Envío de correo a los terceros de forma masiva, creando una simple newsletter.
+
+GESTIÓN DE TERCEROS
+ GESTIÓN DE CLIENTES, PROVEEDORES Y CONTACTOS
+Gestión de clientes.
+Gestión de proveedores.
+Asociación de categorías de clientes, prospectos, proveedores y contactos.
+Vinculación de la agenda y eventos tras las acciones con las entidades de presupuestos, pedidos, facturas, etc.
+Documentos asociados al tercero para una asociación rápida de los documentos según las entidades.
+Notas públicas y privadas asociadas al tercero con el objetivo de informar al tercero en los documentos, o a los usuarios internos de forma privada.
+Gestión de clientes potenciales (prospectos).
+Gestión de contactos.
+Gestión de descuentos por niveles de precios para terceros.
+Vinculación de entidades (Presupuesto, pedidos, facturas, etc, con el tercero para una visualización rápida).
+Notificaciones de los contactos del tercero que pueden ser usados en el momento del cambio de estado de la entidad, sea presupuesto, pedido, etc. De esta forma el cliente estará notificado tras el cambio del mismo por email automáticamente.
+
+GESTIÓN DE CONTRATOS
+ GESTIÓN DE CONTRATOS DE CLIENTES
+Avisos en el dashboard (página de inicio) con umbral definido previamente, realizaremos un seguimiento eficiente de los contratos.
+Seguimiento de los servicios de venta periódica y repetitiva, tales como mantenimiento o aquellos servicios que gozan de un control temporal y necesario para la actividad empresarial.
+Algo muy necesario para empresas que su negocio está basado en cuotas periódicas por su actividad, tales como empresas de servicios con actividades recurrentes a sus clientes. Ej. de ello serían empresas de hosting o contratación de dominios, empresas de seguros, abogados que tienen un servicio periódico con sus clientes, etc. Es decir, cualquier vinculación temporal por el ofrecimiento de un servicio.
+Viaweb permite la descarga del PDF del contrato de un cliente con los servicios contratados.
+Podremos facturar los contratos de los clientes gracias a la vinculación del módulo de facturación con los contratos.
+Ahorra tiempo y mantiene un seguimiento del vencimiento de los servicios de nuestros clientes con la finalidad de que no se escape el control y pago de ellos.
+Un contrato en Viaweb, está compuesto por uno o varios servicios que no tienen porque tener una misma fecha de finalización del mismo, y que Viaweb, mantendrá informado de ello al usuario responsable de mismo.
+
+MODIFICACIÓN Y CREACIÓN DE DOCUMENTOS
+ PRESUPUESTOS, PEDIDOS, FACTURAS, NOTAS DE ENTREGA
+Algunas empresas valoran mucho la presentación de sus documentos a sus clientes, tales como presupuestos, pedidos, facturas, notas de entrega, albaranes, etc.
+Podemos convertir cualquier documento existente, en una copia exacta de la que requiera tu empresa, tanto a nivel de estructura y campos necesarios, como a nivel de imagen corporativa, convirtiendo en únicos los documentos que maneje tu empresa.
+
+Somos conscientes de la importancia de la imagen corporativa en la presentación de documentos a tus clientes, por ello te invitamos a que contactes con nosotros para que te podamos informar con mas detalle de este servicio personalizado.
+
+
+
+GESTIÓN COMERCIAL
+ GESTIÓN DE PRESUPUESTOS, PEDIDOS, CONTRATOS
+Gestión completa de presupuestos.
+Generación de notas de entregas o albaranes.
+Flujo de trabajo entre pedidos y presupuestos.
+Gestión de tickets de soporte a clientes.
+Estadísticas de presupuestos y pedidos (clientes y proveedores).
+Gestión de intervenciones o partes de trabajo.
+Gestión completa de pedidos a clientes y proveedores.
+Gestión de usuarios externos para la visualización de su información exclusiva. (perfecto para dar accesos a clientes y ahorrar tiempo de gestión).
+Seguimiento de pedidos.
+Gestión de estados de presupuestos, pedidos (clientes), pedidos (proveedores).
+Control de contratos de servicios periódicos de clientes.
+
+GESTIÓN DE TICKETS DE SOPORTE
+ SEGUIMIENTO A LOS CASOS DE SUS CLIENTES
+Un portal para que su socio o cliente informe incidencias o problemas.
+Siga y responda tickets.
+Crea tickets automáticamente a partir de correos electrónicos.
+Finanzas &
+Facturación
+
+GESTIÓN FINANCIERA
+ CONTROL FINANCIERO DE LA EMPRESA
+Gestión de facturas a clientes (Ventas).
+Gestión de impuestos IVA, IRPF, RE.
+Introducción de pagos de salarios (Hay que tener en cuenta, que no es lo mismo que creación de nóminas)
+Estadísticas de facturas recibidas y emitidas.
+Fusión de facturas pendientes de pago o de pago pacial en PDF.
+Gestión de cuentas bancarias y otras.
+Gestión automática en los pagos de facturas de las domiciliaciones.
+Estadísticas financieras.
+Activación de paneles de servicios a punto de caducar por contrato.
+Gestión de facturas de proveedores (Compras).
+Gestión de cargas sociales.
+Informes de resultados generales, por clientes, por productos y servicios, por volumen de ventas, por usuarios (comerciales).
+Diario de ventas y compras.
+Agrupación de pedidos en facturas.
+Gestión de domiciliaciones bancarias.
+Flujo de trabajo con la parte comercial (Presupuestos y pedidos.).
+Márgenes de ventas.
+
+FACTURA ELECTRÓNICA
+ INTEGRACIÓN WEBSERVICES, AFIP
+Cree sus facturas (facturas comunes, pagos iniciales, notas de crédito desde su hoja de cliente desde cero), dependiendo de los módulos / funcionalidades que haya habilitado; también puede generar su factura a partir de sus propuestas (módulo Propuesta), sus pedidos (módulo Pedido), sus contratos (módulo Contrato) y/o intervenciones (módulo Intervención).
+Si el módulo Margin está habilitado, el margen se puede calcular a partir del mejor proveedor, el precio de costo o el precio de peso promedio de sus productos. Obtendrá estadísticas de margen por producto, cliente, fecha, etc.
+Incluya productos predefinidos para ahorrarle tiempo, o ingrese contenido completo manualmente.
+Sus facturas también pueden ser generadas automáticamente usando la plantilla de facturas recurrentes.
+El documento de su factura (PDF, ODT, etc) se genera y actualiza automáticamente.
+
+Envíe su factura por e-mail directamente desde la aplicación.
+Utilice plantillas de e-mail predefinidas para que el contenido se complete automáticamente.
+Genere un archivo Direct Debit SEPA para pagos bancarios automáticos por lotes y siga los pasos de integración específicos de su banco.
+Cierre su factura cambiándola automáticamente al estado pagado una vez que el banco haya procesado su archivo SEPA.
+
+Proporcione a su cliente un enlace de pago online con Paypal, Stripe, Paybox, PayZen, etc.
+
+Puede seguir el estado de sus facturas abiertas.
+
+Enumere y muestre todos sus pedidos. Elija qué información desea ver en sus listas. Filtre y ordene según cualquier criterio. Con la función de lote, se le recuerdan todas sus facturas impagas.
+
+Analice su rendimiento de facturación.
+Utilice páginas de estadísticas predefinidas para obtener información útil sobre el desempeño de sus representantes de ventas.
+
+Reutilice sus facturas con otros módulos.
+Exporte sus facturas al libro mayor del módulo de contabilidad para que su contabilidad se realice automáticamente en unos pocos clics.
+
+Exporte sus facturas y pagos con el módulo de exportación y reutilícelos con herramientas externas, o conecte su suite de BI existente directamente a la base de datos abierta para el análisis de Big Data.
+
+
+
+GESTIÓN ELECTRÓNICA DOCUMENTAL
+ DOCUMENTACIÓN CENTRALIZADA
+Sistema básico de almacenamiento de documentos.
+Permite el registro o subida de archivos, sea cual sea su extensión, en entidades como tareas de un proyecto, gestión general de documentos (GED), presupuestos, pedidos, facturas, terceros, con el propósito de relacionar dicha información adicional con estas entidades, ya que por su relación fichero – entidad, permite una búsqueda rápida y relación de ambas.
+Los documentos pueden ser estándar o no (es decir basados en estándares de creación y lectura), pero se ha de tener en cuenta que la aplicación que pretende abrirlos para su visualización han de ser capaces de leer o interpretar dichos formatos, como por ejemplo, pdf, jpg, word, excel, etc.
+Gestión documental integrada de forma automática con las entidades de presupuestos, pedidos, facturas, terceros, etc.
+Recomendado para comerciales que viajan con eventualidad y requieren disponer de los documentos existentes en el sistema, sean almacenados por ellos o por otros usuarios, pero en definitiva, necesarios en su trabajo.
+
+GESTIÓN DE INTERVENCIONES
+ GESTIÓN PARA LOS PARTES DE TRABAJOS REALIZADOS A LOS CLIENTES
+Creación y gestión de intervenciones (partes de trabajo).
+Integración con Proyectos.
+Creación de facturas a partir de las intervenciones realizadas a un cliente con un sólo click, siempre que sea un acuerdo por ambas partes.
+Integración de las intervenciones con los contratos de clientes (Que según el contrato establecido mutuamente con la empresa a base de intervenciones realizadas, estas serán cobradas en una fecha pactada (mensual, anual, etc.), o por el contrario, a partir de un contrato de mantenimiento con un cliente (anual, o mayor), simplemente se desea obtener el tiempo dedicado a dicho cliente, que tras previo pago de su cuota, puede resultar viable o no para una posterior renovación del próximo periodo de contrato).
+Controles de tiempo aplicados a un cliente por intervención del mismo.
+Integración con contratos.
+Equivalente a partes de trabajo realizados por trabajadores internos o externos a la empresa, quedando reflejado en el sistema y con conocimiento de la empresa para determinar una acción.
+Gestión de relaciones
+Humanas (HR)
+
+GESTIÓN DE USUARIOS
+ GRUPOS Y PERMISOS
+Gestión de usuarios del sistema.
+Individualización de la página de inicio para cada usuario (Dashboard).
+Gestión de grupos.
+Conectividad de usuarios a través de LDAP.
+Creación de varios administradores.
+Fijación del horario de un usuario.
+Determinación del salario del usuario.
+Establecimiento de color de un usuario para la visulaización rápida en la agenda de sus registros de acciones.
+Personalización de temas por usuario.
+Gestión de usuarios externos para la visualización de su información exclusiva. (perfecto para dar accesos a clientes y ahorrar tiempo de gestión)
+Granularidad de permisos por grupos y usuarios.
+Número ilimitado de usuarios.
+Establecimiento de los costes de un usuario interno.
+Jerarquía del usuario en la empresa.
+Creación de la firma de envíos de email para un usuario.
+Visualización de días libres de vacaciones del usuario.
+
+GESTIÓN DE MIEMBROS
+ GESTIÓN DE CLUBS, ASOCIACIONES (CUOTAS, SOCIOS)
+Ideal para organizaciones, clubs, entidades que necesitan llevar un control del pago de sus socios, que periódicamente abonan una cuota fija por pertenecer al mismo.
+Gestión de Subvenciones.
+Listados de Miembros dados de baja, que están y no están al día de pagos.
+Listados completos con filtros de búsqueda.
+Impresión de justificante de pago de cuota (recibos).
+Viaweb ERP/CRM permite el control de gestión para Clubs, Asociaciones, Entidades que necesitan un control de sus gastos periódicamente (gimnasios, empresas que cobran cuotas equivalentes a sus clientes abonados a su servicio, etc.)
+Clasificación de miembros según tipo establecido.
+Estadísticas gráficas por país, región, provincia, población y características.
+Indicado para la gestión de Miembros de una empresa.
+Además, Viaweb dispone de un módulo de control y gestión de Donaciones para organizaciones sin ánimo de lucro.
+
+GESTIÓN DE RECURSOS HUMANOS
+ PETICIONES DE VACACIONES, SALARIOS A LOS EMPLEADOS Y RELACIÓN CON PROYECTOS
+Petición de días libres por parte de los empleados.
+Notificación por email de las peticiones y su posterior aceptación o no a través de un email que recibirá el empleado.
+Establecimiento del precio por hora y la jornada (en horas diarias) de un trabajador de la empresa para luego poder obtener los resultados de beneficios o pérdidas en los proyectos creados de clientes en base al resumen de objetos vinculados al mismo (facturas de clientes y facturas de proveedores como costes asociados, además de las horas y costes de usuarios trabajadores relacionados al proyecto en función de las horas aplicadas a las tareas del proyecto) .
+Gestión de gastos comunes.
+Aprobación de peticiones de días libres por parte del usuario responsable.
+Notificación por email de las peticiones y su posterior aceptación o no a través de un email que recibirá el empleado.
+Establecimiento del salario de un empleado como usuario del sistema aunque no tenga acceso al mismo. Pero está pensado para próximas actualizaciones del sistema.
+Posibilidad de incluir el pago de salarios a los empleados para que queden reflejados en la gestión de la empresa y formen parte del balance o informe global de la misma.
+
+HOJAS DE HORAS
+ INGRESE EL TIEMPO INVERTIDO EN HOJAS DE HORAS FÁCILES DE USAR
+Complete su hoja de tiempo utilizando la interfaz que se adapte a sus necesidades.
+Hay varias soluciones disponibles para ingresar sus hojas de tiempo, desde una cuadrícula semanal, hasta una cuadrícula diaria y cuadrícula mensual.
+Ingrese el progreso (opcional) al mismo tiempo que ingresa el tiempo dedicado en una tarea. Puede ver el impacto del tiempo invertido en las ganancias del proyecto.
+
+Si se ha definido una tarifa por hora para el usuario en su registro de usuario, entonces el tiempo invertido se convierte automáticamente en su moneda y esto se incluye en el resumen de ganancias de su proyecto.
+
+Analice y exporte sus hojas de tiempo, utilizando el módulo de exportación para exportar las hojas de tiempo de usuarios y proyectos.
+Tambien puede revisar los informes predefinidos o conectar sus herramientas de análisis de datos directamente a la base de datos para realizar un análisis preciso de sus proyectos.
+
+
+Productividad
+
+GESTIÓN DE PROYECTOS
+ MÁRGENES DE BENEFICIOS O COSTES
+Asociación de entidades al proyecto (presupuestos, pedidos, facturas de clientes y proveedores, intervenciones, etc), así analizaremos rápidamente todo lo relacionado con el proyecto.
+Visualización de las ganancias o pérdidas del proyecto según las entidades relacionadas con el mismo (facturas del cliente, y facturas del proveedor por costes de material), además de las imputaciones de horas implicadas de los empleados en el mismo.
+Posibilidad de adjuntar documentos relevantes al proyecto y a las tareas del mismo.
+Obtención de información por parte de los integrantes del proyecto.
+Creación y seguimiento de tareas asignadas de un proyecto según el rol del usuario responsable o participante del mismo, es decir, usuario interno a la empresa, o externo.
+Organización, control y gestión de proyectos de la empresa.
+Visión rápida e intuitiva del proyecto.
+Asignación de usuarios externos (como por ejemplo clientes) a un proyecto, con el objetivo de que éste pueda realizar un seguimiento en tiempo real.
+Sencillo diagrama de Gantt para obtener información del estado del mismo a simple vista a modo de agenda, el cual nos permitirá averiguar si el proyecto entra o no dentro del plazo previsto según las tareas completadas.
+
+GESTIÓN DE AGENDA Y REGISTROS
+ CONTROL DE EVENTOS Y ACCIONES
+Agenda para la gestión de eventos automáticos o manuales.
+Integración con google CAL (necesario módulo externo a Viaweb)
+Listado de acciones filtrados por usuarios, grupos, etc. desde el módulo agenda o calendario.
+Asignación de tareas o eventos a usuarios del sistema.
+Visualización diaria, semanal o trimestral, para una visión más amplia de la agenda.
+Filtrado de fechas por búsqueda de vista, semanal, mensual o diaria, además de “hoy”.
+Toda una agenda completa informativa de lo registrado y automatizado por parte de los usuarios de la empresa, que permite la visualización según los permisos asignados al usuario del sistema.
+Compartición de la agenda con otros usuarios.
+Registro automático de todas las acciones del usuario responsable de una acción (creación de presupuestos, creación de factura, validación de las entidades tales como presupuestos, facturas, pedidos, expediciones, etc.)
+Creación de PDF de los listados de acciones.
+Posibilidad de creación de nuevas acciones a través del diccionario del menú de configuración por el administrador.
+Visualización rápida del estado de ocupación de los usuarios, necesarios para el departamento de secretaría o administración responsable de tal caso.
+Filtrado por tipo de evento, por usuario, por tipo proyecto, por tipo de evento.
+
+DESARROLLO DE REPORTES
+ RECOPILACIÓN DE DATOS Y ESTADÍSTICAS
+Sabemos lo importante que es disponer de la información necesaria para tomar decisiones, o simplemente obtener una recopilación de datos, con la finalidad de crear estadísticas o realizar comparativas.
+Estamos totalmente capacitados para el desarrollo de cualquier tipo de informe o reporte.
+
+Estos informes pueden disponer de varias dimensiones, y contener diferentes gráficos, sumatorios u operaciones matemáticas, para obtener el resultado deseado. Si se desea, también podemos exportar los datos del informe a HTML, CSV o EXCEL para posteriormente ser tratados con facilidad.
+
+
+
+MANUFACTURA
+ LISTA DE MATERIALES Y PLANIFICACIÓN DE RECURSOS DE MATERIALES
+BOM (listas de materiales); crea tus nomenclaturas para definir cómo consumir materias primas o servicios para producir productos manufacturados (cantidad a consumir, eficiencia, impacto de stock).
+Órdenes de fabricación; reutilice las listas de materiales predefinidas para generar sus órdenes de fabricación.
+Produzca su orden de fabricación en uno o varios pasos.
+Si se aumenta el stock de producto producido y se reduce el stock de producto consumido automáticamente, puede obtener una vista de todos estos cambios en su historial.
+La aplicación calculará en tiempo real, el stock virtual teniendo en cuenta todas las órdenes de fabricación abiertas.
+
+Puede gestionar lotes y series; si lo necesita, puede activar la función gestión de número de lote / serie. Los productos definidos para ser administrados por lotes requerirán un número de lote para ser fabricados.
+Siga su producción por lotes y recupere detalles de movimientos de stock para un lote en particular en cualquier momento, comenzando desde el proceso de producción hasta el envío del cliente.
+También, puede exportar sus órdenes de fabricación con el módulo de exportación; reutilícelas con herramientas externas, o conecte su suite de BI existente directamente a la base de datos abierta para el análisis de Big Data.
+
+
+Solución
+Omnicanal
+
+DASHBOARD
+ PÁGINA Y TABLERO DE INICIO
+Estadísticas iniciales de número de usuarios, clientes, proveedores, pedidos, facturas, intervenciones, etc.
+Activación de paneles de facturas a clientes por mes.
+Activación de paneles de pedidos de clientes por mes.
+Activación de paneles de últimos presupuestos modificados.
+Activación de paneles de últimas acciones a realizar (agenda).
+Activación de paneles de balance de cuentas abiertas.
+Activación de paneles de facturas de clientes y proveedores pendientes de pago.
+Activación de paneles de servicios a punto de caducar por contrato.
+Listado de indicadores configurables con avisos en forma de alertas por tiempo establecido.
+Activación de paneles de facturas de proveedores por mes.
+Activación de paneles de últimos pedidos modificados.
+Activación de paneles de últimas facturas modificadas.
+Activación de paneles de alertas de stock.
+Activación de paneles de gráficos de distribución de productos y servicios.
+Activación de paneles de proyectos.
+Activación de paneles de últimas intervenciones realizadas.
+
+GESTIÓN DE PUNTO DE VENTA
+ TERMINAL PUNTO DE VENTA PARA VENTAS EN MOSTRADOR
+Dos tpv a elegir.
+Módulo Takepos – Punto de venta similar al de Odoo, válido para el sector de bares y restaurantes.
+Integrado con la facturación de Viaweb ERP/CRM.
+Configuración de métodos de pago de Viaweb ERP/CRM.
+100% Integrado con Viaweb ERP/CRM.
+En definitiva un módulo util, muy básico para sus funciones que no requieren funcionalidades adicionales.
+Sistema básico de terminal punto de venta.
+Permite uso de lector de código de barras para su lectura.
+Ventas de mostrador rápida.
+Configuración de cliente (Tercero) predeterminado para la venta.
+Gestión sencilla del control de stock de ventas con Viaweb ERP/CRM, según su configuración.
+
+GESTIÓN DE PRODUCTOS Y SERVICIOS
+ ALMACENES Y STOCK
+Gestión completa de productos y servicios.
+Gestión de almacenes y stock de productos..
+Establecimiento de distintos niveles de precios.
+Categorización de productos y servicios.
+Listados y estadísticas de envíos.
+Gestión de lotes y caducidad.
+Estadísticas de productos y servicios.
+Transferencias y movimientos de stock.
+Reaprovisionamiento de productos.
+Gestión de envíos y transportes.
+Creación de albaranes o entregas.
+Creación de grupos y atributos de productos.
+
+INTEGRACIÓN CON ECOMMERCE
+ SINCRONIZACIÓN DE PRODUCTO Y STOCK EN TIEMPO REAL
+Venda en línea con su propia plataforma de comercio electrónico o utilice el de comercio electrónico integrado.
+
+Si usa una solución de comercio electrónico externa.
+Si tiene una tienda en línea / plataforma de comercio electrónico, puede sincronizarla con Viaweb ERP y CRM utilizando módulos de sincronización externos.
+La mayoría de las soluciones de comercio electrónico están totalmente o parcialmente compatibles, como Prestashop , Magento , OsCommerce , WooCommerce , OpenCart , etc.
+
+Si utiliza la solución de comercio electrónico integrada, en el futuro, Viaweb proporcionará su propio módulo de comercio electrónico, por lo que no necesitará instalar ningún servicio de integración y sincronización entre su ERP y sus plataformas de comercio electrónico.
+
+
+
+ENVÍOS
+ RASTREAR SU LISTA DE SELECCIÓN, PEDIDOS Y CANTIDAD PARA ENVIAR
+Puede crear sus envíos con un clic desde cualquier pedido. Comparar la cantidad enviada con la cantidad a enviar.
+Definir la fecha prevista de entrega para cada uno de sus envíos para que pueda procesarlos por prioridad o seguir los envíos tardíos. Y si necesita más información sobre su envío, puede configurar la aplicación para administrar cualquier otro campo personalizado que necesite.
+
+Al crear una nueva hoja de selección, peso o volumen de sus artículos pueden ser ambos calculados automáticamente a partir de datos de productos predefinidos o definidos manualmente.
+Su stock se actualiza automáticamente cuando realiza un nuevo envío. Y el registro de su movimiento de existencias está directamente vinculado a este.
+Puede rastrear fácilmente su envío con un enlace directo a la herramienta de rastreo del transportador que se llena automáticamente.
+
+Genere el PDF de la hoja de envío e imprímalo para su transportista o envíelo por e-mail directamente desde la aplicación a cualquier socio.
+Si es necesario, también puede administrar / generar un recibo de entrega.
+
+
+Integración,
+Desarrollo
+
+ADMINISTRACIÓN DEL SISTEMA
+ CONFIGURACIÓN Y PARAMETRIZACIÓN DEL SISTEMA
+Completa gestión de la parametrización del sistema.
+Gestión de los módulos de serie del sistema Viaweb ERP/CRM.
+Gestión de usuarios.
+Gestión de límites y precisiones del sistema.
+Gestión de los paneles del dashboard.
+Control de impuestos.
+Gestión de traducciones.
+Gestión de menús.
+Gestión del entorno.
+Configuración a medida y flexible.
+Control de flujos de trabajo.
+Control de impresión directa de documentos como presupuestos, pedidos, facturas, etc.
+Control de módulos experimentales (a prueba) que a través de variables ocultas estarán disponible, con el objetivo únicamente de testear y no de poner en producción o un entorno real.
+Gestión de diccionarios (tablas maestras).
+Control de la seguridad del sistema.
+Configuración del correo.
+Gestión de grupos de usuarios.
+Gestión de backups (copias de seguridad).
+Configuración de SMS.
+Gestión de alertas.
+Control de la seguridad del sistema.
+Tareas programadas a través de comandos de cron (linux).
+Gestión de módulos complementarios y de interfaz, agregados al sistema (no incluidos de serie).
+
+PROGRAMACIÓN A MEDIDA
+ MODIFICACIÓN DE FUNCIONALIDADES Y COMPORTAMIENTOS
+Algo que suele ocurrir con frecuencia es que los usuarios de un programa de gestión, con el tiempo, o por cambios en la operatividad diaria, cambian sus necesidades, viéndose en la obligación de realizar algunas modificaciones en el programa, adaptándose éste a esas nuevas necesidades.
+Desde nuestra experiencia y conocimiento, te invitamos a que nos hagas llegar esas necesidades para evaluar la mejor opción, u opciones que encajen perfectamente para cubrir tus objetivos.
+
+
+
+MIGRACIÓN DE DATOS
+ TRASPASO DE DATOS ÓPTIMO Y SENCILLO
+En la mayoría de ocasiones, a menos que se trate de la creación de una nueva empresa, es necesario disponer de los datos del anterior programa que se estaba utilizando hasta el momento, y del cual se quiere cambiar.
+La migración de datos no es una tarea sencilla, debido a que cada programa está estructurado de una forma particular, la cual no tiene por que coincidir con el de otro programa, que es en la mayoría de casos.
+
+Debido a esto, esta tarea de migración ha de llevar consigo un análisis previo de los datos a migrar, con el objetivo de que tras la migración al nuevo programa no se pierda o transforme la información, y así disponer de una base de datos correcta y completa.
+
+Pregúntanos acerca de nuestro servicio de migración, y te ofreceremos la mejor solución.
+
+
+Nuestros
+Planes
+ERP1 - ERP/CRM
+Minorista
+Hasta 15 usuarios ( erp.viaweb.net.ar/tuempresa )
+Alojamiento en la nube de servidores de AWS, Vultr, Digital Ocean
+1 vCore - 2GB RAM - Disco SSD 40GB - Certificado Web SSL
+Servicio de backup diario
+Factura electrónica: Módulo de Facturación AFIP
+Módulo de Reporting & BI
+Asistencia en la personalización
+Consultoría de requisitos
+Instalación y parametrización
+Desarrollo de módulos personalizados
+Soporte: Cantidad de horas a definir
+TPV Profesional + Generador de etiquetas empresa de venta de productos
+Facturación masiva de contratos empresa de venta de servicios
+empezar
+ERP2 - ERP/CRM
+Mayorista
+De 15 a 30 usuarios ( erp.tuempresa.com.ar )
+Alojamiento en la nube de servidores de AWS, Vultr, Digital Ocean
+2 vCore - 4GB RAM - Disco SSD 80GB - Certificado Web SSL NUEVO
+Servicio de Backup Diario
+Factura electrónica: Módulo de Facturación AFIP
+Módulo de Reporting & BI
+Asistencia en la personalización
+Consultoría de requisitos
+Instalación y parametrización
+Desarrollo de módulos personalizados
+Soporte: Cantidad de horas a definir
+TPV Profesional + Generador de etiquetas empresa de venta de productos
+Facturación masiva de contratos empresa de venta de servicios
+empezar
+ERP3 - ERP/CRM
+Extendido
+De 15 a 100 usuarios ( erp.tuempresa.com.ar )
+Alojamiento en la nube de servidores de AWS, Vultr, Digital Ocean
+2 vCore - 8GB RAM - Disco SSD 160GB - Certificado Web SSL NUEVO
+Servicio de Backup Diario
+Factura electrónica: Módulo de Facturación AFIP
+Módulo de Reporting & BI: Informes Avanzados
+Asistencia en la personalización
+Consultoría de requisitos
+Instalación y parametrización
+Desarrollo de módulos personalizados
+Soporte: Cantidad de horas a definir
+TPV Profesional + Generador de etiquetas empresa de venta de productos
+Facturación masiva de contratos empresa de venta de servicios
+empezar
