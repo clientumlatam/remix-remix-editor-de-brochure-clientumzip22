@@ -1398,7 +1398,7 @@ export default function PublicWebsite({
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
                         { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
-                        { id: "clientes",       icon: Users,        color: "bg-cyan-50 text-cyan-600 border-cyan-100",     accent: "group-hover:text-cyan-600",   label: "Nuestros Clientes",     desc: "Más de 40 empresas de la Patagonia que ya confían en nosotros." },
+                        { id: "clientes",       icon: Users,        color: "bg-cyan-50 text-cyan-600 border-cyan-100",     accent: "group-hover:text-cyan-600",   label: "Nuestros Clientes",     desc: "+35 empresas e instituciones del Alto Valle que ya confían en nosotros." },
                       ].map(({ id, icon: Icon, color, accent, label, desc }) => (
                         <button
                           key={id}
@@ -1440,7 +1440,7 @@ export default function PublicWebsite({
                         {
                           id: "asociacion", icon: Users, accent: "from-violet-600 to-pink-600",
                           label: "Programa de Partners",
-                          desc: "Sumate a la red de revendedores y afiliados. Comisiones del 20% recurrente.",
+                          desc: "Sumate a la red de revendedores y afiliados. Comisiones del 30% recurrente.",
                           cta: "Ver Programa"
                         },
                         {
@@ -2352,7 +2352,7 @@ export default function PublicWebsite({
                   {/* PLAN 4: PREMIUM */}
                   <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
                     <div>
-                      <h3 className="font-bold text-slate-900 text-sm">Corporativo</h3>
+                      <h3 className="font-bold text-slate-900 text-sm">Plan Corporativo</h3>
                       <p className="text-slate-500 text-[10px] mt-1 leading-relaxed">Para empresas con múltiples canales activos.</p>
                       {hidePrices ? (
                         <div className="my-4 flex items-baseline">
@@ -2379,7 +2379,7 @@ export default function PublicWebsite({
                   {/* PLAN 5: ENTERPRISE */}
                   <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
                     <div>
-                      <h3 className="font-bold text-slate-900 text-sm">Especializado</h3>
+                      <h3 className="font-bold text-slate-900 text-sm">Plan Especializado</h3>
                       <p className="text-slate-500 text-[10px] mt-1 leading-relaxed">Infraestructura y desarrollos a medida.</p>
                       {hidePrices ? (
                         <div className="my-4 flex items-baseline">
@@ -2415,7 +2415,7 @@ export default function PublicWebsite({
                       },
                       {
                         q: "¿Ofrecen opciones de pago mensual o anual?",
-                        a: "Ofrecemos ambas opciones de pago. La facturación anual cuenta con una bonificación especial equivalente a un 20% de descuento sobre el precio de lista."
+                        a: "Ofrecemos ambas opciones de pago. La facturación anual tiene un descuento del 15% sobre el precio de lista mensual."
                       },
                       {
                         q: "¿Puedo cancelar o cambiar de plan en cualquier momento?",
@@ -3180,14 +3180,14 @@ export default function PublicWebsite({
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="bg-slate-950 p-6 rounded-xl border border-slate-800">
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-blue-400">FH</div>
+                        <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xs text-emerald-400">AG</div>
                         <div>
-                          <h4 className="font-bold text-xs">Felix Harder</h4>
-                          <span className="text-[9px] text-slate-400">Coach de Fitness &amp; Autor Best Seller</span>
+                          <h4 className="font-bold text-xs">Ana Giménez</h4>
+                          <span className="text-[9px] text-slate-400">Dueña de Ferretería, General Roca</span>
                         </div>
                       </div>
                       <p className="text-[11px] text-slate-300 italic leading-relaxed">
-                        "El curso de nutrición y marketing digital de Viaweb me ayudó a entender cómo estructurar un plan de dieta perfecto y vender mis ebooks en automático. ¡Totalmente recomendable!"
+                        "El curso de WooCommerce me permitió montar mi tienda online en dos semanas. Ahora recibo pedidos por web mientras atiendo el local — los pedidos entran solos al sistema."
                       </p>
                     </div>
 
@@ -3200,7 +3200,7 @@ export default function PublicWebsite({
                         </div>
                       </div>
                       <p className="text-[11px] text-slate-300 italic leading-relaxed">
-                        "Los cursos de Viaweb Academia son prácticos y aplicables. Creé mi primera tienda online en WooCommerce desde cero y ya estoy procesando pedidos automatizados en pesos."
+                        "Los cursos de Clientum Academia son prácticos y aplicables. Los pedidos empezaron a automatizarse desde el primer mes y dejé de perseguir pagos manualmente."
                       </p>
                     </div>
 
@@ -3213,7 +3213,7 @@ export default function PublicWebsite({
                         </div>
                       </div>
                       <p className="text-[11px] text-slate-300 italic leading-relaxed">
-                        "La formación en automatización de procesos redujo el estrés de administración. Nuestro equipo ahora controla el CRM unificado liberando horas de tiempo libre."
+                        "El CRM unificado cambió cómo gestionamos nuestros proyectos. La formación en automatización redujo horas de administración desde la primera semana."
                       </p>
                     </div>
                   </div>
