@@ -201,7 +201,7 @@ export default function PublicWebsite({
   // Course enrollment state
   const [enrolledCourse, setEnrolledCourse] = useState<string | null>(null);
 
-  // Full services catalog (488 servicios) — search, category filter & pagination
+  // Full services catalog (479 servicios) — search, category filter & pagination
   const ALL_SERVICES = serviciosCatalogo as CatalogService[];
   const SERVICE_CATEGORIES = categoriasServicios as CatalogCategory[];
   const [catalogQuery, setCatalogQuery] = useState("");
@@ -228,12 +228,12 @@ export default function PublicWebsite({
     { plan: "Plan Inicial",     precio_usd_mes: 20,  descripcion: "Para emprendedores y pequeños negocios.", web: "Landing page responsiva", crm_erp: "Embudo básico (200 cont.)", seguridad: "Respaldos mensuales",        ia_bi: "Bot de bienvenida fijo" },
     { plan: "Plan PyME",        precio_usd_mes: 45,  descripcion: "Para comercios con ventas activas.",       web: "Tienda online estándar",   crm_erp: "Stock + AFIP (1.000 cont.)", seguridad: "Cifrado de base de datos",   ia_bi: "Bot WhatsApp con FAQs" },
     { plan: "Plan Pro",         precio_usd_mes: 80,  descripcion: "Para automatizar con IA, bots y facturación.", web: "E-Commerce premium total", crm_erp: "Multi-embudo ilimitado",   seguridad: "Auditorías de software",    ia_bi: "Agente IA & BI avanzado" },
-    { plan: "Corporativo",      precio_usd_mes: 150, descripcion: "Para empresas con múltiples canales activos.", web: "Portal B2B + Web integral", crm_erp: "Pipeline multi-sucursal",  seguridad: "Hardening y firewall",     ia_bi: "Analítica predictiva & bots" },
-    { plan: "Especializado",    precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
+    { plan: "Plan Corporativo", precio_usd_mes: 150, descripcion: "Para empresas con múltiples canales activos.", web: "Portal B2B + Web integral", crm_erp: "Pipeline multi-sucursal",  seguridad: "Hardening y firewall",     ia_bi: "Analítica predictiva & bots" },
+    { plan: "Plan Especializado", precio_usd_mes: 250, descripcion: "Infraestructura y desarrollos a medida.",   web: "Apps web & mobile infinitas", crm_erp: "Integraciones ERP legacy", seguridad: "SOC activo 24/7 dedicado", ia_bi: "Modelos LLM corporativos" },
   ];
 
   // ── Unified WooCommerce CSV export ────────────────────────────────────────
-  // Combines: servicios (488) + planes (5) + cursos (32) + soluciones (12)
+  // Combines: servicios (440) + planes (5) + cursos (22) + soluciones (12)
   const handleExportWooCommerceCSV = () => {
     const esc = (v: string | number) => {
       const s = String(v ?? "").replace(/"/g, '""');
@@ -287,8 +287,8 @@ export default function PublicWebsite({
       { slug: "inicial",     name: "Plan Inicial",    price: 20,  desc: "Para emprendedores y pequeños negocios.",       features: "Web: Landing page responsiva | CRM/ERP: Embudo básico (200 cont.) | Seguridad: Respaldos mensuales | IA & BI: Bot de bienvenida fijo" },
       { slug: "pyme",        name: "Plan PyME",       price: 45,  desc: "Para comercios con ventas activas.",             features: "Web: Tienda online estándar | CRM/ERP: Stock + AFIP (1.000 cont.) | Seguridad: Cifrado de base de datos | IA & BI: Bot WhatsApp con FAQs" },
       { slug: "pro",         name: "Plan Pro",        price: 80,  desc: "Para automatizar con IA, bots y facturación.",  features: "Web: E-Commerce premium total | CRM/ERP: Multi-embudo ilimitado | Seguridad: Auditorías de software | IA & BI: Agente IA & BI avanzado" },
-      { slug: "corporativo", name: "Corporativo",     price: 150, desc: "Para empresas con múltiples canales activos.",   features: "Web: Portal B2B + Web integral | CRM/ERP: Pipeline multi-sucursal | Seguridad: Hardening y firewall | IA & BI: Analítica predictiva & bots" },
-      { slug: "especializado",name:"Especializado",   price: 250, desc: "Infraestructura y desarrollos a medida.",        features: "Web: Apps web & mobile infinitas | CRM/ERP: Integraciones ERP legacy | Seguridad: SOC activo 24/7 dedicado | IA & BI: Modelos LLM corporativos" },
+      { slug: "corporativo", name: "Plan Corporativo",     price: 150, desc: "Para empresas con múltiples canales activos.",   features: "Web: Portal B2B + Web integral | CRM/ERP: Pipeline multi-sucursal | Seguridad: Hardening y firewall | IA & BI: Analítica predictiva & bots" },
+      { slug: "especializado", name: "Plan Especializado",   price: 250, desc: "Infraestructura y desarrollos a medida.",        features: "Web: Apps web & mobile infinitas | CRM/ERP: Integraciones ERP legacy | Seguridad: SOC activo 24/7 dedicado | IA & BI: Modelos LLM corporativos" },
     ];
     for (const p of planesData) {
       lines.push(row(
@@ -327,9 +327,9 @@ export default function PublicWebsite({
       { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes se autoatienden." },
       { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Tu presencia web, conectada al CRM." },
       { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-      { id: "catalogo",         name: "Catálogo Completo",   desc: "488 servicios en 14 categorías con precios reales." },
+      { id: "catalogo",         name: "Catálogo Completo",   desc: "479 servicios en 14 categorías con precios reales." },
       { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
-      { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
+      { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
       { id: "casos",            name: "Casos de Éxito",      desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
     ];
     for (const s of solucionesData) {
@@ -385,23 +385,30 @@ export default function PublicWebsite({
 
   // Recommended plan calculation
   const recommendedPlan = useMemo(() => {
-    if (projectCount <= 20 && pageCount <= 20) {
+    const total = projectCount + pageCount;
+    if (total <= 20) {
       return {
-        name: "Clientum Mini",
+        name: "Plan Inicial",
         price: "$20",
-        desc: "Ideal para iniciar tus proyectos o landing pages sencillas."
+        desc: "Ideal para emprendedores e iniciativas pequeñas con landing page y CRM básico."
       };
-    } else if (projectCount <= 50 && pageCount <= 50) {
+    } else if (total <= 60) {
       return {
-        name: "Clientum Small",
-        price: "$50",
-        desc: "Nuestra opción recomendada para marcas y PyMEs en crecimiento continuo."
+        name: "Plan PyME",
+        price: "$45",
+        desc: "Para comercios con ventas activas: tienda online, stock, AFIP y bot WhatsApp."
+      };
+    } else if (total <= 100) {
+      return {
+        name: "Plan Pro",
+        price: "$80",
+        desc: "Nuestra opción más elegida — IA, bots, facturación automática y e-commerce premium."
       };
     } else {
       return {
-        name: "Clientum Large",
-        price: "$100",
-        desc: "Soporte completo, escalabilidad masiva y herramientas empresariales sin límites."
+        name: "Plan Corporativo",
+        price: "$150",
+        desc: "Para empresas con múltiples canales activos, portal B2B y analítica predictiva."
       };
     }
   }, [projectCount, pageCount]);
@@ -658,7 +665,7 @@ export default function PublicWebsite({
       children: [
         { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
         { id: "blog", label: "Blog & Recursos", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" },
-        { id: "catalogo", label: "Catálogo de Servicios", desc: "488 servicios en 14 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
+        { id: "catalogo", label: "Catálogo de Servicios", desc: "479 servicios en 14 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
         { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
       ]
     },
@@ -1387,9 +1394,9 @@ export default function PublicWebsite({
                         { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes se autoatienden." },
                         { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Tu presencia web, conectada al CRM." },
                         { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "488 servicios en 14 categorías con precios reales." },
+                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "479 servicios en 14 categorías con precios reales." },
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
-                        { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $49 USD/mes. Implementación en 5 días hábiles." },
+                        { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
                         { id: "clientes",       icon: Users,        color: "bg-cyan-50 text-cyan-600 border-cyan-100",     accent: "group-hover:text-cyan-600",   label: "Nuestros Clientes",     desc: "Más de 40 empresas de la Patagonia que ya confían en nosotros." },
                       ].map(({ id, icon: Icon, color, accent, label, desc }) => (
@@ -1516,10 +1523,10 @@ export default function PublicWebsite({
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       {[
-                        { value: "+200", label: "PyMEs implementadas" },
+                        { value: "+35",  label: "Clientes activos" },
                         { value: "5 días", label: "Tiempo de implementación" },
                         { value: "24/7", label: "Soporte técnico" },
-                        { value: "488", label: "Servicios en catálogo" },
+                        { value: "479", label: "Servicios en catálogo" },
                       ].map(({ value, label }) => (
                         <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                           <div className="text-2xl font-extrabold font-mono text-emerald-400 tracking-tight">{value}</div>

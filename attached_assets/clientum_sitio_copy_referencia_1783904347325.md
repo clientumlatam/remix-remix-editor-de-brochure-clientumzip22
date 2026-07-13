@@ -1,4 +1,4 @@
-# Clientum — Copy completo del sitio (referencia v4)
+# Clientum — Copy completo del sitio (referencia)
 > Extraído del sitio en vivo (clientum.com.ar). Guardado como fuente de verdad para reutilizar en brochure, catálogo y rebuild del sitio estático.
 
 ## Navegación global
@@ -158,7 +158,7 @@ CTA: "Exportar todo a WooCommerce · CSV"
 | **Corporativo** | $150/mes | Empresas con múltiples canales activos | Portal B2B + Web integral | Pipeline multi-sucursal | Hardening y firewall | Analítica predictiva & bots |
 | **Especializado** | $250/mes | Infraestructura y desarrollos a medida | Apps web & mobile infinitas | Integraciones ERP legacy | SOC activo 24/7 dedicado | Modelos LLM corporativos |
 
-**"Plan Recomendado para Ti" (calculador corregido — v4):** El calculador ahora recomienda planes reales según `total = proyectos + páginas`: ≤20 → **Plan Inicial $20** · ≤60 → **Plan PyME $45** · ≤100 → **Plan Pro $80** · >100 → **Plan Corporativo $150**. Bug del "Clientum Small $50" eliminado.
+**"Plan Recomendado para Ti" (default del calculador):** Clientum Small — "Nuestra opción recomendada para marcas y PyMEs en crecimiento continuo." $50/mes — nota: este nombre/precio no coincide exactamente con ninguno de los 5 planes de la tabla (¿bug del calculador o plan adicional no listado?).
 
 **FAQ (preguntas sin respuesta visible en el copy, pendientes de redactar):**
 - ¿Cuál es el propósito del período de prueba?
@@ -269,7 +269,7 @@ Inscríbete hoy mismo en nuestros programas de formación práctica dictados por
 
 Todas con CTA "Inscribirse Gratis". Buscador de cursos + botón "Exportar todo a WooCommerce · CSV".
 
-**Catálogo original: 22 cursos depurados (de 32 originales)**, con el mismo patrón de "basura de importación" que el catálogo de productos de GAMAN: cursos propios de marca duplicados con redacciones distintas + cursos genéricos en inglés sin relación con el negocio. **Ya depurado** (misma lógica que la deduplicación de servicios): se sacaron 9 cursos fuera de marca y se fusionaron los duplicados/variantes de un mismo tema en un nombre canónico.
+**Catálogo original: 67 cursos en 6 páginas**, con el mismo patrón de "basura de importación" que el catálogo de productos de GAMAN: cursos propios de marca duplicados con redacciones distintas + cursos genéricos en inglés sin relación con el negocio. **Ya depurado** (misma lógica que la deduplicación de servicios): se sacaron 9 cursos fuera de marca y se fusionaron los duplicados/variantes de un mismo tema en un nombre canónico.
 
 **CATÁLOGO LIMPIO — 29 cursos reales para el campus** (de 58 entradas on-brand → 29 canónicos, fusionando variantes redundantes):
 
@@ -316,7 +316,37 @@ Nutrition: Build Your Perfect Diet & Meal Plan · Complete Financial Analyst Cou
 
 ---
 
+## Componente: Header (markup real extraído del sitio)
+Sticky, blur de fondo, sombra sutil. Estructura:
+
+**Logo:** cuadrado redondeado `#1A3461`, ícono SVG propio — un rombo/diamante hecho de 4 líneas conectando 4 nodos circulares (no es el ícono de texto "C" que aparece en el brochure PDF, es un mark geométrico de líneas+nodos). Al lado: "CLIENTUM" en mayúsculas + subtítulo "CRM, Chatbots & Tecnología PyME" en versalitas chicas.
+
+```svg
+<svg width="20" height="20" viewBox="0 0 180 180" fill="none">
+  <rect width="180" height="180" rx="36" fill="#1A3461"/>
+  <line x1="90" y1="28" x2="152" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <line x1="152" y1="90" x2="90" y2="152" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <line x1="90" y1="152" x2="28" y2="90" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <line x1="28" y1="90" x2="90" y2="28" stroke="white" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="90" cy="28" r="14" fill="white"/>
+  <circle cx="152" cy="90" r="14" fill="white"/>
+  <circle cx="90" cy="152" r="14" fill="white"/>
+  <circle cx="28" cy="90" r="14" fill="white"/>
+</svg>
+```
+
+**Nav principal:** Inicio (activo/subrayado) · Soluciones ▾ (dropdown) · Precios · Empresa ▾ (dropdown) · Recursos ▾ (dropdown) · Soporte ▾ (dropdown)
+
+**Acciones (derecha):** botón secundario "Login / Registro" (borde, ícono log-in) + botón primario "Solicitar Demo" (fondo `#1A3461`, ícono flecha verde esmeralda). En mobile colapsa a botón hamburguesa.
+
+⚠️ **Discrepancia de color de marca:** el header real usa azul `#1A3461`, pero el brochure PDF define la paleta oficial como Prussian Blue `#031E43` + Dusk Blue `#3B506D` (según trabajo previo de branding). Son azules distintos — `#1A3461` es un tono intermedio entre los dos. Falta unificar cuál es el azul oficial antes de seguir construyendo componentes nuevos.
+
+⚠️ **Nota:** este header tiene botón "Login / Registro" (portal de usuario logueado), que no apareció mencionado en el resto del copy scrapeado hasta ahora — confirma que existe una capa de autenticación/dashboard además de las landing pages públicas.
+
+---
+
 ## Footer (repetido en todas las páginas)
+
 **CLIENTUM** — Consultoría integrada de marketing digital e ingeniería de software omnicanal para potenciar PyMEs.
 General Roca, Río Negro
 
