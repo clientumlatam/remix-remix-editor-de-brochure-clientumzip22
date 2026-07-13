@@ -4,3198 +4,3058 @@
     "name": "Gestión de la Experiencia del Cliente (CX)",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Consultoría Y Ejecución De Programas De Gestión De La Experiencia Del Cliente.",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0002",
     "name": "Systems Maintenance",
     "cat": "Atención al Cliente",
     "desc": "Mantenimiento De Sistemas It",
-    "price": "2025"
+    "price": "2025.0"
   },
   {
     "id": "CTM-0003",
     "name": "Servicios de monitoreo y gestión de infraestructura IT",
     "cat": "Atención al Cliente",
     "desc": "Monitoreo Y Gestión De Infraestructura It",
-    "price": "2025"
+    "price": "2025.0"
   },
   {
     "id": "CTM-0004",
     "name": "Servicios de auditoría y cumplimiento normativo",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Consultoría Y Auditoría Para Garantizar El Cumplimiento De Requisitos Legales Y Normativos.",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0005",
     "name": "IT Support Package",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico It",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0006",
     "name": "Desarrollo de chatbots",
     "cat": "Atención al Cliente",
     "desc": "Servicio de Desarrollo de Chatbot de Soporte al Cliente para Ecommerce: Mejora la experiencia del cliente, reduce costos y aumenta las ventas con nuestra solución innovadora.",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0007",
     "name": "Automatización de Servicio al Cliente",
     "cat": "Atención al Cliente",
     "desc": "Automatización Del Servicio Al Cliente",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0008",
     "name": "Montaje de eventos",
     "cat": "Atención al Cliente",
     "desc": "Servicio Integral De Montaje Y Producción Técnica De Eventos Corporativos O Sociales.",
-    "price": "18"
+    "price": "18.0"
   },
   {
     "id": "CTM-0009",
     "name": "Soporte Técnico Continuo",
     "cat": "Atención al Cliente",
     "desc": "Soporte Post-Implementación: el aliado indispensable para el éxito de tus proyectos tecnológicos.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0010",
     "name": "Soporte Remoto",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico A Distancia.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0011",
     "name": "Mantenimiento preventivo",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Mantenimiento Y Soporte Técnico Para Infraestructura Y Sistemas Informáticos.",
-    "price": "165"
+    "price": "165.0"
   },
   {
     "id": "CTM-0012",
     "name": "Soporte Técnico 24/7",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico Especializado",
-    "price": "165"
+    "price": "165.0"
   },
   {
     "id": "CTM-0013",
     "name": "Asistencia técnica remota",
     "cat": "Atención al Cliente",
     "desc": "$150 por incidente: Protección integral para tu tranquilidad",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0014",
     "name": "Generación de Respuestas con IA",
     "cat": "Atención al Cliente",
     "desc": "Solución De Generación De Respuestas Con Ia",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0015",
     "name": "Diseño de interiores",
     "cat": "Atención al Cliente",
     "desc": "Servicio De Diseño Integral De Interiores.",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0016",
     "name": "Servicios de Asistencia Virtual Ecommerce",
     "cat": "Atención al Cliente",
     "desc": "Soluciones De Asistencia Virtual Para Ecommerce.",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0017",
     "name": "Servicio de Gestión de Reseñas y Opiniones",
     "cat": "Atención al Cliente",
     "desc": "Herramienta de gestión de reseñas y feedback para e-commerce que recopila, analiza y responde a las opiniones de los clientes, brindando información valiosa para el crecimiento del negocio.",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0018",
     "name": "Instalación de Software",
     "cat": "Atención al Cliente",
     "desc": "Instalación Y Configuración De Software.",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0019",
     "name": "Consultoría legal",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Consultoría Y Asesoría Legal Para Empresas.",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0020",
     "name": "Chatbot de Atención al Cliente para Ecommerce",
     "cat": "Atención al Cliente",
     "desc": "Servicio de chatbot de atención al cliente para e-commerce. Automatiza las consultas de los clientes 24/7, mejora la experiencia del usuario y aumenta las ventas.",
-    "price": "12"
-  },
-  {
-    "id": "CTM-0021",
-    "name": "$200 por incidente: Protección integral para tu tranquilidad",
-    "cat": "Atención al Cliente",
-    "desc": "$200 por incidente: Protección integral para tu tranquilidad",
-    "price": "1275"
+    "price": "12.0"
   },
   {
     "id": "CTM-0022",
     "name": "Chatbot de Ventas (WhatsApp/Web)",
     "cat": "Atención al Cliente",
     "desc": "Chatbots para Ecommerce que mejoran la atención al cliente.",
-    "price": "12"
+    "price": "12.0"
   },
   {
     "id": "CTM-0023",
     "name": "Translation of Documents",
     "cat": "Atención al Cliente",
     "desc": "Traducción Documentos",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0024",
     "name": "Servicio de traducción",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Traducción De Contenido A Diversos Idiomas.",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0025",
     "name": "Actualización de software",
     "cat": "Atención al Cliente",
     "desc": "Actualización De Software Y Parches De Seguridad.",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0026",
     "name": "Alquiler de equipo audiovisual",
     "cat": "Atención al Cliente",
     "desc": "Alquiler De Equipos Audiovisuales Profesionales Para Proyectos De Producción De Contenido.",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0027",
     "name": "Enrutamiento Inteligente de Tickets",
     "cat": "Atención al Cliente",
     "desc": "Solución De Enrutamiento Inteligente De Tickets Con Ia",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0028",
     "name": "Traducción e interpretación",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Interpretación En Vivo Para Eventos Y Reuniones Multilinguës.",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0029",
     "name": "Personalización",
     "cat": "Atención al Cliente",
     "desc": "Servicio De Asesoría Integral De Imagen Personal.",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0030",
     "name": "Plataforma de Chatbots y Asistentes Virtuales",
     "cat": "Atención al Cliente",
     "desc": "Chatbots Y Asistentes Virtuales",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0031",
     "name": "Optimización de Estrategias de Servicio al Cliente",
     "cat": "Atención al Cliente",
     "desc": "Optimización De Servicio",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0032",
     "name": "Transcripción de audio",
     "cat": "Atención al Cliente",
     "desc": "Servicio De Transcripción Profesional De Audio.",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0033",
     "name": "Soporte a Usuarios Finales",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico Para Usuarios Finales.",
-    "price": "562"
+    "price": "562.0"
   },
   {
     "id": "CTM-0034",
     "name": "Respaldo y recuperación",
     "cat": "Atención al Cliente",
     "desc": "Servicios De Respaldo Y Recuperación De Información.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0035",
     "name": "Gestión de redes",
     "cat": "Atención al Cliente",
     "desc": "Gestión Y Mantenimiento De Redes.",
-    "price": "638"
+    "price": "638.0"
   },
   {
     "id": "CTM-0036",
     "name": "Soporte básico anual",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico Inicial: Tu aliado tecnológico para un funcionamiento óptimo. Atención personalizada, diagnóstico remoto, soporte telefónico y por correo electrónico, base de conocimientos integral. Minimiza el tiempo de",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0037",
     "name": "Valor Hora - Cliente D",
     "cat": "Atención al Cliente",
     "desc": "Valor Hora Cliente D",
-    "price": "712"
+    "price": "712.0"
   },
   {
     "id": "CTM-0038",
     "name": "**Soporte Técnico**",
     "cat": "Atención al Cliente",
     "desc": "Soporte Técnico Para Usuarios Finales.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0039",
     "name": "Servicio de catering",
     "cat": "Atención al Cliente",
     "desc": "Servicio De Catering Para Eventos Y Reuniones.",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0040",
     "name": "Soporte Integral: Tu solución completa para todas tus necesidades",
     "cat": "Atención al Cliente",
     "desc": "Soporte Integral: Tu aliado para un negocio sin preocupaciones. Atención personalizada, soporte técnico 24/7, gestión de proyectos, capacitación y auditorías para garantizar el éxito y la tranquilidad de tu negocio.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0041",
     "name": "Chatbots para E-commerce: Asistencia 24/7, Respuestas Automáticas y Procesamiento de Pedidos",
     "cat": "Atención al Cliente",
     "desc": "Chatbots para E-commerce: Asistencia en tiempo real, respuestas a preguntas frecuentes y procesamiento de pedidos",
-    "price": "488"
+    "price": "488.0"
   },
   {
     "id": "CTM-0042",
     "name": "Desarrollo de Apps Móviles para Ecommerce: Diseño, Implementación y Publicación",
     "cat": "Aplicaciones Móviles",
     "desc": "Servicio de Desarrollo de Aplicaciones Móviles para E-commerce: Diseño centrado en el usuario, integración perfecta, funcionalidades avanzadas, optimización para dispositivos móviles. Mayor alcance, experiencia de compra",
-    "price": "855"
+    "price": "855.0"
   },
   {
     "id": "CTM-0043",
     "name": "Desarrollo de Aplicaciones Móviles Nativas para Ecommerce: Mejora la Experiencia de Compra y Fideliza Clientes",
     "cat": "Aplicaciones Móviles",
     "desc": "Servicio de Desarrollo de Aplicación Móvil Nativa Para Ecommerce",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0044",
     "name": "Desarrollo de app móvil",
     "cat": "Aplicaciones Móviles",
     "desc": "Servicios De Consultoría Y Construcción De Soluciones Móviles Para Mejorar La Productividad, Eficiencia Y Experiencia De Los Usuarios.",
-    "price": "735"
+    "price": "735.0"
   },
   {
     "id": "CTM-0045",
     "name": "Soluciones Personalizadas para Apps",
     "cat": "Aplicaciones Móviles",
     "desc": "Soluciones Móviles Personalizadas.",
-    "price": "615"
+    "price": "615.0"
   },
   {
     "id": "CTM-0046",
     "name": "Creación de apps móviles",
     "cat": "Aplicaciones Móviles",
     "desc": "Servicio De Creación De Aplicaciones Móviles A Medida.",
-    "price": "495"
+    "price": "495.0"
   },
   {
     "id": "CTM-0047",
     "name": "Aplicaciones Móviles para Ecommerce: Crea tu Tienda Online en tu Bolsillo",
     "cat": "Aplicaciones Móviles",
     "desc": "Aplicaciones móviles para e-commerce: la clave para impulsar tu negocio online",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0048",
     "name": "Diseño avanzado de aplicación móvil",
     "cat": "Aplicaciones Móviles",
     "desc": "Diseño avanzado de aplicación móvil",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0049",
     "name": "Desarrollo de Apps Móviles con Realidad Aumentada y Virtual: ¡Experiencias Inmersivas en tus Manos!",
     "cat": "Aplicaciones Móviles",
     "desc": "Desarrollo de Apps Móviles con Realidad Aumentada y Virtual: ¡Experiencias Inmersivas al Alcance de tu Mano!",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0050",
     "name": "Outsourcing de procesos de negocio",
     "cat": "Automatización de Procesos",
     "desc": "Servicios De Outsourcing Para Optimizar Y Gestionar Operaciones Clave Del Negocio.",
-    "price": "33"
+    "price": "33.0"
   },
   {
     "id": "CTM-0051",
     "name": "Implementación de soluciones de inteligencia artificial (IA) y aprendizaje automático (ML) para automatización de procesos",
     "cat": "Automatización de Procesos",
     "desc": "Automatización De Procesos Con Ia Y Ml",
-    "price": "315"
+    "price": "315.0"
   },
   {
     "id": "CTM-0052",
     "name": "Automatización de Procesos de Negocio (BPA)",
     "cat": "Automatización de Procesos",
     "desc": "Servicios De Consultoría Y Despliegue De Tecnologías De Automatización, Orquestación Y Aprovisionamiento De Recursos De Infraestructura.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0053",
     "name": "Implementación de RPA (Automatización Robótica de Procesos)",
     "cat": "Automatización de Procesos",
     "desc": "Servicios De Consultoría Y Despliegue De Tecnologías De Automatización Inteligente De Tareas Y Procesos Repetitivos.",
-    "price": "285"
+    "price": "285.0"
   },
   {
     "id": "CTM-0054",
     "name": "Automatización de Operaciones de TI (AIOps)",
     "cat": "Automatización de Procesos",
     "desc": "Soluciones De Automatización De Operaciones De Ti (Aiops).",
-    "price": "27"
+    "price": "27.0"
   },
   {
     "id": "CTM-0055",
     "name": "Automation with Dolibarr",
     "cat": "Automatización de Procesos",
     "desc": "Automatización Empresarial",
-    "price": "24"
+    "price": "24.0"
   },
   {
     "id": "CTM-0056",
     "name": "Automatización Avanzada",
     "cat": "Automatización de Procesos",
     "desc": "Automatización De Procesos Empresariales",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0057",
     "name": "Automatización Empresarial",
     "cat": "Automatización de Procesos",
     "desc": "Optimización De Procesos Industriales",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0058",
     "name": "Integración de Sistemas",
     "cat": "Automatización de Procesos",
     "desc": "Migración De Aplicaciones Legacy A Microservicios.",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0059",
     "name": "Gestión de Flotas y Rutas",
     "cat": "Automatización de Procesos",
     "desc": "Herramientas De Automatización",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0060",
     "name": "Asistencia Virtual para la Gestión de Tareas",
     "cat": "Automatización de Procesos",
     "desc": "Asistencia Virtual",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0061",
     "name": "Soluciones RPA (Robotic Process Automation)",
     "cat": "Automatización de Procesos",
     "desc": "Automatización De Procesos Con Rpa.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0062",
     "name": "Soporte Automatizado",
     "cat": "Automatización de Procesos",
     "desc": "Soporte Automatizado",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0063",
     "name": "Procesamiento Automatizado de Facturas y Pagos",
     "cat": "Automatización de Procesos",
     "desc": "Procesamiento Automatizado",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0064",
     "name": "Rediseño De Procesos",
     "cat": "Automatización de Procesos",
     "desc": "Análisis Y Rediseño De Procesos.",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0065",
     "name": "Automatización de Procesos Ecommerce: Optimiza y Agiliza tu Negocio Online",
     "cat": "Automatización de Procesos",
     "desc": "Automatización de Flujos de Trabajo en Ecommerce",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0066",
     "name": "Consultoría en digitalización de procesos",
     "cat": "Automatización de Procesos",
     "desc": "Consultoría En Digitalización De Procesos",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0067",
     "name": "Automatización de Ventas con IA",
     "cat": "Automatización de Procesos",
     "desc": "Automatización De Procesos De Marketing Utilizando Ia.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0068",
     "name": "Plataformas de Automatización",
     "cat": "Automatización de Procesos",
     "desc": "Herramientas De Automatización Empresarial",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0069",
     "name": "Optimización de Energía y Recursos",
     "cat": "Automatización de Procesos",
     "desc": "Optimización De Energía",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0070",
     "name": "Desarrollo de Soluciones de Inteligencia Artificial y Machine Learning",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Inteligencia Artificial, Aprendizaje De Máquina Y Procesamiento De Datos.",
-    "price": "4725"
+    "price": "4725.0"
   },
   {
     "id": "CTM-0071",
     "name": "Desarrollo de Soluciones de BI para KPIs",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Construcción De Aplicaciones Para La Extracción De Insights, Predicción De Tendencias Y Toma De Decisiones Basada En Datos.",
-    "price": "48"
+    "price": "48.0"
   },
   {
     "id": "CTM-0072",
     "name": "Servicios de gestión de proyectos",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Acompañamiento En La Gestión De Proyectos De Cambio Y Mejora Continua.",
-    "price": "465"
+    "price": "465.0"
   },
   {
     "id": "CTM-0073",
     "name": "Implementación de soluciones de big data",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Analítica De Comportamiento, Usabilidad Y Satisfacción Del Usuario Para Optimizar La Experiencia Digital.",
-    "price": "4575"
+    "price": "4575.0"
   },
   {
     "id": "CTM-0074",
     "name": "IA y Aprendizaje Automático",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Ia Para La Automatización De Procesos, Predicción De Tendencias Y Toma De Decisiones.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0075",
     "name": "Consultoría empresarial",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Especializada En El Desarrollo De Arquitecturas De Sistemas Y Procesos A Nivel Organizacional.",
-    "price": "4425"
+    "price": "4425.0"
   },
   {
     "id": "CTM-0076",
     "name": "Gestión de la innovación",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Para Potenciar Las Capacidades De Innovación En Las Organizaciones.",
-    "price": "435"
+    "price": "435.0"
   },
   {
     "id": "CTM-0077",
     "name": "Análisis de datos en tiempo real",
     "cat": "Business Intelligence",
     "desc": "Soluciones De Análisis De Datos En Tiempo Real.",
-    "price": "4275"
+    "price": "4275.0"
   },
   {
     "id": "CTM-0078",
     "name": "Gobierno de Datos y Gestión",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Especializada En El Diseño E Implementación De Iniciativas De Gobernanza De Datos.",
-    "price": "42"
+    "price": "42.0"
   },
   {
     "id": "CTM-0079",
     "name": "Implementación de Business Intelligence (BI)",
     "cat": "Business Intelligence",
     "desc": "Servicios De Creación De Soluciones De Inteligencia De Negocios (Bi) Para Empresas.",
-    "price": "405"
+    "price": "405.0"
   },
   {
     "id": "CTM-0080",
     "name": "Implementación de Sistemas de IA",
     "cat": "Business Intelligence",
     "desc": "Gestión De Datos",
-    "price": "4125"
+    "price": "4125.0"
   },
   {
     "id": "CTM-0081",
     "name": "Consultoría y Estrategia Digital",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Especializada En La Planificación E Implementación De Iniciativas De Digitalización.",
-    "price": "3975"
+    "price": "3975.0"
   },
   {
     "id": "CTM-0082",
     "name": "BI (Business Intelligence)",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Desarrollo De Plataformas De Inteligencia De Negocios Y Analítica Avanzada.",
-    "price": "3825"
+    "price": "3825.0"
   },
   {
     "id": "CTM-0083",
     "name": "Visualización Avanzada de Datos",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Desarrollo De Plataformas Para Análisis De Datos, Inteligencia De Negocios Y Generación De Reportes.",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0084",
     "name": "IT Consultancy",
     "cat": "Business Intelligence",
     "desc": "Consultoría It",
-    "price": "36"
+    "price": "36.0"
   },
   {
     "id": "CTM-0085",
     "name": "Análisis Predictivo y ML",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis Predictivo Para Mantenimiento Basada En Ia",
-    "price": "3675"
+    "price": "3675.0"
   },
   {
     "id": "CTM-0086",
     "name": "Implementación de Herramientas de BI",
     "cat": "Business Intelligence",
     "desc": "Servicio De Implementación De Herramientas De Analítica Y Optimización Para Ecommerce.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0087",
     "name": "Soporte Avanzado en BI",
     "cat": "Business Intelligence",
     "desc": "Análisis De Datos Avanzado.",
-    "price": "3525"
+    "price": "3525.0"
   },
   {
     "id": "CTM-0088",
     "name": "Optimización de Bases de Datos",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Especializada En La Gestión Integral De Datos Empresariales.",
-    "price": "345"
+    "price": "345.0"
   },
   {
     "id": "CTM-0089",
     "name": "Inteligencia de Mercado para Identificar Tendencias",
     "cat": "Business Intelligence",
     "desc": "Inteligencia De Mercado",
-    "price": "3375"
+    "price": "3375.0"
   },
   {
     "id": "CTM-0090",
     "name": "Automatización de Reportes Ejecutivos",
     "cat": "Business Intelligence",
     "desc": "Automatización De Reportes Con Pentaho",
-    "price": "33"
+    "price": "33.0"
   },
   {
     "id": "CTM-0091",
     "name": "Planificación estratégica",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Para El Diseño E Implementación De Estrategias Empresariales.",
-    "price": "315"
+    "price": "315.0"
   },
   {
     "id": "CTM-0092",
     "name": "Investigación de mercados",
     "cat": "Business Intelligence",
     "desc": "Servicios De Investigación De Mercados Para Recopilar Y Analizar Información.",
-    "price": "3225"
+    "price": "3225.0"
   },
   {
     "id": "CTM-0093",
     "name": "Consultoría en gestión de procesos",
     "cat": "Business Intelligence",
     "desc": "Revisión y Optimización de Procesos: Identifica y elimina cuellos de botella, mejora la productividad y reduce costos.",
-    "price": "3075"
+    "price": "3075.0"
   },
   {
     "id": "CTM-0094",
     "name": "Análisis de Sentimiento en Redes Sociales",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis De Sentimiento En Llamadas Telefónicas Basada En Ia",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0095",
     "name": "Análisis de Big Data",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Ejecución De Proyectos De Análisis De Datos Y Big Data Para Empresas.",
-    "price": "27"
+    "price": "27.0"
   },
   {
     "id": "CTM-0096",
     "name": "Analítica de datos",
     "cat": "Business Intelligence",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Analítica Predictiva, Prescriptiva Y En Tiempo Real Para Optimizar Procesos Clave Del Negocio.",
-    "price": "2775"
+    "price": "2775.0"
   },
   {
     "id": "CTM-0097",
     "name": "Dashboards Personalizados",
     "cat": "Business Intelligence",
     "desc": "Implementación De Bi Y Dashboards Personalizados",
-    "price": "285"
+    "price": "285.0"
   },
   {
     "id": "CTM-0098",
     "name": "Consultoría en Machine Learning",
     "cat": "Business Intelligence",
     "desc": "Consultoría En Machine Learning",
-    "price": "2925"
+    "price": "2925.0"
   },
   {
     "id": "CTM-0099",
     "name": "Consultoría en Big Data",
     "cat": "Business Intelligence",
     "desc": "Consultoría En Gestión Del Cambio",
-    "price": "2625"
+    "price": "2625.0"
   },
   {
     "id": "CTM-0100",
     "name": "Análisis de Datos y Métricas",
     "cat": "Business Intelligence",
     "desc": "Mejora La Toma De Decisiones Empresariales Con Análisis De Datos.",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0101",
     "name": "Redacción de informes",
     "cat": "Business Intelligence",
     "desc": "Servicio De Redacción Profesional De Informes.",
-    "price": "2475"
+    "price": "2475.0"
   },
   {
     "id": "CTM-0102",
     "name": "Desarrollo de Algoritmos Avanzados",
     "cat": "Business Intelligence",
     "desc": "Algoritmos Para Marketing Digital.",
-    "price": "24"
+    "price": "24.0"
   },
   {
     "id": "CTM-0103",
     "name": "Servicio de Analítica Web: Optimiza tu Ecommerce con Datos Valiosos",
     "cat": "Business Intelligence",
     "desc": "Servicio de Análisis de Datos de Ecommerce: Optimiza tu estrategia de negocio online con métricas esenciales, análisis de cohortes, segmentación avanzada y más.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0104",
     "name": "Support for BI",
     "cat": "Business Intelligence",
     "desc": "Soporte Especializado Bi",
-    "price": "2325"
+    "price": "2325.0"
   },
   {
     "id": "CTM-0105",
     "name": "Análisis de Conversiones: Optimiza tu E-commerce y Aumenta tus Ventas",
     "cat": "Business Intelligence",
     "desc": "Servicio de análisis de conversiones para e-commerce que te permite: Identificar áreas de mejora Optimizar la experiencia del usuario Aumentar las ventas Mejorar el ROI de marketing",
-    "price": "2175"
+    "price": "2175.0"
   },
   {
     "id": "CTM-0106",
     "name": "Consultoría Adicional Básica: Asesoría Experta para Optimizar tu Negocio",
     "cat": "Business Intelligence",
     "desc": "Consultoría Adicional Básica: Asesoramiento personalizado, análisis exhaustivo y planes de acción para el éxito empresarial.",
-    "price": "2025"
+    "price": "2025.0"
   },
   {
     "id": "CTM-0107",
     "name": "Consultoría en inteligencia competitiva",
     "cat": "Business Intelligence",
     "desc": "Consultoría En Inteligencia Competitiva",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0108",
     "name": "Gestión de Riesgos con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Gestión De Riesgos Basada En Ia",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0109",
     "name": "Consultoría en sostenibilidad",
     "cat": "Business Intelligence",
     "desc": "Consultoría En Desarrollo Sostenible",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0110",
     "name": "Análisis de mercado",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis De La Competencia Basada En Ia",
-    "price": "18"
+    "price": "18.0"
   },
   {
     "id": "CTM-0111",
     "name": "Personalización de Informes: Crea Reportes a Medida para tus Necesidades",
     "cat": "Business Intelligence",
     "desc": "Desarrollo de Informes Personalizados: Herramienta para la toma de decisiones informada, con informes adaptados, automatizados, integrados y visuales.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0112",
     "name": "Optimización de Estrategias de Precios",
     "cat": "Business Intelligence",
     "desc": "Informe de Análisis de Rendimiento: Información valiosa para el éxito empresarial.",
-    "price": "165"
+    "price": "165.0"
   },
   {
     "id": "CTM-0113",
     "name": "Optimización de Proyectos Empresariales",
     "cat": "Business Intelligence",
     "desc": "Análisis de Procesos Empresariales: Optimiza el rendimiento y la eficiencia de tu empresa.",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0114",
     "name": "Plataforma de Analítica Web",
     "cat": "Business Intelligence",
     "desc": "Análisis Del Comportamiento Web",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0115",
     "name": "Evaluación de Impacto: Analiza y Mide el Éxito de tus Iniciativas",
     "cat": "Business Intelligence",
     "desc": "Evaluación de Impacto: Herramienta para medir el éxito de tus iniciativas.",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0116",
     "name": "Análisis de Comportamiento del Consumidor",
     "cat": "Business Intelligence",
     "desc": "Análisis De Comportamiento",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0117",
     "name": "Planificación Financiera con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Planificación Financiera Con Ia",
-    "price": "12"
+    "price": "12.0"
   },
   {
     "id": "CTM-0118",
     "name": "Análisis de Datos de Recursos Humanos con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis De Datos De Rrhh Basada En Ia",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0119",
     "name": "Análisis de Datos de la Cadena de Suministro con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis De Datos De La Cadena De Suministro Con Ia",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0120",
     "name": "Análisis de Interacciones con Clientes con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Análisis De Interacciones Con Clientes Basada En Ia",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0121",
     "name": "Gestión de Cumplimiento Normativo con IA",
     "cat": "Business Intelligence",
     "desc": "Solución De Gestión De Cumplimiento Normativo Con Ia",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0122",
     "name": "IA y ML",
     "cat": "Business Intelligence",
     "desc": "Ia Y Ml",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0123",
     "name": "Ciencia de Datos",
     "cat": "Business Intelligence",
     "desc": "Consultoría En Analítica",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0124",
     "name": "Reportes de Ventas",
     "cat": "Business Intelligence",
     "desc": "Reportes de Ventas",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0125",
     "name": "Soluciones completas para grandes empresas con necesidades analíticas avanzadas y continuas.",
     "cat": "Business Intelligence",
     "desc": "Soluciones completas para grandes empresas con necesidades analíticas avanzadas y continuas.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0126",
     "name": "Consultoría en Estrategia Web: Optimiza tu presencia online y alcanza tus objetivos",
     "cat": "Business Intelligence",
     "desc": "Consultoría en Estrategia Web: Impulsa tu presencia digital al siguiente nivel. Análisis exhaustivo, estrategia personalizada, SEO, marketing de contenidos, análisis de datos. Beneficios: mayor visibilidad, generación de",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0127",
     "name": "Implementación De Medidas De Protección",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Detección, Prevención Y Respuesta A Amenazas Cibernéticas En Infraestructuras Críticas Y Operacionales.",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0128",
     "name": "Desarrollo de soluciones de ciberseguridad",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Creación De Aplicaciones Y Sistemas De Ciberseguridad Para La Defensa Frente A Amenazas.",
-    "price": "3675"
+    "price": "3675.0"
   },
   {
     "id": "CTM-0129",
     "name": "Servicios de ciberseguridad",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Consultoría Especializada En Ciberseguridad Para La Protección De Activos Digitales.",
-    "price": "345"
+    "price": "345.0"
   },
   {
     "id": "CTM-0130",
     "name": "Ciberseguridad avanzada",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Consultoría Y Despliegue De Tecnologías De Seguridad De La Información, Detección De Amenazas Y Protección De Activos Digitales.",
-    "price": "3225"
+    "price": "3225.0"
   },
   {
     "id": "CTM-0131",
     "name": "Seguridad informática",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Seguridad Y Protección De Sistemas.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0132",
     "name": "Auditoría de Seguridad",
     "cat": "Ciberseguridad",
     "desc": "Auditoría De Ciberseguridad",
-    "price": "2775"
+    "price": "2775.0"
   },
   {
     "id": "CTM-0133",
     "name": "Gestión de Identidades y Accesos",
     "cat": "Ciberseguridad",
     "desc": "Gestión De Identidades Y Accesos",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0134",
     "name": "Verificación de Seguridad en Big Data",
     "cat": "Ciberseguridad",
     "desc": "Auditoría De Seguridad En Big Data",
-    "price": "2325"
+    "price": "2325.0"
   },
   {
     "id": "CTM-0135",
     "name": "Instalación de Sistemas de Alarmas",
     "cat": "Ciberseguridad",
     "desc": "Sistemas De Videovigilancia.",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0136",
     "name": "Respuesta a incidentes básica",
     "cat": "Ciberseguridad",
     "desc": "Monitoreo Y Respuesta A Incidentes.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0137",
     "name": "Análisis de Riesgos de Ciberseguridad",
     "cat": "Ciberseguridad",
     "desc": "Análisis De Riesgos Y Ciberseguridad",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0138",
     "name": "Servicios de Seguridad Ecommerce",
     "cat": "Ciberseguridad",
     "desc": "Servicios De Seguridad Y Cumplimiento Para Ecommerce.",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0139",
     "name": "Seguridad Adicional: Tu escudo digital para un hogar protegido",
     "cat": "Ciberseguridad",
     "desc": "Seguridad Adicional: Protege tu hogar con tranquilidad",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0140",
     "name": "Respaldo y Recuperación de Datos: Protege tus archivos con nuestra solución integral",
     "cat": "Ciberseguridad",
     "desc": "Respaldo y Recuperación de Datos: tu salvavidas digital. Protege tus datos de pérdidas y disfruta de tranquilidad con respaldos automáticos, almacenamiento en la nube y recuperación rápida.",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0141",
     "name": "Plataforma de Monitoreo y Alertas",
     "cat": "Ciberseguridad",
     "desc": "Monitoreo Y Alertas Proactivas",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0142",
     "name": "Detección de Fraude con IA",
     "cat": "Ciberseguridad",
     "desc": "Detección De Fraude",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0143",
     "name": "SSL Básico",
     "cat": "Ciberseguridad",
     "desc": "Certificado Ssl Para Sitios Web.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0144",
     "name": "Migración Básica a la Nube",
     "cat": "Cloud Computing",
     "desc": "Servicios De Consultoría Y Ejecución De Proyectos De Migración Y Adopción De Soluciones Cloud.",
-    "price": "24"
+    "price": "24.0"
   },
   {
     "id": "CTM-0145",
     "name": "Cloud Computing",
     "cat": "Cloud Computing",
     "desc": "Servicios De Consultoría Y Ejecución De Proyectos De Adopción De Soluciones En La Nube.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0146",
     "name": "Servicios de Implementación de ERP en la Nube",
     "cat": "Cloud Computing",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Computación En La Nube, Almacenamiento, Redes Y Servicios Gestionados.",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0147",
     "name": "Servicios de Alojamiento y Cloud",
     "cat": "Cloud Computing",
     "desc": "Servicios De Alojamiento Y Cloud",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0148",
     "name": "Optimización de Recursos TI",
     "cat": "Cloud Computing",
     "desc": "Mejora De Recursos Tecnológicos",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0149",
     "name": "Soluciones de nube híbrida",
     "cat": "Cloud Computing",
     "desc": "Servicios De Implementación Y Gestión De Entornos De Nube Híbrida.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0150",
     "name": "Plataforma ERP en la nube",
     "cat": "Cloud Computing",
     "desc": "Erp En La Nube",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0151",
     "name": "Consultoría en Soluciones Cloud",
     "cat": "Cloud Computing",
     "desc": "Soluciones En La Nube",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0152",
     "name": "Respaldo y Recuperación de Datos",
     "cat": "Cloud Computing",
     "desc": "Respaldo Y Recuperación De Datos",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0153",
     "name": "Configuración de Redes",
     "cat": "Cloud Computing",
     "desc": "Configuración De Redes.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0154",
     "name": "Soporte de Infraestructura en la Nube",
     "cat": "Cloud Computing",
     "desc": "Monitoreo De Infraestructuras En La Nube.",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0155",
     "name": "Evaluación de Tecnologías Cloud",
     "cat": "Cloud Computing",
     "desc": "Evaluación De Tecnologías En La Nube.",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0156",
     "name": "Cloud Storage Solution",
     "cat": "Cloud Computing",
     "desc": "Almacenamiento En La Nube",
-    "price": "712"
+    "price": "712.0"
   },
   {
     "id": "CTM-0157",
     "name": "Gestión Básica de Servicios en la Nube",
     "cat": "Cloud Computing",
     "desc": "Gestión Básica de Servicios en la Nube",
-    "price": "562"
+    "price": "562.0"
   },
   {
     "id": "CTM-0158",
     "name": "1 vCore, RAM: 1gb, Disco: 25 GB SSD, Ancho de Banda: 1000 GB",
     "cat": "Cloud Computing",
     "desc": "Servidor Virtual 1 Vcore 1 Gb Ram 25 Gb Ssd 1000 Gb Ancho Banda",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0159",
     "name": "Implementación de ERP en la Nube: Optimiza tu gestión empresarial con SaaS",
     "cat": "Cloud Computing",
     "desc": "Servicios de Implementación de Sistemas ERP en la Nube: Optimizando operaciones y obteniendo ventajas competitivas.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0160",
     "name": "Desarrollo de videojuegos",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Diseño, Desarrollo Y Publicación De Videojuegos Y Aplicaciones De Entretenimiento Innovadoras.",
-    "price": "48"
+    "price": "48.0"
   },
   {
     "id": "CTM-0161",
     "name": "Desarrollo de soluciones blockchain",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Creación De Soluciones Blockchain Para Áreas Como Finanzas, Cadena De Suministro Y Certificación.",
-    "price": "4575"
+    "price": "4575.0"
   },
   {
     "id": "CTM-0162",
     "name": "Desarrollo de soluciones de realidad virtual",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios de Implementación de Realidad Aumentada para Ecommerce: Visualización 3D, prueba virtual, información adicional, experiencias interactivas. Mejora la experiencia de compra, aumenta las conversiones y diferencia",
-    "price": "465"
+    "price": "465.0"
   },
   {
     "id": "CTM-0163",
     "name": "Servicios de integración de sistemas",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Consultoría Y Desarrollo De Arquitecturas De Integración De Aplicaciones Y Datos.",
-    "price": "4725"
+    "price": "4725.0"
   },
   {
     "id": "CTM-0164",
     "name": "Migración y modernización de aplicaciones",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Consultoría Y Ejecución De Proyectos De Modernización Y Migración De Infraestructura Tecnológica.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0165",
     "name": "Servicios de desarrollo de aplicaciones con arquitecturas de microservicios",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Desarrollo De Aplicaciones Web Con Microservicios Y Apis",
-    "price": "4425"
+    "price": "4425.0"
   },
   {
     "id": "CTM-0166",
     "name": "Custom Web Development",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Desarrollo De Software Personalizado",
-    "price": "4425"
+    "price": "4425.0"
   },
   {
     "id": "CTM-0167",
     "name": "Servicio de Desarrollo de Integraciones B2B para Ecommerce: Automatiza tus Ventas y Distribución",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de Desarrollo de Integraciones B2B para E-commerce: Conecta tus sistemas, automatiza procesos y mejora la eficiencia de tu negocio.",
-    "price": "435"
+    "price": "435.0"
   },
   {
     "id": "CTM-0168",
     "name": "Desarrollo de software",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Diseño, Desarrollo, Implementación Y Mantenimiento De Aplicaciones A La Medida.",
-    "price": "4275"
+    "price": "4275.0"
   },
   {
     "id": "CTM-0169",
     "name": "Servicio de Implementación de Sistema de Recomendaciones Personalizadas",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de Desarrollo de Funcionalidad de Recomendación de Productos para Ecommerce. Mejora la experiencia de compra, aumenta las conversiones y brinda información valiosa.",
-    "price": "42"
+    "price": "42.0"
   },
   {
     "id": "CTM-0170",
     "name": "Soporte Integral para Comercio Electrónico",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Creación De Soluciones De Comercio Electrónico B2C Y B2B Con Funcionalidades Avanzadas.",
-    "price": "4125"
+    "price": "4125.0"
   },
   {
     "id": "CTM-0171",
     "name": "Desarrollo de sitio web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Construcción Y Mejora De Presencia Web Para Empresas Y Organizaciones.",
-    "price": "405"
+    "price": "405.0"
   },
   {
     "id": "CTM-0172",
     "name": "Personalización de Experiencia de Usuario",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Optimización De Experiencia De Usuario Para Ecommerce.",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0173",
     "name": "Rediseño de Tienda Online: Optimiza tu E-commerce para Impulsar las Ventas",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de creación de tienda online para impulsar tu negocio con diseño personalizado, catálogo completo, pagos seguros, optimización móvil y redes sociales.",
-    "price": "3975"
+    "price": "3975.0"
   },
   {
     "id": "CTM-0174",
     "name": "Web Design",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño Web Personalizado",
-    "price": "36"
+    "price": "36.0"
   },
   {
     "id": "CTM-0175",
     "name": "Gestión de Contenidos Web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Consultoría Y Construcción De Soluciones De Gestión De Contenidos, Diseño Web Y Desarrollo De Aplicaciones Web.",
-    "price": "3675"
+    "price": "3675.0"
   },
   {
     "id": "CTM-0176",
     "name": "Plataforma e-Commerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de Migración de Plataforma Ecommerce: Migra tu tienda online a una plataforma más potente y escalable para crecer y escalar tu negocio sin problemas.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0177",
     "name": "Desarrollo de Contenido Multilingüe",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Contenido Multilingüe",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0178",
     "name": "Soporte para Wordpress",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Soporte Wordpress Multisite",
-    "price": "3825"
+    "price": "3825.0"
   },
   {
     "id": "CTM-0179",
     "name": "Servicio de Optimización de Búsqueda Interna",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Optimización De La Búsqueda Interna En Ecommerce.",
-    "price": "3525"
+    "price": "3525.0"
   },
   {
     "id": "CTM-0180",
     "name": "Desarrollo de tienda online",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Desarrollo de E-Commerce y Tiendas en Línea: La clave para el éxito en el mundo digital.",
-    "price": "345"
+    "price": "345.0"
   },
   {
     "id": "CTM-0181",
     "name": "E-Commerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "E-Commerce Con Wordpress Y Woocommerce",
-    "price": "33"
+    "price": "33.0"
   },
   {
     "id": "CTM-0182",
     "name": "Diseño Web Responsive",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño Web Responsive",
-    "price": "3375"
+    "price": "3375.0"
   },
   {
     "id": "CTM-0183",
     "name": "Servicio de Implementación de Programas de Fidelización",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Implementación De Programas De Fidelización Para Ecommerce.",
-    "price": "315"
+    "price": "315.0"
   },
   {
     "id": "CTM-0184",
     "name": "Servicio de Optimización de Funnels de Conversión",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Optimización De Funnels De Conversión Para Ecommerce.",
-    "price": "3225"
+    "price": "3225.0"
   },
   {
     "id": "CTM-0185",
     "name": "Diseño de sitios web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Diseño Y Desarrollo De Sitios Web A La Medida.",
-    "price": "3075"
+    "price": "3075.0"
   },
   {
     "id": "CTM-0186",
     "name": "Servicio de Estrategia de Precio y Promociones",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de consultoría en estrategia de ecommerce que guía a las empresas hacia el éxito en línea, brindando análisis de mercado, planificación estratégica, optimización de sitios web, marketing digital y gestión de ope",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0187",
     "name": "Diseño de página web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Creación De Una Página Web Profesional Y Funcional Para Representar La Marca En Línea.",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0188",
     "name": "Servicio de Integración de Marketplace",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Integración con Marketplaces Ecommerce: Expande tu negocio online",
-    "price": "2625"
+    "price": "2625.0"
   },
   {
     "id": "CTM-0189",
     "name": "Servicio de Membresías",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Implementación De Suscripciones Para Ecommerce.",
-    "price": "27"
+    "price": "27.0"
   },
   {
     "id": "CTM-0190",
     "name": "Integración Omnicanal para Ecommerce: Conecta tu tienda virtual con todos tus canales",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios de integración omnicanal para e-commerce",
-    "price": "2775"
+    "price": "2775.0"
   },
   {
     "id": "CTM-0191",
     "name": "Servicios de Internacionalización Ecommerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Soluciones De Internacionalización Para Ecommerce.",
-    "price": "285"
+    "price": "285.0"
   },
   {
     "id": "CTM-0192",
     "name": "Integración Multicanal para Ecommerce: Amplía tu Alcance y Optimiza tus Ventas",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios de Integración Multicanal para Ecommerce",
-    "price": "2925"
+    "price": "2925.0"
   },
   {
     "id": "CTM-0193",
     "name": "Integración de WooCommerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Integración De Woocommerce En Ecommerce.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0194",
     "name": "Diseño Web Personalizado",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Personalización Avanzada: Tu experiencia única. Crea un perfil personalizado, recibe recomendaciones adaptadas, ajusta la interfaz y recibe notificaciones relevantes para optimizar tus experiencias, ahorrar tiempo y aume",
-    "price": "2325"
+    "price": "2325.0"
   },
   {
     "id": "CTM-0195",
     "name": "Servicios de Gestión de Catálogo Ecommerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Soluciones De Gestión De Catálogo Para Ecommerce.",
-    "price": "24"
+    "price": "24.0"
   },
   {
     "id": "CTM-0196",
     "name": "Support for E-Commerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Soporte E-Commerce",
-    "price": "2475"
+    "price": "2475.0"
   },
   {
     "id": "CTM-0197",
     "name": "Traducción de Sitio Web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Traducción De Sitio Web",
-    "price": "2325"
+    "price": "2325.0"
   },
   {
     "id": "CTM-0198",
     "name": "Diseño UX/UI",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño De Experiencias De Usuario Y Interfaces",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0199",
-    "name": "Implementacion Tienda Online Basico",
+    "name": "Implementación Tienda Online Básico",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Implementación de Tienda Online Minorista: ¡Creá tu presencia digital hoy!",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0200",
     "name": "Soluciones de e-commerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios de Logística y Distribución para Ecommerce: Optimiza tus operaciones, reduce costos y mejora la satisfacción del cliente.",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0201",
     "name": "Solución de Dropshipping",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Implementación De Dropshipping Para Ecommerce.",
-    "price": "2025"
+    "price": "2025.0"
   },
   {
     "id": "CTM-0202",
     "name": "Tienda Virtual",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Tienda Online Básica: ¡Tu puerta de entrada al mundo del comercio electrónico!",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0203",
     "name": "Servicios de Retención de Clientes Ecommerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio de Desarrollo de Soluciones de Fidelización para Ecommerce. Crea y ejecuta programas de fidelización personalizados para impulsar la lealtad del cliente, aumentar las ventas y mejorar la rentabilidad.",
-    "price": "2175"
+    "price": "2175.0"
   },
   {
     "id": "CTM-0204",
     "name": "Solución de Pasarela de Pago",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Implementación De Pasarela De Pago Para Ecommerce.",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0205",
     "name": "Servicios de Gestión de Inventario Ecommerce",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Gestión integral del inventario y logística para e-commerce. Optimiza tus operaciones, mejora la experiencia del cliente y logra un crecimiento sostenible.",
-    "price": "18"
+    "price": "18.0"
   },
   {
     "id": "CTM-0206",
     "name": "Implementación de soluciones de e-commerce: Optimiza tu negocio online",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Sistemas de Pago en Línea: Solución integral para negocios modernos, integrando múltiples opciones de pago, gestión de suscripciones y reportes detallados para mayor comodidad, eficiencia y seguridad.",
-    "price": "165"
+    "price": "165.0"
   },
   {
     "id": "CTM-0207",
     "name": "Mantenimiento de sitios web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicio De Mantenimiento Y Soporte Para Sitios Web.",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0208",
     "name": "Consultoría de UX",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Optimización De La Experiencia De Usuario De Productos Digitales.",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0209",
     "name": "Diseño de Tienda Virtual: Crea una Experiencia de Compra Inolvidable",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño de Tienda Virtual: Creá una experiencia de compra online excepcional con una interfaz visual atractiva, optimización para dispositivos móviles, integración de pasarelas de pago, gestión de inventario y análisis.",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0210",
     "name": "Servicios Web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Soluciones De Pagos Para Ecommerce.",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0211",
     "name": "Optimización de Performance Web",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Optimización De Rendimiento Web",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0212",
     "name": "Servicio de Envío y Logística",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Servicios De Entrega Y Logística Para Ecommerce.",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0213",
     "name": "Optimización de Tienda Virtual: Mejora tu rendimiento y aumenta tus ventas",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Optimización del Rendimiento: La clave para el éxito empresarial. Analiza datos en tiempo real, identifica cuellos de botella, brinda recomendaciones personalizadas, automatiza procesos y genera informes. Mejora la efici",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0214",
     "name": "Implementación de Módulos Adicionales: Mejora tu Sitio Web con Funcionalidades Esenciales",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Implementación de Módulos Adicionales: Solución integral para optimizar operaciones, integrando funcionalidades, automatizando procesos y personalizando para necesidades específicas.",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0215",
     "name": "¡Crea tu Tienda Online Básica y Vende en Internet Hoy!",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Implementación de Tienda Online Básica: ¡Tu puerta de entrada al comercio electrónico!",
-    "price": "1125"
+    "price": "1125.0"
   },
   {
     "id": "CTM-0216",
     "name": "Diseño de sitio web corporativo",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño De Sitios Corporativos",
-    "price": "12"
+    "price": "12.0"
   },
   {
     "id": "CTM-0217",
     "name": "Plan Tienda Online Basico pagado cada 1 mes",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Plan Mensual Tienda Online Marketplace",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0218",
     "name": "Hasta 5 páginas: ¡Crea sitios web impresionantes con facilidad!",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Hasta 5 páginas Plataforma de creación de contenido que permite crear y compartir documentos de hasta 5 páginas. Interfaz intuitiva, diseño elegante y compatible con múltiples dispositivos.",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0219",
-    "name": "Implementacion Sitio Web Institucional",
+    "name": "Implementación Sitio Web Institucional",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Implementación De Sitio Web Institucional",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0220",
     "name": "<strong>Ítem: La solución definitiva para tus necesidades</strong>",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Ítem: el compañero perfecto para tu vida diaria, diseñado para mejorar la productividad, reducir el estrés y brindar comodidad y conveniencia.",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0221",
     "name": "Plan Básico Web: ¡Tu sitio web profesional al alcance de tu mano!",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Plan Básico Web: Tu aliado para una presencia digital sólida Características: Sitio web de una página Dominio personalizado Diseño responsivo Optimización SEO Soporte técnico Beneficios: Establece una presencia en línea",
-    "price": "712"
+    "price": "712.0"
   },
   {
     "id": "CTM-0222",
     "name": "Plantillas prediseñadas: ¡Crea contenido impactante en minutos!",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Plantillas predefinidas: la solución para optimizar tus proyectos",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0223",
     "name": "Diseño Personalizado Completo: Crea tu Propia Marca Única",
     "cat": "Desarrollo Web y E-Commerce",
     "desc": "Diseño Personalizado Completo: Creá tu propio mundo, a tu medida.",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0224",
     "name": "Implementación de ERP Oracle e-Business Suite",
     "cat": "ERP y CRM",
     "desc": "Implementación Del Erp Oracle E-Business Suite.",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0225",
     "name": "Implementación de ERP Microsoft Dynamics 365",
     "cat": "ERP y CRM",
     "desc": "Soporte Y Mantenimiento De Erp Microsoft Dynamics 365.",
-    "price": "96"
+    "price": "96.0"
   },
   {
     "id": "CTM-0226",
     "name": "Migración de ERP SAP a Odoo",
     "cat": "ERP y CRM",
     "desc": "Migración De Erp Sap A Odoo.",
-    "price": "9375"
+    "price": "9375.0"
   },
   {
     "id": "CTM-0227",
     "name": "Integración de ERP SAP con Herramientas de BI",
     "cat": "ERP y CRM",
     "desc": "Integración De Erp Sap Con Herramientas De Bi.",
-    "price": "9525"
+    "price": "9525.0"
   },
   {
     "id": "CTM-0228",
     "name": "Actualización De Versión CRM",
     "cat": "ERP y CRM",
     "desc": "Actualización De Erp Sap A Última Versión.",
-    "price": "93"
+    "price": "93.0"
   },
   {
     "id": "CTM-0229",
     "name": "Desarrollo de software personalizado",
     "cat": "ERP y CRM",
     "desc": "Desarrollo De Soluciones Personalizadas Para Erp Microsoft Dynamics 365.",
-    "price": "915"
+    "price": "915.0"
   },
   {
     "id": "CTM-0230",
     "name": "Implementación de ERP",
     "cat": "ERP y CRM",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Gestión Integral De Procesos Y Recursos De Negocio.",
-    "price": "9075"
+    "price": "9075.0"
   },
   {
     "id": "CTM-0231",
     "name": "Consultoría en Innovación Tecnológica",
     "cat": "ERP y CRM",
     "desc": "Innovación Tecnológica",
-    "price": "8925"
+    "price": "8925.0"
   },
   {
     "id": "CTM-0232",
     "name": "Servicios de Integración de ERP con otras Aplicaciones",
     "cat": "ERP y CRM",
     "desc": "Servicios De Integración De Sistemas Erp Con Otras Aplicaciones.",
-    "price": "855"
+    "price": "855.0"
   },
   {
     "id": "CTM-0233",
     "name": "Transformación Digital Asistida",
     "cat": "ERP y CRM",
     "desc": "Asesoría En Transformación Digital Y Organizacional",
-    "price": "87"
-  },
-  {
-    "id": "CTM-0234",
-    "name": "$1000: La solución integral para tus necesidades financieras",
-    "cat": "ERP y CRM",
-    "desc": "1.000 pesos: un billete con historia y valor",
-    "price": "8775"
+    "price": "87.0"
   },
   {
     "id": "CTM-0235",
     "name": "Gestión de la cadena de suministro",
     "cat": "ERP y CRM",
     "desc": "Servicios De Consultoría Y Construcción De Aplicaciones Para Optimizar, Automatizar Y Hacer Más Eficiente La Cadena De Suministro.",
-    "price": "8325"
+    "price": "8325.0"
   },
   {
     "id": "CTM-0236",
     "name": "Project Management Platforms",
     "cat": "ERP y CRM",
     "desc": "Gestión De Proyectos",
-    "price": "8475"
+    "price": "8475.0"
   },
   {
     "id": "CTM-0237",
     "name": "Soporte Avanzado ERP",
     "cat": "ERP y CRM",
     "desc": "Soporte Avanzado Erp",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0238",
     "name": "Gestión de proyectos y portafolio",
     "cat": "ERP y CRM",
     "desc": "Gestión De Proyectos Con Analítica Y Automatización",
-    "price": "81"
+    "price": "81.0"
   },
   {
     "id": "CTM-0239",
     "name": "Consultoría en experiencia del cliente",
     "cat": "ERP y CRM",
     "desc": "Optimización De La Experiencia Del Cliente",
-    "price": "7875"
+    "price": "7875.0"
   },
   {
     "id": "CTM-0240",
     "name": "Implementación de CRM",
     "cat": "ERP y CRM",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Gestión Integral De Relaciones Con Clientes, Ventas Y Servicio Al Cliente.",
-    "price": "795"
+    "price": "795.0"
   },
   {
     "id": "CTM-0241",
     "name": "Gestión de la Producción",
     "cat": "ERP y CRM",
     "desc": "Supervisión De Producción",
-    "price": "7725"
+    "price": "7725.0"
   },
   {
     "id": "CTM-0242",
     "name": "Optimización de Inventarios",
     "cat": "ERP y CRM",
     "desc": "Gestión Y Reabastecimiento De Inventarios.",
-    "price": "7425"
+    "price": "7425.0"
   },
   {
     "id": "CTM-0243",
     "name": "Integración de Sistemas ERP",
     "cat": "ERP y CRM",
     "desc": "Integración De Sistemas",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0244",
     "name": "Servicios de Certificación y Validación de ERP",
     "cat": "ERP y CRM",
     "desc": "Servicios De Certificación Y Validación De Sistemas Erp.",
-    "price": "765"
+    "price": "765.0"
   },
   {
     "id": "CTM-0245",
     "name": "Gestión de Talento y RRHH",
     "cat": "ERP y CRM",
     "desc": "Solución De Gestión Del Talento Basada En Ia",
-    "price": "72"
+    "price": "72.0"
   },
   {
     "id": "CTM-0246",
     "name": "ERP para Servicios",
     "cat": "ERP y CRM",
     "desc": "Servicios Integrales De Gestión Y Desarrollo Del Talento Dentro De Las Organizaciones.",
-    "price": "7275"
+    "price": "7275.0"
   },
   {
     "id": "CTM-0247",
     "name": "Integración ERP: Sincroniza tu tienda online y ERP para una gestión eficiente",
     "cat": "ERP y CRM",
     "desc": "Integración de la tienda en línea con el ERP de la empresa.",
-    "price": "705"
+    "price": "705.0"
   },
   {
     "id": "CTM-0248",
     "name": "Implementación de ERP para Retail y Distribuidores",
     "cat": "ERP y CRM",
     "desc": "Erp Para Distribuidores Y Mayoristas.",
-    "price": "69"
+    "price": "69.0"
   },
   {
     "id": "CTM-0249",
     "name": "Auditoría de sistemas",
     "cat": "ERP y CRM",
     "desc": "Servicios De Auditoría Y Optimización De Sistemas Erp.",
-    "price": "6825"
+    "price": "6825.0"
   },
   {
     "id": "CTM-0250",
     "name": "Gestión de Mantenimiento",
     "cat": "ERP y CRM",
     "desc": "Servicios De Soporte Y Mantenimiento De Sistemas Erp.",
-    "price": "6225"
+    "price": "6225.0"
   },
   {
     "id": "CTM-0251",
     "name": "Servicios de Integración de ERP Ecommerce",
     "cat": "ERP y CRM",
     "desc": "Servicios De Integración De Sistemas Para Ecommerce.",
-    "price": "6375"
+    "price": "6375.0"
   },
   {
     "id": "CTM-0252",
     "name": "Implementación de CRM para Retail y Distribuidores",
     "cat": "ERP y CRM",
     "desc": "Crm Especializado En Distribuidores.",
-    "price": "645"
+    "price": "645.0"
   },
   {
     "id": "CTM-0253",
     "name": "ERP para Manufactura",
     "cat": "ERP y CRM",
     "desc": "Integración Erp Y Crm Para Manufactura.",
-    "price": "66"
+    "price": "66.0"
   },
   {
     "id": "CTM-0254",
     "name": "Soporte a Usuarios Clave CRM",
     "cat": "ERP y CRM",
     "desc": "Configuración de Usuarios: La clave para una experiencia de usuario personalizada",
-    "price": "6675"
+    "price": "6675.0"
   },
   {
     "id": "CTM-0255",
     "name": "Gestión de Documentos",
     "cat": "ERP y CRM",
     "desc": "Servicios De Creación De Soluciones De Gestión Documental Y Archivo Electrónico De Información.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0256",
     "name": "ERP para Agroindustria",
     "cat": "ERP y CRM",
     "desc": "Integración Erp Y Crm Para Agroindustria.",
-    "price": "6075"
+    "price": "6075.0"
   },
   {
     "id": "CTM-0257",
     "name": "Asesoría en Cumplimiento Normativo",
     "cat": "ERP y CRM",
     "desc": "Políticas De Cumplimiento.",
-    "price": "585"
+    "price": "585.0"
   },
   {
     "id": "CTM-0258",
     "name": "Gestión de Calidad",
     "cat": "ERP y CRM",
     "desc": "Implementación De Un Sistema De Gestión De Calidad.",
-    "price": "555"
+    "price": "555.0"
   },
   {
     "id": "CTM-0259",
     "name": "Consultoría Inicial para Servicios",
     "cat": "ERP y CRM",
     "desc": "Servicios De Consultoría Estratégica En Sistemas Erp.",
-    "price": "5625"
+    "price": "5625.0"
   },
   {
     "id": "CTM-0260",
     "name": "Implementación Básica: La solución integral para tu negocio",
     "cat": "ERP y CRM",
     "desc": "Implementación Básica: la base para el éxito de tu negocio. Optimiza procesos, reduce costos, mejora la calidad y la satisfacción del cliente, y obtiene una ventaja competitiva.",
-    "price": "5775"
+    "price": "5775.0"
   },
   {
     "id": "CTM-0261",
     "name": "Gestión de Ventas",
     "cat": "ERP y CRM",
     "desc": "Seguimiento Y Gestión De Ventas Y Clientes.",
-    "price": "54"
+    "price": "54.0"
   },
   {
     "id": "CTM-0262",
     "name": "Recursos humanos",
     "cat": "ERP y CRM",
     "desc": "Soluciones De Rrhh Con Análisis De Datos Y Machine Learning.",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0263",
     "name": "Plataforma de Administración de Propiedades",
     "cat": "ERP y CRM",
     "desc": "Gestión De Propiedades Inmobiliarias",
-    "price": "5025"
+    "price": "5025.0"
   },
   {
     "id": "CTM-0264",
     "name": "Integración ERP y CRM para Retail y Distribuidores",
     "cat": "ERP y CRM",
     "desc": "Integración Erp Y Crm Para Distribuidores.",
-    "price": "5175"
+    "price": "5175.0"
   },
   {
     "id": "CTM-0265",
     "name": "Plataforma de Facturación y Pagos",
     "cat": "ERP y CRM",
     "desc": "Automatización De Facturación Y Pagos",
-    "price": "495"
+    "price": "495.0"
   },
   {
     "id": "CTM-0266",
     "name": "Contabilidad y finanzas",
     "cat": "ERP y CRM",
     "desc": "Servicios De Contabilidad, Finanzas Y Asesoría Fiscal Para Empresas.",
-    "price": "4725"
+    "price": "4725.0"
   },
   {
     "id": "CTM-0267",
     "name": "Implementación de Soluciones de Gestión de Activos Intangibles: Optimiza y Protege tus Recursos Valiosos",
     "cat": "ERP y CRM",
     "desc": "Implementación de Soluciones de Gestión de Activos Intangibles: Optimiza y protege tus recursos valiosos",
-    "price": "48"
+    "price": "48.0"
   },
   {
     "id": "CTM-0268",
     "name": "Implementación de Módulos de Gestión Empresarial a Medida",
     "cat": "ERP y CRM",
     "desc": "Servicios De Creación Y Personalización De Soluciones De Gestión Empresarial Integradas.",
-    "price": "4425"
+    "price": "4425.0"
   },
   {
     "id": "CTM-0269",
     "name": "Support for CRM",
     "cat": "ERP y CRM",
     "desc": "Soporte Crm",
-    "price": "4575"
+    "price": "4575.0"
   },
   {
     "id": "CTM-0270",
     "name": "Gestión de Compras",
     "cat": "ERP y CRM",
     "desc": "Sistemas De Gestión De Transporte",
-    "price": "42"
+    "price": "42.0"
   },
   {
     "id": "CTM-0271",
     "name": "Módulo de mantenimiento para Dolibarr",
     "cat": "ERP y CRM",
     "desc": "Integración Erp Y Ecommerce.",
-    "price": "435"
+    "price": "435.0"
   },
   {
     "id": "CTM-0272",
     "name": "Consultoría de Gestión para Distribuidores y Mayoristas",
     "cat": "ERP y CRM",
     "desc": "Consultoría de Gestión para Distribuidores y Mayoristas",
-    "price": "3975"
+    "price": "3975.0"
   },
   {
     "id": "CTM-0273",
     "name": "Integración de Datos: Conecta y Unifica Tus Datos para Decisiones Informadas",
     "cat": "ERP y CRM",
     "desc": "Integración de Datos: La clave para desbloquear el valor de tus datos",
-    "price": "4125"
+    "price": "4125.0"
   },
   {
     "id": "CTM-0274",
     "name": "ERP y CRM",
     "cat": "ERP y CRM",
     "desc": "Integración De Erp Con Crm.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0275",
     "name": "Integración con Terceros: Conecta tu negocio con el mundo",
     "cat": "ERP y CRM",
     "desc": "Integración con Plataformas de Terceros: Conecta tu negocio con el mundo",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0276",
     "name": "Gestión de Proveedores",
     "cat": "ERP y CRM",
     "desc": "Gestión De Relaciones Con Clientes Y Proveedores",
-    "price": "36"
+    "price": "36.0"
   },
   {
     "id": "CTM-0277",
     "name": "Evaluación de desempeño",
     "cat": "ERP y CRM",
     "desc": "Análisis de Desempeño del Sistema: Optimiza el rendimiento para el éxito. Monitorea en tiempo real, analiza tendencias, diagnostica problemas y genera informes personalizados para mejorar el rendimiento, reducir costos,",
-    "price": "285"
+    "price": "285.0"
   },
   {
     "id": "CTM-0278",
     "name": "Soluciones CRM",
     "cat": "ERP y CRM",
     "desc": "Infraestructura Ti",
-    "price": "2925"
+    "price": "2925.0"
   },
   {
     "id": "CTM-0279",
     "name": "Soporte Técnico ERP",
     "cat": "ERP y CRM",
     "desc": "Soporte Técnico Continuo.",
-    "price": "3075"
+    "price": "3075.0"
   },
   {
     "id": "CTM-0280",
     "name": "Evaluación Inicial de Sistemas: Diagnóstico y Optimización para un Rendimiento Óptimo",
     "cat": "ERP y CRM",
     "desc": "Evaluación Inicial de Sistemas: Solución integral para optimizar tus operaciones de TI, identificando áreas de mejora y brindando recomendaciones personalizadas.",
-    "price": "315"
+    "price": "315.0"
   },
   {
     "id": "CTM-0281",
     "name": "Mantenimiento Anual Básico: Protege tu inversión y optimiza el rendimiento de tu equipo",
     "cat": "ERP y CRM",
     "desc": "Mantenimiento Anual Básico: La tranquilidad de un hogar protegido",
-    "price": "33"
+    "price": "33.0"
   },
   {
     "id": "CTM-0282",
     "name": "Licencia de Usuario (x10): ¡Ampliá tu alcance y potenciá tu negocio!",
     "cat": "ERP y CRM",
     "desc": "Licencia de Usuario (x10): ¡Amplía tu alcance y potencia tu negocio!",
-    "price": "3375"
+    "price": "3375.0"
   },
   {
     "id": "CTM-0283",
     "name": "Plan de Contingencia: Guía esencial para la preparación ante emergencias",
     "cat": "ERP y CRM",
     "desc": "Plan de Contingencia: Tu escudo ante lo inesperado",
-    "price": "3525"
+    "price": "3525.0"
   },
   {
     "id": "CTM-0284",
     "name": "Plataforma de Gestión de Flotas",
     "cat": "ERP y CRM",
     "desc": "Gestión Eficiente De Flotas De Entrega",
-    "price": "2475"
+    "price": "2475.0"
   },
   {
     "id": "CTM-0285",
     "name": "Software ERP",
     "cat": "ERP y CRM",
     "desc": "Gestión De Proyectos De Construcción",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0286",
     "name": "Módulo CRM Básico: Gestioná tus clientes de forma eficiente",
     "cat": "ERP y CRM",
     "desc": "Módulo CRM Básico: Gestioná tus clientes de forma eficiente",
-    "price": "27"
+    "price": "27.0"
   },
   {
     "id": "CTM-0287",
     "name": "Optimización de Operaciones Logísticas",
     "cat": "ERP y CRM",
     "desc": "Optimización De Logística",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0288",
     "name": "Optimización de Estrategias de Ventas",
     "cat": "ERP y CRM",
     "desc": "Optimización De Producción",
-    "price": "2325"
+    "price": "2325.0"
   },
   {
     "id": "CTM-0289",
     "name": "5 usuarios: la solución perfecta para equipos pequeños y medianos",
     "cat": "ERP y CRM",
     "desc": "5 Usuarios: La solución integral para la gestión de equipos",
-    "price": "21"
+    "price": "21.0"
   },
   {
     "id": "CTM-0290",
     "name": "Control de Pedidos",
     "cat": "ERP y CRM",
     "desc": "Seguimiento de Pedidos: ¡Monitoreá tus envíos en tiempo real!",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0291",
     "name": "Fidelización de Clientes",
     "cat": "ERP y CRM",
     "desc": "Fidelización de Clientes",
-    "price": "12"
+    "price": "12.0"
   },
   {
     "id": "CTM-0292",
     "name": "Gestión de Órdenes de Trabajo",
     "cat": "ERP y CRM",
     "desc": "Gestión de Órdenes de Trabajo",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0293",
     "name": "Seguimiento de Tiempos y Costos",
     "cat": "ERP y CRM",
     "desc": "Seguimiento de Tiempos y Costos",
-    "price": "1425"
+    "price": "1425.0"
   },
   {
     "id": "CTM-0294",
     "name": "Implementación de ERP y CRM para pymes: Optimiza tus procesos y crece",
     "cat": "ERP y CRM",
     "desc": "Implementación básica de ERP y CRM para pymes: la solución integral para el crecimiento empresarial",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0295",
     "name": "Integración de Módulos ERP: Amplía las Funcionalidades de tu Sistema",
     "cat": "ERP y CRM",
     "desc": "Integración de Módulos Adicionales: Optimiza tus operaciones con conectividad perfecta, automatización de procesos y personalización flexible.",
-    "price": "165"
+    "price": "165.0"
   },
   {
     "id": "CTM-0296",
     "name": "Adaptación a Cambios Regulatorios: Mantente al día con las últimas normativas",
     "cat": "ERP y CRM",
     "desc": "Adaptación a Cambios Regulatorios: Navegando el panorama regulatorio en constante evolución",
-    "price": "1725"
+    "price": "1725.0"
   },
   {
     "id": "CTM-0297",
     "name": "Gestión Avanzada de Datos: Centraliza, Analiza y Automatiza tus Procesos para el Éxito Empresarial",
     "cat": "ERP y CRM",
     "desc": "Gestión Avanzada de Datos: Centraliza, estandariza, procesa, analiza y visualiza datos para mejorar la toma de decisiones, la eficiencia y la ventaja competitiva.",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0298",
     "name": "Servicios de Migración de ERP: La clave para una transformación empresarial sin problemas",
     "cat": "ERP y CRM",
     "desc": "Servicios de Migración de Sistemas ERP: La clave para una transformación empresarial sin problemas",
-    "price": "2025"
+    "price": "2025.0"
   },
   {
     "id": "CTM-0299",
     "name": "Online Learning Platforms",
     "cat": "Formación y Capacitación",
     "desc": "Plataformas De Aprendizaje En Línea",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0300",
     "name": "Gestión de Proyectos Ágiles",
     "cat": "Formación y Capacitación",
     "desc": "Solución De Gestión De Proyectos Ágiles Con Ia",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0301",
     "name": "Capacitación en Desarrollo Web",
     "cat": "Formación y Capacitación",
     "desc": "Desarrollo De Competencias Digitales.",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0302",
     "name": "Consultoría en Estrategia de TI",
     "cat": "Formación y Capacitación",
     "desc": "Estrategia De Ti",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0303",
     "name": "Formación en UX/UI Design",
     "cat": "Formación y Capacitación",
     "desc": "Formación En Ux/Ui Design",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0304",
     "name": "Technology Training",
     "cat": "Formación y Capacitación",
     "desc": "Formación Tecnológica",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0305",
     "name": "Capacitación en Procesos de Negocio para ERP Odoo",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Procesos De Negocio Para Erp Odoo.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0306",
     "name": "Capacitación en Análisis de Datos",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Analítica De Datos",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0307",
     "name": "Cursos en Tecnologías Digitales",
     "cat": "Formación y Capacitación",
     "desc": "Servicios De Capacitación Especializada En Herramientas, Técnicas Y Tendencias Tecnológicas.",
-    "price": "338"
+    "price": "338.0"
   },
   {
     "id": "CTM-0308",
     "name": "Plataforma E-Learning",
     "cat": "Formación y Capacitación",
     "desc": "Mantenimiento De E-Learning",
-    "price": "338"
+    "price": "338.0"
   },
   {
     "id": "CTM-0309",
     "name": "Talleres y Seminarios",
     "cat": "Formación y Capacitación",
     "desc": "Talleres Sobre Nuevas Tecnologías.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0310",
     "name": "Capacitación en Marketing Digital",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Marketing Digital",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0311",
     "name": "Capacitación en Uso de CRM",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Crm",
-    "price": "338"
+    "price": "338.0"
   },
   {
     "id": "CTM-0312",
     "name": "Capacitación empresarial",
     "cat": "Formación y Capacitación",
     "desc": "Servicios De Capacitación Y Entrenamiento Corporativo.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0313",
     "name": "Capacitación en Ciberseguridad",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Ciberseguridad",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0314",
     "name": "Talleres de Capacitación en Gestión",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Herramientas De Gestión.",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0315",
     "name": "Servicios de capacitación",
     "cat": "Formación y Capacitación",
     "desc": "Servicios De Capacitación Y Entrenamiento Para El Desarrollo De Competencias Del Personal.",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0316",
     "name": "Capacitación y formación",
     "cat": "Formación y Capacitación",
     "desc": "Servicios De Capacitación En Habilidades Y Competencias Para La Transformación Digital.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0317",
     "name": "Capacitación en liderazgo y gestión de equipos",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Liderazgo",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0318",
     "name": "Workshops and Seminars",
     "cat": "Formación y Capacitación",
     "desc": "Talleres Y Seminarios",
-    "price": "188"
+    "price": "188.0"
   },
   {
     "id": "CTM-0319",
     "name": "Formación de Usuarios Avanzada: Domina tus habilidades y lleva tu productividad al siguiente nivel",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación de Usuarios Avanzada: Domina tus herramientas y potencia tu productividad",
-    "price": "188"
+    "price": "188.0"
   },
   {
     "id": "CTM-0320",
     "name": "Capacitación en inteligencia artificial",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación En Ia",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0321",
     "name": "Capacitación en habilidades blandas",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación Inicial: ¡Tu puerta de entrada al mundo del éxito profesional! Cursos prácticos, instructores expertos, aprendizaje flexible y certificación reconocida para mejorar tus habilidades, avanzar en tu carrera y a",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0322",
     "name": "Taller de emprendimiento",
     "cat": "Formación y Capacitación",
     "desc": "Taller Práctico De Capacitación En Emprendimiento.",
-    "price": "188"
+    "price": "188.0"
   },
   {
     "id": "CTM-0323",
     "name": "Plataforma de Aprendizaje en Línea",
     "cat": "Formación y Capacitación",
     "desc": "Cursos Y Recursos Educativos En Línea",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0324",
     "name": "Formación en idiomas",
     "cat": "Formación y Capacitación",
     "desc": "Cursos De Aprendizaje De Idiomas A Distancia A Través De Una Plataforma Online.",
-    "price": "142"
+    "price": "142.0"
   },
   {
     "id": "CTM-0325",
     "name": "Capacitación básica en CMS: Domina los fundamentos para gestionar tu sitio web",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación integral en gestión web para crear y administrar sitios web profesionales, impulsar el crecimiento digital y desarrollar habilidades valiosas.",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0326",
     "name": "Capacitación Integral en E-Commerce: Domina el Comercio Electrónico y Potencia tu Negocio",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación Integral en E-Commerce: Tu puerta de entrada al éxito en el comercio electrónico.",
-    "price": "105"
+    "price": "105.0"
   },
   {
     "id": "CTM-0327",
     "name": "Capacitación básica: el primer paso para tu éxito profesional",
     "cat": "Formación y Capacitación",
     "desc": "Capacitación Básica: La clave para el éxito profesional. Cursos en línea y presenciales, instructores expertos, material interactivo y certificación reconocida. Mejora tus habilidades, avanza en tu carrera, gana confianz",
-    "price": "112"
+    "price": "112.0"
   },
   {
     "id": "CTM-0328",
     "name": "Capacitación y Entrenamiento en ERP: Maximiza la Adopción y Aprovechamiento de tu Sistema",
     "cat": "Formación y Capacitación",
     "desc": "Servicios de Capacitación y Entrenamiento en Sistemas Erp",
-    "price": "128"
+    "price": "128.0"
   },
   {
     "id": "CTM-0329",
     "name": "Personalización de Experiencias en Tiempo Real",
     "cat": "Marketing Digital",
     "desc": "Personalización En Tiempo Real",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0330",
     "name": "Servicio de Desarrollo de Programa de Afiliación: Aumenta el Tráfico y las Ventas de tu Ecommerce",
     "cat": "Marketing Digital",
     "desc": "Servicio de Desarrollo de Programa de Afiliación para E-commerce: Impulsa tu negocio online con alianzas estratégicas.",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0331",
     "name": "Segmentación Avanzada para Estrategias de Marketing",
     "cat": "Marketing Digital",
     "desc": "Servicio de Email Marketing para Ecommerce: Tu aliado para conectar con tus clientes",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0332",
     "name": "Recomendaciones de Productos Personalizadas",
     "cat": "Marketing Digital",
     "desc": "Recomendaciones Personalizadas",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0333",
     "name": "Content Creation and Management",
     "cat": "Marketing Digital",
     "desc": "Gestión De Contenido",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0334",
     "name": "Campaña de publicidad",
     "cat": "Marketing Digital",
     "desc": "Implementación De Campañas De Publicidad Display Para Generar Visibilidad Y Tráfico Web.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0335",
     "name": "SEO Basic Package",
     "cat": "Marketing Digital",
     "desc": "Seo Avanzado",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0336",
     "name": "Social Media Management",
     "cat": "Marketing Digital",
     "desc": "Ejecución De Campañas De Social Media Para Aumentar La Visibilidad Y Interacción De La Marca.",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0337",
     "name": "Graphic Design Services",
     "cat": "Marketing Digital",
     "desc": "Diseño Gráfico Personalizado",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0338",
     "name": "Diseño gráfico",
     "cat": "Marketing Digital",
     "desc": "Servicios De Creación De Diseños Gráficos, Piezas De Publicidad Y Materiales Corporativos.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0339",
     "name": "Filmación de video corporativo",
     "cat": "Marketing Digital",
     "desc": "Producción De Videos Corporativos Para Fines De Comunicación, Marketing Y Promoción.",
-    "price": "825"
+    "price": "825.0"
   },
   {
     "id": "CTM-0340",
     "name": "Generación De Leads",
     "cat": "Marketing Digital",
     "desc": "Herramienta De Generación De Contenidos",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0341",
     "name": "Estrategia de SEO",
     "cat": "Marketing Digital",
     "desc": "Optimización Del Posicionamiento Web Orgánico Para Aumentar La Visibilidad Y Tráfico.",
-    "price": "712"
+    "price": "712.0"
   },
   {
     "id": "CTM-0342",
     "name": "Servicios de Marketing Multicanal Ecommerce",
     "cat": "Marketing Digital",
     "desc": "Servicios de Estrategia de Marketing Digital para Ecommerce",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0343",
     "name": "Animación 2D",
     "cat": "Marketing Digital",
     "desc": "Producción De Animaciones 2D Para Comunicar Mensajes De Marca De Manera Creativa.",
-    "price": "712"
+    "price": "712.0"
   },
   {
     "id": "CTM-0344",
     "name": "Producción de video",
     "cat": "Marketing Digital",
     "desc": "Creación De Un Programa De Podcast Para Ofrecer Contenido De Valor A Los Oyentes.",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0345",
     "name": "Automatización de Campañas de Marketing",
     "cat": "Marketing Digital",
     "desc": "Servicios De Automatización De Marketing Para Ecommerce.",
-    "price": "638"
+    "price": "638.0"
   },
   {
     "id": "CTM-0346",
     "name": "Diseño de identidad de marca",
     "cat": "Marketing Digital",
     "desc": "Diseño De La Identidad Visual De Una Marca Para Fortalecer Su Posicionamiento.",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0347",
     "name": "Servicio de SEO",
     "cat": "Marketing Digital",
     "desc": "Servicio De Optimización Seo Para Mejorar El Posicionamiento Web.",
-    "price": "675"
+    "price": "675.0"
   },
   {
     "id": "CTM-0348",
     "name": "Keyword Optimization for SEO",
     "cat": "Marketing Digital",
     "desc": "Optimización De Palabras Clave",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0349",
     "name": "Marketing Digital con IA",
     "cat": "Marketing Digital",
     "desc": "Servicios De Consultoría En Estrategia Y Ejecución De Marketing Digital.",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0350",
     "name": "Optimización Seo",
     "cat": "Marketing Digital",
     "desc": "Servicio De Optimización De Seo Para Posicionamiento Web.",
-    "price": "562"
+    "price": "562.0"
   },
   {
     "id": "CTM-0351",
     "name": "Gestión de Redes Sociales",
     "cat": "Marketing Digital",
     "desc": "Planificación Y Gestión De La Estrategia De Redes Sociales De Una Empresa.",
-    "price": "562"
+    "price": "562.0"
   },
   {
     "id": "CTM-0352",
     "name": "Campañas SEM",
     "cat": "Marketing Digital",
     "desc": "Plataforma De Gestión De Campañas De Marketing Con Ia",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0353",
     "name": "Posicionamiento SEO",
     "cat": "Marketing Digital",
     "desc": "Servicio de optimización SEO para e-commerce que mejora la visibilidad, atrae tráfico calificado, aumenta las conversiones y genera un retorno de la inversión.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0354",
     "name": "Campañas de Marketing para Ecommerce: Atrae y Fideliza Clientes en Línea",
     "cat": "Marketing Digital",
     "desc": "Campañas de Marketing para Ecommerce: Impulsa tu Negocio Online",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0355",
     "name": "Video Spot Publicitario Básico",
     "cat": "Marketing Digital",
     "desc": "Video Spot Publicitario",
-    "price": "638"
+    "price": "638.0"
   },
   {
     "id": "CTM-0356",
     "name": "Identificación de leads calificados",
     "cat": "Marketing Digital",
     "desc": "Identificación De Leads",
-    "price": "638"
+    "price": "638.0"
   },
   {
     "id": "CTM-0357",
     "name": "Copywriting",
     "cat": "Marketing Digital",
     "desc": "Servicio De Gestión De Contenidos Y Copywriting Para Ecommerce.",
-    "price": "525"
+    "price": "525.0"
   },
   {
     "id": "CTM-0358",
     "name": "Servicios de Implementación de Cupones y Promociones Ecommerce",
     "cat": "Marketing Digital",
     "desc": "Servicios De Implementación De Cupones Y Promociones Para Ecommerce.",
-    "price": "488"
+    "price": "488.0"
   },
   {
     "id": "CTM-0359",
     "name": "Video promocional",
     "cat": "Marketing Digital",
     "desc": "Creación De Contenido Audiovisual Para Promocionar Una Marca, Producto O Servicio.",
-    "price": "488"
+    "price": "488.0"
   },
   {
     "id": "CTM-0360",
     "name": "Desarrollo de Contenido para Ecommerce: Mejora el Engagement y la Experiencia del Cliente",
     "cat": "Marketing Digital",
     "desc": "Generación De Contenido Para Tiendas Virtuales",
-    "price": "488"
+    "price": "488.0"
   },
   {
     "id": "CTM-0361",
     "name": "Creación de contenido",
     "cat": "Marketing Digital",
     "desc": "Desarrollo De Contenidos Estratégicos Para Atraer Y Fidelizar A La Audiencia.",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0362",
     "name": "Diseño de empaques",
     "cat": "Marketing Digital",
     "desc": "Diseño De Empaques Y Etiquetas Para Resaltar La Presencia De Los Productos En El Mercado.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0363",
     "name": "Campaña de Remarketing: Recupera clientes potenciales y aumenta tus ventas",
     "cat": "Marketing Digital",
     "desc": "Servicio de Campaña de Remarketing para Ecommerce",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0364",
     "name": "Email Marketing con IA",
     "cat": "Marketing Digital",
     "desc": "Servicio De Email Marketing Para Campañas Efectivas.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0365",
     "name": "Auditoría SEO",
     "cat": "Marketing Digital",
     "desc": "Evaluación Y Optimización Del Posicionamiento En Buscadores.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0366",
     "name": "Campañas de Google Ads",
     "cat": "Marketing Digital",
     "desc": "Campaña de Google Ads: Impulsa tu negocio a nuevas alturas",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0367",
     "name": "Diseño de imagen de marca",
     "cat": "Marketing Digital",
     "desc": "Servicio De Diseño De Imagen De Marca Completa.",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0368",
     "name": "Plataforma de Gestión de Afiliados",
     "cat": "Marketing Digital",
     "desc": "Publicidad Y Promoción En Plataformas De Comercio Electrónico.",
-    "price": "338"
+    "price": "338.0"
   },
   {
     "id": "CTM-0369",
     "name": "Edición de video",
     "cat": "Marketing Digital",
     "desc": "Servicio De Post-Producción De Videos Corporativos Y De Marketing.",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0370",
     "name": "Diseño de material impreso",
     "cat": "Marketing Digital",
     "desc": "Servicio De Diseño De Material Impreso Corporativo Y De Marketing.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0371",
     "name": "Campaña publicitaria en Facebook e Instagram",
     "cat": "Marketing Digital",
     "desc": "Servicio de publicidad en Facebook Ads para llegar a tu público objetivo, generar clientes potenciales y aumentar las ventas.",
-    "price": "338"
+    "price": "338.0"
   },
   {
     "id": "CTM-0372",
     "name": "Diseño de infografía",
     "cat": "Marketing Digital",
     "desc": "Servicio De Fotografía De Productos Para Catálogos Y Ecommerce.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0373",
     "name": "Retoque fotográfico",
     "cat": "Marketing Digital",
     "desc": "Servicio De Retoque Y Edición Avanzada De Fotografías.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0374",
     "name": "Gestión de Anuncios Facebook",
     "cat": "Marketing Digital",
     "desc": "Gestión De Anuncios Y Creación De Contenido Básico Facebook",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0375",
     "name": "Diseño de logotipo",
     "cat": "Marketing Digital",
     "desc": "Servicio De Diseño Profesional De Logotipos.",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0376",
     "name": "Diseño de folleto",
     "cat": "Marketing Digital",
     "desc": "Diseño De Piezas Gráficas Impresas Para Marketing.",
-    "price": "262"
+    "price": "262.0"
   },
   {
     "id": "CTM-0377",
     "name": "Análisis De Datos De Marketing",
     "cat": "Marketing Digital",
     "desc": "Solución De Análisis De Atribución De Marketing Con Ia",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0378",
     "name": "Lead Scoring con IA",
     "cat": "Marketing Digital",
     "desc": "Solución De Lead Scoring Basada En Ia",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0379",
     "name": "Diseño de presentación",
     "cat": "Marketing Digital",
     "desc": "Desarrollo De Presentaciones Empresariales Cautivadoras.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0380",
     "name": "Optimización SEO Completa: Mejora tu visibilidad online y aumenta tus ventas",
     "cat": "Marketing Digital",
     "desc": "Optimización SEO Completa: La clave para el éxito en línea. Mejora tu visibilidad, atrae tráfico calificado y aumenta las conversiones con nuestra solución integral de SEO.",
-    "price": "188"
+    "price": "188.0"
   },
   {
     "id": "CTM-0381",
     "name": "Servicio de Gestión de Contenidos para Ecommerce: Planificación, Creación y Optimización SEO",
     "cat": "Marketing Digital",
     "desc": "Servicio de Gestión de Campañas de Publicidad Digital para Ecommerce: gestión integral, segmentación precisa, análisis avanzado, automatización y reportes detallados para potenciar tu negocio online.",
-    "price": "188"
+    "price": "188.0"
   },
   {
     "id": "CTM-0382",
     "name": "Colaboración y Trabajo Remoto",
     "cat": "Plataformas de Comunicación",
     "desc": "Servicios De Consultoría Y Construcción De Soluciones De Gestión De Proyectos, Comunicación, Seguimiento De Tareas Y Trabajo Remoto Para Mejorar La Productividad Y Coordinación De Equipos.",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0383",
     "name": "Plataformas de Comunicación",
     "cat": "Plataformas de Comunicación",
     "desc": "Colaboración En Línea",
-    "price": "12"
+    "price": "12.0"
   },
   {
     "id": "CTM-0384",
     "name": "Implementación de Sistemas de Telefonía IP",
     "cat": "Plataformas de Comunicación",
     "desc": "Servicios De Consultoría Y Desarrollo De Soluciones De Trabajo Remoto, Comunicación Y Coordinación.",
-    "price": "975"
+    "price": "975.0"
   },
   {
     "id": "CTM-0385",
     "name": "Plataforma de Gestión de Eventos Virtuales",
     "cat": "Plataformas de Comunicación",
     "desc": "Gestión De Eventos Virtuales",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0386",
     "name": "Videoconferencias Seguras y Eficientes",
     "cat": "Plataformas de Comunicación",
     "desc": "Videoconferencias Seguras",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0387",
     "name": "Mantenimiento de Sistemas de Videoconferencia",
     "cat": "Plataformas de Comunicación",
     "desc": "Mantenimiento De Videoconferencias",
-    "price": "412"
+    "price": "412.0"
   },
   {
     "id": "CTM-0388",
     "name": "Optimización de redes corporativas",
     "cat": "Plataformas de Comunicación",
     "desc": "Optimización De Redes",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0389",
     "name": "Hosting Corporativo",
     "cat": "Servicios de Hosting",
     "desc": "Hosting Corporativo.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0390",
     "name": "Soluciones de Hosting Confiables y Seguras",
     "cat": "Servicios de Hosting",
     "desc": "Soluciones De Hosting.",
-    "price": "68"
+    "price": "68.0"
   },
   {
     "id": "CTM-0391",
     "name": "Servidor Virtual Privado",
     "cat": "Servicios de Hosting",
     "desc": "Vps Para Hosting Web.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0392",
     "name": "Alojamiento web",
     "cat": "Servicios de Hosting",
     "desc": "Servicios De Hospedaje Y Administración De Infraestructura Web Para Empresas.",
-    "price": "52"
+    "price": "52.0"
   },
   {
     "id": "CTM-0393",
     "name": "VPS Hosting",
     "cat": "Servicios de Hosting",
     "desc": "Alojamiento En Vps",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0394",
     "name": "Web Hosting Maintenance",
     "cat": "Servicios de Hosting",
     "desc": "Mantenimiento De Hosting Web",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0395",
     "name": "Migración de Hosting",
     "cat": "Servicios de Hosting",
     "desc": "Migración De Hosting",
-    "price": "52"
+    "price": "52.0"
   },
   {
     "id": "CTM-0396",
     "name": "Gestión De Dominios",
     "cat": "Servicios de Hosting",
     "desc": "Hosting Y Dominios Para Empresas.",
-    "price": "38"
+    "price": "38.0"
   },
   {
     "id": "CTM-0397",
     "name": "Hosting Web Profesional",
     "cat": "Servicios de Hosting",
     "desc": "Alojamiento Web Profesional.",
-    "price": "38"
+    "price": "38.0"
   },
   {
     "id": "CTM-0398",
     "name": "Web Hosting Starter",
     "cat": "Servicios de Hosting",
     "desc": "Alojamiento Web Básico.",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0399",
     "name": "Hosting seguro",
     "cat": "Servicios de Hosting",
     "desc": "Hosting Web Seguro",
-    "price": "3"
+    "price": "3.0"
   },
   {
     "id": "CTM-0400",
     "name": "Hosting Básico",
     "cat": "Servicios de Hosting",
     "desc": "Hosting Básico Con 10 Gb Y 100 Gb Ancho.",
-    "price": "15"
+    "price": "15.0"
   },
   {
     "id": "CTM-0401",
     "name": "Registro y pago anual de un dominio .com",
     "cat": "Servicios de Hosting",
     "desc": "Registro De Dominio",
-    "price": "22"
+    "price": "22.0"
   },
   {
     "id": "CTM-0402",
     "name": "Soluciones Para Servicios",
     "cat": "Soluciones por Industria",
     "desc": "Servicios De Consultoría Y Construcción De Soluciones De Realidad Extendida Para La Visualización 3D De Proyectos, La Colaboración Remota Y La Capacitación De Trabajadores En Entornos De Construcción.",
-    "price": "45"
+    "price": "45.0"
   },
   {
     "id": "CTM-0403",
     "name": "Internet of Things (IoT)",
     "cat": "Soluciones por Industria",
     "desc": "Servicios De Creación De Soluciones De Internet Of Things Para Automatización, Monitoreo Y Control.",
-    "price": "4425"
+    "price": "4425.0"
   },
   {
     "id": "CTM-0404",
     "name": "Implementación de soluciones de IoT",
     "cat": "Soluciones por Industria",
     "desc": "Servicios De Consultoría Y Despliegue De Soluciones De Analítica Avanzada De Big Data Para Optimizar La Eficiencia Operacional, La Calidad Y El Mantenimiento Predictivo En Procesos De Manufactura.",
-    "price": "4275"
+    "price": "4275.0"
   },
   {
     "id": "CTM-0405",
     "name": "Realidad aumentada y virtual",
     "cat": "Soluciones por Industria",
     "desc": "Realidad Aumentada Y Virtual",
-    "price": "4125"
-  },
-  {
-    "id": "CTM-0406",
-    "name": "¡Llévate el mejor sonido a un precio increíble! Parlante Bluetooth por solo $300",
-    "cat": "Soluciones por Industria",
-    "desc": "¡300 pesos, una inversión que vale la pena!",
-    "price": "42"
+    "price": "4125.0"
   },
   {
     "id": "CTM-0407",
     "name": "Consultoría en Blockchain",
     "cat": "Soluciones por Industria",
     "desc": "Servicios De Consultoría Y Construcción De Aplicaciones Blockchain Para La Automatización De Procesos, Gestión De Contratos Y Validación De Transacciones En La Cadena De Suministro.",
-    "price": "3975"
+    "price": "3975.0"
   },
   {
     "id": "CTM-0408",
     "name": "Gestión para Distribuidores y Mayoristas",
     "cat": "Soluciones por Industria",
     "desc": "Gestión Logística Y De Stock Para Distribuidores.",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0409",
     "name": "Control para Agroindustria",
     "cat": "Soluciones por Industria",
     "desc": "Control De Costos Para Agroindustria.",
-    "price": "36"
+    "price": "36.0"
   },
   {
     "id": "CTM-0410",
     "name": "Integración para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Integración De Ecommerce Para Minoristas.",
-    "price": "3675"
+    "price": "3675.0"
   },
   {
     "id": "CTM-0411",
     "name": "Optimización para Manufactura",
     "cat": "Soluciones por Industria",
     "desc": "Optimización De Procesos Para Minoristas",
-    "price": "375"
+    "price": "375.0"
   },
   {
     "id": "CTM-0412",
     "name": "Desarrollo de soluciones de tecnología financiera (FinTech)",
     "cat": "Soluciones por Industria",
     "desc": "Soluciones Fintech",
-    "price": "345"
-  },
-  {
-    "id": "CTM-0413",
-    "name": "¡Llévate el tuyo por solo $500!",
-    "cat": "Soluciones por Industria",
-    "desc": "¡500 pesos, una oportunidad única para transformar tu vida!",
-    "price": "3375"
+    "price": "345.0"
   },
   {
     "id": "CTM-0414",
     "name": "Soporte Operativo Anual para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Soporte Operativo Anual Para Minoristas",
-    "price": "33"
+    "price": "33.0"
   },
   {
     "id": "CTM-0415",
     "name": "Desarrollo de soluciones de telemedicina",
     "cat": "Soluciones por Industria",
     "desc": "Desarrollo De Soluciones De Telemedicina",
-    "price": "315"
+    "price": "315.0"
   },
   {
     "id": "CTM-0416",
     "name": "Auditoría de Sistemas para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Auditoría De Sistemas Para Minoristas",
-    "price": "3075"
+    "price": "3075.0"
   },
   {
     "id": "CTM-0417",
     "name": "Evaluación de Estrategias de Mercado para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Desarrollo De Estrategias De Expansión Para Minoristas",
-    "price": "285"
+    "price": "285.0"
   },
   {
     "id": "CTM-0418",
     "name": "Consultoría en sostenibilidad y responsabilidad social",
     "cat": "Soluciones por Industria",
     "desc": "Consultoría En Sostenibilidad",
-    "price": "2925"
+    "price": "2925.0"
   },
   {
     "id": "CTM-0419",
     "name": "Capacitación en Gestión para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Capacitación En Gestión Para Minoristas",
-    "price": "2775"
+    "price": "2775.0"
   },
   {
     "id": "CTM-0420",
     "name": "Consultoría Inicial para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Consultoría En Desarrollo De Productos",
-    "price": "2625"
-  },
-  {
-    "id": "CTM-0421",
-    "name": "Pintura Interior",
-    "cat": "Soluciones por Industria",
-    "desc": "Servicio De Pintura Profesional Para Renovar Los Ambientes Interiores.",
-    "price": "2325"
-  },
-  {
-    "id": "CTM-0422",
-    "name": "Tapizado de Muebles",
-    "cat": "Soluciones por Industria",
-    "desc": "Actualización Del Tapizado Para Renovar La Apariencia De Muebles.",
-    "price": "2475"
+    "price": "2625.0"
   },
   {
     "id": "CTM-0423",
     "name": "Personalización de Plataforma para Minoristas",
     "cat": "Soluciones por Industria",
     "desc": "Personalización de Plataforma para Minoristas",
-    "price": "255"
-  },
-  {
-    "id": "CTM-0424",
-    "name": "Mudanza Local",
-    "cat": "Soluciones por Industria",
-    "desc": "Mudanza Local Eficiente Y Confiable Para El Hogar.",
-    "price": "2025"
-  },
-  {
-    "id": "CTM-0425",
-    "name": "Poda de Arboles",
-    "cat": "Soluciones por Industria",
-    "desc": "Servicio Profesional De Poda Y Recorte De Árboles Del Jardín.",
-    "price": "2175"
-  },
-  {
-    "id": "CTM-0426",
-    "name": "Servicio de Jardinería Integral",
-    "cat": "Soluciones por Industria",
-    "desc": "Servicio Integral Para El Cuidado Y Embellecimiento Del Jardín.",
-    "price": "225"
+    "price": "255.0"
   },
   {
     "id": "CTM-0427",
     "name": "Soluciones por Industria",
     "cat": "Soluciones por Industria",
     "desc": "Soluciones De Ia Para El Sector Retail",
-    "price": "135"
-  },
-  {
-    "id": "CTM-0428",
-    "name": "Limpieza de Ventanas",
-    "cat": "Soluciones por Industria",
-    "desc": "Servicio De Limpieza Avanzada Para Recuperar El Aspecto De Las Alfombras.",
-    "price": "1425"
-  },
-  {
-    "id": "CTM-0429",
-    "name": "Instalación de Aire Acondicionado",
-    "cat": "Soluciones por Industria",
-    "desc": "Mantenimiento Preventivo Para Un Aire Acondicionado Eficiente.",
-    "price": "15"
-  },
-  {
-    "id": "CTM-0430",
-    "name": "Servicio de Plomería",
-    "cat": "Soluciones por Industria",
-    "desc": "Solución Profesional A Problemas De Plomería En El Hogar.",
-    "price": "165"
-  },
-  {
-    "id": "CTM-0431",
-    "name": "Reparación de Electrodomésticos",
-    "cat": "Soluciones por Industria",
-    "desc": "Instalación Profesional De Electrodomésticos En El Hogar.",
-    "price": "1725"
+    "price": "135.0"
   },
   {
     "id": "CTM-0432",
     "name": "Asesoría de Diseño de Interiores",
     "cat": "Soluciones por Industria",
     "desc": "Orientación Experta Para Mejorar El Diseño Y Estética Del Hogar.",
-    "price": "18"
-  },
-  {
-    "id": "CTM-0433",
-    "name": "Instalación de Cortinas",
-    "cat": "Soluciones por Industria",
-    "desc": "Instalación Profesional De Cortinas O Persianas En El Hogar.",
-    "price": "195"
-  },
-  {
-    "id": "CTM-0434",
-    "name": "Corte de Césped Estándar",
-    "cat": "Soluciones por Industria",
-    "desc": "Corte Básico De Césped Para Mantener El Jardín Cuidado.",
-    "price": "6"
-  },
-  {
-    "id": "CTM-0435",
-    "name": "Mantenimiento de Piscina",
-    "cat": "Soluciones por Industria",
-    "desc": "Servicio Completo Para Mantener La Piscina En Óptimas Condiciones.",
-    "price": "712"
-  },
-  {
-    "id": "CTM-0436",
-    "name": "Reparación de Cerraduras",
-    "cat": "Soluciones por Industria",
-    "desc": "Solución A Problemas Con Cerraduras Del Hogar.",
-    "price": "825"
-  },
-  {
-    "id": "CTM-0437",
-    "name": "$80",
-    "cat": "Soluciones por Industria",
-    "desc": "$80",
-    "price": "9"
+    "price": "18.0"
   },
   {
     "id": "CTM-0438",
     "name": "Gestión de Cultivos",
     "cat": "Soluciones por Industria",
     "desc": "Gestión de Cultivos",
-    "price": "975"
-  },
-  {
-    "id": "CTM-0439",
-    "name": "Básica: La solución integral para tus necesidades de belleza",
-    "cat": "Soluciones por Industria",
-    "desc": "Básica: la prenda esencial para tu armario. Su diseño minimalista y versátil te permite crear infinitos looks, desde los más casuales hasta los más elegantes.",
-    "price": "1125"
-  },
-  {
-    "id": "CTM-0440",
-    "name": "Soluciones de IA para la Salud: Diagnóstico Preciso, Tratamiento Personalizado y Atención Mejorada",
-    "cat": "Soluciones por Industria",
-    "desc": "Soluciones de IA para la industria de la salud: Diagnóstico mejorado, tratamiento personalizado, monitoreo remoto y automatización de tareas para una mejor atención al paciente, reducción de costos y acceso mejorado.",
-    "price": "12"
+    "price": "975.0"
   },
   {
     "id": "CTM-0441",
     "name": "Chatbot WhatsApp",
     "cat": "Plataforma",
     "desc": "Tu negocio atiende solo, las 24 horas, con IA en castellano.",
-    "price": "6"
+    "price": "6.0"
   },
   {
     "id": "CTM-0442",
     "name": "CRM Inteligente",
     "cat": "Plataforma",
     "desc": "Pipeline drag & drop, facturación AFIP y seguimiento automático.",
-    "price": "9"
+    "price": "9.0"
   },
   {
     "id": "CTM-0443",
     "name": "Asistente IA",
     "cat": "Plataforma",
     "desc": "Tu analista de negocio disponible en todo momento.",
-    "price": "1275"
+    "price": "1275.0"
   },
   {
     "id": "CTM-0444",
     "name": "Reportes Automáticos",
     "cat": "Plataforma",
     "desc": "Dashboards en tiempo real para decisiones basadas en datos.",
-    "price": "1575"
+    "price": "1575.0"
   },
   {
     "id": "CTM-0445",
     "name": "Automatización",
     "cat": "Plataforma",
     "desc": "Flujos que procesan pedidos, cobros y envíos sin intervención.",
-    "price": "1875"
+    "price": "1875.0"
   },
   {
     "id": "CTM-0446",
     "name": "Portal del Cliente",
     "cat": "Plataforma",
     "desc": "Tus clientes consultan stock, facturas y pedidos solos.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0447",
     "name": "Desarrollo Web",
     "cat": "Plataforma",
     "desc": "Sitios y e-commerce conectados directamente al CRM.",
-    "price": "255"
+    "price": "255.0"
   },
   {
     "id": "CTM-0448",
     "name": "Integraciones",
     "cat": "Plataforma",
     "desc": "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios.",
-    "price": "2925"
+    "price": "2925.0"
   },
   {
     "id": "CTM-0449",
     "name": "Catálogo Completo",
     "cat": "Plataforma",
     "desc": "Más de 2.231 servicios en 14 categorías con precios.",
-    "price": "3225"
+    "price": "3225.0"
   },
   {
     "id": "CTM-0450",
     "name": "Consultoría & ERP",
     "cat": "Plataforma",
     "desc": "Auditoría de procesos, ERP personalizado y hoja de ruta.",
-    "price": "3525"
+    "price": "3525.0"
   },
   {
     "id": "CTM-0451",
     "name": "Planes y Precios",
     "cat": "Plataforma",
     "desc": "Desde $49 USD/mes. Implementación en 5 días hábiles.",
-    "price": "39"
+    "price": "39.0"
   },
   {
     "id": "CTM-0452",
     "name": "Casos de Éxito",
     "cat": "Plataforma",
     "desc": "Historias reales de PyMEs que multiplicaron sus ventas.",
-    "price": "42"
+    "price": "42.0"
   },
   {
     "id": "CTM-0490",
     "name": "Integración Facebook & Instagram Ads",
     "cat": "Integraciones",
     "desc": "Sincronización instantánea de formularios de leads (Lead Ads) para que impacten en tiempo real en las columnas de tu embudo comercial.",
-    "price": "75"
+    "price": "75.0"
   },
   {
     "id": "CTM-0491",
     "name": "Integración WooCommerce & Shopify",
     "cat": "Integraciones",
     "desc": "Sincronización bidireccional en tiempo real de productos, precios, stock unificado y recuperación automatizada de carritos abandonados.",
-    "price": "195"
+    "price": "195.0"
   },
   {
     "id": "CTM-0492",
     "name": "Integración AFIP Facturación",
     "cat": "Integraciones",
     "desc": "Emisión y envío automático de facturas electrónicas A, B o C asociadas directamente con cada transacción ganada en tu CRM.",
-    "price": "225"
+    "price": "225.0"
   },
   {
     "id": "CTM-0493",
     "name": "Integración MercadoPago & Stripe",
     "cat": "Integraciones",
     "desc": "Generación dinámica de links de pago desde el bot conversacional de WhatsApp y conciliación inmediata en tu libro diario contable.",
-    "price": "135"
+    "price": "135.0"
   },
   {
     "id": "CTM-0494",
     "name": "Integración ERPs Tradicionales (Tango / Bejerman)",
     "cat": "Integraciones",
     "desc": "Sincronizador inteligente vía API REST y servicios locales de base de datos para control de stock mayorista, listas de precios avanzadas y compras.",
-    "price": "525"
+    "price": "525.0"
   }
 ]
