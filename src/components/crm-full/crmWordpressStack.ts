@@ -124,7 +124,7 @@ export const wordpressStack: WpStackArea[] = [
     id: 'seguridad',
     emoji: '🔒',
     title: 'Seguridad / Auth',
-    catalogCategory: 'Plataforma',
+    catalogCategory: 'Ciberseguridad',
     plugins: [
       { name: 'Wordfence', purpose: 'Firewall + escaneo' },
       { name: 'JWT Authentication for WP REST API', purpose: 'Si exponés la API REST a n8n / Dolibarr' },

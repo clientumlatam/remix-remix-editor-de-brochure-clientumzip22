@@ -331,7 +331,7 @@ export default function PublicWebsite({
       { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes se autoatienden." },
       { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Tu presencia web, conectada al CRM." },
       { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-      { id: "catalogo",         name: "Catálogo Completo",   desc: "509 servicios en 15 categorías con precios reales." },
+      { id: "catalogo",         name: "Catálogo Completo",   desc: "425 servicios en 14 categorías con precios reales." },
       { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
       { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
       { id: "casos",            name: "Casos de Éxito",      desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
@@ -733,7 +733,7 @@ export default function PublicWebsite({
       children: [
         { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
         { id: "blog", label: "Blog & Recursos", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" },
-        { id: "catalogo", label: "Catálogo de Servicios", desc: "509 servicios en 15 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
+        { id: "catalogo", label: "Catálogo de Servicios", desc: "425 servicios en 14 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
         { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
       ]
     },
@@ -1519,7 +1519,7 @@ export default function PublicWebsite({
                         { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes se autoatienden." },
                         { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Tu presencia web, conectada al CRM." },
                         { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "509 servicios en 15 categorías con precios reales." },
+                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "425 servicios en 14 categorías con precios reales." },
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
                         { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
@@ -2177,172 +2177,191 @@ export default function PublicWebsite({
 
             {/* CATÁLOGO COMPLETO DE SERVICIOS TAB */}
             {activeTab === "catalogo" && (
-              <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-8">
-                <div className="text-center max-w-2xl mx-auto">
-                  <span className="text-emerald-600 font-mono text-xs uppercase tracking-widest font-bold">
+              <div className="flex flex-col">
+                {/* Navy hero band */}
+                <div className="bg-[#1A3461] text-center py-14 px-6">
+                  <span className="inline-flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-widest font-bold">
                     Catálogo completo · {ALL_SERVICES.length.toLocaleString("es-AR")} servicios
                   </span>
-                  <h1 className="text-3xl md:text-4xl font-display font-black text-slate-950 tracking-tight mt-2">
+                  <h1 className="text-3xl md:text-4xl font-display font-black text-white tracking-tight mt-3">
                     Todo lo que hacemos, en un solo lugar
                   </h1>
-                  <p className="text-slate-500 text-xs md:text-sm mt-3 leading-relaxed">
+                  <p className="text-blue-100/70 text-xs md:text-sm mt-3 leading-relaxed max-w-2xl mx-auto">
                     Filtrá por categoría o buscá por palabra clave. Cada servicio se cotiza según el alcance real del proyecto — los precios de referencia son orientativos.
                   </p>
                 </div>
 
-                {/* Funciones & Soluciones — curated category shortcuts */}
-                <div>
-                  <h2 className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
-                    Funciones y Soluciones de la Plataforma
-                  </h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                    {[
-                      { id: "chatbot", label: "Chatbot WhatsApp", desc: "Tu negocio atiende solo, las 24 horas", icon: Bot, color: "text-green-500 bg-green-50" },
-                      { id: "crm_inteligente", label: "CRM Inteligente", desc: "Nunca más perdas una venta", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
-                      { id: "asistente_ia", label: "Asistente IA", desc: "Tu analista de negocio, siempre disponible", icon: Sparkles, color: "text-violet-500 bg-violet-50" },
-                      { id: "reportes", label: "Reportes Automáticos", desc: "Tomá decisiones con datos reales", icon: BarChart2, color: "text-orange-500 bg-orange-50" },
-                      { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
-                      { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
-                      { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
-                      { id: "servicios", label: "Servicios", desc: "Consultoría de negocio y ERP personalizado", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
-                      { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
-                      { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
-                      { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" },
-                      { id: "planes", label: "Planes y Precios", desc: "Encontrá el plan exacto para tu negocio", icon: BarChart2, color: "text-blue-500 bg-blue-50" },
-                      { id: "clientes", label: "Nuestros Clientes", desc: "+35 empresas que ya confían en Clientum", icon: Users, color: "text-teal-500 bg-teal-50" },
-                    ].map((item) => {
-                      const ItemIcon = item.icon;
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => {
-                            setActiveTab(item.id);
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                          }}
-                          className="text-left bg-white border border-slate-200 rounded-xl p-4 flex flex-col gap-2 hover:border-blue-300 hover:shadow-sm transition-all cursor-pointer"
-                        >
-                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}>
-                            <ItemIcon className="w-4 h-4" />
-                          </div>
-                          <span className="font-bold text-xs text-slate-950">{item.label}</span>
-                          <span className="text-[10px] text-slate-500 leading-snug">{item.desc}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Search + category filter */}
-                <div className="flex flex-col sm:flex-row gap-3 max-w-3xl mx-auto w-full">
-                  <div className="relative flex-1">
-                    <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <input
-                      type="text"
-                      value={catalogQuery}
-                      onChange={(e) => {
-                        setCatalogQuery(e.target.value);
-                        setCatalogPage(1);
-                      }}
-                      placeholder="Buscar servicio (ej: ERP, e-commerce, ciberseguridad)…"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
-                    />
-                  </div>
-                  <select
-                    value={catalogCat}
-                    onChange={(e) => {
-                      setCatalogCat(e.target.value);
-                      setCatalogPage(1);
-                    }}
-                    className="px-4 py-3 rounded-xl border border-slate-200 text-sm text-slate-600 sm:w-64 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
-                  >
-                    <option value="">Todas las categorías</option>
-                    {SERVICE_CATEGORIES.map((c) => (
-                      <option key={c.name} value={c.name}>
-                        {c.name} ({c.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Results count + export buttons */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 max-w-3xl mx-auto w-full">
-                  <p className="text-xs text-slate-400 font-mono">
-                    {filteredCatalog.length.toLocaleString("es-AR")} resultado{filteredCatalog.length === 1 ? "" : "s"}
-                    {catalogQuery || catalogCat ? ` · ${ALL_SERVICES.length.toLocaleString("es-AR")} total` : ""}
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={handleExportWooCommerceCSV}
-                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white hover:bg-black transition-all"
-                      title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
-                    >
-                      <Download className="w-3.5 h-3.5" />
-                      Exportar todo a WooCommerce · CSV
-                    </button>
-                  </div>
-                </div>
-
-                {/* Results grid */}
-                {catalogPageItems.length === 0 ? (
-                  <p className="text-center text-slate-400 text-sm py-10">
-                    No encontramos servicios para tu búsqueda. Probá con otra palabra o categoría.
-                  </p>
-                ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {catalogPageItems.map((s) => (
-                      <div key={s.id} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col gap-3">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full self-start">
-                          {s.cat || "General"}
-                        </span>
-                        <h3 className="font-bold text-sm text-slate-950 leading-snug">{s.name}</h3>
-                        {s.desc && <p className="text-[11px] text-slate-500 leading-relaxed">{s.desc}</p>}
-                        <div className="flex items-center justify-between mt-auto pt-2 border-t border-slate-100">
-                          <span className="text-xs font-bold text-slate-700">
-                            {(() => {
-                              const n = Number((s.price || "").replace(",", "."));
-                              return Number.isFinite(n) && n > 0
-                                ? `Desde ${n.toLocaleString("es-AR")}`
-                                : "Cotización a medida";
-                            })()}
-                          </span>
+                <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col gap-8 w-full">
+                  {/* Funciones & Soluciones — curated category shortcuts */}
+                  <div>
+                    <h2 className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+                      Funciones y Soluciones de la Plataforma
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                      {[
+                        { id: "chatbot", label: "Chatbot WhatsApp", desc: "Tu negocio atiende solo, las 24 horas", icon: Bot, color: "text-green-500 bg-green-50" },
+                        { id: "crm_inteligente", label: "CRM Inteligente", desc: "Nunca más perdas una venta", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
+                        { id: "asistente_ia", label: "Asistente IA", desc: "Tu analista de negocio, siempre disponible", icon: Sparkles, color: "text-violet-500 bg-violet-50" },
+                        { id: "reportes", label: "Reportes Automáticos", desc: "Tomá decisiones con datos reales", icon: BarChart2, color: "text-orange-500 bg-orange-50" },
+                        { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
+                        { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
+                        { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
+                        { id: "servicios", label: "Servicios", desc: "Consultoría de negocio y ERP personalizado", icon: Briefcase, color: "text-blue-500 bg-blue-50" },
+                        { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
+                        { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
+                        { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" },
+                        { id: "planes", label: "Planes y Precios", desc: "Encontrá el plan exacto para tu negocio", icon: BarChart2, color: "text-blue-500 bg-blue-50" },
+                        { id: "clientes", label: "Nuestros Clientes", desc: "+35 empresas que ya confían en Clientum", icon: Users, color: "text-teal-500 bg-teal-50" },
+                      ].map((item) => {
+                        const ItemIcon = item.icon;
+                        return (
                           <button
+                            key={item.id}
                             onClick={() => {
-                              setDemoForm({ ...demoForm, mensaje: `Hola Clientum, quiero consultar sobre el servicio "${s.name}".` });
-                              setActiveTab("contacto");
+                              setActiveTab(item.id);
                               window.scrollTo({ top: 0, behavior: "smooth" });
                             }}
-                            className="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                            className="text-left bg-white border border-slate-200 rounded-xl p-4 flex flex-col gap-2 hover:border-blue-300 hover:shadow-sm transition-all cursor-pointer"
                           >
-                            Consultar <ArrowRight className="w-3 h-3" />
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${item.color}`}>
+                              <ItemIcon className="w-4 h-4" />
+                            </div>
+                            <span className="font-bold text-xs text-slate-950">{item.label}</span>
+                            <span className="text-[10px] text-slate-500 leading-snug">{item.desc}</span>
                           </button>
-                        </div>
-                      </div>
-                    ))}
+                        );
+                      })}
+                    </div>
                   </div>
-                )}
 
-                {/* Pagination */}
-                {catalogTotalPages > 1 && (
-                  <div className="flex items-center justify-center gap-2 flex-wrap">
-                    <button
-                      disabled={catalogPage <= 1}
-                      onClick={() => setCatalogPage((p) => Math.max(1, p - 1))}
-                      className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
-                    >
-                      ← Anterior
-                    </button>
-                    <span className="text-xs text-slate-500 font-mono px-2">
-                      Página {catalogPage} de {catalogTotalPages}
-                    </span>
-                    <button
-                      disabled={catalogPage >= catalogTotalPages}
-                      onClick={() => setCatalogPage((p) => Math.min(catalogTotalPages, p + 1))}
-                      className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
-                    >
-                      Siguiente →
-                    </button>
+                  {/* Sticky search + category chip toolbar */}
+                  <div className="sticky top-16 z-20 -mx-6 px-6 py-3 bg-white/95 backdrop-blur-sm border-y border-slate-100 flex flex-col gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <div className="relative flex-1">
+                        <Search className="w-4 h-4 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+                        <input
+                          type="text"
+                          value={catalogQuery}
+                          onChange={(e) => {
+                            setCatalogQuery(e.target.value);
+                            setCatalogPage(1);
+                          }}
+                          placeholder="Buscar servicio (ej: ERP, e-commerce, ciberseguridad)…"
+                          className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+                        />
+                      </div>
+                      <span className="text-xs text-slate-400 font-mono self-center shrink-0 px-1">
+                        {filteredCatalog.length.toLocaleString("es-AR")} resultado{filteredCatalog.length === 1 ? "" : "s"}
+                        {catalogQuery || catalogCat ? ` · ${ALL_SERVICES.length.toLocaleString("es-AR")} total` : ""}
+                      </span>
+                      <button
+                        onClick={handleExportWooCommerceCSV}
+                        className="flex items-center justify-center gap-1.5 px-3 py-3 text-xs font-semibold rounded-xl bg-[#1A3461] text-white hover:bg-[#0d1f3c] transition-all shrink-0"
+                        title="Exportar catálogo completo (servicios, planes, cursos y soluciones) listo para importar en WooCommerce"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        <span className="hidden sm:inline">Exportar todo · CSV</span>
+                      </button>
+                    </div>
+
+                    {/* Category chip scroller */}
+                    <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1 [&::-webkit-scrollbar]:h-1.5">
+                      <button
+                        onClick={() => {
+                          setCatalogCat("");
+                          setCatalogPage(1);
+                        }}
+                        className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold border transition-all shrink-0 ${
+                          catalogCat === ""
+                            ? "bg-[#1A3461] text-white border-[#1A3461]"
+                            : "bg-white text-slate-500 border-slate-200 hover:border-[#1A3461]"
+                        }`}
+                      >
+                        Todas ({ALL_SERVICES.length})
+                      </button>
+                      {SERVICE_CATEGORIES.map((c) => (
+                        <button
+                          key={c.name}
+                          onClick={() => {
+                            setCatalogCat(c.name);
+                            setCatalogPage(1);
+                          }}
+                          className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold border transition-all shrink-0 ${
+                            catalogCat === c.name
+                              ? "bg-[#1A3461] text-white border-[#1A3461]"
+                              : "bg-white text-slate-500 border-slate-200 hover:border-[#1A3461]"
+                          }`}
+                        >
+                          {c.name} ({c.count})
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                )}
+
+                  {/* Results grid */}
+                  {catalogPageItems.length === 0 ? (
+                    <p className="text-center text-slate-400 text-sm py-10">
+                      No encontramos servicios para tu búsqueda. Probá con otra palabra o categoría.
+                    </p>
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {catalogPageItems.map((s) => (
+                        <div key={s.id} className="bg-white border border-slate-200 rounded-2xl p-5 shadow-xs flex flex-col gap-3 hover:border-blue-200 hover:shadow-sm transition-all">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+                              {s.cat || "General"}
+                            </span>
+                            <span className="text-[10px] font-mono text-slate-300">CTM-{s.id}</span>
+                          </div>
+                          <h3 className="font-display font-bold text-sm text-slate-950 leading-snug">{s.name}</h3>
+                          {s.desc && <p className="text-[11px] text-slate-500 leading-relaxed line-clamp-3">{s.desc}</p>}
+                          <div className="flex items-center justify-between mt-auto pt-3 border-t border-slate-100">
+                            <span className="font-display text-sm font-extrabold text-[#1A3461]">
+                              {(() => {
+                                const n = Number((s.price || "").replace(",", "."));
+                                return Number.isFinite(n) && n > 0
+                                  ? `Desde U$D ${n.toLocaleString("es-AR")}`
+                                  : "Cotización a medida";
+                              })()}
+                            </span>
+                            <button
+                              onClick={() => {
+                                setDemoForm({ ...demoForm, mensaje: `Hola Clientum, quiero consultar sobre el servicio "${s.name}".` });
+                                setActiveTab("contacto");
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }}
+                              className="text-[10px] font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                            >
+                              Consultar <ArrowRight className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Pagination */}
+                  {catalogTotalPages > 1 && (
+                    <div className="flex items-center justify-center gap-2 flex-wrap">
+                      <button
+                        disabled={catalogPage <= 1}
+                        onClick={() => setCatalogPage((p) => Math.max(1, p - 1))}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                      >
+                        ← Anterior
+                      </button>
+                      <span className="text-xs text-slate-500 font-mono px-2">
+                        Página {catalogPage} de {catalogTotalPages}
+                      </span>
+                      <button
+                        disabled={catalogPage >= catalogTotalPages}
+                        onClick={() => setCatalogPage((p) => Math.min(catalogTotalPages, p + 1))}
+                        className="px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-600 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-50"
+                      >
+                        Siguiente →
+                      </button>
+                    </div>
+                  )}
 
                 <div className="bg-[#1A3461] rounded-2xl p-10 text-center text-white">
                   <h2 className="text-xl font-display font-black">¿No encontrás lo que necesitás?</h2>
@@ -2356,6 +2375,7 @@ export default function PublicWebsite({
                   >
                     Contanos tu caso →
                   </button>
+                </div>
                 </div>
               </div>
             )}

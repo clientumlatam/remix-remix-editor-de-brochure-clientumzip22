@@ -1,11 +1,7 @@
 [
   {
-    "name": "ERP y CRM",
-    "count": 74
-  },
-  {
-    "name": "Desarrollo Web y E-Commerce",
-    "count": 64
+    "name": "ERP",
+    "count": 62
   },
   {
     "name": "Business Intelligence",
@@ -16,19 +12,31 @@
     "count": 53
   },
   {
-    "name": "Atención al Cliente",
+    "name": "Desarrollo Web",
+    "count": 48
+  },
+  {
+    "name": "Soporte",
     "count": 40
   },
   {
-    "name": "Formación y Capacitación",
+    "name": "Capacitación",
     "count": 30
+  },
+  {
+    "name": "Hosting e Infraestructura",
+    "count": 29
+  },
+  {
+    "name": "E-Commerce",
+    "count": 24
   },
   {
     "name": "Soluciones por Industria",
     "count": 21
   },
   {
-    "name": "Automatización de Procesos",
+    "name": "Automatización",
     "count": 20
   },
   {
@@ -36,23 +44,11 @@
     "count": 17
   },
   {
-    "name": "Cloud Computing",
-    "count": 16
-  },
-  {
-    "name": "Servicios de Hosting",
-    "count": 13
-  },
-  {
-    "name": "Plataforma",
+    "name": "CRM",
     "count": 12
   },
   {
-    "name": "Aplicaciones Móviles",
-    "count": 8
-  },
-  {
-    "name": "Plataformas de Comunicación",
+    "name": "Comunicación",
     "count": 7
   },
   {
