@@ -645,6 +645,7 @@ export default function PublicWebsite({
         { id: "automatizacion", label: "Automatización", desc: "Hacé más con menos esfuerzo", icon: Zap, color: "text-amber-500 bg-amber-50" },
         { id: "portal_cliente", label: "Portal del Cliente", desc: "Tus clientes se autoatienden", icon: LayoutGrid, color: "text-teal-500 bg-teal-50" },
         { id: "desarrollo_web", label: "Desarrollo Web", desc: "Tu presencia web, conectada al CRM", icon: Code2, color: "text-slate-600 bg-slate-100" },
+        { id: "integraciones", label: "Integraciones", desc: "WhatsApp, AFIP, MercadoPago, ERPs y más", icon: Globe, color: "text-cyan-600 bg-cyan-50" },
       ]
     },
     { id: "planes", label: "Precios", type: "link" as const },
