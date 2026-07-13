@@ -205,7 +205,7 @@ export default function PublicWebsite({
   // Course enrollment state
   const [enrolledCourse, setEnrolledCourse] = useState<string | null>(null);
 
-  // Full services catalog (457 servicios) — search, category filter & pagination
+  // Full services catalog (437 servicios) — search, category filter & pagination
   const ALL_SERVICES = serviciosCatalogo as CatalogService[];
   const SERVICE_CATEGORIES = categoriasServicios as CatalogCategory[];
   const [catalogQuery, setCatalogQuery] = useState("");
@@ -237,7 +237,7 @@ export default function PublicWebsite({
   ];
 
   // ── Unified WooCommerce CSV export ────────────────────────────────────────
-  // Combines: servicios (440) + planes (5) + cursos (22) + soluciones (12)
+  // Combines: servicios (437) + planes (5) + cursos (67) + soluciones (12) = 521 total WC rows
   const handleExportWooCommerceCSV = () => {
     const esc = (v: string | number) => {
       const s = String(v ?? "").replace(/"/g, '""');
@@ -331,7 +331,7 @@ export default function PublicWebsite({
       { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes se autoatienden." },
       { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Tu presencia web, conectada al CRM." },
       { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-      { id: "catalogo",         name: "Catálogo Completo",   desc: "457 servicios en 15 categorías con precios reales." },
+      { id: "catalogo",         name: "Catálogo Completo",   desc: "509 servicios en 15 categorías con precios reales." },
       { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
       { id: "planes_precios",   name: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
       { id: "casos",            name: "Casos de Éxito",      desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
@@ -359,7 +359,7 @@ export default function PublicWebsite({
     URL.revokeObjectURL(url);
   };
 
-  // Full LMS course catalog (377 cursos) — search & pagination
+  // Full LMS course catalog (67 cursos) — search & pagination
   const ALL_COURSES = cursosLms as LmsCourse[];
   const [coursesQuery, setCoursesQuery] = useState("");
   const [coursesPage, setCoursesPage] = useState(1);
@@ -706,7 +706,7 @@ export default function PublicWebsite({
       children: [
         { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
         { id: "blog", label: "Blog & Recursos", desc: "Aprende tácticas de ventas y marketing", icon: BookOpen, color: "text-rose-500 bg-rose-50" },
-        { id: "catalogo", label: "Catálogo de Servicios", desc: "457 servicios en 15 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
+        { id: "catalogo", label: "Catálogo de Servicios", desc: "509 servicios en 15 categorías con precios", icon: LayoutGrid, color: "text-indigo-500 bg-indigo-50" },
         { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
       ]
     },
@@ -1492,7 +1492,7 @@ export default function PublicWebsite({
                         { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes se autoatienden." },
                         { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Tu presencia web, conectada al CRM." },
                         { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
-                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "457 servicios en 15 categorías con precios reales." },
+                        { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "509 servicios en 15 categorías con precios reales." },
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
                         { id: "planes",         icon: CheckCircle2, color: "bg-emerald-50 text-emerald-600 border-emerald-100",accent:"group-hover:text-emerald-600",label: "Planes y Precios",    desc: "Desde $20 USD/mes. Implementación en 5 días hábiles." },
                         { id: "casos",          icon: Star,         color: "bg-rose-50 text-rose-600 border-rose-100",     accent: "group-hover:text-rose-600",   label: "Casos de Éxito",        desc: "Historias reales de PyMEs que multiplicaron sus ventas." },
