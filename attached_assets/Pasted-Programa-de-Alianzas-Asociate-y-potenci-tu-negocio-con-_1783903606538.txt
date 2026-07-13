@@ -1,0 +1,210 @@
+Programa de Alianzas
+Asociate y potenciá tu negocio con Clientum
+Sumate a nuestro ecosistema y ganá dinero ayudando a digitalizar PyMEs de la Patagonia y toda Latinoamérica.
+
+Programa de Afiliados
+Perfecto para influencers de negocios, creadores de contenido, mentores y cualquier profesional que recomiende Clientum. Recibe una recompensa recurrente por el valor de tus referidos.
+
+30% de Comisión Recurrente: Recibe el 30% del abono mensual de cada cliente que mantenga activa su cuenta de por vida.
+Panel Transparente: Monitorea en vivo tus clicks, conversiones y comisiones listas para liquidar.
+Material de Soporte Gratuito: Banners, videos promocionales, plantillas de correo y copys listos para compartir.
+Unirme como Afiliado Gratis
+Partners de Implementación
+Especial para agencias de marketing digital, consultores de negocios e implementadores de software. Ofrece la potencia tecnológica de Clientum CRM bajo tu marca y añade valor a tu cartera de clientes.
+
+Precios de Revendedor Preferenciales: Descuentos exclusivos y la opción de configurar marca blanca (White Label).
+Capacitación y Certificación VIP: Onboarding técnico premium directo con nuestros desarrolladores.
+Derivación de Leads Locales: Compartimos contigo leads en tu zona geográfica que requieran servicios de implementación manual en campo.
+Postularme como Partner Certificado
+Niveles
+Del primer referido a partner preferente
+Nivel 01
+Afiliado
+Sin requisitos técnicos. Compartís tu link, cobrás comisión recurrente y accedés al material de marketing.
+
+Nivel 02
+Partner Certificado
+Agencias e implementadores con onboarding técnico aprobado. Precios de revendedor y soporte prioritario.
+
+Nivel 03
+Partner Preferente
+Volumen sostenido de clientes activos. Marca blanca completa, derivación de leads y presencia destacada en clientum.com.ar.
+
+Cómo sumarte
+Cuatro pasos para empezar
+1
+Postulate
+Contanos tu perfil: si sos afiliado o partner de implementación.
+
+2
+Reunión inicial
+Revisamos condiciones, comisiones y alcance juntos sin compromiso.
+
+3
+Onboarding
+Capacitación en la plataforma y, si aplica, certificación técnica.
+
+4
+A vender
+Accedés a tu panel, material de marketing y empezás a generar comisiones.
+
+Ecosistema
+Tecnologías con las que trabajamos
+Integramos y conectamos las plataformas que tu empresa ya usa o necesita adoptar.
+
+🛒
+E-Commerce & Tiendas Online
+6 herramientas
+WooCommerce
+Nativo
+Shopify
+API
+PrestaShop
+Integración
+Tiendanube
+API
+MercadoShops
+Integración
+Jumpseller
+API
+💳
+Pagos & Cobros
+6 herramientas
+MercadoPago
+Nativo
+PayPal
+API
+Stripe
+API
+Modo
+Integración
+GetNet / Prisma
+Integración
+Naranja X
+Integración
+💬
+Mensajería & Comunicación
+7 herramientas
+WhatsApp Business API
+Certificado
+Meta (Facebook / IG)
+Partner
+Twilio
+API
+360dialog
+Certificado
+Telegram Bot API
+API
+Gmail API
+Integración
+SMTP / Correo propio
+Nativo
+📣
+Marketing & Publicidad
+7 herramientas
+Meta Ads
+Partner
+Google Ads
+Partner
+TikTok for Business
+Integración
+LinkedIn Ads
+Integración
+Mailchimp
+API
+ActiveCampaign
+API
+Brevo (Sendinblue)
+API
+🏢
+ERP, Facturación & Contabilidad
+7 herramientas
+AFIP (Facturación electrónica)
+Nativo
+Dolibarr ERP
+Nativo
+Odoo
+Integración
+Contabilium
+API
+Colppy
+Integración
+Xubio
+Integración
+Tango Gestión
+Integración
+☁️
+Cloud, Hosting & Servidores
+6 herramientas
+Google Cloud
+Partner
+Amazon AWS
+Partner
+Microsoft Azure
+Partner
+Cloudflare
+Certificado
+DigitalOcean
+Integración
+Hostinger
+Integración
+📊
+Analytics & Business Intelligence
+6 herramientas
+Google Analytics 4
+Nativo
+Looker Studio
+Integración
+Power BI
+Integración
+Meta Pixel
+Nativo
+Hotjar
+Integración
+Tableau
+Integración
+⚙️
+Productividad & Colaboración
+7 herramientas
+Google Workspace
+Certificado
+Microsoft 365
+Integración
+Slack
+API
+Zoom
+Integración
+Microsoft Teams
+Integración
+Notion
+API
+Trello / Jira
+Integración
+🔒
+Seguridad & Infraestructura
+5 herramientas
+Let's Encrypt / SSL
+Nativo
+Cloudflare WAF
+Certificado
+reCAPTCHA (Google)
+Integración
+2FA / TOTP
+Nativo
+OAuth 2.0 / SSO
+Nativo
+🤖
+Inteligencia Artificial
+6 herramientas
+OpenAI (GPT-4)
+API
+Google Gemini
+API
+Anthropic Claude
+API
+Whisper (STT)
+API
+ElevenLabs (TTS)
+API
+Stability AI
+API
