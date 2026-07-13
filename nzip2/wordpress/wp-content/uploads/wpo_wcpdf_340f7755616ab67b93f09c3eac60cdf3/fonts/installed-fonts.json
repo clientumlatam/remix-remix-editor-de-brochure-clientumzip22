@@ -1,0 +1,26 @@
+{
+    "open sans": {
+        "normal": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/OpenSans-Normal",
+        "bold": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/OpenSans-Bold",
+        "italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/OpenSans-Italic",
+        "bold_italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/OpenSans-BoldItalic"
+    },
+    "segoe": {
+        "normal": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/Segoe-Normal",
+        "bold": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/Segoe-Bold",
+        "italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/Segoe-Italic",
+        "bold_italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/Segoe-BoldItalic"
+    },
+    "roboto slab": {
+        "normal": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/RobotoSlab-Normal",
+        "bold": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/RobotoSlab-Bold",
+        "italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/RobotoSlab-Italic",
+        "bold_italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/RobotoSlab-BoldItalic"
+    },
+    "currencies": {
+        "normal": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/currencies",
+        "bold": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/currencies",
+        "italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/currencies",
+        "bold_italic": "\/home\/runner\/workspace\/wordpress\/wp-content\/uploads\/wpo_wcpdf_340f7755616ab67b93f09c3eac60cdf3\/fonts\/currencies"
+    }
+}

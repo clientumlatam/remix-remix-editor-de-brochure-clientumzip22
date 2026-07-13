@@ -1,0 +1,844 @@
+# Copyright (C) 2025 Pawel Borowiec
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Course Flow 1.0.10\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/course-flow\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-12-08T19:29:01+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: course-flow\n"
+
+#. Plugin Name of the plugin
+#: course-flow.php
+#: course-flow.php:664
+#: course-flow.php:665
+msgid "Course Flow"
+msgstr ""
+
+#. Description of the plugin
+#: course-flow.php
+msgid "Accept Stripe payments in Tutor LMS, LearnPress and LearnDash without WooCommerce."
+msgstr ""
+
+#. Author of the plugin
+#: course-flow.php
+msgid "Pawel Borowiec"
+msgstr ""
+
+#. Author URI of the plugin
+#: course-flow.php
+msgid "https://pawelborowiec.com"
+msgstr ""
+
+#: admin/button-settings-page.php:22
+msgid "Course Flow - Button settings"
+msgstr ""
+
+#: admin/button-settings-page.php:300
+#: admin/image-button-settings-page.php:106
+#: admin/settings-page.php:290
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/button-settings-page.php:309
+msgid "Course Flow - Button Settings"
+msgstr ""
+
+#: admin/button-settings-page.php:319
+msgid "Text of the Course Purchase Button"
+msgstr ""
+
+#: admin/button-settings-page.php:323
+msgid "Font Family"
+msgstr ""
+
+#: admin/button-settings-page.php:326
+msgid "Arial"
+msgstr ""
+
+#: admin/button-settings-page.php:327
+msgid "Helvetica"
+msgstr ""
+
+#: admin/button-settings-page.php:328
+msgid "Lato"
+msgstr ""
+
+#: admin/button-settings-page.php:329
+msgid "Montserrat"
+msgstr ""
+
+#: admin/button-settings-page.php:330
+msgid "Open Sans"
+msgstr ""
+
+#: admin/button-settings-page.php:331
+msgid "Oswald"
+msgstr ""
+
+#: admin/button-settings-page.php:332
+msgid "Poppins"
+msgstr ""
+
+#: admin/button-settings-page.php:333
+msgid "Raleway"
+msgstr ""
+
+#: admin/button-settings-page.php:334
+msgid "Roboto"
+msgstr ""
+
+#: admin/button-settings-page.php:335
+msgid "Times New Roman"
+msgstr ""
+
+#: admin/button-settings-page.php:340
+msgid "Font Size"
+msgstr ""
+
+#: admin/button-settings-page.php:344
+msgid "Text Color"
+msgstr ""
+
+#: admin/button-settings-page.php:348
+msgid "Background Color"
+msgstr ""
+
+#: admin/button-settings-page.php:352
+msgid "Border Color"
+msgstr ""
+
+#: admin/button-settings-page.php:356
+msgid "Button Height"
+msgstr ""
+
+#: admin/button-settings-page.php:360
+msgid "Button Width"
+msgstr ""
+
+#: admin/button-settings-page.php:364
+msgid "Border Radius"
+msgstr ""
+
+#: admin/button-settings-page.php:368
+msgid "Border Width"
+msgstr ""
+
+#: admin/button-settings-page.php:372
+msgid "Border Style"
+msgstr ""
+
+#: admin/button-settings-page.php:375
+msgid "Solid"
+msgstr ""
+
+#: admin/button-settings-page.php:376
+msgid "Dashed"
+msgstr ""
+
+#: admin/button-settings-page.php:377
+msgid "Dotted"
+msgstr ""
+
+#: admin/button-settings-page.php:378
+msgid "Double"
+msgstr ""
+
+#: admin/button-settings-page.php:379
+msgid "None"
+msgstr ""
+
+#: admin/button-settings-page.php:384
+msgid "Shadow X Offset"
+msgstr ""
+
+#: admin/button-settings-page.php:388
+msgid "Shadow Y Offset"
+msgstr ""
+
+#: admin/button-settings-page.php:392
+msgid "Shadow Blur"
+msgstr ""
+
+#: admin/button-settings-page.php:396
+msgid "Shadow Spread"
+msgstr ""
+
+#: admin/button-settings-page.php:400
+msgid "Shadow Color"
+msgstr ""
+
+#: admin/button-settings-page.php:404
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: admin/button-settings-page.php:408
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: admin/button-settings-page.php:412
+#: admin/image-button-settings-page.php:269
+msgid "Save Changes"
+msgstr ""
+
+#: admin/button-settings-page.php:416
+#: admin/image-button-settings-page.php:275
+msgid "Button Preview"
+msgstr ""
+
+#: admin/courses-page.php:26
+msgid "Course Flow - Courses"
+msgstr ""
+
+#: admin/courses-page.php:30
+#: admin/image-button-settings-page.php:294
+msgid "Course ID"
+msgstr ""
+
+#: admin/courses-page.php:31
+msgid "Course Title"
+msgstr ""
+
+#: admin/courses-page.php:32
+msgid "Buy Button Shortcode"
+msgstr ""
+
+#: admin/courses-page.php:33
+msgid "Image Buy Button Shortcode"
+msgstr ""
+
+#: admin/courses-page.php:74
+msgid "No courses found."
+msgstr ""
+
+#: admin/courses-page.php:113
+#: admin/courses-page.php:134
+#: admin/courses-page.php:155
+msgid "Free"
+msgstr ""
+
+#: admin/image-button-settings-page.php:28
+#: admin/image-button-settings-page.php:125
+msgid "Course Flow - Image Button Settings"
+msgstr ""
+
+#: admin/image-button-settings-page.php:140
+msgid "Image Button"
+msgstr ""
+
+#: admin/image-button-settings-page.php:154
+#: course-flow.php:876
+msgid "Select Image"
+msgstr ""
+
+#: admin/image-button-settings-page.php:159
+#: course-flow.php:877
+msgid "Remove Image"
+msgstr ""
+
+#: admin/image-button-settings-page.php:162
+msgid "Select an image from the media library (recommended formats: PNG, JPEG, WebP, max. 2 MB)."
+msgstr ""
+
+#: admin/image-button-settings-page.php:170
+msgid "Alternative Text"
+msgstr ""
+
+#: admin/image-button-settings-page.php:181
+msgid "Alternative text for the image (for accessibility and SEO)."
+msgstr ""
+
+#: admin/image-button-settings-page.php:189
+msgid "Image Width"
+msgstr ""
+
+#: admin/image-button-settings-page.php:203
+msgid "Set the width of the image button (1-5000 px)."
+msgstr ""
+
+#: admin/image-button-settings-page.php:211
+msgid "Image Height"
+msgstr ""
+
+#: admin/image-button-settings-page.php:225
+msgid "Set the height of the image button (1-2000 px)."
+msgstr ""
+
+#: admin/image-button-settings-page.php:233
+#: course-flow.php:879
+msgid "Use Original Size"
+msgstr ""
+
+#: admin/image-button-settings-page.php:244
+msgid "Check to display the image in its original size, ignoring the width and height settings."
+msgstr ""
+
+#: admin/image-button-settings-page.php:252
+msgid "Maintain Aspect Ratio"
+msgstr ""
+
+#: admin/image-button-settings-page.php:263
+msgid "Check to maintain the image's aspect ratio when adjusting width or height."
+msgstr ""
+
+#: admin/image-button-settings-page.php:287
+msgid "Available Shortcodes"
+msgstr ""
+
+#: admin/image-button-settings-page.php:288
+msgid "Copy the shortcode for the desired course to insert the image button on a page."
+msgstr ""
+
+#: admin/image-button-settings-page.php:293
+msgid "Course Name"
+msgstr ""
+
+#: admin/image-button-settings-page.php:295
+msgid "Shortcode"
+msgstr ""
+
+#: admin/image-button-settings-page.php:320
+msgid "Copy shortcode"
+msgstr ""
+
+#: admin/image-button-settings-page.php:381
+msgid "No courses available to generate shortcodes."
+msgstr ""
+
+#: admin/settings-page.php:45
+#: course-flow.php:720
+msgid "Stripe Settings"
+msgstr ""
+
+#: admin/settings-page.php:47
+msgid "Configure your Stripe API keys and other integration options."
+msgstr ""
+
+#: admin/settings-page.php:54
+msgid "Stripe Public Key"
+msgstr ""
+
+#: admin/settings-page.php:58
+msgid "Enter the Stripe public key from your Stripe dashboard."
+msgstr ""
+
+#: admin/settings-page.php:66
+msgid "Stripe Secret Key"
+msgstr ""
+
+#: admin/settings-page.php:71
+#: course-flow.php:847
+msgid "Show"
+msgstr ""
+
+#: admin/settings-page.php:73
+msgid "Enter the Stripe secret key from your Stripe dashboard. The key is masked for security. Click \"Show\" to display the key, or enter a new key to replace it. Store the key in a secure location and do not share it publicly."
+msgstr ""
+
+#: admin/settings-page.php:81
+msgid "Stripe Webhook Secret"
+msgstr ""
+
+#: admin/settings-page.php:85
+msgid "Enter the Stripe webhook key from your Stripe dashboard."
+msgstr ""
+
+#: admin/settings-page.php:93
+msgid "Webhook URL"
+msgstr ""
+
+#: admin/settings-page.php:97
+msgid "Copy this URL and configure it as a webhook endpoint in your Stripe dashboard."
+msgstr ""
+
+#: admin/settings-page.php:107
+msgid "When configuring a webhook in Stripe, select the event <strong>checkout.session.completed</strong> for payments to work properly."
+msgstr ""
+
+#: admin/settings-page.php:115
+msgid "Please help improve the plugin."
+msgstr ""
+
+#: admin/settings-page.php:121
+msgid "By enabling this option, you agree to share anonymous usage data to help improve Course Flow. Your privacy is protected — no personal data is collected, and the information is used solely for statistical purposes to make the plugin better for everyone. You can change this setting at any time."
+msgstr ""
+
+#: admin/settings-page.php:126
+msgid "Connection tests will show whether data sharing is enabled (✅) or disabled (❌). For more information, please see our <a href=\"https://dev.pawelborowiec.com/course-flow/privacy-policy.html\" target=\"_blank\">privacy policy</a>."
+msgstr ""
+
+#: admin/settings-page.php:135
+msgid "Stripe Connection Test"
+msgstr ""
+
+#: admin/settings-page.php:137
+#: course-flow.php:722
+#: course-flow.php:806
+#: assets/js/stripe-test-connection.js:38
+msgid "TEST CONNECTION"
+msgstr ""
+
+#: admin/settings-page.php:146
+msgid "Automatic Account Creation"
+msgstr ""
+
+#: admin/settings-page.php:150
+msgid "Check to automatically create a user account upon completion of payment."
+msgstr ""
+
+#: admin/settings-page.php:158
+msgid "Page After Payment Completion"
+msgstr ""
+
+#: admin/settings-page.php:165
+msgid "Default homepage"
+msgstr ""
+
+#: admin/settings-page.php:171
+msgid "Select the page to which the user will be redirected after payment is completed. By default, the homepage is used with the parameter ?success."
+msgstr ""
+
+#: admin/settings-page.php:179
+#: course-flow.php:723
+msgid "Plugin Language"
+msgstr ""
+
+#: admin/settings-page.php:275
+msgid "Choose the language for the plugin texts in the admin panel and on the front end (e.g., buttons, messages). By default, English (United States) is used."
+msgstr ""
+
+#: course-flow.php:177
+msgid "Webhook key is optional, no test if not provided."
+msgstr ""
+
+#: course-flow.php:195
+msgid "No Stripe public key."
+msgstr ""
+
+#: course-flow.php:197
+msgid "Invalid Stripe public key format."
+msgstr ""
+
+#: course-flow.php:201
+msgid "Stripe public key valid."
+msgstr ""
+
+#: course-flow.php:206
+msgid "No Stripe secret key."
+msgstr ""
+
+#: course-flow.php:214
+#: course-flow.php:826
+#: assets/js/stripe-test-connection.js:58
+msgid "Stripe secret key is correct."
+msgstr ""
+
+#: course-flow.php:217
+msgid "Stripe secret key error: "
+msgstr ""
+
+#: course-flow.php:225
+#: course-flow.php:828
+#: assets/js/stripe-test-connection.js:60
+msgid "Invalid Stripe webhook key format. Webhooks will not work."
+msgstr ""
+
+#: course-flow.php:230
+#: course-flow.php:829
+#: assets/js/stripe-test-connection.js:61
+msgid "Stripe webhook key format is valid."
+msgstr ""
+
+#: course-flow.php:237
+#: course-flow.php:818
+#: assets/js/stripe-test-connection.js:50
+msgid "Webhook key is not set. Stripe webhooks will not work until you add a webhook secret."
+msgstr ""
+
+#: course-flow.php:242
+msgid "Invalid webhook URL."
+msgstr ""
+
+#: course-flow.php:252
+msgid "The webhook URL cannot be verified: "
+msgstr ""
+
+#: course-flow.php:256
+msgid "Webhook URL is valid."
+msgstr ""
+
+#: course-flow.php:264
+#: course-flow.php:830
+#: assets/js/stripe-test-connection.js:62
+msgid "Thank you for helping improve Course Flow! Your anonymous data helps us make the plugin even better."
+msgstr ""
+
+#: course-flow.php:265
+msgid "Data sharing is currently disabled. No anonymous usage data is being collected."
+msgstr ""
+
+#: course-flow.php:272
+#: course-flow.php:827
+#: assets/js/stripe-test-connection.js:59
+msgid "Settings saved and connection tested."
+msgstr ""
+
+#: course-flow.php:289
+msgid "Permission denied."
+msgstr ""
+
+#: course-flow.php:323
+msgid "Settings saved."
+msgstr ""
+
+#: course-flow.php:675
+#: course-flow.php:676
+msgid "Settings"
+msgstr ""
+
+#: course-flow.php:684
+#: course-flow.php:685
+msgid "Courses"
+msgstr ""
+
+#: course-flow.php:693
+#: course-flow.php:694
+msgid "Button Settings"
+msgstr ""
+
+#: course-flow.php:702
+#: course-flow.php:703
+msgid "Image Button Settings"
+msgstr ""
+
+#: course-flow.php:721
+#: course-flow.php:878
+#: includes/shortcode.php:299
+#: includes/tutor-integration.php:406
+#: includes/tutor-integration.php:451
+#: includes/tutor-integration.php:479
+#: includes/tutor-integration.php:594
+#: includes/tutor-integration.php:633
+msgid "Buy Course"
+msgstr ""
+
+#: course-flow.php:802
+#: assets/js/stripe-test-connection.js:34
+msgid "Testing…"
+msgstr ""
+
+#: course-flow.php:803
+#: assets/js/stripe-test-connection.js:35
+msgid "Testing connection in progress…"
+msgstr ""
+
+#: course-flow.php:804
+#: assets/js/stripe-test-connection.js:36
+#: assets/js/stripe-test-connection.js:223
+msgid "Data sharing:"
+msgstr ""
+
+#: course-flow.php:805
+#: assets/js/stripe-test-connection.js:37
+msgid "(format only, without full verification)"
+msgstr ""
+
+#: course-flow.php:807
+#: assets/js/stripe-test-connection.js:39
+msgid "Incorrect server response:"
+msgstr ""
+
+#: course-flow.php:808
+#: assets/js/stripe-test-connection.js:40
+msgid "Connection test error:"
+msgstr ""
+
+#: course-flow.php:809
+#: assets/js/stripe-test-connection.js:41
+msgid "Not set - webhooks disabled"
+msgstr ""
+
+#: course-flow.php:810
+#: assets/js/stripe-test-connection.js:42
+msgid "Please fill in your Stripe Publishable Key and Secret Key before testing."
+msgstr ""
+
+#: course-flow.php:811
+#: assets/js/stripe-test-connection.js:43
+msgid "Stripe Webhook Secret:"
+msgstr ""
+
+#: course-flow.php:812
+#: assets/js/stripe-test-connection.js:44
+msgid "Secret Key:"
+msgstr ""
+
+#: course-flow.php:813
+#: assets/js/stripe-test-connection.js:45
+msgid "Enabled"
+msgstr ""
+
+#: course-flow.php:814
+#: assets/js/stripe-test-connection.js:46
+msgid "Disabled"
+msgstr ""
+
+#: course-flow.php:815
+#: assets/js/stripe-test-connection.js:47
+msgid "Passed"
+msgstr ""
+
+#: course-flow.php:816
+#: assets/js/stripe-test-connection.js:48
+msgid "Failed"
+msgstr ""
+
+#: course-flow.php:817
+#: assets/js/stripe-test-connection.js:49
+msgid "Warning"
+msgstr ""
+
+#: course-flow.php:819
+#: assets/js/stripe-test-connection.js:51
+msgid "💡 Tip: Enabling data sharing helps us improve Course Flow for everyone. No personal data is collected."
+msgstr ""
+
+#: course-flow.php:820
+#: assets/js/stripe-test-connection.js:52
+msgid "Important:"
+msgstr ""
+
+#: course-flow.php:821
+#: assets/js/stripe-test-connection.js:53
+msgid "Stripe webhooks require a webhook secret to function. Without it, automatic enrollment and payment confirmation will not work."
+msgstr ""
+
+#: course-flow.php:822
+#: assets/js/stripe-test-connection.js:54
+msgid "Configure webhooks in Stripe Dashboard"
+msgstr ""
+
+#: course-flow.php:823
+#: assets/js/stripe-test-connection.js:55
+msgid "Configuration error."
+msgstr ""
+
+#: course-flow.php:824
+#: assets/js/stripe-test-connection.js:56
+msgid "This API call cannot be made with a publishable API key. Please use a secret API key. You can find a list of your API keys at"
+msgstr ""
+
+#: course-flow.php:825
+#: assets/js/stripe-test-connection.js:57
+msgid "Invalid API Key provided:"
+msgstr ""
+
+#: course-flow.php:831
+#: assets/js/stripe-test-connection.js:63
+msgid "Stripe secret key error:"
+msgstr ""
+
+#: course-flow.php:848
+msgid "Hide"
+msgstr ""
+
+#: course-flow.php:875
+msgid "Select Image Button"
+msgstr ""
+
+#: course-flow.php:881
+#: course-flow.php:909
+#: assets/js/courses-page.js:91
+msgid "Shortcode copied to clipboard!"
+msgstr ""
+
+#: course-flow.php:1154
+msgid "URL parameter is required."
+msgstr ""
+
+#: course-flow.php:1165
+#: course-flow.php:1182
+msgid "Failed to get image dimensions."
+msgstr ""
+
+#: includes/courseflow-lp-integration.php:30
+msgid "Course Flow LP Courses"
+msgstr ""
+
+#: includes/courseflow-lp-integration.php:31
+msgid "Course Flow LP Course"
+msgstr ""
+
+#: includes/courseflow-lp-integration.php:253
+msgid "Stripe"
+msgstr ""
+
+#: includes/learndash-integration.php:181
+#: includes/learndash-integration.php:314
+msgid "Stripe (P24/Card)"
+msgstr ""
+
+#: includes/learndash-integration.php:211
+msgid "No user"
+msgstr ""
+
+#: includes/learndash-integration.php:229
+msgid "ID"
+msgstr ""
+
+#: includes/learndash-integration.php:230
+msgid "Date"
+msgstr ""
+
+#: includes/learndash-integration.php:231
+msgid "Customer"
+msgstr ""
+
+#: includes/learndash-integration.php:232
+msgid "Course"
+msgstr ""
+
+#: includes/learndash-integration.php:233
+msgid "Price"
+msgstr ""
+
+#: includes/learndash-integration.php:234
+msgid "Payment Method"
+msgstr ""
+
+#: includes/learndash-integration.php:318
+msgid "Unknown"
+msgstr ""
+
+#: includes/learndash-integration.php:334
+msgid "No price"
+msgstr ""
+
+#. translators: %1$s is the course title, %2$d is the course ID.
+#: includes/learndash-integration.php:497
+#, php-format
+msgid "Order for course %1$s (ID %2$d)"
+msgstr ""
+
+#: includes/lms-handler.php:173
+msgid "Transaction"
+msgstr ""
+
+#: includes/shortcode.php:75
+#: includes/shortcode.php:159
+msgid "Invalid course ID."
+msgstr ""
+
+#: includes/shortcode.php:81
+#: includes/shortcode.php:165
+msgid "Course not found."
+msgstr ""
+
+#: includes/shortcode.php:89
+#: includes/shortcode.php:173
+msgid "LMS not active for this course."
+msgstr ""
+
+#: includes/shortcode.php:132
+#: includes/shortcode.php:216
+msgid "Buy Now"
+msgstr ""
+
+#: includes/shortcode.php:244
+#: includes/stripe-handler.php:690
+msgid "Invalid course ID"
+msgstr ""
+
+#: includes/shortcode.php:249
+msgid "Course not found"
+msgstr ""
+
+#: includes/shortcode.php:290
+msgid "LMS not active for this course"
+msgstr ""
+
+#: includes/shortcode.php:294
+msgid "No image URL configured"
+msgstr ""
+
+#: includes/stripe-handler.php:446
+msgid "Missing course ID."
+msgstr ""
+
+#: includes/stripe-handler.php:456
+msgid "Invalid course."
+msgstr ""
+
+#: includes/stripe-handler.php:470
+msgid "Unsupported course type."
+msgstr ""
+
+#: includes/stripe-handler.php:507
+msgid "Stripe PHP library not found."
+msgstr ""
+
+#: includes/stripe-handler.php:518
+msgid "Stripe secret key not configured."
+msgstr ""
+
+#. translators: %d: Course ID number
+#: includes/stripe-handler.php:528
+#, php-format
+msgid "Course #%d"
+msgstr ""
+
+#: includes/stripe-handler.php:594
+msgid "Stripe error: "
+msgstr ""
+
+#: includes/stripe-handler.php:613
+msgid "Stripe library not found"
+msgstr ""
+
+#: includes/stripe-handler.php:626
+msgid "Missing Stripe API key"
+msgstr ""
+
+#: includes/stripe-handler.php:643
+msgid "Invalid webhook signature"
+msgstr ""
+
+#: includes/stripe-handler.php:653
+msgid "Invalid webhook payload"
+msgstr ""
+
+#: includes/stripe-handler.php:682
+msgid "Missing user email"
+msgstr ""
+
+#: includes/stripe-handler.php:699
+msgid "Invalid course"
+msgstr ""
+
+#: includes/stripe-handler.php:720
+msgid "LMS not active or unsupported"
+msgstr ""
+
+#: includes/stripe-handler.php:729
+msgid "Failed to grant course access"
+msgstr ""
+
+#: assets/js/courses-page.js:101
+#: assets/js/image-button-settings.js:261
+#: assets/js/image-button-settings.js:266
+msgid "Failed to copy shortcode. Please try again."
+msgstr ""
+
+#: assets/js/image-button-settings.js:232
+msgid "Shortcode copied!"
+msgstr ""
+
+#: assets/js/stripe-test-connection.js:25
+msgid "Error: Could not load connection test configuration. Please reload the page."
+msgstr ""

@@ -1,0 +1,408 @@
+/**
+ * Styles for the Button Settings page in Course Flow.
+ * Version: 2.1.0
+ * Author: Pawel Borowiec
+ * Text Domain: course-flow
+ */
+
+/* Global box-sizing reset */
+* {
+    box-sizing: border-box;
+}
+
+/* NO CUSTOM .wrap MARGINS - Let WordPress handle it like courses-page.css does */
+
+/* Container for button settings with flexible layout */
+.courseflow-button-settings-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Button settings form styling */
+.courseflow-button-settings-form {
+    flex: 1;
+    min-width: 18.75rem;
+    max-width: 37.5rem;
+}
+
+/* Button settings preview section */
+.courseflow-button-settings-preview {
+    flex: 1;
+    min-width: 18.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Preview section heading */
+.courseflow-button-settings-preview h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Preview button styling */
+#courseflow-button-settings .courseflow-button-settings-preview #courseflow-preview-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+    cursor: default;
+    transition: all 0.3s ease;
+    min-height: 2.5rem;
+    padding: 0.625rem 1.25rem;
+    background-color: rgb(221, 153, 51);
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
+    max-width: 90%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Dropdown results styling for Select2 */
+.courseflow-full-height-dropdown .select2-results__options {
+    max-height: 25rem !important;
+    overflow-y: auto;
+}
+
+/* React-specific styles */
+.courseflow-button-settings-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.courseflow-form-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.courseflow-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.courseflow-subsection-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    margin: 24px 0 16px 0;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.courseflow-subsection-title:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.courseflow-form-group {
+    margin-bottom: 20px;
+}
+
+.courseflow-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.courseflow-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.courseflow-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #ffffff;
+}
+
+.courseflow-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.courseflow-input:disabled {
+    background-color: #f8fafc;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+.courseflow-color-picker-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.courseflow-color-input {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 2px;
+}
+
+.courseflow-color-text-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Monaco', 'Courier New', monospace;
+    transition: all 0.2s ease;
+}
+
+.courseflow-color-text-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.courseflow-save-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #059669;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 24px;
+}
+
+.courseflow-save-btn:hover {
+    background-color: #047857;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.courseflow-save-btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.courseflow-preview-container {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 40px 20px;
+    border: 1px dashed #e2e8f0;
+}
+
+.courseflow-preview-button-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+.courseflow-preview-button {
+    margin: 0 auto 20px auto;
+    display: inline-flex;
+}
+
+.courseflow-preview-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.courseflow-preview-info p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 6px 0;
+}
+
+.courseflow-preview-info strong {
+    color: #475569;
+}
+
+.courseflow-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 60px 20px;
+}
+
+.courseflow-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f1f5f9;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: courseflow-spin 0.8s linear infinite;
+}
+
+@keyframes courseflow-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.courseflow-loading-container p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Responsive styles for tablets and smaller screens */
+@media (max-width: 48.875rem) {
+    .courseflow-button-settings-container {
+        flex-direction: column;
+        overflow-x: hidden;
+        padding-left: 12px;
+        padding-right: 12px;
+        max-width: 100vw;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .courseflow-button-settings-form {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .courseflow-button-settings-preview {
+        min-width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        overflow-x: hidden;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+    
+    #courseflow-button-settings .courseflow-button-settings-preview #courseflow-preview-button {
+        margin: 0 auto;
+        max-width: 90%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .courseflow-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .courseflow-button-settings-content {
+        flex-direction: column;
+    }
+}
+
+/* Additional styles for very small screens (smartphones) */
+@media (max-width: 25rem) {
+    .courseflow-button-settings-container {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 12px;
+    }
+    
+    .courseflow-button-settings-form {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    
+    .courseflow-button-settings-preview {
+        min-width: 100%;
+    }
+    
+    #courseflow-button-settings .courseflow-button-settings-preview #courseflow-preview-button {
+        max-width: 90%;
+    }
+    
+    .courseflow-color-picker-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .courseflow-color-input {
+        width: 100%;
+    }
+    
+    .courseflow-form-card {
+        padding: 16px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .courseflow-form-card {
+        background: #1e293b;
+        border-color: #334155;
+    }
+
+    .courseflow-card-title,
+    .courseflow-subsection-title {
+        color: #f1f5f9;
+    }
+
+    .courseflow-label {
+        color: #cbd5e1;
+    }
+
+    .courseflow-input,
+    .courseflow-color-text-input {
+        background: #0f172a;
+        border-color: #334155;
+        color: #e2e8f0;
+    }
+
+    .courseflow-input:focus,
+    .courseflow-color-text-input:focus {
+        border-color: #3b82f6;
+    }
+
+    .courseflow-preview-container {
+        background: #0f172a;
+        border-color: #334155;
+    }
+
+    .courseflow-preview-info p {
+        color: #94a3b8;
+    }
+
+    .courseflow-preview-info strong {
+        color: #cbd5e1;
+    }
+}

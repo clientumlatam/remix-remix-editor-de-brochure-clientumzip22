@@ -1,0 +1,33 @@
+{
+    "name": "pawelborowiec/course-flow",
+    "description": "A plugin to integrate Stripe payments with Tutor LMS, LearnPress, and LearnDash without WooCommerce.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=7.4",
+        "stripe/stripe-php": "^18",
+        "composer/installers": "^2.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CourseFlow\\": "includes/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+        "wp-coding-standards/wpcs": "^2.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/course-flow/": ["type:wordpress-plugin"]
+        },
+        "installer-name": "course-flow"
+    }
+}

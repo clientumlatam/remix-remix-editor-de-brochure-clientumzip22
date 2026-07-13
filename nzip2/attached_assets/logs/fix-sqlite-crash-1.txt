@@ -1,0 +1,28 @@
+#1 - Fix Action Scheduler SQLite Crash
+What & Why
+
+The site repeatedly crashes with an uncaught RuntimeException: Unable to claim actions fatal error. It is thrown by WooCommerce's bundled Action Scheduler library every time WP-Cron runs (roughly every 30–60 seconds, triggered by normal page loads). Action Scheduler's claim query uses MySQL-only syntax (UPDATE t1 JOIN (SELECT ... FOR UPDATE) t2 ON ... SET ...), which the SQLite Database Integration plugin's query translator cannot parse, so every claim attempt fails and throws. This spams wp-content/debug.log with fatal traces on a constant cycle and represents the "Start application" runtime crash.
+Done looks like
+
+    No new PHP Fatal error: Uncaught RuntimeException: Unable to claim actions entries appear in wp-content/debug.log after the fix, across multiple WP-Cron cycles (wait through at least 2-3 cron intervals to confirm).
+    The homepage, an admin page, and a WooCommerce-related page (e.g. shop/cart) all continue to load normally (HTTP 200, no visible errors).
+    Scheduled/queued WooCommerce actions (e.g. from Action Scheduler) can still be claimed and processed under SQLite — i.e. the fix makes claiming actually work, not just silences the error.
+
+Out of scope
+
+    Rewriting or upgrading the bundled sqlite-database-integration or woocommerce plugins wholesale.
+    Fixing the separate, non-fatal wp_learnpress_sessions "no such table" warning logged elsewhere in debug.log (different root cause, not a crash).
+    Any changes to the CRM Express server, WhatsApp Bridge, or the Mockup Sandbox artifact — unrelated to this crash.
+
+Steps
+
+    Add a SQLite-safe Action Scheduler store override — Create a small must-use plugin (following the existing pattern in wp-content/mu-plugins/) that hooks the action_scheduler_store_class filter to swap in a store class extending the existing DB store, overriding just the action-claiming query with SQLite-compatible SQL (e.g. a two-step SELECT of eligible action IDs followed by an UPDATE ... WHERE action_id IN (...), without JOIN/FOR UPDATE/SKIP LOCKED), so no vendor plugin files are modified directly.
+    Verify the fix under load — Confirm via the debug log that WP-Cron's Action Scheduler runs complete without throwing, that actions actually get claimed/processed, and that normal front-end and admin pages keep loading correctly.
+
+Relevant files
+
+    wordpress/wp-content/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php
+    wordpress/wp-content/plugins/woocommerce/packages/action-scheduler/classes/data-stores/ActionScheduler_HybridStore.php
+    wordpress/wp-content/plugins/woocommerce/packages/action-scheduler/classes/ActionScheduler_DataController.php
+    wordpress/wp-content/mu-plugins/fix-deferred-scripts.php
+    wordpress/wp-content/debug.log

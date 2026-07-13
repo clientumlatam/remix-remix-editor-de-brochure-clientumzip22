@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clientum — Todo lo que tu empresa necesita, en una sola plataforma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#07102A;
+  --navy-soft:#0E1B3D;
+  --blue:#3B82F6;
+  --blue-deep:#2563EB;
+  --green:#10B981;
+  --green-soft:#ECFDF5;
+  --pink-soft:#FDF2F2;
+  --ink:#0B1220;
+  --ink-60:#4B5568;
+  --line:#E6E9F0;
+  --bg:#F7F8FB;
+  --white:#FFFFFF;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.font-display{font-family:'Syne',sans-serif;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--green);
+}
+.eyebrow.on-dark{color:#6EE7B7;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;border-radius:10px;font-weight:600;font-size:14.5px;
+  border:1px solid transparent;cursor:pointer;transition:.15s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--blue);color:#fff;}
+.btn-primary:hover{background:var(--blue-deep);}
+.btn-dark{background:var(--navy);color:#fff;}
+.btn-dark:hover{background:#111d47;}
+.btn-ghost-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.28);}
+.btn-ghost-dark:hover{border-color:rgba(255,255,255,.6);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--line);}
+.btn-outline:hover{border-color:var(--navy);}
+.btn-green{background:var(--green);color:#fff;}
+.btn-green:hover{background:#0EA271;}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Syne';font-weight:800;font-size:15px;}
+.brand-text .name{font-family:'Syne';font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--navy);line-height:1.1;}
+.brand-text .tag{font-size:9.5px;letter-spacing:.06em;color:var(--ink-60);text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:30px;}
+.nav-links a{font-size:14px;font-weight:500;color:var(--ink-60);}
+.nav-links a:hover{color:var(--navy);}
+.nav-links a.active{color:var(--navy);font-weight:600;}
+.nav-cta{display:flex;align-items:center;gap:10px;}
+.nav-login{font-size:14px;font-weight:600;color:var(--ink-60);padding:10px 14px;}
+
+/* HERO */
+.hero{background:var(--navy);color:#fff;padding:72px 0 84px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-120px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.25),transparent 70%);}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;position:relative;}
+.badge-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);padding:7px 14px 7px 10px;border-radius:99px;font-size:12px;font-weight:600;color:#B9C2DB;margin-bottom:22px;}
+.badge-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--green);}
+.hero h1{font-size:44px;line-height:1.12;font-weight:700;letter-spacing:-.01em;margin-bottom:20px;max-width:11.5ch;}
+.hero p.desc{font-size:16.5px;line-height:1.6;color:#B9C2DB;max-width:52ch;margin-bottom:28px;}
+.hero-ctas{display:flex;gap:12px;margin-bottom:26px;flex-wrap:wrap;}
+.hero-check{display:flex;gap:22px;flex-wrap:wrap;}
+.hero-check span{display:flex;align-items:center;gap:7px;font-size:13.5px;color:#9AA6C4;}
+.hero-check .ok{color:var(--green);font-weight:700;}
+
+/* form card */
+.form-card{background:#fff;color:var(--ink);border-radius:18px;padding:26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);}
+.form-card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;}
+.form-card-head h3{font-family:'Syne';font-size:17px;font-weight:700;margin-bottom:4px;}
+.form-card-head p{font-size:12.5px;color:var(--ink-60);line-height:1.4;max-width:26ch;}
+.live-badge{background:var(--green-soft);color:var(--green);font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:99px;letter-spacing:.03em;white-space:nowrap;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8A93AB;margin-bottom:6px;}
+.field input,.field select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff;}
+.field input::placeholder{color:#B2B9C9;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.submit-btn{width:100%;background:var(--green);color:#fff;padding:13px;border:none;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer;margin-top:4px;}
+.submit-btn:hover{background:#0EA271;}
+
+/* three top cards under hero */
+.top-cards-section{background:var(--bg);padding:48px 0;}
+.top-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px;}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+.tcard .icn{width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:16px;}
+.tcard .eyebrow{display:block;margin-bottom:8px;}
+.tcard h4{font-family:'Syne';font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.tcard p{font-size:13.5px;color:var(--ink-60);line-height:1.55;margin-bottom:14px;}
+.tcard .link{font-size:13.5px;font-weight:700;color:var(--navy);}
+.two-cta{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.dark-cta{background:var(--navy);border-radius:var(--radius);padding:26px;color:#fff;position:relative;overflow:hidden;}
+.dark-cta .tag-eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px;display:block;}
+.dark-cta h4{font-family:'Syne';font-size:17px;font-weight:700;margin-bottom:8px;max-width:26ch;}
+.dark-cta p{font-size:13px;color:#9AA6C4;margin-bottom:16px;max-width:32ch;}
+.soon-tag{position:absolute;top:24px;right:24px;background:rgba(255,255,255,.1);font-size:10px;font-weight:700;padding:4px 9px;border-radius:99px;letter-spacing:.04em;}
+
+/* why section */
+.why{padding:88px 0;text-align:center;}
+.why .eyebrow{color:#E2413F;}
+.why h2{font-size:32px;font-weight:700;max-width:20ch;margin:12px auto 14px;}
+.why > .wrap > p{color:var(--ink-60);font-size:15.5px;max-width:60ch;margin:0 auto 44px;}
+.problem-row,.solution-row{display:grid;gap:18px;text-align:left;}
+.problem-row{grid-template-columns:repeat(3,1fr);margin-bottom:56px;}
+.solution-row{grid-template-columns:repeat(4,1fr);}
+.p-card{background:var(--pink-soft);border-radius:14px;padding:22px;}
+.p-card .icn{font-size:20px;margin-bottom:14px;}
+.p-card h4{font-family:'Syne';font-size:14.5px;font-weight:700;margin-bottom:8px;}
+.p-card p{font-size:12.5px;color:var(--ink-60);line-height:1.5;}
+.s-eyebrow-wrap{grid-column:1/-1;margin-bottom:4px;}
+.s-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;}
+.s-card .icn{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:14px;}
+.s-card:nth-child(1) .icn{background:#ECFDF5;color:var(--green);}
+.s-card:nth-child(2) .icn{background:#EFF6FF;color:var(--blue);}
+.s-card:nth-child(3) .icn{background:#F5F3FF;color:#8B5CF6;}
+.s-card:nth-child(4) .icn{background:#FFF7ED;color:#F59E0B;}
+.s-card h4{font-family:'Syne';font-size:14.5px;font-weight:700;margin-bottom:8px;}
+.s-card p{font-size:12.5px;color:var(--ink-60);line-height:1.5;}
+
+.quote-box{background:var(--navy);border-radius:18px;padding:32px 40px;text-align:left;margin:56px 0 40px;position:relative;}
+.quote-box .mark{font-family:'Syne';font-size:38px;color:var(--green);line-height:1;margin-bottom:10px;}
+.quote-box p{color:#fff;font-size:17px;line-height:1.6;max-width:64ch;margin-bottom:14px;}
+.quote-box cite{font-style:normal;font-size:12.5px;color:#8A93AB;letter-spacing:.03em;text-transform:uppercase;font-weight:600;}
+
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;}
+.stat-strip div{background:var(--navy);border-radius:12px;padding:22px 16px;text-align:center;}
+.stat-strip .num{font-family:'Syne';font-size:26px;font-weight:800;color:var(--green);margin-bottom:4px;}
+.stat-strip .lbl{font-size:11.5px;color:#9AA6C4;line-height:1.3;}
+
+.diag-banner{background:var(--green-soft);border-radius:18px;padding:38px;text-align:center;}
+.diag-banner h4{font-family:'Syne';font-size:19px;font-weight:700;margin-bottom:8px;}
+.diag-banner p{color:var(--ink-60);font-size:14px;margin-bottom:4px;}
+.diag-banner .fine{font-size:12.5px;font-weight:600;color:var(--green);margin-bottom:18px;}
+
+/* trust strip */
+.trust{background:var(--navy);padding:18px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.trust .wrap{display:flex;align-items:center;gap:36px;flex-wrap:wrap;justify-content:center;}
+.trust .lbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B7796;white-space:nowrap;}
+.trust .items{display:flex;gap:34px;flex-wrap:wrap;}
+.trust .items span{font-size:13px;color:#8A93AB;font-weight:500;white-space:nowrap;}
+
+/* most hired */
+.most-hired{padding:88px 0;text-align:center;}
+.most-hired .eyebrow{color:var(--green);}
+.most-hired h2{font-size:30px;font-weight:700;margin:12px 0 44px;}
+.numbered-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;}
+.n-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;}
+.n-card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--green-soft);color:var(--green);font-family:'Syne';font-weight:800;font-size:14px;margin-bottom:16px;}
+.n-card h4{font-family:'Syne';font-size:16px;font-weight:700;margin-bottom:8px;}
+.n-card p{font-size:13.5px;color:var(--ink-60);line-height:1.55;margin-bottom:14px;}
+.n-card .link{font-size:13.5px;font-weight:700;}
+
+/* impact metrics */
+.impact{background:var(--bg);padding:88px 0;text-align:center;}
+.impact h2{font-size:26px;font-weight:700;margin-bottom:10px;}
+.impact > .wrap > p{color:var(--ink-60);font-size:14.5px;max-width:56ch;margin:0 auto 44px;}
+.impact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:70px;}
+.imp-card{background:#fff;border-radius:14px;padding:30px 20px;}
+.imp-card .num{font-family:'Syne';font-weight:800;font-size:34px;margin-bottom:10px;}
+.imp-card:nth-child(1) .num{color:var(--green);}
+.imp-card:nth-child(2) .num{color:var(--blue);}
+.imp-card:nth-child(3) .num{color:#8B5CF6;}
+.imp-card .lbl{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;}
+.imp-card p{font-size:13px;color:var(--ink-60);line-height:1.5;}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;text-align:left;margin-bottom:70px;}
+.split.reverse .art{order:2;}
+.split .eyebrow{margin-bottom:12px;}
+.split h3{font-family:'Syne';font-size:25px;font-weight:700;margin-bottom:14px;max-width:14ch;}
+.split p{color:var(--ink-60);font-size:14.5px;line-height:1.6;margin-bottom:22px;max-width:44ch;}
+.art-box{background:linear-gradient(135deg,#E9EDF6,#DDE3F1);border-radius:16px;height:280px;display:flex;align-items:center;justify-content:center;color:#8A93AB;font-size:13px;font-weight:600;overflow:hidden;}
+.art-dashboard{background:var(--navy);border-radius:16px;height:280px;padding:20px;color:#fff;}
+
+/* culture */
+.culture{background:var(--navy);color:#fff;padding:88px 0;text-align:center;}
+.culture h2{font-family:'Syne';font-size:28px;font-weight:700;margin-bottom:10px;}
+.culture > .wrap > p{color:#9AA6C4;font-size:14.5px;max-width:56ch;margin:0 auto 44px;}
+.culture-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;}
+.c-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;}
+.c-card .icn{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:16px;}
+.c-card:nth-child(1) .icn{background:#312E81;}
+.c-card:nth-child(2) .icn{background:#1E3A8A;}
+.c-card:nth-child(3) .icn{background:#166534;}
+.c-card h4{font-family:'Syne';font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.c-card p{font-size:13px;color:#9AA6C4;line-height:1.55;}
+
+/* all solutions */
+.all-sol{padding:88px 0;text-align:center;}
+.all-sol .eyebrow{color:var(--blue);}
+.all-sol h2{font-size:30px;font-weight:700;margin:12px 0 12px;}
+.all-sol > .wrap > p{color:var(--ink-60);font-size:14.5px;margin-bottom:24px;}
+.export-btn{margin-bottom:40px;}
+.sol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:left;}
+.sol-card{border:1px solid var(--line);border-radius:14px;padding:22px;}
+.sol-card .icn{font-size:19px;margin-bottom:14px;}
+.sol-card h4{font-family:'Syne';font-size:14.5px;font-weight:700;margin-bottom:6px;}
+.sol-card p{font-size:12.5px;color:var(--ink-60);line-height:1.5;margin-bottom:12px;}
+.sol-card .link{font-size:12.5px;font-weight:700;color:var(--navy);}
+
+/* ecosystem */
+.eco{background:var(--navy);color:#fff;padding:88px 0;text-align:center;}
+.eco .eyebrow{color:var(--green);}
+.eco h2{font-family:'Syne';font-size:28px;font-weight:700;margin:12px 0 10px;}
+.eco > .wrap > p{color:#9AA6C4;font-size:14.5px;margin-bottom:44px;}
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:left;}
+.eco-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px;}
+.eco-card .icn{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:16px;}
+.eco-card h4{font-family:'Syne';font-size:15px;font-weight:700;margin-bottom:8px;}
+.eco-card p{font-size:12.5px;color:#9AA6C4;line-height:1.5;margin-bottom:12px;}
+.eco-card .link{font-size:12.5px;font-weight:700;color:var(--green);}
+
+/* final cta */
+.final-cta{background:linear-gradient(120deg,#0B1533,#122556);padding:56px 0;}
+.final-cta .inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+.final-cta .txt{color:#fff;max-width:420px;}
+.final-cta .eyebrow{color:var(--green);margin-bottom:12px;}
+.final-cta h3{font-family:'Syne';font-size:24px;font-weight:700;margin-bottom:10px;}
+.final-cta p{color:#9AA6C4;font-size:14px;line-height:1.5;margin-bottom:20px;}
+.final-cta .ctas{display:flex;gap:12px;}
+.final-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.final-stats div{background:rgba(255,255,255,.06);border-radius:12px;padding:18px 22px;text-align:center;min-width:120px;}
+.final-stats .num{font-family:'Syne';font-size:22px;font-weight:800;color:#fff;margin-bottom:2px;}
+.final-stats .lbl{font-size:10.5px;color:#9AA6C4;letter-spacing:.03em;text-transform:uppercase;}
+
+/* footer */
+footer{background:var(--navy);color:#9AA6C4;padding:64px 0 28px;}
+.footer-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-bottom:48px;}
+.footer-cols h5{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B7796;margin-bottom:16px;}
+.footer-cols li{list-style:none;margin-bottom:10px;font-size:13.5px;}
+.footer-cols a:hover{color:#fff;}
+.footer-bottom{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;gap:30px;border-top:1px solid rgba(255,255,255,.08);padding-top:40px;margin-bottom:30px;}
+.footer-bottom h5{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6B7796;margin-bottom:16px;}
+.footer-bottom li{list-style:none;margin-bottom:9px;font-size:13.5px;}
+.f-brand .name{font-family:'Syne';color:#fff;font-weight:700;font-size:15px;margin-bottom:10px;}
+.f-brand p{font-size:12.5px;line-height:1.5;margin-bottom:14px;}
+.f-loc{font-size:12px;color:#6B7796;}
+.newsletter{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.newsletter h6{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;}
+.newsletter p{font-size:12px;}
+.nl-form{display:flex;gap:8px;}
+.nl-form input{padding:10px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff;font-size:13px;min-width:220px;}
+.nl-form button{background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;}
+.copyright{display:flex;justify-content:space-between;font-size:12px;color:#6B7796;flex-wrap:wrap;gap:10px;padding-top:24px;}
+
+@media(max-width:980px){
+  .hero-grid,.problem-row,.solution-row,.top-cards,.two-cta,.numbered-cards,.impact-row,.split,.culture-row,.sol-grid,.eco-grid,.stat-strip,.footer-cols,.footer-bottom{grid-template-columns:repeat(2,1fr);}
+  .nav-links{display:none;}
+}
+@media(max-width:640px){
+  .hero h1{font-size:32px;}
+  .problem-row,.solution-row,.top-cards,.two-cta,.numbered-cards,.impact-row,.split,.culture-row,.sol-grid,.eco-grid,.stat-strip,.footer-cols,.footer-bottom{grid-template-columns:1fr;}
+  .final-cta .inner{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <a href="#inicio" class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">
+        <div class="name">CLIENTUM</div>
+        <div class="tag">CRM, Chatbots &amp; Tecnología PyME</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#soluciones">Soluciones</a>
+      <a href="#planes">Precios</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#soporte">Soporte</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#login" class="nav-login">Login / Registro</a>
+      <a href="#demo" class="btn btn-dark">Solicitar Demo →</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge-pill"><span class="dot"></span> Plataforma All-in-One para PyMEs</span>
+      <h1>Todo lo que tu empresa necesita, en una sola plataforma.</h1>
+      <p class="desc">CRM, Chatbot WhatsApp con IA, E-Commerce, ERP, Business Intelligence, Marketing Digital, Ciberseguridad, Cloud, Apps Móviles y Capacitación — el ecosistema completo de Clientum para hacer crecer tu PyME.</p>
+      <div class="hero-ctas">
+        <a href="#soluciones" class="btn btn-primary">Ver Servicios →</a>
+        <a href="#demo" class="btn btn-ghost-dark">▷ Solicitar Demo</a>
+      </div>
+      <div class="hero-check">
+        <span><span class="ok">✓</span> Sin contrato mínimo</span>
+        <span><span class="ok">✓</span> Implementado en 5 días</span>
+        <span><span class="ok">✓</span> Soporte en español 24/7</span>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-head">
+        <div>
+          <h3>Solicitá un Presupuesto Gratuito</h3>
+          <p>Cargá tus datos y el equipo de Clientum te enviará una demo adaptada a tu escala.</p>
+        </div>
+        <span class="live-badge">● EN VIVO</span>
+      </div>
+      <div class="field"><label>Tu nombre</label><input placeholder="Ej. Martín Rodríguez"></div>
+      <div class="field"><label>Correo electrónico</label><input placeholder="Ej. martin@empresa.com"></div>
+      <div class="field-row">
+        <div class="field"><label>Empresa</label><input placeholder="Ej. Distribuidora Sur"></div>
+        <div class="field">
+          <label>Servicio de interés</label>
+          <select><option>E-Commerce Web</option><option>Chatbot WhatsApp con IA</option><option>CRM + ERP</option><option>Business Intelligence</option></select>
+        </div>
+      </div>
+      <button class="submit-btn">Enviar Solicitud</button>
+    </div>
+  </div>
+</section>
+
+<section class="top-cards-section">
+  <div class="wrap">
+    <div class="top-cards">
+      <div class="tcard">
+        <div class="icn">▤</div>
+        <span class="eyebrow" style="color:var(--ink-60);">Software de Gestión</span>
+        <p>Un software completo para gestionar todos sus negocios. Sistemas integrados de gestión necesarios para las distintas áreas de su empresa en una única plataforma.</p>
+        <a class="link" href="#">Ver más →</a>
+      </div>
+      <div class="tcard">
+        <div class="icn">⌗</div>
+        <span class="eyebrow" style="color:var(--ink-60);">E-Commerce</span>
+        <p>Desarrollo de sitios web con tecnología omnicanal. Digitalización de su negocio con herramientas analíticas, marketing y diseño.</p>
+        <a class="link" href="#">Ver más →</a>
+      </div>
+      <div class="tcard">
+        <div class="icn">📊</div>
+        <span class="eyebrow" style="color:var(--ink-60);">Business Intelligence</span>
+        <p>Seguimiento de las principales métricas de negocio y gestión. Poné en marcha campañas efectivas orientadas a objetivos planteados.</p>
+        <a class="link" href="#">Ver más →</a>
+      </div>
+    </div>
+    <div class="two-cta">
+      <div class="dark-cta">
+        <span class="tag-eyebrow">Nube Viaweb</span>
+        <h4>¿Está preparada tu empresa para migrar a la nube?</h4>
+        <p>Hacé tu Autodiagnóstico Cloud sin costo.</p>
+        <a class="btn btn-green" href="#">Hacelo ahora →</a>
+      </div>
+      <div class="dark-cta">
+        <span class="soon-tag">PRÓXIMAMENTE</span>
+        <span class="tag-eyebrow">Ciclo de charlas</span>
+        <h4>La transformación digital en tiempos de incertidumbre</h4>
+        <p>Ciclo de charlas sobre transformación digital para empresas.</p>
+        <a class="btn btn-outline" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.28);" href="#">Ingresá ahora →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <span class="eyebrow">Por qué Clientum</span>
+    <h2>Tu negocio pierde ventas mientras alguien no contesta el WhatsApp</h2>
+    <p>Clientum automatiza la atención, el seguimiento de leads y la gestión de tu PyME con inteligencia artificial: sin perfil técnico, sin vueltas, funcionando en días.</p>
+
+    <div class="problem-row">
+      <div class="p-card"><div class="icn">⏱</div><h4>Respuestas lentas = ventas perdidas</h4><p>Los leads que entran por WhatsApp e Instagram se enfrían si no reciben respuesta al toque. La velocidad define quién cierra la venta.</p></div>
+      <div class="p-card"><div class="icn">📋</div><h4>Presupuestos y stock a mano</h4><p>Horas armando presupuestos uno por uno y controlando stock con planillas sueltas. Errores costosos que se repiten cada semana.</p></div>
+      <div class="p-card"><div class="icn">📉</div><h4>Cero seguimiento</h4><p>Sin un sistema de follow-up automático, la mayoría de los contactos simplemente se pierden en el camino.</p></div>
+    </div>
+
+    <div class="solution-row">
+      <div class="s-eyebrow-wrap"><span class="eyebrow" style="color:var(--green);">Qué resuelve Clientum</span><h3 style="font-size:22px;font-family:'Syne';font-weight:700;margin-top:8px;">La solución para cada problema</h3></div>
+      <div class="s-card"><div class="icn">☎</div><h4>Chatbot con IA 24/7</h4><p>Atiende WhatsApp Business API las 24 horas y responde consultas más frecuentes al instante.</p></div>
+      <div class="s-card"><div class="icn">📈</div><h4>CRM + reportes en vivo</h4><p>Seguimiento automático de cada lead y reportes con datos reales de tu operación, sin planillas sueltas.</p></div>
+      <div class="s-card"><div class="icn">📄</div><h4>Presupuestos automáticos</h4><p>Se generan solos y el follow-up lo maneja la IA, liberando horas de trabajo manual por semana.</p></div>
+      <div class="s-card"><div class="icn">⚡</div><h4>Integraciones que ya usás</h4><p>Se conecta con WooCommerce, Shopify, PrestaShop y ERPs como Dolibarr sin instalar nada extra.</p></div>
+    </div>
+
+    <div class="quote-box">
+      <div class="mark">"</div>
+      <p>Ahora sabemos exactamente qué repuestos tenemos sin revisar papeles. Las facturas salen solas y evitamos errores que antes nos costaban tiempo y plata.</p>
+      <cite>— Estudio Méndez &amp; Asoc., General Roca</cite>
+    </div>
+
+    <div class="stat-strip">
+      <div><div class="num">24/7</div><div class="lbl">Atención automática por IA</div></div>
+      <div><div class="num">5–7</div><div class="lbl">Días hábiles para arrancar (Plan Starter)</div></div>
+      <div><div class="num">30</div><div class="lbl">Días de soporte incluido, ajustes sin costo</div></div>
+      <div><div class="num">0</div><div class="lbl">Conocimiento técnico requerido</div></div>
+    </div>
+
+    <div class="diag-banner">
+      <h4>Pedí tu diagnóstico gratuito</h4>
+      <p>60 minutos para mostrarte cuánto tiempo y dinero podés ahorrar con IA en tu PyME.</p>
+      <p class="fine">Sin costo · Sin compromiso</p>
+      <a href="#demo" class="btn btn-green">Solicitar Diagnóstico Gratuito →</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <span class="lbl">Confían en Clientum</span>
+    <div class="items">
+      <span>🚚 Distribuidoras</span><span>🛍 Retail &amp; E-Commerce</span><span>📑 Estudios Contables</span>
+      <span>💊 Salud &amp; Bienestar</span><span>🍽 Gastronomía</span><span>🏠 Inmobiliarias</span>
+    </div>
+  </div>
+</section>
+
+<section class="most-hired">
+  <div class="wrap">
+    <span class="eyebrow">Soluciones principales</span>
+    <h2>Nuestros Servicios Más Contratados</h2>
+    <div class="numbered-cards">
+      <div class="n-card"><div class="num">01</div><h4>CRM + Chatbot IA + Facturación (Plan Pro)</h4><p>La base de la plataforma Clientum: chatbot de WhatsApp ilimitado, CRM con pipeline visual, asistente de IA y facturación AFIP integrada, todo en un solo abono.</p><a class="link" href="#" style="color:var(--navy);">Ver más →</a></div>
+      <div class="n-card"><div class="num">02</div><h4>Desarrollo Web &amp; E-Commerce</h4><p>Tiendas online y sitios de alto rendimiento con pasarela de pago, sincronización de stock y diseño UX/UI premium, integrados directamente al CRM.</p><a class="link" href="#" style="color:var(--navy);">Ver más →</a></div>
+      <div class="n-card"><div class="num">03</div><h4>Implementación de ERP y Automatización</h4><p>Conectamos tu ERP, e-commerce y sistemas de stock en tiempo real, automatizando flujos repetitivos y liquidaciones sin intervención manual.</p><a class="link" href="#" style="color:var(--navy);">Ver más →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="impact">
+  <div class="wrap">
+    <h2>Nuestras Métricas Hablan por Nosotros</h2>
+    <p>Confiamos en la excelencia técnica para generar un impacto directo y cuantificable en tu organización.</p>
+    <div class="impact-row">
+      <div class="imp-card"><div class="num">+30%</div><div class="lbl" style="color:var(--green);">Eficiencia operativa</div><p>Aumento en velocidad de despacho e inventariado continuo.</p></div>
+      <div class="imp-card"><div class="num">+40%</div><div class="lbl" style="color:var(--blue);">Satisfacción cliente</div><p>Mejora en tiempos de respuesta de consultas comerciales.</p></div>
+      <div class="imp-card"><div class="num">−25%</div><div class="lbl" style="color:#8B5CF6;">Costos administrativos</div><p>Reducción de horas de carga manual de Excel gracias a automatizaciones.</p></div>
+    </div>
+
+    <div class="split">
+      <div>
+        <span class="eyebrow" style="color:var(--blue);">Enfoque de negocios</span>
+        <h3>Enfócate en lo estratégico, nosotros automatizamos el resto</h3>
+        <p>Olvidate de perseguir cotizaciones, actualizar stocks en tres planillas distintas y procesar pedidos manuales. Conectamos tus bases con sistemas automáticos para que tu equipo rinda al máximo.</p>
+        <a href="#" class="btn btn-dark">Ver Herramientas E-commerce ↗</a>
+      </div>
+      <div class="art"><div class="art-box">Clientum workflow</div></div>
+    </div>
+
+    <div class="split reverse">
+      <div class="art"><div class="art-dashboard">
+        <div style="font-size:11px;color:#9AA6C4;margin-bottom:14px;">UNIDADES · LAST 7 DAYS USING MEDIAN ⌄</div>
+        <div style="display:flex;gap:10px;align-items:flex-end;height:150px;">
+          <div style="flex:1;background:linear-gradient(180deg,#3B82F6,#1E3A8A);height:60%;border-radius:4px 4px 0 0;"></div>
+          <div style="flex:1;background:linear-gradient(180deg,#10B981,#065F46);height:85%;border-radius:4px 4px 0 0;"></div>
+          <div style="flex:1;background:linear-gradient(180deg,#3B82F6,#1E3A8A);height:40%;border-radius:4px 4px 0 0;"></div>
+          <div style="flex:1;background:linear-gradient(180deg,#10B981,#065F46);height:70%;border-radius:4px 4px 0 0;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:16px;font-size:11px;color:#6EE7B7;">
+          <span>0.7s</span><span>2.79μs</span><span>40.6%</span><span>479K</span><span>17m0s</span><span>2μs</span>
+        </div>
+      </div></div>
+      <div>
+        <span class="eyebrow" style="color:var(--green);">Medición &amp; BI</span>
+        <h3>Medir es conocer: Inteligencia de Negocios accionable</h3>
+        <p>Nuestras implementaciones ERP te brindan dashboards limpios en tiempo real. Visualizá qué productos te generan mayor margen de ganancia, cuál es el costo real de tus adquisiciones y dónde hay cuellos de botella.</p>
+        <a href="#" class="btn btn-outline">Ver Planes de Implementación →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="culture">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Nuestra Cultura Corporativa</span>
+    <h2>Los tres pilares esenciales</h2>
+    <p>Bajo los cuales construimos código y forjamos relaciones duraderas.</p>
+    <div class="culture-row">
+      <div class="c-card"><div class="icn">🔄</div><h4>Lealtad</h4><p>Comprometidos a largo plazo con el éxito de nuestros clientes. Tu infraestructura tecnológica y tus secretos comerciales están seguros con nosotros.</p></div>
+      <div class="c-card"><div class="icn">🧭</div><h4>Versatilidad</h4><p>Ofrecemos soluciones sumamente personalizadas. Nos adaptamos a diferentes industrias, escalas de facturación y requerimientos reglamentarios AFIP.</p></div>
+      <div class="c-card"><div class="icn">👥</div><h4>Personalidad</h4><p>No somos un robot empaquetador. Nos encanta ventanear a tomar mate y coordinar videollamadas, prestando atención humana y detallista a cada lead.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="all-sol" id="soluciones">
+  <div class="wrap">
+    <span class="eyebrow">Plataforma completa</span>
+    <h2>Todas las Soluciones</h2>
+    <p>Cada herramienta diseñada para conectarse entre sí y multiplicar el impacto en tu PyME.</p>
+    <a class="btn btn-dark export-btn" href="catalogo.html">⭳ Exportar todo a WooCommerce · CSV</a>
+    <div class="sol-grid">
+      <div class="sol-card"><div class="icn">💬</div><h4>Chatbot WhatsApp</h4><p>Tu negocio atiende solo, las 24 horas.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">🗂</div><h4>CRM Inteligente</h4><p>Nunca más perdas una venta.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">✨</div><h4>Asistente IA</h4><p>Tu analista de negocio, siempre disponible.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">📊</div><h4>Reportes Automáticos</h4><p>Dashboards en tiempo real para decisiones basadas en datos.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">⚡</div><h4>Automatización</h4><p>Hacé más con menos esfuerzo.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">🧩</div><h4>Portal del Cliente</h4><p>Tus clientes se autoatienden.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">💻</div><h4>Desarrollo Web</h4><p>Tu presencia web, conectada al CRM.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">🔗</div><h4>Integraciones</h4><p>WhatsApp, AFIP, MercadoPago, Gmail y más.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">📚</div><h4>Catálogo Completo</h4><p>509 servicios en 15 categorías con precios reales.</p><a class="link" href="catalogo.html">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">🏛</div><h4>Consultoría &amp; ERP</h4><p>Auditoría de procesos, ERP personalizado y hoja de ruta.</p><a class="link" href="#">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">💳</div><h4>Planes y Precios</h4><p>Desde $20 USD/mes. Implementación en 5 días hábiles.</p><a class="link" href="#planes">Ver más →</a></div>
+      <div class="sol-card"><div class="icn">⭐</div><h4>Casos de Éxito</h4><p>Historias reales de PyMEs que multiplicaron sus ventas.</p><a class="link" href="#">Ver más →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="eco" id="recursos">
+  <div class="wrap">
+    <span class="eyebrow on-dark">Comunidad &amp; recursos</span>
+    <h2>El Ecosistema Clientum</h2>
+    <p>Capacitación, red de partners, contenidos y soporte: todo lo que necesitás para crecer.</p>
+    <div class="eco-grid">
+      <div class="eco-card"><div class="icn" style="background:#4C1D95;">🎓</div><h4>Academia Clientum</h4><p>Cursos gratuitos de CRM, automatización y ventas para tu equipo.</p><a class="link" href="#">Ir a la Academia →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#831843;">🤝</div><h4>Programa de Partners</h4><p>Sumate a la red de revendedores y afiliados. Comisiones del 30% recurrente.</p><a class="link" href="#">Ver Programa →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#7C2D12;">📰</div><h4>Recursos &amp; Blog</h4><p>Tácticas de ventas, marketing digital y automatizaciones para PyMEs.</p><a class="link" href="#">Leer Artículos →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#065F46;">🏆</div><h4>Casos de Éxito</h4><p>Cómo distribuidoras, estudios y comercios escalaron con Clientum.</p><a class="link" href="#">Ver Historias →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#1E3A8A;">👥</div><h4>Nuestros Clientes</h4><p>Las empresas de la Patagonia y Argentina que ya trabajan con Clientum.</p><a class="link" href="#">Ver Clientes →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#075985;">ℹ</div><h4>Sobre Clientum</h4><p>Nuestro equipo, cultura y por qué más de 35 empresas nos eligieron.</p><a class="link" href="#">Conocernos →</a></div>
+      <div class="eco-card"><div class="icn" style="background:#4B5563;">🛟</div><h4>Centro de Ayuda</h4><p>FAQs, tutoriales y soporte técnico especializado en español.</p><a class="link" href="#">Obtener Soporte →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="planes">
+  <div class="wrap inner">
+    <div class="txt">
+      <span class="eyebrow on-dark">Próximos pasos</span>
+      <h3>Elegí tu plan e implementá en 5 días hábiles</h3>
+      <p>Sin costos de setup ocultos. Sin contratos largos. Cancelás cuando querés. El equipo de Clientum te acompaña desde el primer día.</p>
+      <div class="ctas">
+        <a href="#" class="btn btn-green">Ver Planes y Precios →</a>
+        <a href="#" class="btn btn-ghost-dark">Contactar un Asesor</a>
+      </div>
+    </div>
+    <div class="final-stats">
+      <div><div class="num">+35</div><div class="lbl">Clientes activos</div></div>
+      <div><div class="num">5 días</div><div class="lbl">Tiempo de implementación</div></div>
+      <div><div class="num">24/7</div><div class="lbl">Soporte técnico</div></div>
+      <div><div class="num">509</div><div class="lbl">Servicios en catálogo</div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="empresa">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <h5>Productos principales para PyMEs</h5>
+        <ul>
+          <li><a href="#">Minoristas</a></li><li><a href="#">Manufactura</a></li><li><a href="#">Agroindustria</a></li>
+          <li><a href="#">Distribuidores y mayoristas</a></li><li><a href="#">Servicios</a></li>
+          <li><a href="#">Solución para minoristas (B2C)</a></li><li><a href="#">Solución para mayoristas (B2B)</a></li>
+          <li><a href="#">Integraciones (MercadoPago, Facebook Pixel, WooCommerce)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Productos para grandes empresas</h5>
+        <ul>
+          <li><a href="#">App Móvil</a></li><li><a href="#">Business Intelligence</a></li>
+          <li><a href="#">Servidores virtuales privados</a></li><li><a href="#">Hosting</a></li>
+          <li><a href="#">Correos corporativos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Búsquedas frecuentes</h5>
+        <ul>
+          <li><a href="#">Atención al cliente</a></li>
+          <li><a href="#">Atención al cliente para grandes empresas</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Nuevos productos</h5>
+        <ul>
+          <li><a href="#">Viaweb Storage</a></li><li><a href="#">Viaweb Cloud</a></li><li><a href="#">Webmail</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="f-brand">
+        <div class="name">CLIENTUM</div>
+        <p>Consultoría integrada de marketing digital e ingeniería de software omnicanal para potenciar PyMEs.</p>
+        <div class="f-loc">📍 General Roca, Río Negro</div>
+      </div>
+      <div>
+        <h5>Soluciones</h5>
+        <ul><li><a href="#">Chatbot WhatsApp</a></li><li><a href="#">CRM Inteligente</a></li><li><a href="#">Asistente IA</a></li><li><a href="#">Automatización</a></li><li><a href="#">Portal del Cliente</a></li><li><a href="#">Desarrollo Web</a></li><li><a href="#">Planes y Precios</a></li></ul>
+      </div>
+      <div>
+        <h5>Empresa</h5>
+        <ul><li><a href="#">Sobre Nosotros</a></li><li><a href="#">Casos de Éxito</a></li><li><a href="#">Clientes</a></li><li><a href="#">Blog &amp; Recursos</a></li><li><a href="#">Política de Privacidad</a></li></ul>
+      </div>
+      <div>
+        <h5>Soporte</h5>
+        <ul><li><a href="#">Centro de Ayuda</a></li><li><a href="#">Academia</a></li><li><a href="#">Partners &amp; Afiliados</a></li><li><a href="#">Contacto</a></li></ul>
+      </div>
+    </div>
+
+    <div class="newsletter">
+      <div>
+        <h6>Newsletter</h6>
+        <p>Suscribite y enterate primero de las novedades de Clientum.</p>
+      </div>
+      <div class="nl-form">
+        <input placeholder="tu@empresa.com">
+        <button>Suscribirme</button>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 Clientum S.R.L. Todos los derechos reservados. — activo Viaweb (2016–2026)</span>
+      <span>General Roca, Río Negro, Argentina &nbsp;·&nbsp; GitHub Repo ↗</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
