@@ -3763,6 +3763,184 @@ export default function PublicWebsite({
                   </div>
                 </div>
 
+                {/* ── ECOSISTEMA TECNOLÓGICO ── */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-[#1A3461] font-mono text-[10px] uppercase tracking-widest font-bold">Ecosistema</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Tecnologías con las que trabajamos</h2>
+                    <p className="text-slate-400 text-xs mt-2 max-w-md mx-auto">Integramos y conectamos las plataformas que tu empresa ya usa o necesita adoptar.</p>
+                  </div>
+
+                  {(() => {
+                    const BADGE: Record<string, string> = {
+                      "API":          "bg-blue-100 text-blue-700",
+                      "Integración":  "bg-violet-100 text-violet-700",
+                      "Nativo":       "bg-emerald-100 text-emerald-700",
+                      "Certificado":  "bg-amber-100 text-amber-700",
+                      "Partner":      "bg-rose-100 text-rose-700",
+                    };
+                    const sections: { label: string; icon: string; color: string; items: { name: string; tag: keyof typeof BADGE }[] }[] = [
+                      {
+                        label: "E-Commerce & Tiendas Online",
+                        icon: "🛒",
+                        color: "border-orange-200 bg-orange-50",
+                        items: [
+                          { name: "WooCommerce",   tag: "Nativo" },
+                          { name: "Shopify",       tag: "API" },
+                          { name: "PrestaShop",    tag: "Integración" },
+                          { name: "Tiendanube",    tag: "API" },
+                          { name: "MercadoShops",  tag: "Integración" },
+                          { name: "Jumpseller",    tag: "API" },
+                        ],
+                      },
+                      {
+                        label: "Pagos & Cobros",
+                        icon: "💳",
+                        color: "border-green-200 bg-green-50",
+                        items: [
+                          { name: "MercadoPago",     tag: "Nativo" },
+                          { name: "PayPal",          tag: "API" },
+                          { name: "Stripe",          tag: "API" },
+                          { name: "Modo",            tag: "Integración" },
+                          { name: "GetNet / Prisma", tag: "Integración" },
+                          { name: "Naranja X",       tag: "Integración" },
+                        ],
+                      },
+                      {
+                        label: "Mensajería & Comunicación",
+                        icon: "💬",
+                        color: "border-emerald-200 bg-emerald-50",
+                        items: [
+                          { name: "WhatsApp Business API", tag: "Certificado" },
+                          { name: "Meta (Facebook / IG)",  tag: "Partner" },
+                          { name: "Twilio",                tag: "API" },
+                          { name: "360dialog",             tag: "Certificado" },
+                          { name: "Telegram Bot API",      tag: "API" },
+                          { name: "Gmail API",             tag: "Integración" },
+                          { name: "SMTP / Correo propio",  tag: "Nativo" },
+                        ],
+                      },
+                      {
+                        label: "Marketing & Publicidad",
+                        icon: "📣",
+                        color: "border-pink-200 bg-pink-50",
+                        items: [
+                          { name: "Meta Ads",          tag: "Partner" },
+                          { name: "Google Ads",        tag: "Partner" },
+                          { name: "TikTok for Business", tag: "Integración" },
+                          { name: "LinkedIn Ads",      tag: "Integración" },
+                          { name: "Mailchimp",         tag: "API" },
+                          { name: "ActiveCampaign",    tag: "API" },
+                          { name: "Brevo (Sendinblue)", tag: "API" },
+                        ],
+                      },
+                      {
+                        label: "ERP, Facturación & Contabilidad",
+                        icon: "🏢",
+                        color: "border-blue-200 bg-blue-50",
+                        items: [
+                          { name: "AFIP (Facturación electrónica)", tag: "Nativo" },
+                          { name: "Dolibarr ERP",    tag: "Nativo" },
+                          { name: "Odoo",            tag: "Integración" },
+                          { name: "Contabilium",     tag: "API" },
+                          { name: "Colppy",          tag: "Integración" },
+                          { name: "Xubio",           tag: "Integración" },
+                          { name: "Tango Gestión",   tag: "Integración" },
+                        ],
+                      },
+                      {
+                        label: "Cloud, Hosting & Servidores",
+                        icon: "☁️",
+                        color: "border-slate-200 bg-slate-50",
+                        items: [
+                          { name: "Google Cloud",    tag: "Partner" },
+                          { name: "Amazon AWS",      tag: "Partner" },
+                          { name: "Microsoft Azure", tag: "Partner" },
+                          { name: "Cloudflare",      tag: "Certificado" },
+                          { name: "DigitalOcean",    tag: "Integración" },
+                          { name: "Hostinger",       tag: "Integración" },
+                        ],
+                      },
+                      {
+                        label: "Analytics & Business Intelligence",
+                        icon: "📊",
+                        color: "border-indigo-200 bg-indigo-50",
+                        items: [
+                          { name: "Google Analytics 4",  tag: "Nativo" },
+                          { name: "Looker Studio",       tag: "Integración" },
+                          { name: "Power BI",            tag: "Integración" },
+                          { name: "Meta Pixel",          tag: "Nativo" },
+                          { name: "Hotjar",              tag: "Integración" },
+                          { name: "Tableau",             tag: "Integración" },
+                        ],
+                      },
+                      {
+                        label: "Productividad & Colaboración",
+                        icon: "⚙️",
+                        color: "border-yellow-200 bg-yellow-50",
+                        items: [
+                          { name: "Google Workspace",  tag: "Certificado" },
+                          { name: "Microsoft 365",     tag: "Integración" },
+                          { name: "Slack",             tag: "API" },
+                          { name: "Zoom",              tag: "Integración" },
+                          { name: "Microsoft Teams",   tag: "Integración" },
+                          { name: "Notion",            tag: "API" },
+                          { name: "Trello / Jira",     tag: "Integración" },
+                        ],
+                      },
+                      {
+                        label: "Seguridad & Infraestructura",
+                        icon: "🔒",
+                        color: "border-red-200 bg-red-50",
+                        items: [
+                          { name: "Let's Encrypt / SSL",  tag: "Nativo" },
+                          { name: "Cloudflare WAF",       tag: "Certificado" },
+                          { name: "reCAPTCHA (Google)",   tag: "Integración" },
+                          { name: "2FA / TOTP",           tag: "Nativo" },
+                          { name: "OAuth 2.0 / SSO",      tag: "Nativo" },
+                        ],
+                      },
+                      {
+                        label: "Inteligencia Artificial",
+                        icon: "🤖",
+                        color: "border-violet-200 bg-violet-50",
+                        items: [
+                          { name: "OpenAI (GPT-4)",     tag: "API" },
+                          { name: "Google Gemini",      tag: "API" },
+                          { name: "Anthropic Claude",   tag: "API" },
+                          { name: "Whisper (STT)",      tag: "API" },
+                          { name: "ElevenLabs (TTS)",   tag: "API" },
+                          { name: "Stability AI",       tag: "API" },
+                        ],
+                      },
+                    ];
+
+                    return (
+                      <div className="flex flex-col gap-6">
+                        {sections.map(({ label, icon, color, items }) => (
+                          <div key={label} className={`border rounded-2xl overflow-hidden ${color}`}>
+                            {/* Section header */}
+                            <div className="flex items-center gap-3 px-5 py-3 border-b border-black/5">
+                              <span className="text-lg">{icon}</span>
+                              <span className="font-display font-bold text-sm text-slate-900">{label}</span>
+                              <span className="ml-auto font-mono text-[9px] text-slate-400 uppercase tracking-widest">{items.length} herramientas</span>
+                            </div>
+                            {/* Partner rows */}
+                            <div className="divide-y divide-black/5">
+                              {items.map(({ name, tag }) => (
+                                <div key={name} className="flex items-center justify-between px-5 py-2.5 bg-white/60 hover:bg-white transition-colors">
+                                  <span className="text-[12px] font-medium text-slate-800">{name}</span>
+                                  <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${BADGE[tag]}`}>{tag}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })()}
+                </div>
+
               </div>
             )}
 
