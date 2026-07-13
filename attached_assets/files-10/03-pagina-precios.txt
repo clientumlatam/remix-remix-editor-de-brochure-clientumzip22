@@ -1,0 +1,61 @@
+[section label="Precios Intro" class="ctm-precios-intro" padding="60px 0px 30px 0px"]
+  [row]
+    [col span="8" span__sm="12" offset="2" text_align="center"]
+      [ux_text class="ctm-eyebrow"]NUESTRA OFERTA COMERCIAL[/ux_text]
+      [title text="Planes Transparentes para Todos" tag_name="h1" style="center"]
+      [ux_text]Ofrecemos soluciones adaptadas a las necesidades de cada cliente. Nuestros planes están diseñados para brindar servicios de alta calidad, asegurando que cada empresa encuentre el soporte adecuado para su crecimiento.[/ux_text]
+    [/col]
+  [/row]
+[/section]
+
+[section label="Calculadora" class="ctm-calculadora-section" padding="0px 0px 60px 0px"]
+  [row]
+    [col span="10" span__sm="12" offset="1"]
+      [ctm_calculadora_planes]
+    [/col]
+  [/row]
+[/section]
+
+[section label="Tabla de Planes" class="ctm-tabla-planes" padding="0px 0px 60px 0px"]
+  [row]
+    [col span="12"]
+      [ux_products cat="planes" columns="5" columns__sm="1" columns__md="2"
+        type="row" style="normal" show_cat="false" show_rating="false"
+        orderby="menu_order" order="asc"]
+    [/col]
+  [/row]
+[/section]
+
+[section label="FAQ Precios" class="ctm-faq-precios" padding="0px 0px 60px 0px"]
+  [row]
+    [col span="8" span__sm="12" offset="2"]
+      [title text="Preguntas Frecuentes sobre Planes" tag_name="h2"]
+      [tabs style="accordion" title_tag="h4"]
+        [tab title="¿Cuál es el propósito del período de prueba?"]
+          Contenido a completar.
+        [/tab]
+        [tab title="¿Ofrecen opciones de pago mensual o anual?"]
+          Contenido a completar.
+        [/tab]
+        [tab title="¿Puedo cancelar o cambiar de plan en cualquier momento?"]
+          Contenido a completar.
+        [/tab]
+        [tab title="¿Se calcula el Impuesto al Valor Agregado (IVA) en los precios?"]
+          Contenido a completar.
+        [/tab]
+      [/tabs]
+    [/col]
+  [/row]
+[/section]
+
+<!--
+NOTA: [ux_products cat="planes"] requiere que el slug de categoría de WooCommerce
+sea exactamente "planes" (minúscula, sin tilde) al importar 03-planes-5.csv —
+verificar el slug generado y ajustar el atributo cat si difiere.
+
+Los checks (✓) de cada plan en la captura original (Web/CRM-ERP/Seguridad/IA & BI
+por plan) NO están en el CSV como datos estructurados — son texto libre dentro de
+Description. Si querés que se rendericen como lista con check-icons en vez de
+párrafo corrido, hay que estructurar esos 4 atributos por plan (custom fields /
+ACF) en vez de dejarlos en el campo Description de WooCommerce.
+-->
