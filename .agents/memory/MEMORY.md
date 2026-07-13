@@ -1,2 +1,3 @@
 - [Brochure PDF export](brochure-pdf-export.md) — PDF must be captured from the live DOM preview, not hand-drawn separately, or it silently drifts from the on-screen design.
 - [Session role staleness](session-role-staleness.md) — role changes made directly in the DB don't propagate to already-logged-in sessions unless the read path re-queries the DB.
+- [Clientum services catalog source](clientum-services-catalog-source.md) — raw master catalog (2147 rows) lives in the `nzip2` GitHub repo; app's JSON is a curated derivative, re-derive from source rather than hand-editing.
