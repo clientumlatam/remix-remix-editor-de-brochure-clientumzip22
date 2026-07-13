@@ -85,6 +85,25 @@
     if (id === 'pipeline') renderPipeline();
     if (id === 'meddic')   populateMeddicSel();
     if (id === 'outreach') populateOutreachSel();
+
+    /* Lazy-load iframe for AI Marketing Suite modules */
+    if (sec && sec.classList.contains('aimp-iframe-section')) {
+      const iframe  = sec.querySelector('.aimp-module-iframe');
+      const loader  = sec.querySelector('.aimp-iframe-loader');
+      const ifreSrc = sec.dataset.iframeSrc;
+      if (iframe && ifreSrc && !iframe.src) {
+        iframe.addEventListener('load', function onLoad() {
+          if (loader) loader.style.display = 'none';
+          iframe.style.display = 'block';
+          iframe.removeEventListener('load', onLoad);
+        });
+        iframe.src = ifreSrc;
+      } else if (iframe && iframe.src) {
+        /* Already loaded — just make sure loader is hidden */
+        if (loader) loader.style.display = 'none';
+        iframe.style.display = 'block';
+      }
+    }
   }
 
   document.querySelectorAll('.aimp-nav-item').forEach(el => {

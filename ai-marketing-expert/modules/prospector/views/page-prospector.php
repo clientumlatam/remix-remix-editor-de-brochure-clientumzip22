@@ -116,6 +116,32 @@ $delegated_sections = array(
       <div class="aimp-nav-item" data-section="copiloto"><span class="aimp-nav-icon">✨</span><span>Copiloto IA</span></div>
       <div class="aimp-nav-item" data-section="actividad"><span class="aimp-nav-icon">🕐</span><span>Actividad</span></div>
       <div class="aimp-nav-item" data-section="quickcreate"><span class="aimp-nav-icon">⚡</span><span>Creación Rápida</span></div>
+
+      <div class="aimp-sidebar-group aimp-sidebar-group--suite">AI Marketing Suite</div>
+      <div class="aimp-nav-item" data-section="aime-dashboard" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert' ) ); ?>">
+        <span class="aimp-nav-icon">🏠</span><span>Dashboard General</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-email" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-email' ) ); ?>">
+        <span class="aimp-nav-icon">📧</span><span>Email Marketing</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-content" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-content' ) ); ?>">
+        <span class="aimp-nav-icon">✍️</span><span>Generador de Contenido</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-seo" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-seo' ) ); ?>">
+        <span class="aimp-nav-icon">📈</span><span>SEO Analyzer</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-social" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-social' ) ); ?>">
+        <span class="aimp-nav-icon">📣</span><span>Redes Sociales</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-chatbot" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-chatbot' ) ); ?>">
+        <span class="aimp-nav-icon">🤖</span><span>Chatbot IA</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-providers" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-ai-providers' ) ); ?>">
+        <span class="aimp-nav-icon">🔑</span><span>Proveedores IA</span>
+      </div>
+      <div class="aimp-nav-item" data-section="aime-settings" data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=ai-marketing-expert-settings' ) ); ?>">
+        <span class="aimp-nav-icon">⚙️</span><span>Configuración IA</span>
+      </div>
     </nav>
 
     <!-- ── MAIN ─────────────────────────────────────────────────── -->
@@ -498,6 +524,46 @@ $delegated_sections = array(
             Abrir en CRM Editor →
           </a>
         </div>
+      </div>
+      <?php endforeach; ?>
+
+      <!-- ════════════════════════════════════════════════════════
+           AI MARKETING SUITE — IFRAME SECTIONS
+      ════════════════════════════════════════════════════════ -->
+      <?php
+      $aime_iframe_sections = array(
+        'aime-dashboard'  => array( 'icon' => '🏠', 'title' => 'Dashboard General',       'page' => 'ai-marketing-expert' ),
+        'aime-email'      => array( 'icon' => '📧', 'title' => 'Email Marketing',          'page' => 'ai-marketing-expert-email' ),
+        'aime-content'    => array( 'icon' => '✍️',  'title' => 'Generador de Contenido',  'page' => 'ai-marketing-expert-content' ),
+        'aime-seo'        => array( 'icon' => '📈', 'title' => 'SEO Analyzer',             'page' => 'ai-marketing-expert-seo' ),
+        'aime-social'     => array( 'icon' => '📣', 'title' => 'Redes Sociales',           'page' => 'ai-marketing-expert-social' ),
+        'aime-chatbot'    => array( 'icon' => '🤖', 'title' => 'Chatbot IA',               'page' => 'ai-marketing-expert-chatbot' ),
+        'aime-providers'  => array( 'icon' => '🔑', 'title' => 'Proveedores IA',           'page' => 'ai-marketing-expert-ai-providers' ),
+        'aime-settings'   => array( 'icon' => '⚙️', 'title' => 'Configuración IA',         'page' => 'ai-marketing-expert-settings' ),
+      );
+      foreach ( $aime_iframe_sections as $id => $mod ) : ?>
+      <div id="sec-<?php echo esc_attr( $id ); ?>" class="aimp-section aimp-iframe-section" style="display:none"
+           data-iframe-src="<?php echo esc_url( admin_url( 'admin.php?page=' . $mod['page'] ) ); ?>">
+        <div class="aimp-iframe-header">
+          <span class="aimp-iframe-icon"><?php echo esc_html( $mod['icon'] ); ?></span>
+          <span class="aimp-iframe-title"><?php echo esc_html( $mod['title'] ); ?></span>
+          <a href="<?php echo esc_url( admin_url( 'admin.php?page=' . $mod['page'] ) ); ?>"
+             target="_blank" class="aimp-btn aimp-btn-ghost aimp-btn-sm" style="margin-left:auto">
+            ↗ Abrir en nueva pestaña
+          </a>
+        </div>
+        <div class="aimp-iframe-loader" id="loader-<?php echo esc_attr( $id ); ?>">
+          <div class="aimp-iframe-spinner"></div>
+          <div class="aimp-iframe-loading-text">Cargando <?php echo esc_html( $mod['title'] ); ?>…</div>
+        </div>
+        <iframe
+          id="iframe-<?php echo esc_attr( $id ); ?>"
+          class="aimp-module-iframe"
+          src=""
+          frameborder="0"
+          allowfullscreen
+          style="display:none">
+        </iframe>
       </div>
       <?php endforeach; ?>
 
