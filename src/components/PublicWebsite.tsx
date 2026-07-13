@@ -503,7 +503,7 @@ export default function PublicWebsite({
       year: "2023",
       type: "E-Commerce + CRM Inteligente",
       industry: "retail",
-      img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/morgado-hogar-web.png",
       desc: "Tienda online con catálogo de muebles y deco sincronizado con stock físico. Pipeline de ventas y seguimiento automático de presupuestos por WhatsApp."
     },
     {
@@ -512,7 +512,7 @@ export default function PublicWebsite({
       year: "2023",
       type: "Bot WhatsApp + Gestión de Stock",
       industry: "salud",
-      img: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/farmacia-san-martin-web.webp",
       desc: "Bot 24/7 que responde consultas de disponibilidad de medicamentos, agenda turnos y envía recordatorios. Stock integrado con facturación AFIP."
     },
     {
@@ -530,7 +530,7 @@ export default function PublicWebsite({
       year: "2023",
       type: "CRM Inmobiliario + Bot WhatsApp",
       industry: "inmobiliaria",
-      img: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/terbay-web.png",
       desc: "Bot califica interesados, envía planos y fotos, y agenda visitas automáticamente. Pipeline de operaciones con seguimiento de cada cliente hasta el cierre."
     },
     {
@@ -548,7 +548,7 @@ export default function PublicWebsite({
       year: "2022",
       type: "Portal Web + Streaming Digital",
       industry: "medios",
-      img: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/canal10-web.png",
       desc: "Rediseño del portal de noticias con integración de streaming en vivo, gestión de contenidos y automatización de publicaciones en redes sociales."
     },
     {
@@ -557,7 +557,7 @@ export default function PublicWebsite({
       year: "2023",
       type: "E-Commerce + CRM Automotriz",
       industry: "automotriz",
-      img: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/cabarcos-motores-web.png",
       desc: "Catálogo de vehículos y repuestos online con reservas digitales. CRM con seguimiento de consultas, test drives y posventa integrado a WhatsApp."
     },
     {
@@ -566,7 +566,7 @@ export default function PublicWebsite({
       year: "2023",
       type: "ERP + Rastreo de Flota",
       industry: "logística",
-      img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80",
+      img: "/clientes/kj-logistica-web.png",
       desc: "Sistema de gestión de viajes, control de flota y liquidación de conductores. Reportes automáticos de kilómetros, combustible y rentabilidad por unidad."
     },
     {
@@ -2913,7 +2913,7 @@ export default function PublicWebsite({
                       { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen,  logo: null },
                       { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro",  url: "generalroca.gob.ar", icon: Building, logo: null },
                       { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building, logo: null },
-                      { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building, logo: null },
+                      { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building, logo: "/logos/maquinchao.png" },
                     ].map(({ name, rubro, url, icon: Icon, logo }) => (
                       <div key={name} className="bg-white border-2 border-[#1A3461]/10 hover:border-[#1A3461]/30 rounded-2xl p-5 flex flex-col gap-3 transition-all shadow-xs hover:shadow-md">
                         <div className="flex items-start justify-between">
