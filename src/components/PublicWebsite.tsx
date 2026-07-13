@@ -564,6 +564,42 @@ export default function PublicWebsite({
       industry: "logística",
       img: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=600&q=80",
       desc: "Sistema de gestión de viajes, control de flota y liquidación de conductores. Reportes automáticos de kilómetros, combustible y rentabilidad por unidad."
+    },
+    {
+      id: "p9",
+      name: "Poliservice Suministros",
+      year: "2024",
+      type: "Sitio Web + CRM de Distribución Zonal",
+      industry: "industrial",
+      img: "/clientes/poliservice-web.png",
+      desc: "Sitio institucional con representación y distribución zonal, ficha de importador y catálogo de clientes. CRM para seguimiento de cotizaciones industriales."
+    },
+    {
+      id: "p10",
+      name: "SCT Patagonia",
+      year: "2024",
+      type: "Sitio Web + Catálogo de Servicios",
+      industry: "industrial",
+      img: "/clientes/sct-patagonia-web.png",
+      desc: "Rediseño de sitio con catálogo de servicios de cintas transportadoras, video institucional y formulario de contacto conectado al CRM comercial."
+    },
+    {
+      id: "p11",
+      name: "AFP Service",
+      year: "2024",
+      type: "E-Commerce + Catálogo de Productos",
+      industry: "industrial",
+      img: "/clientes/afp-service-web.png",
+      desc: "Tienda online de ferretería industrial y unidades modulares con buscador de productos, catálogo descargable y gestión de pedidos integrada al stock."
+    },
+    {
+      id: "p12",
+      name: "Centro Empleados de Comercio",
+      year: "2024",
+      type: "Portal Institucional + Gestión de Novedades",
+      industry: "institucional",
+      img: "/clientes/cec-web.png",
+      desc: "Portal gremial con beneficios destacados, novedades, escalas salariales y accesos directos a OSECAC y afiliación. Panel de noticias actualizable por el gremio."
     }
   ];
 
@@ -2932,7 +2968,9 @@ export default function PublicWebsite({
                     { id: "agroindustria", label: "Agroindustria" },
                     { id: "medios", label: "Medios" },
                     { id: "automotriz", label: "Automotriz" },
-                    { id: "logística", label: "Logística" }
+                    { id: "logística", label: "Logística" },
+                    { id: "industrial", label: "Industrial" },
+                    { id: "institucional", label: "Institucional" }
                   ].map(ind => (
                     <button
                       key={ind.id}
