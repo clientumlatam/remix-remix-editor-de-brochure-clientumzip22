@@ -3421,5 +3421,47 @@
     "cat": "Suscripción mensual",
     "desc": "Infraestructura y desarrollos a medida. Web: Apps web & mobile infinitas. CRM/ER",
     "price": "375"
+  },
+  {
+    "id": "CTM-0489",
+    "name": "Integración WhatsApp Business API",
+    "cat": "Integraciones",
+    "desc": "Conexión de tu línea oficial de WhatsApp para automatizar respuestas de bots, flujos pre-aprobados por Meta y campañas masivas sin riesgo de baneo.",
+    "price": "135"
+  },
+  {
+    "id": "CTM-0490",
+    "name": "Integración Facebook & Instagram Ads",
+    "cat": "Integraciones",
+    "desc": "Sincronización instantánea de formularios de leads (Lead Ads) para que impacten en tiempo real en las columnas de tu embudo comercial.",
+    "price": "75"
+  },
+  {
+    "id": "CTM-0491",
+    "name": "Integración WooCommerce & Shopify",
+    "cat": "Integraciones",
+    "desc": "Sincronización bidireccional en tiempo real de productos, precios, stock unificado y recuperación automatizada de carritos abandonados.",
+    "price": "195"
+  },
+  {
+    "id": "CTM-0492",
+    "name": "Integración AFIP Facturación",
+    "cat": "Integraciones",
+    "desc": "Emisión y envío automático de facturas electrónicas A, B o C asociadas directamente con cada transacción ganada en tu CRM.",
+    "price": "225"
+  },
+  {
+    "id": "CTM-0493",
+    "name": "Integración MercadoPago & Stripe",
+    "cat": "Integraciones",
+    "desc": "Generación dinámica de links de pago desde el bot conversacional de WhatsApp y conciliación inmediata en tu libro diario contable.",
+    "price": "135"
+  },
+  {
+    "id": "CTM-0494",
+    "name": "Integración ERPs Tradicionales (Tango / Bejerman)",
+    "cat": "Integraciones",
+    "desc": "Sincronizador inteligente vía API REST y servicios locales de base de datos para control de stock mayorista, listas de precios avanzadas y compras.",
+    "price": "525"
   }
 ]
