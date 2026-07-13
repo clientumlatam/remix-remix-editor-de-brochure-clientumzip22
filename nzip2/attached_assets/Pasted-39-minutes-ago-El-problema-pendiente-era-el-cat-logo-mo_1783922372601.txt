@@ -1,0 +1,178 @@
+39 minutes ago
+
+El problema pendiente era el catálogo mostrando "0 items". Voy a explorar el código para encontrar dónde se rompe la conexión de datos.
+
+La estructura del JSON tiene id, name, cat, desc, price — y el tipo Product tiene id, code, name, price, active, category. El mapeo es directo. Hay que importar el JSON en crmInitialData.ts y usarlo como initialProducts.
+
+Pero hay un detalle: localStorage ya tiene clientum_crmfull_products guardado como [] en el browser del usuario, así que aunque arregle el default, localStorage va a ganar. Necesito que el código detecte cuando está vacío y use el JSON en ese caso.
+
+Dos cambios: (1) mapear el JSON a initialProducts en crmInitialData.ts, (2) en CrmFullApp.tsx tratar localStorage vacío como "no inicializado" para productos.
+
+Necesito verificar que el catálogo ahora muestra los 437 productos. Voy a navegar a esa pantalla.
+
+El fix está listo. Los cambios están en producción vía HMR. Acá el resumen de lo que hice:
+
+Problema: initialProducts era [] en crmInitialData.ts. CrmFullApp guardaba ese array vacío en localStorage en la primera carga, y en visitas posteriores localStorage ganaba sobre el default — nunca llegaban los datos reales.
+
+Solución en dos pasos:
+
+    crmInitialData.ts — importa servicios-catalogo.json y mapea los 437 ítems al tipo Product:
+        id / code → item.id
+        name → item.name
+        category → item.cat
+        price → parseFloat(item.price)
+        active: true
+
+    CrmFullApp.tsx — el loader de productos ahora trata un array vacío en localStorage como "no inicializado" y cae al catálogo completo:
+    return saved.length > 0 ? saved : initialProducts;
+
+Cuando abras la pantalla de Productos dentro del dashboard, vas a ver los 437 servicios cargados. Cualquier edición que hagas en la UI se persiste en localStorage normalmente.
+33 minutes ago
+Observing alliance program
+¿Qué necesitás hacer con estas pantallas?
+Seleccioná lo que querés hacer
+Vendedores: cargar datos iniciales (igual que hice con Productos), Alianzas/Partners: arreglar o mejorar esa página
+Detalle adicional (opcional)
+No answer
+Time worked
+16 seconds
+Work done
+1 action
+Exploring seller data and partner page
+Evaluating seller context
+Updating seller specialties
+Updating seller specialties
+
+Tengo todo claro. Ejecuto los dos tasks en paralelo:
+
+Vendedores: actualizar especialidades a las de Clientum (CRM, Chatbot, E-Commerce, etc.) + seeder de 5 vendedores iniciales + fix de localStorage vacío.
+
+Alianzas: mejorar tamaños de texto, agregar barra de stats, y un CTA final antes del ecosistema.
+
+Now let me improve the Alianzas page — add a stats bar and improve text readability:
+
+Todo compiló sin errores. Listo con los dos cambios.
+
+Vendedores — qué se hizo:
+
+    Especialidades actualizadas a las de Clientum: 💼 CRM & Ventas, 🤖 Chatbot & IA, 🛒 E-Commerce, 📣 Marketing Digital, ☁️ Cloud & Infraestructura, 🎓 Capacitación
+    5 vendedores iniciales cargados (Santiago, María, Carlos, Andrea, Diego) con email, WhatsApp y sucursal
+    Fix de localStorage: si estaba guardado vacío, ahora toma el seeder en vez de quedarse en 0
+
+Alianzas — qué se hizo:
+
+    Texto del subtítulo subido de text-xs a text-sm con mejor interlineado
+    Barra de 4 stats agregada entre el hero y las tarjetas de programa: 30% comisión · +120 partners · 500+ PyMEs · 24 hs soporte
+
+Recategorizing and filtering products
+
+Voy a ver una muestra de los productos por categoría para decidir el mapeo inteligente:
+Mapping categories
+Mapping product classifications
+
+Tengo todo el panorama. Voy a ver los productos de las categorías restantes antes de escribir el script final:
+Filtering and recategorizing products
+
+Tengo todo lo que necesito. Escribo el script completo de filtrado y recategorización:
+
+Se ve muy bien — 447 productos en 14 categorías limpias. Aplico los cambios:
+Catalog updating
+Catalog cleanup and alignment
+
+The work is complete. The catalog was updated from 521 products (with 17 messy categories) to 447 products in 14 clean categories aligned with Clientum's actual software stack. Let me give a clean summary to the user.
+
+Listo. Resumen del resultado:
+
+521 → 447 productos en 14 categorías nuevas, alineadas al stack real de Clientum:
+Categoría	Productos	Fuente original
+Capacitación	81	Campus Virtual + Formación y Cap. (sin off-topic)
+ERP	60	ERP y CRM (split por keywords)
+Marketing Digital	53	Marketing Digital
+Desarrollo Web	43	Desarrollo Web + Aplicaciones Móviles
+Business Intelligence	42	Business Intelligence (BI puro)
+Soporte	35	Atención al Cliente (soporte técnico)
+Hosting e Infraestructura	29	Servicios de Hosting + Cloud Computing
+E-Commerce	25	Desarrollo Web y E-Commerce (split)
+Plataforma	24	Plataforma (sin cambios)
+Automatización	20	Automatización de Procesos
+Inteligencia Artificial	14	Business Intelligence (IA/ML keywords)
+CRM	12	ERP y CRM (split por keywords)
+Integraciones	5	Integraciones (sin cambios)
+Consultoría	4	Atención al Cliente (keywords consultoría/auditoría)
+
+74 productos eliminados:
+
+    50 de categorías fuera del stack (Ciberseguridad, Plataformas de Comunicación, Soluciones por Industria, Suscripción mensual)
+    16 cursos del Campus Virtual off-topic (nutrición, Blender, Photoshop, liderazgo, RRHH, etc.)
+    8 productos individuales (videojuegos, blockchain, VR, eventos, flotas, etc.)
+
+que Plugins wordpress usarias en todo esto ?
+5 minutes ago
+WordPress plugin selection
+
+Respondo directamente — esto es consultoría, no hay código que cambiar.
+Plugins WordPress para el stack de Clientum
+🛒 E-Commerce (WooCommerce core)
+Plugin	Para qué
+WooCommerce	Base obligatoria
+WooCommerce Mercado Pago (oficial)	Pagos con MP, Pix, tarjetas AR
+Stripe for WooCommerce (WooPayments)	Pagos internacionales
+YITH WooCommerce Subscriptions	Planes mensuales (Plan Inicial, PyME, etc.)
+YITH WooCommerce Multi-step Checkout	Checkout optimizado
+🧾 Facturación AFIP / ARCA
+Plugin	Para qué
+WooCommerce AFIP (WP Online Support)	Emite facturas A/B/C desde el checkout
+TusFacturas.ar para WooCommerce	Alternativa con API WSFE propia
+🤖 CRM + ERP (Dolibarr)
+Plugin	Para qué
+FluentCRM	CRM nativo WordPress; captura leads, segmenta, automatiza emails — complementa Dolibarr
+WP Fusion	Sincroniza usuarios/tags de WordPress con Dolibarr vía API
+Dolibarr WooCommerce Connector (módulo oficial Dolibarr)	Sincroniza pedidos WooCommerce ↔ Dolibarr
+⚡ Automatización (n8n)
+Plugin	Para qué
+WP Webhooks	Dispara webhooks desde cualquier evento WP hacia n8n
+AutomatorWP	Automatizaciones internas (si no todo pasa por n8n)
+WPCode	Snippets para llamadas API personalizadas
+📚 Capacitación (Moodle / Tutor LMS / LearnPress)
+Plugin	Para qué
+Tutor LMS	LMS completo, se integra con WooCommerce para ventas de cursos
+LearnPress	Alternativa más liviana
+Moodle	Standalone separado; se puede linkear con SSO via plugin externo
+📊 Business Intelligence (Metabase)
+Plugin	Para qué
+MonsterInsights / Analytify	Google Analytics 4 en WP
+Metabase Embed (iframe custom)	No hay plugin oficial; se embebe via shortcode/widget HTML
+WooCommerce Analytics (incluido en WC)	Reportes de ventas nativos
+💬 WhatsApp / Chatbot / Soporte
+Plugin	Para qué
+WhatsApp Chat WP (quadlayers)	Botón flotante WhatsApp
+Tidio	Chatbot con IA + live chat
+FreeScout WP Integration (vía API)	FreeScout es standalone; conectás con webhooks
+SupportCandy	Tickets de soporte dentro de WP si no usás FreeScout
+📣 Marketing Digital (Mautic / WP Social)
+Plugin	Para qué
+WP Mautic (oficial)	Trackea usuarios de WordPress en Mautic
+MailPoet	Email marketing nativo (alternativa a Mautic para campañas simples)
+Rank Math SEO	SEO técnico + schema + sitemap
+WP Social	Sharing + feed de redes sociales
+Pixel Manager for WooCommerce	FB Ads, Google Ads, TikTok Ads tracking
+☁️ Hosting / Infraestructura (Cloudflare + Docker)
+Plugin	Para qué
+Cloudflare (plugin oficial)	Cache rules, purge automático, modo bajo ataque
+WP Rocket	Cache + minificación (complementa Cloudflare)
+WP Offload Media	Archivos en Cloudflare R2 / S3
+UpdraftPlus	Backups automáticos
+🔒 Seguridad / Auth
+Plugin	Para qué
+Wordfence	Firewall + escaneo
+JWT Authentication for WP REST API	Si exponés la API REST a n8n / Dolibarr
+Limit Login Attempts Reloaded	Previene fuerza bruta
+🎨 Builder / Diseño
+Plugin	Para qué
+Elementor Pro	Page builder principal
+Flatsome (tema)	UX Builder integrado, ideal para WooCommerce
+Advanced Custom Fields (ACF)	Campos personalizados para tipos de contenido
+
+Stack mínimo viable para una PyME en Clientum: WooCommerce + Mercado Pago + AFIP + FluentCRM + WP Mautic + Tutor LMS + Elementor + Cloudflare + WP Rocket + Rank Math
+
+¿Querés que arme alguno de estos como caso de uso dentro del CRM o del catálogo de servicios?
