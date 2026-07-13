@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   MapPin,
@@ -108,6 +108,10 @@ export default function PublicWebsite({
   onLogout,
 }: PublicWebsiteProps) {
   const [activeTab, setActiveTab] = useState<string>("inicio");
+  useEffect(() => {
+    (window as any).__setActiveTab = setActiveTab;
+    return () => { delete (window as any).__setActiveTab; };
+  }, []);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileOpenSection, setMobileOpenSection] = useState<string | null>(null);

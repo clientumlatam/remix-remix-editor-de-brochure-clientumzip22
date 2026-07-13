@@ -66,3 +66,9 @@ id = "EFSAUDRE8AKNap7wyC9pZ"
 uri = "file://Clientum_Copy_FINAL.md"
 type = "text"
 title = "Copy del Sitio FINAL — MD (fuente de verdad · limpio · sin pendientes)"
+
+[[outputs]]
+id = "UrA3eFZZBOMTSLI7M1cSj"
+uri = "file://clientum-exports/Clientum_Textos_Paginas.csv"
+type = "table"
+title = "Clientum — Textos por Página (CSV)"
