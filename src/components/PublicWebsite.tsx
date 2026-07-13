@@ -539,7 +539,7 @@ export default function PublicWebsite({
       year: "2022",
       type: "ERP + AFIP + Cartas de Porte",
       industry: "agroindustria",
-      img: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=600&q=80",
+      img: "/logos/forestal-norte.jpg",
       desc: "Digitalización de operaciones forestales: cartas de porte electrónicas, liquidaciones automáticas y trazabilidad de carga desde el campo hasta la planta."
     },
     {
@@ -2974,7 +2974,7 @@ export default function PublicWebsite({
                     clientes: [
                        { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",       url: "consorcioderiegoroca.com.ar", logo: null, darkLogo: false },
                        { name: "Cooperativa Frigorífico J.J. Gómez",       rubro: "Frigorífico / Agroindustria", url: "frigorificojpgomez.com.ar",   logo: null, darkLogo: false },
-                       { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria",   url: null,                          logo: null, darkLogo: false },
+                       { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria",   url: null,                          logo: "/logos/forestal-norte.jpg", darkLogo: false },
                     ]
                   },
                   {
