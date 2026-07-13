@@ -2831,7 +2831,7 @@ export default function PublicWebsite({
                     color: "bg-indigo-600",
                     icon: Briefcase,
                     clientes: [
-                       { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar", logo: null, darkLogo: false },
+                       { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar", logo: "/logos/afp-service.png", darkLogo: false },
                        { name: "YendoApp",                rubro: "Tecnología / App Móvil",    url: "yendoapp.com.ar",   logo: null, darkLogo: false },
                        { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null,                logo: null, darkLogo: false },
                        { name: "Estudio Integra",         rubro: "Estudio Profesional",       url: null,                logo: null, darkLogo: false },
@@ -2839,8 +2839,8 @@ export default function PublicWebsite({
                        { name: "Grupo de Asesores",       rubro: "Consultoría",               url: null,                logo: null, darkLogo: false },
                        { name: "Anmerica",                rubro: "Servicios",                 url: null,                logo: null, darkLogo: false },
                        { name: "Agua Wass",               rubro: "Agua / Servicios",          url: null,                logo: null, darkLogo: false },
-                       { name: "SCT Patagonia",           rubro: "Servicios / Construcción",  url: null,                logo: null, darkLogo: false },
-                       { name: "Poliservice Suministros", rubro: "Suministros Industriales",  url: null,                logo: null, darkLogo: false },
+                       { name: "SCT Patagonia",           rubro: "Servicios / Construcción",  url: null,                logo: "/logos/sct-patagonia.png", darkLogo: false },
+                       { name: "Poliservice Suministros", rubro: "Suministros Industriales",  url: null,                logo: "/logos/poliservice.jpg",   darkLogo: false },
                     ]
                   },
                   {
@@ -2848,7 +2848,7 @@ export default function PublicWebsite({
                     color: "bg-teal-600",
                     icon: Users,
                     clientes: [
-                       { name: "Centro Empleados de Comercio", rubro: "Gremio / Institucional", url: "cecgroca.com.ar", logo: null, darkLogo: false },
+                       { name: "Centro Empleados de Comercio", rubro: "Gremio / Institucional", url: "cecgroca.com.ar", logo: "/logos/cec-general-roca.png", darkLogo: false },
                     ]
                   },
                 ].map(({ label, color, icon: SectorIcon, clientes }) => (
