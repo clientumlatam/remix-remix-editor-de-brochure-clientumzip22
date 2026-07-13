@@ -1,0 +1,28 @@
+[section label="Funciones y Soluciones" class="ctm-soluciones" padding="60px 0px 60px 0px"]
+  [row class="ctm-soluciones__row"]
+    [col span="3" span__sm="6" span__md="4" class="ctm-soluciones__col"]
+      [featured_box img_width="48" title="Chatbot WhatsApp" icon="icon-chat" link="/soluciones/chatbot-whatsapp/"]
+        Tu negocio atiende solo, las 24 horas
+      [/featured_box]
+    [/col]
+    [col span="3" span__sm="6" span__md="4" class="ctm-soluciones__col"]
+      [featured_box img_width="48" title="CRM Inteligente" icon="icon-users" link="/soluciones/crm-inteligente/"]
+        Nunca más perdas una venta
+      [/featured_box]
+    [/col]
+    [col span="3" span__sm="6" span__md="4" class="ctm-soluciones__col"]
+      [featured_box img_width="48" title="Asistente IA" icon="icon-cpu" link="/soluciones/asistente-ia/"]
+        Tu analista de negocio, siempre disponible
+      [/featured_box]
+    [/col]
+    [col span="3" span__sm="6" span__md="4" class="ctm-soluciones__col"]
+      [featured_box img_width="48" title="Reportes Automáticos" icon="icon-bar-chart" link="/soluciones/reportes-automaticos/"]
+        Tomá decisiones con datos reales
+      [/featured_box]
+    [/col]
+    <!-- repetir el mismo patrón col para las 8 tiles restantes: Automatización,
+         Portal del Cliente, Desarrollo Web, Servicios, Integraciones,
+         Catálogo Completo, Consultoría & ERP, Planes y Precios, Casos de Éxito,
+         Nuestros Clientes -- usar SOL-* del CSV excluido como fuente de nombre/slug -->
+  [/row]
+[/section]

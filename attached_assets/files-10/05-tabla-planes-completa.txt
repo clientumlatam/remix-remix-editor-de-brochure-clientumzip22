@@ -1,0 +1,79 @@
+[section label="Tabla de Planes" class="ctm-tabla-planes" padding="0px 0px 60px 0px"]
+  [row class="ctm-tabla-planes__row"]
+
+    [col span="12" span__md="6" span__lg="20%" class="ctm-plan-card"]
+      [ux_text class="ctm-plan-card__nombre"]Plan Inicial[/ux_text]
+      [ux_text class="ctm-plan-card__desc"]Para emprendedores e iniciativas pequeñas.[/ux_text]
+      [ux_text class="ctm-plan-card__precio"]$20 <small>/ MES</small>[/ux_text]
+      [ux_text]
+        ✓ Web: Landing page responsiva<br>
+        ✓ CRM/ERP: Embudo básico (200 cont.)<br>
+        ✓ Seguridad: Respaldos mensuales<br>
+        ✓ IA & BI: Bot de bienvenida fijo
+      [/ux_text]
+      [button text="Seleccionar Inicial" link="/contanos-tu-caso/?plan=inicial" style="outline" block="true"]
+    [/col]
+
+    [col span="12" span__md="6" span__lg="20%" class="ctm-plan-card"]
+      [ux_text class="ctm-plan-card__nombre"]Plan PyME[/ux_text]
+      [ux_text class="ctm-plan-card__desc"]Para comercios con ventas activas.[/ux_text]
+      [ux_text class="ctm-plan-card__precio"]$45 <small>/ MES</small>[/ux_text]
+      [ux_text]
+        ✓ Web: Tienda online estándar<br>
+        ✓ CRM/ERP: Stock + AFIP (1.000 cont.)<br>
+        ✓ Seguridad: Cifrado de base de datos<br>
+        ✓ IA & BI: Bot WhatsApp con FAQs
+      [/ux_text]
+      [button text="Seleccionar PyME" link="/contanos-tu-caso/?plan=pyme" style="outline" block="true"]
+    [/col]
+
+    [col span="12" span__md="6" span__lg="20%" class="ctm-plan-card ctm-plan-card--destacado"]
+      [ux_text class="ctm-plan-card__badge"]MÁS ELEGIDO ★[/ux_text]
+      [ux_text class="ctm-plan-card__nombre"]Plan Pro[/ux_text]
+      [ux_text class="ctm-plan-card__desc"]Para automatizar con IA, bots y facturación.[/ux_text]
+      [ux_text class="ctm-plan-card__precio"]$80 <small>/ MES</small>[/ux_text]
+      [ux_text]
+        ✓ <strong>Web:</strong> E-Commerce premium total<br>
+        ✓ <strong>CRM/ERP:</strong> Multi-embudo ilimitado<br>
+        ✓ <strong>Seguridad:</strong> Auditorías de software<br>
+        ✓ <strong>IA & BI:</strong> Agente IA & BI avanzado
+      [/ux_text]
+      [button text="Seleccionar Pro" link="/contanos-tu-caso/?plan=pro" style="filled" block="true"]
+    [/col]
+
+    [col span="12" span__md="6" span__lg="20%" class="ctm-plan-card"]
+      [ux_text class="ctm-plan-card__nombre"]Plan Corporativo[/ux_text]
+      [ux_text class="ctm-plan-card__desc"]Para empresas con múltiples canales activos.[/ux_text]
+      [ux_text class="ctm-plan-card__precio"]$150 <small>/ MES</small>[/ux_text]
+      [ux_text]
+        ✓ Web: Portal B2B + Web integral<br>
+        ✓ CRM/ERP: Pipeline multi-sucursal<br>
+        ✓ Seguridad: Hardening y firewall<br>
+        ✓ IA & BI: Analítica predictiva & bots
+      [/ux_text]
+      [button text="Seleccionar Corp" link="/contanos-tu-caso/?plan=corporativo" style="outline" block="true"]
+    [/col]
+
+    [col span="12" span__md="6" span__lg="20%" class="ctm-plan-card"]
+      [ux_text class="ctm-plan-card__nombre"]Plan Especializado[/ux_text]
+      [ux_text class="ctm-plan-card__desc"]Infraestructura y desarrollos a medida.[/ux_text]
+      [ux_text class="ctm-plan-card__precio"]$250 <small>/ MES</small>[/ux_text]
+      [ux_text]
+        ✓ Web: Apps web & mobile infinitas<br>
+        ✓ CRM/ERP: Integraciones ERP legacy<br>
+        ✓ Seguridad: SOC activo 24/7 dedicado<br>
+        ✓ IA & BI: Modelos LLM corporativos
+      [/ux_text]
+      [button text="Seleccionar Custom" link="/contanos-tu-caso/?plan=especializado" style="dark" block="true"]
+    [/col]
+
+  [/row]
+[/section]
+
+<!--
+Reemplaza el bloque "Tabla de Planes" de 03-pagina-precios.txt (el que usaba
+[ux_products cat="planes"]). Las features de acá son texto fijo tomado
+directo de la captura original — si preferís que salgan de WooCommerce
+dinámicamente (para editarlas desde el admin sin tocar código), hay que
+pasarlas a atributos de producto o campos ACF por plan.
+-->

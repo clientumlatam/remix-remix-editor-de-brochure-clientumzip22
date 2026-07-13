@@ -1,0 +1,108 @@
+[section label="Integraciones Intro" class="ctm-integraciones-intro" padding="60px 0px 30px 0px"]
+  [row]
+    [col span="8" span__sm="12" offset="2" text_align="center"]
+      [ux_text class="ctm-eyebrow"]CONECTIVIDAD TOTAL[/ux_text]
+      [title text="Integraciones de Clientum" tag_name="h1" style="center"]
+      [ux_text]Sincroniza de forma automática Clientum CRM con tus aplicaciones favoritas, pasarelas de pago y sistemas de facturación.[/ux_text]
+    [/col]
+  [/row]
+[/section]
+
+[section label="Grid Integraciones" class="ctm-integraciones-grid" padding="0px 0px 60px 0px"]
+  [row class="ctm-integraciones-grid__row"]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]MENSAJERÍA DIRECTA [span class="ctm-tag--pill"]Oficial & Seguro[/span][/ux_text]
+        [title text="WhatsApp Business API" tag_name="h4"]
+        [ux_text]Conecta tu línea oficial de WhatsApp para automatizar respuestas de bots, enviar flujos pre-aprobados por Meta y realizar campañas masivas sin riesgo de baneo.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=whatsapp-business-api" style="link"]
+      [/ux_image_box]
+    [/col]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]GENERACIÓN DE DEMANDA [span class="ctm-tag--pill"]Tiempo Real[/span][/ux_text]
+        [title text="Facebook & Instagram Ads" tag_name="h4"]
+        [ux_text]Sincroniza instantáneamente tus formularios de clientes potenciales (Lead Ads) para que impacten en tiempo real en las columnas de tu embudo comercial.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=facebook-instagram-ads" style="link"]
+      [/ux_image_box]
+    [/col]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]E-COMMERCE [span class="ctm-tag--pill"]Automatizado[/span][/ux_text]
+        [title text="WooCommerce & Shopify" tag_name="h4"]
+        [ux_text]Sincronización bidireccional en tiempo real de productos, variaciones de precios, stock unificado y recuperación automatizada de carritos de compras abandonados.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=woocommerce-shopify" style="link"]
+      [/ux_image_box]
+    [/col]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]ADMINISTRACIÓN FISCAL [span class="ctm-tag--pill"]Conector AFIP[/span][/ux_text]
+        [title text="AFIP Facturación" tag_name="h4"]
+        [ux_text]Emisión y envío automático de facturas electrónicas A, B o C asociadas directamente con cada transacción comercial ganada en tu CRM.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=afip-facturacion" style="link"]
+      [/ux_image_box]
+    [/col]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]PASARELA DE PAGOS [span class="ctm-tag--pill"]Finanzas[/span][/ux_text]
+        [title text="MercadoPago & Stripe" tag_name="h4"]
+        [ux_text]Generación dinámica de links de pago desde el propio bot conversacional de WhatsApp y conciliación inmediata en tu libro diario contable.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=mercadopago-stripe" style="link"]
+      [/ux_image_box]
+    [/col]
+
+    [col span="4" span__sm="12" span__md="6" class="ctm-integraciones-grid__col"]
+      [ux_image_box img="" image_width="0" text_align="left"]
+        [ux_text class="ctm-tag"]SISTEMAS CORPORATIVOS [span class="ctm-tag--pill"]Enterprise[/span][/ux_text]
+        [title text="ERPs Tradicionales (Tango / Bejerman)" tag_name="h4"]
+        [ux_text]Sincronizador inteligente mediante API REST y servicios locales de base de datos para control de stock mayorista, listas de precios avanzadas y compras.[/ux_text]
+        [button text="Solicitar Integración →" link="/contanos-tu-caso/?integracion=erps-tradicionales" style="link"]
+      [/ux_image_box]
+    [/col]
+
+  [/row]
+[/section]
+
+[section label="API REST Devs" class="ctm-api-devs" bg_color="#0d1524" padding="60px 0px 60px 0px"]
+  [row]
+    [col span="5" span__sm="12" text_color="light"]
+      [ux_text class="ctm-eyebrow ctm-eyebrow--light"]PARA DESARROLLADORES[/ux_text]
+      [title text="API REST & Webhooks de Clientum" tag_name="h3" color="rgb(255,255,255)"]
+      [ux_text]¿Tienes un software a medida? Nuestra arquitectura abierta te permite integrar Clientum de forma fácil. Genera webhooks personalizados para notificar compras, registrar nuevos prospectos o disparar alertas ante cualquier evento comercial en tiempo real.[/ux_text]
+      [button text="Ver API Docs" link="/api-docs/" style="filled" icon="icon-file-text"]
+    [/col]
+    [col span="7" span__sm="12"]
+      [ux_text]
+        <pre style="background:#0a0f1a;color:#8fd6b4;padding:20px;border-radius:8px;font-family:monospace;font-size:13px;overflow-x:auto;">
+// Webhook Payload Example (POST)
+{
+  "event": "lead.created",
+  "timestamp": "2026-07-13T19:00:00Z",
+  "data": {
+    "company": "Distribuidora Gaman",
+    "contact_phone": "+54 298 4432105",
+    "pain_point": "Demora en responder WhatsApp",
+    "estimated_roi": "450%"
+  }
+}
+        </pre>
+      [/ux_text]
+    [/col]
+  [/row]
+[/section]
+
+<!--
+NOTA: estos 6 conectores + el bloque API son contenido 100% estático/marketing,
+no vienen del CSV de 573 productos. No hace falta importar nada a WooCommerce
+para esta página — es texto fijo en el theme.
+
+El ejemplo de payload usa datos ficticios de muestra ("Distribuidora Gaman",
+teléfono, ROI estimado) tal como aparecía en la captura original — reemplazar
+por un ejemplo real o genérico antes de publicar si esos datos de muestra
+no son apropiados para mostrar en producción.
+-->
