@@ -30,3 +30,21 @@ id = "s6amMwnNd1RRLvGNNrZS1"
 uri = "file://clientum-ai-client-prospector.csv"
 type = "table"
 title = "Clientum — AI Client Prospector (CSV)"
+
+[[outputs]]
+id = "MEhEifKNRDHaopDs1coAB"
+uri = "file://Clientum_catalogo_woocommerce_v4.csv"
+type = "table"
+title = "Clientum Catálogo WooCommerce v4 — CSV (479 productos)"
+
+[[outputs]]
+id = "5z47XSisKUjIjM7fDtPE9"
+uri = "file://Clientum_catalogo_reestructurado_v4.xlsx"
+type = "table"
+title = "Clientum Catálogo Reestructurado v4 — XLSX (5 hojas)"
+
+[[outputs]]
+id = "SgOV_kukw4dfGN3_DkrXE"
+uri = "file://Clientum_sitio_copy_referencia_v4.md"
+type = "text"
+title = "Clientum Sitio Copy Referencia v4 — MD"
