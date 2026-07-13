@@ -1,0 +1,91 @@
+[section label="Cursos Destacados" class="ctm-cursos-destacados" padding="60px 0px 60px 0px"]
+
+  [row class="ctm-cursos-destacados__row"]
+
+    <!-- 1) CRS-1321 (aprox.) — no hay match exacto en el CSV para
+         "Dominio de las métricas de marketing digital". El curso real más
+         cercano es "Marketing Digital para Principiantes" (CRS-1321, sin
+         descripción en el CSV). Ajustar título/slug al confirmar el dato real. -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_1" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--intermedio"]Intermedio[/ux_text]
+      [title text="Marketing Digital para Principiantes" tag_name="h3"]
+      [ux_text]Descubre cómo analizar, medir y optimizar tus estrategias de adquisición y conversión.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 4 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/marketing-digital-principiantes/" style="filled" block="true"]
+    [/col]
+
+    <!-- 2) CRS-1136 -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_2" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--principiante"]Principiante[/ux_text]
+      [title text="Crea tu Tienda Online ¡YA! con Woocommerce" tag_name="h3"]
+      [ux_text]Vende más que nunca de forma autónoma. Despídete del trabajo tradicional y controla tu inventario.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 6 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/tienda-online-woocommerce/" style="filled" block="true"]
+    [/col]
+
+    <!-- 3) CRS-1137 -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_3" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--avanzado"]Avanzado[/ux_text]
+      [title text="Automatiza tu Negocio y Multiplica tu Tiempo" tag_name="h3"]
+      [ux_text]Aprende a integrar bots de WhatsApp, flujos de CRM y liquidaciones automáticas. Dile adiós al estrés.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 5 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/automatiza-tu-negocio/" style="filled" block="true"]
+    [/col]
+
+  [/row]
+
+  [row class="ctm-cursos-destacados__row"]
+
+    <!-- 4) CRS-1151 -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_4" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--principiante"]Principiante[/ux_text]
+      [title text="Finanzas para Emprendedores" tag_name="h3"]
+      [ux_text]Toma el control absoluto de tu flujo de caja, costos fijos y proyecciones de facturación en pesos.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 4 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/finanzas-emprendedores/" style="filled" block="true"]
+    [/col]
+
+    <!-- 5) CRS-1140 -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_5" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--avanzado"]Avanzado[/ux_text]
+      [title text="SEO Avanzado y Marketing Orgánico" tag_name="h3"]
+      [ux_text]Posiciona tu web corporativa en el TOP de Google y recibe miles de visitas gratuitas cada mes.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 8 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/seo-avanzado/" style="filled" block="true"]
+    [/col]
+
+    <!-- 6) CRS-1142 -->
+    [col span="4" span__sm="12" span__md="6" class="ctm-cursos-destacados__col"]
+      [ux_image id="REPLACE_ID_6" image_size="medium" height="180px" crop="true"]
+      [gap height="15px"]
+      [ux_text class="ctm-badge ctm-badge--general"]General[/ux_text]
+      [title text="Comunicación Empresarial Efectiva" tag_name="h3"]
+      [ux_text]Domina el arte de hablar en público, negociar contratos y convencer a clientes exigentes.[/ux_text]
+      [ux_text class="ctm-duracion"]DURACIÓN: 3 SEMANAS[/ux_text]
+      [button text="Inscribirse gratis" link="/campus/comunicacion-empresarial/" style="filled" block="true"]
+    [/col]
+
+  [/row]
+
+[/section]
+
+<!--
+SOURCING DE IMÁGENES (subir a Media Library y reemplazar REPLACE_ID_1..6):
+1. Marketing/analytics: buscar "marketing analytics dashboard laptop" en Unsplash/Pexels
+2. E-commerce/tienda: buscar "small business owner packing boxes ecommerce"
+3. Automatización/reunión: buscar "business team meeting collaboration office"
+4. Finanzas: buscar "calculator receipts small business finance"
+5. SEO: buscar "seo content writing desk workspace"
+6. Comunicación: buscar "business presentation public speaking meeting"
+Todas con licencia libre de uso comercial (Unsplash/Pexels license).
+-->

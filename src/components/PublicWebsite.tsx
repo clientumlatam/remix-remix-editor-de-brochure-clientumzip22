@@ -4362,6 +4362,45 @@ export default function PublicWebsite({
                     </div>
                   ))}
                 </div>
+                {/* Módulos disponibles — implementación ERP/CRM completa */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-blue-600 font-mono text-[10px] uppercase tracking-widest font-bold">Implementaciones ERP / CRM</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Módulos disponibles</h2>
+                    <p className="text-slate-500 text-xs max-w-2xl mx-auto mt-3 leading-relaxed">
+                      Un software completamente modular: activás sólo las funciones que tu empresa necesita. Se ejecuta 100% en la nube, accesible desde cualquier lugar con conexión a internet.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {[
+                      { group: "CRM & Ventas", icon: Briefcase, items: ["Seguimiento de clientes y terceros con historial completo", "Gestión de presupuestos, pedidos y contratos", "Tickets de soporte con creación automática desde email"] },
+                      { group: "Gestión de terceros", icon: Users, items: ["Clientes, proveedores y contactos unificados", "Categorías, niveles de precio y notas por tercero", "Notificaciones automáticas ante cambios de estado"] },
+                      { group: "Contratos y facturación", icon: FileText, items: ["Contratos de servicios periódicos con alertas de vencimiento", "Facturación electrónica integrada con AFIP", "Links de pago online (Paypal, Stripe, PayZen)"] },
+                      { group: "Finanzas", icon: BarChart2, items: ["Gestión de IVA, IRPF y cargas sociales", "Cuentas bancarias y domiciliaciones automáticas", "Estadísticas financieras y de márgenes de venta"] },
+                      { group: "Gestión documental", icon: LayoutGrid, items: ["Almacenamiento centralizado vinculado a cada entidad", "Presupuestos, pedidos, facturas y terceros conectados", "Búsqueda rápida por relación ficha–documento"] },
+                      { group: "Recursos Humanos", icon: Users, items: ["Gestión de usuarios, grupos y permisos granulares", "Vacaciones, salarios y hojas de horas", "Gestión de miembros para clubs y asociaciones"] },
+                      { group: "Productividad", icon: CheckSquare, items: ["Proyectos con márgenes de beneficio en tiempo real", "Agenda compartida con registro automático de acciones", "Desarrollo de reportes a medida con exportación a Excel"] },
+                      { group: "Manufactura", icon: Package, items: ["Listas de materiales (BOM) y órdenes de fabricación", "Control de stock virtual en tiempo real", "Gestión de lotes y series de producción"] },
+                      { group: "Omnicanal", icon: ShoppingCart, items: ["Dashboard con indicadores y alertas configurables", "Punto de venta (TPV) integrado con la facturación", "Sincronización de stock con Prestashop, WooCommerce, etc."] },
+                      { group: "Administración e integración", icon: Settings, items: ["Parametrización flexible, backups y tareas programadas", "Programación a medida según necesidades del negocio", "Migración de datos desde tu sistema anterior"] },
+                    ].map(({ group, icon: Icon, items }) => (
+                      <div key={group} className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Icon className="w-4 h-4 text-blue-500" />
+                          <h4 className="font-bold text-slate-900 text-sm">{group}</h4>
+                        </div>
+                        <ul className="flex flex-col gap-1.5">
+                          {items.map((it) => (
+                            <li key={it} className="text-[11px] text-slate-500 leading-relaxed flex items-start gap-1.5">
+                              <Check className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />{it}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="bg-[#1A3461] text-white rounded-2xl p-8 text-center">
                   <h3 className="text-lg font-display font-bold">Organizá tu pipeline hoy</h3>
                   <p className="text-xs text-slate-300 mt-2">Probalo 14 días gratis y cerrá más ventas desde la primera semana.</p>
@@ -4484,6 +4523,33 @@ export default function PublicWebsite({
                     </div>
                   ))}
                 </div>
+                {/* E-marketing y gerenciamiento */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-orange-600 font-mono text-[10px] uppercase tracking-widest font-bold">E-marketing y gerenciamiento</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Seguimiento de las principales métricas de negocio y gestión</h2>
+                    <p className="text-slate-500 text-xs max-w-2xl mx-auto mt-3 leading-relaxed">
+                      Planificamos, implementamos y administramos canales digitales con herramientas de e-marketing enfocadas en la conversión, para generar experiencias que benefician tanto a la marca como al consumidor.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {[
+                      { title: "E-marketing", icon: TrendingUp, desc: "Decisiones basadas en datos para un plan de medios digitales, con optimizaciones constantes, medición y automatización que refuerzan tu marca." },
+                      { title: "SEO y SEM", icon: Search, desc: "SEO para resultados orgánicos y SEM para mayor visibilidad con campañas de anuncios — las dos estrategias clave para posicionarte en Google." },
+                      { title: "Marketing Automation", icon: Zap, desc: "Desde ventas y segmentación hasta divulgación en redes sociales: ahorrá tiempo y llegá a más consumidores de forma creativa." },
+                      { title: "Email Marketing & Social Ads", icon: Mail, desc: "Combiná e-mail marketing con Social Ads. El CRM integrado gestiona toda la información de forma automatizada." },
+                      { title: "Ejecución y optimización de campañas", icon: BarChart2, desc: "Planificamos, ejecutamos y optimizamos anuncios, midiendo resultados con plataformas de Analytics para mejorar cada campaña." },
+                      { title: "Gestión de medios de pago", icon: ShoppingCart, desc: "Configuración de cuentas e integración de tu tienda con múltiples medios de pago a través de gateways especializados." },
+                    ].map(({ title, icon: Icon, desc }) => (
+                      <div key={title} className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+                        <Icon className="w-5 h-5 text-orange-500 mb-3" />
+                        <h4 className="font-bold text-slate-900 text-sm mb-2">{title}</h4>
+                        <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="bg-orange-50 border border-orange-200 rounded-2xl p-8 text-center">
                   <h3 className="text-lg font-display font-bold text-slate-900">Datos claros para decisiones rápidas</h3>
                   <p className="text-xs text-slate-500 mt-2">Probá los reportes automáticos 14 días sin costo.</p>
@@ -4677,6 +4743,33 @@ export default function PublicWebsite({
                     </div>
                   ))}
                 </div>
+                {/* E-Commerce — tecnología omnicanal */}
+                <div>
+                  <div className="text-center mb-10">
+                    <span className="text-slate-600 font-mono text-[10px] uppercase tracking-widest font-bold">E-Commerce</span>
+                    <h2 className="text-2xl font-display font-black text-slate-950 tracking-tight mt-2">Desarrollo de sitios web con tecnología omnicanal</h2>
+                    <p className="text-slate-500 text-xs max-w-2xl mx-auto mt-3 leading-relaxed">
+                      Optimizamos la gestión unificada de stocks, logística, tiendas físicas y ecommerce. El 70% del tráfico en Latinoamérica es mobile — diseñamos para que tu tienda cargue rápido y se vea increíble en cualquier dispositivo.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {[
+                      { title: "E-Commerce Website", icon: ShoppingCart, desc: "Sitios que plasman la identidad de tu marca: creatividad y diseño mobile/desktop, UI & UX, testing y QA, integraciones de precio, stock y órdenes." },
+                      { title: "Marketplaces", icon: Layers, desc: "Tiendas online escalables y ágiles: creación de cuenta, diseño de piezas gráficas, gestión de cambios y devoluciones, catalogación y atención pre/post venta." },
+                      { title: "Plataforma Omnicanal", icon: Workflow, desc: "Un único lugar para controlar precios, stock, órdenes, medios de pago y courier logísticos entre tu sitio propio y los marketplaces." },
+                      { title: "Métricas", icon: BarChart2, desc: "Business analytics, optimización de conversión, customer journey, A/B testing y dashboards en tiempo real para decisiones basadas en datos." },
+                      { title: "Correos corporativos", icon: Mail, desc: "Cuentas profesionales bajo tu propio dominio, configurables en cualquier dispositivo y con backups propios." },
+                      { title: "Diseño UX/UI de calidad", icon: LayoutGrid, desc: "Análisis, wireframing, prototipado, maquetado y desarrollo — soluciones sólidas basadas en el comportamiento real del consumidor." },
+                    ].map(({ title, icon: Icon, desc }) => (
+                      <div key={title} className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+                        <Icon className="w-5 h-5 text-slate-600 mb-3" />
+                        <h4 className="font-bold text-slate-900 text-sm mb-2">{title}</h4>
+                        <p className="text-xs text-slate-500 leading-relaxed">{desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <div className="bg-slate-100 border border-slate-200 rounded-2xl p-8 text-center">
                   <h3 className="text-lg font-display font-bold text-slate-900">¿Tenés un proyecto en mente?</h3>
                   <p className="text-xs text-slate-500 mt-2">Contanos qué necesitás y te damos presupuesto en 48 horas.</p>
