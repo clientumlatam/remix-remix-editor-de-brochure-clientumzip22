@@ -72,3 +72,9 @@ id = "UrA3eFZZBOMTSLI7M1cSj"
 uri = "file://clientum-exports/Clientum_Textos_Paginas.csv"
 type = "table"
 title = "Clientum — Textos por Página (CSV)"
+
+[[outputs]]
+id = "cgr3x4t91-Rf7hgQfE0bg"
+uri = "file://exports/clientum-catalogo-final.csv"
+type = "table"
+title = "Clientum — Catálogo Final (WooCommerce)"
