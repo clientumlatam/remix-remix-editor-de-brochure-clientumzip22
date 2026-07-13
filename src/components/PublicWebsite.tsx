@@ -2706,26 +2706,34 @@ export default function PublicWebsite({
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
-                      { name: "Canal 10 TV",               rubro: "Medios Públicos",            url: "canal10rn.tv",          icon: Monitor },
-                      { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen },
-                      { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro",  url: "generalroca.gob.ar", icon: Building },
-                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building },
-                      { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building },
-                    ].map(({ name, rubro, url, icon: Icon }) => (
+                      { name: "Canal 10 TV",               rubro: "Medios Públicos",            url: "canal10rn.tv",          icon: Monitor,   logo: "/logos/canal10.webp" },
+                      { name: "Diario 10",                  rubro: "Medios Digitales",           url: "diario10.com.ar",        icon: BookOpen,  logo: null },
+                      { name: "Municipio de General Roca",  rubro: "Gobierno Municipal · Río Negro",  url: "generalroca.gob.ar", icon: Building, logo: null },
+                      { name: "Municipio de 25 de Mayo",    rubro: "Gobierno Municipal · La Pampa",   url: "25demayo.gob.ar",   icon: Building, logo: null },
+                      { name: "Municipio de Maquinchao",    rubro: "Gobierno Municipal · Río Negro",  url: null,                icon: Building, logo: null },
+                    ].map(({ name, rubro, url, icon: Icon, logo }) => (
                       <div key={name} className="bg-white border-2 border-[#1A3461]/10 hover:border-[#1A3461]/30 rounded-2xl p-5 flex flex-col gap-3 transition-all shadow-xs hover:shadow-md">
                         <div className="flex items-start justify-between">
-                          <div className="w-9 h-9 rounded-xl bg-[#1A3461]/10 flex items-center justify-center">
-                            <Icon className="w-4 h-4 text-[#1A3461]" />
-                          </div>
-                          <a
-                            href={`https://${url}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[9px] text-slate-400 hover:text-[#1A3461] flex items-center gap-0.5 transition-colors"
-                            onClick={e => e.stopPropagation()}
-                          >
-                            {url} <ExternalLink className="w-2.5 h-2.5" />
-                          </a>
+                          {logo ? (
+                            <div className="h-9 flex items-center">
+                              <img src={logo} alt={name} className="h-8 max-w-[120px] object-contain" />
+                            </div>
+                          ) : (
+                            <div className="w-9 h-9 rounded-xl bg-[#1A3461]/10 flex items-center justify-center">
+                              <Icon className="w-4 h-4 text-[#1A3461]" />
+                            </div>
+                          )}
+                          {url && (
+                            <a
+                              href={`https://${url}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[9px] text-slate-400 hover:text-[#1A3461] flex items-center gap-0.5 transition-colors"
+                              onClick={e => e.stopPropagation()}
+                            >
+                              {url} <ExternalLink className="w-2.5 h-2.5" />
+                            </a>
+                          )}
                         </div>
                         <div>
                           <div className="font-bold text-sm text-slate-900 leading-tight">{name}</div>
@@ -2751,9 +2759,9 @@ export default function PublicWebsite({
                     color: "bg-blue-600",
                     icon: Home,
                     clientes: [
-                      { name: "Aitue Propiedades",  rubro: "Inmobiliaria",   url: "aitue.com.ar" },
-                      { name: "Terbay Propiedades", rubro: "Inmobiliaria",   url: "terbaypropiedades.com.ar" },
-                      { name: "Habitar Sur",         rubro: "Real Estate / Construcción", url: null },
+                       { name: "Aitue Propiedades",  rubro: "Inmobiliaria",   url: "aitue.com.ar",             logo: null,                      darkLogo: false },
+                       { name: "Terbay Propiedades", rubro: "Inmobiliaria",   url: "terbaypropiedades.com.ar", logo: "/logos/terbay.png",        darkLogo: false },
+                       { name: "Habitar Sur",         rubro: "Real Estate / Construcción", url: null,         logo: null,                      darkLogo: false },
                     ]
                   },
                   {
@@ -2761,9 +2769,9 @@ export default function PublicWebsite({
                     color: "bg-green-700",
                     icon: Layers,
                     clientes: [
-                      { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",   url: "consorcioderiegoroca.com.ar" },
-                      { name: "Cooperativa Frigorífico J.J. Gómez",       rubro: "Frigorífico / Agroindustria", url: "frigorificojpgomez.com.ar" },
-                      { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria", url: null },
+                       { name: "Consorcio de Riego General Roca",          rubro: "Riego / Agroindustria",       url: "consorcioderiegoroca.com.ar", logo: null, darkLogo: false },
+                       { name: "Cooperativa Frigorífico J.J. Gómez",       rubro: "Frigorífico / Agroindustria", url: "frigorificojpgomez.com.ar",   logo: null, darkLogo: false },
+                       { name: "Forestal Norte",                            rubro: "Forestal / Agroindustria",   url: null,                          logo: null, darkLogo: false },
                     ]
                   },
                   {
@@ -2771,14 +2779,14 @@ export default function PublicWebsite({
                     color: "bg-orange-500",
                     icon: ShoppingCart,
                     clientes: [
-                      { name: "Lubrano Hogar",              rubro: "Electrodomésticos / Retail", url: "lubranohogar.com.ar" },
-                      { name: "Morgado Hogar",              rubro: "Hogar / Retail",             url: null },
-                      { name: "Mafacha Ferretería Pinturería", rubro: "Ferretería / Retail",    url: null },
-                      { name: "Growlife Patagonia",         rubro: "Comercio / Growshop",        url: "growlifepatagonia.com.ar" },
-                      { name: "Bauleras Roca",              rubro: "Guardamuebles / Almacenaje", url: null },
-                      { name: "AKBAR SRL",                  rubro: "Comercio",                  url: null },
-                      { name: "LP SRL",                     rubro: "Comercio",                  url: null },
-                      { name: "AMBAR",                      rubro: "Comercio / Servicios",       url: null },
+                       { name: "Lubrano Hogar",              rubro: "Electrodomésticos / Retail", url: "lubranohogar.com.ar",      logo: null,                        darkLogo: false },
+                       { name: "Morgado Hogar",              rubro: "Hogar / Retail",             url: "morgadohogar.com.ar",      logo: "/logos/morgado-hogar.webp", darkLogo: false },
+                       { name: "Mafacha Ferretería Pinturería", rubro: "Ferretería / Retail",    url: "mafacha.com.ar",           logo: "/logos/mafacha.png",        darkLogo: false },
+                       { name: "Growlife Patagonia",         rubro: "Comercio / Growshop",        url: "growlifepatagonia.com.ar", logo: null,                        darkLogo: false },
+                       { name: "Bauleras Roca",              rubro: "Guardamuebles / Almacenaje", url: null,                      logo: null,                        darkLogo: false },
+                       { name: "AKBAR SRL",                  rubro: "Comercio",                  url: null,                      logo: null,                        darkLogo: false },
+                       { name: "LP SRL",                     rubro: "Comercio",                  url: null,                      logo: null,                        darkLogo: false },
+                       { name: "AMBAR",                      rubro: "Comercio / Servicios",       url: null,                      logo: null,                        darkLogo: false },
                     ]
                   },
                   {
@@ -2786,10 +2794,10 @@ export default function PublicWebsite({
                     color: "bg-rose-500",
                     icon: Stethoscope,
                     clientes: [
-                      { name: "Farmacia San Martín",  rubro: "Farmacia",          url: null },
-                      { name: "Coe Consultorio",       rubro: "Consultorio Médico", url: null },
-                      { name: "Consultorio Cerol",     rubro: "Consultorio Médico", url: null },
-                      { name: "Grupo Bio",             rubro: "Salud / Bienestar", url: null },
+                       { name: "Farmacia San Martín",  rubro: "Farmacia",           url: null, logo: null, darkLogo: false },
+                       { name: "Coe Consultorio",       rubro: "Consultorio Médico", url: null, logo: null, darkLogo: false },
+                       { name: "Consultorio Cerol",     rubro: "Consultorio Médico", url: null, logo: null, darkLogo: false },
+                       { name: "Grupo Bio",             rubro: "Salud / Bienestar",  url: null, logo: null, darkLogo: false },
                     ]
                   },
                   {
@@ -2797,10 +2805,10 @@ export default function PublicWebsite({
                     color: "bg-slate-700",
                     icon: Truck,
                     clientes: [
-                      { name: "Cabarcos Motores SRL",  rubro: "Automotriz / Industrial", url: "cabarcosmotores.com.ar" },
-                      { name: "Patagonia Remolques",   rubro: "Remolques / Automotriz",  url: null },
-                      { name: "KJ Logística",          rubro: "Logística / Transporte",  url: null },
-                      { name: "Naval Patagonia",       rubro: "Náutica / Servicios",     url: null },
+                       { name: "Cabarcos Motores SRL",  rubro: "Automotriz / Industrial", url: "cabarcosmotores.com.ar", logo: "/logos/cabarcos-motores-cropped.png", darkLogo: true },
+                       { name: "Patagonia Remolques",   rubro: "Remolques / Automotriz",  url: null,                    logo: null,                                  darkLogo: false },
+                       { name: "KJ Logística",          rubro: "Logística / Transporte",  url: "kjlogistica.com.ar",    logo: "/logos/kj-logistica.webp",             darkLogo: true },
+                       { name: "Naval Patagonia",       rubro: "Náutica / Servicios",     url: null,                    logo: null,                                  darkLogo: false },
                     ]
                   },
                   {
@@ -2808,16 +2816,16 @@ export default function PublicWebsite({
                     color: "bg-indigo-600",
                     icon: Briefcase,
                     clientes: [
-                      { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar" },
-                      { name: "YendoApp",                rubro: "Tecnología / App Móvil",    url: "yendoapp.com.ar" },
-                      { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null },
-                      { name: "Estudio Integra",         rubro: "Estudio Profesional",       url: null },
-                      { name: "Estudio Méndez & Asoc.",  rubro: "Estudio / Consultoría",     url: null },
-                      { name: "Grupo de Asesores",       rubro: "Consultoría",               url: null },
-                      { name: "Anmerica",                rubro: "Servicios",                 url: null },
-                      { name: "Agua Wass",               rubro: "Agua / Servicios",          url: null },
-                      { name: "SCT Patagonia",           rubro: "Servicios / Construcción",  url: null },
-                      { name: "Poliservice Suministros", rubro: "Suministros Industriales",  url: null },
+                       { name: "AFP Service",             rubro: "Servicios Técnicos",        url: "afpservice.com.ar", logo: null, darkLogo: false },
+                       { name: "YendoApp",                rubro: "Tecnología / App Móvil",    url: "yendoapp.com.ar",   logo: null, darkLogo: false },
+                       { name: "Saitt",                   rubro: "Tecnología / Servicios",    url: null,                logo: null, darkLogo: false },
+                       { name: "Estudio Integra",         rubro: "Estudio Profesional",       url: null,                logo: null, darkLogo: false },
+                       { name: "Estudio Méndez & Asoc.",  rubro: "Estudio / Consultoría",     url: null,                logo: null, darkLogo: false },
+                       { name: "Grupo de Asesores",       rubro: "Consultoría",               url: null,                logo: null, darkLogo: false },
+                       { name: "Anmerica",                rubro: "Servicios",                 url: null,                logo: null, darkLogo: false },
+                       { name: "Agua Wass",               rubro: "Agua / Servicios",          url: null,                logo: null, darkLogo: false },
+                       { name: "SCT Patagonia",           rubro: "Servicios / Construcción",  url: null,                logo: null, darkLogo: false },
+                       { name: "Poliservice Suministros", rubro: "Suministros Industriales",  url: null,                logo: null, darkLogo: false },
                     ]
                   },
                   {
@@ -2825,7 +2833,7 @@ export default function PublicWebsite({
                     color: "bg-teal-600",
                     icon: Users,
                     clientes: [
-                      { name: "Centro Empleados de Comercio", rubro: "Gremio / Institucional", url: "cecgroca.com.ar" },
+                       { name: "Centro Empleados de Comercio", rubro: "Gremio / Institucional", url: "cecgroca.com.ar", logo: null, darkLogo: false },
                     ]
                   },
                 ].map(({ label, color, icon: SectorIcon, clientes }) => (
@@ -2837,24 +2845,31 @@ export default function PublicWebsite({
                       <h2 className="font-display font-black text-slate-900 text-base tracking-tight">{label}</h2>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                      {clientes.map(({ name, rubro, url }) => (
-                        <div
-                          key={name}
-                          className="bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-xl px-4 py-3 flex flex-col gap-1.5 transition-all shadow-xs"
-                        >
-                          <span className="text-[11px] font-bold text-slate-800 leading-tight">{name}</span>
-                          <span className="text-[9px] text-slate-400 font-semibold uppercase tracking-wide">{rubro}</span>
-                          {url && (
-                            <a
-                              href={`https://${url}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[9px] text-cyan-600 hover:text-cyan-800 flex items-center gap-0.5 transition-colors mt-0.5"
-                              onClick={e => e.stopPropagation()}
-                            >
-                              {url} <ExternalLink className="w-2 h-2" />
-                            </a>
+                      {clientes.map(({ name, rubro, url, logo, darkLogo }) => (
+                         <div
+                           key={name}
+                           className="bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md rounded-xl overflow-hidden flex flex-col transition-all shadow-xs"
+                         >
+                          {logo && (
+                            <div className={`flex items-center justify-center px-4 py-3 ${darkLogo ? "bg-slate-900" : "bg-slate-50 border-b border-slate-100"}`}>
+                              <img src={logo} alt={name} className="h-10 max-w-full object-contain" />
+                            </div>
                           )}
+                          <div className="px-4 py-3 flex flex-col gap-1.5">
+                            <span className="text-[11px] font-bold text-slate-800 leading-tight">{name}</span>
+                            <span className="text-[9px] text-slate-400 font-semibold uppercase tracking-wide">{rubro}</span>
+                            {url && (
+                              <a
+                                href={`https://${url}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[9px] text-cyan-600 hover:text-cyan-800 flex items-center gap-0.5 transition-colors mt-0.5"
+                                onClick={e => e.stopPropagation()}
+                              >
+                                {url} <ExternalLink className="w-2 h-2" />
+                              </a>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>
