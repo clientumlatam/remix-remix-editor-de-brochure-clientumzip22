@@ -48,3 +48,21 @@ id = "SgOV_kukw4dfGN3_DkrXE"
 uri = "file://Clientum_sitio_copy_referencia_v4.md"
 type = "text"
 title = "Sitio Copy Referencia v4 — MD (con sección Header + SVG + colores)"
+
+[[outputs]]
+id = "pHeJ30MHfvfb0hveahm8r"
+uri = "file://Clientum_WooCommerce_FINAL.csv"
+type = "table"
+title = "WooCommerce FINAL — CSV (482 productos · solo on-brand · español)"
+
+[[outputs]]
+id = "4sBj22b3lEvUP0ipg2iXP"
+uri = "file://Clientum_Catalogo_Referencia_FINAL.xlsx"
+type = "table"
+title = "Catálogo Referencia FINAL — XLSX (6 hojas especializadas)"
+
+[[outputs]]
+id = "EFSAUDRE8AKNap7wyC9pZ"
+uri = "file://Clientum_Copy_FINAL.md"
+type = "text"
+title = "Copy del Sitio FINAL — MD (fuente de verdad · limpio · sin pendientes)"
