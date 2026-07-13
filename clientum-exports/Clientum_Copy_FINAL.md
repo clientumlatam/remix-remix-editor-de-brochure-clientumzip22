@@ -1,5 +1,5 @@
 # Clientum — Copy completo del sitio
-> Fuente de verdad · Julio 2026 · Sincronizado con sitio live (clientum.com.ar)
+> Fuente de verdad · Julio 2026 (v5 · +Integraciones en catálogo) · Sincronizado con sitio live (clientum.com.ar)
 
 ---
 
@@ -248,6 +248,8 @@ Sincronizá automáticamente Clientum CRM con tus apps favoritas, pasarelas de p
 - **AFIP Facturación** *(Fiscal)* — Emisión automática de facturas A, B o C por cada transacción ganada en el CRM.
 - **MercadoPago & Stripe** *(Pagos)* — Links de pago desde el bot de WhatsApp y conciliación en el libro diario contable.
 - **ERPs Tradicionales (Tango / Bejerman)** *(Enterprise)* — API REST + servicios locales para stock mayorista, listas de precios y compras.
+
+> Las 6 integraciones destacadas arriba están ahora también cargadas como ítems del Catálogo de Servicios (categoría nueva **"Integraciones"**, SKUs CTM-0489 a CTM-0494), por lo que aparecen en el buscador del catálogo y en los exports de WooCommerce/XLSX.
 
 **Para Desarrolladores — API REST & Webhooks**
 Generá webhooks para notificar compras, registrar prospectos o disparar alertas ante cualquier evento comercial en tiempo real.
