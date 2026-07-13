@@ -1,0 +1,837 @@
+/* ============================================================
+   AI Client Prospector v2.0 — Admin Styles
+   Optimized for WordPress admin context
+   ============================================================ */
+
+/* Reset within our wrapper */
+#aime-prospector-wrap,
+#aime-prospector-wrap * {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* Override WP admin default page padding */
+#aime-prospector-wrap {
+  margin: -10px -20px 0 !important;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+/* ── SECTION VISIBILITY — critical ──────────────────────────── */
+/* All sections hidden by default — JS adds .active to show one */
+#aime-prospector-wrap .aimp-section {
+  display: none !important;
+}
+#aime-prospector-wrap .aimp-section.active {
+  display: block !important;
+}
+
+/* ── HEADER ──────────────────────────────────────────────────── */
+.aimp-header {
+  background: #0f172a;
+  color: #fff;
+  padding: 0 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 32px; /* WP admin bar */
+  z-index: 500;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+
+.aimp-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 800 !important;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  color: #fff !important;
+}
+
+.aimp-badge {
+  background: #10b981;
+  color: #fff !important;
+  font-size: 9px;
+  font-weight: 700 !important;
+  letter-spacing: .08em;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.aimp-header-sub {
+  flex: 1;
+  font-size: 11px;
+  color: #94a3b8 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aimp-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── BODY ────────────────────────────────────────────────────── */
+.aimp-body {
+  display: flex;
+  min-height: calc(100vh - 88px); /* 32px adminbar + 56px our header */
+  align-items: stretch;
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+.aimp-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: #1e293b;
+  position: sticky;
+  top: 88px;
+  height: calc(100vh - 88px);
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.aimp-sidebar-group {
+  padding: 10px 12px 3px;
+  font-size: 9px;
+  font-weight: 700 !important;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #475569 !important;
+}
+
+.aimp-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 16px;
+  color: #94a3b8 !important;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500 !important;
+  border-left: 3px solid transparent;
+  transition: all .12s;
+  user-select: none;
+  text-decoration: none !important;
+}
+
+.aimp-nav-item:hover {
+  background: rgba(255,255,255,.07);
+  color: #e2e8f0 !important;
+}
+
+.aimp-nav-item.active {
+  background: rgba(16,185,129,.12);
+  color: #10b981 !important;
+  border-left-color: #10b981;
+  font-weight: 600 !important;
+}
+
+.aimp-nav-icon {
+  font-size: 14px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ── MAIN CONTENT ────────────────────────────────────────────── */
+.aimp-main {
+  flex: 1;
+  padding: 24px;
+  min-width: 0;
+  background: #f1f5f9;
+}
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.aimp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  border-radius: 7px;
+  border: none !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: opacity .15s, background .15s;
+  white-space: nowrap;
+  line-height: 1 !important;
+}
+.aimp-btn:hover { opacity: .86; }
+.aimp-btn:focus { outline: none !important; box-shadow: none !important; }
+
+.aimp-btn-ghost     { background: rgba(255,255,255,.12); color: #e2e8f0 !important; }
+.aimp-btn-primary   { background: #10b981; color: #fff !important; }
+.aimp-btn-danger    { background: #ef4444; color: #fff !important; }
+.aimp-btn-secondary { background: #334155; color: #e2e8f0 !important; }
+.aimp-btn-outline   { background: #fff; border: 1px solid #cbd5e1 !important; color: #374151 !important; }
+.aimp-btn-ai        { background: linear-gradient(135deg,#6366f1,#8b5cf6); color: #fff !important; }
+.aimp-btn-sm        { padding: 5px 10px !important; font-size: 11px !important; }
+.aimp-btn:disabled  { opacity: .45; cursor: not-allowed; }
+
+/* ── PAGE HEADER ─────────────────────────────────────────────── */
+.aimp-page-header {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.aimp-page-title {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 4px !important;
+  line-height: 1.2 !important;
+}
+
+.aimp-page-desc {
+  font-size: 13px !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+/* ── CARDS ───────────────────────────────────────────────────── */
+.aimp-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.aimp-card-title {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin: 0 0 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* ── STATS STRIP ─────────────────────────────────────────────── */
+.aimp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.aimp-stat {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 18px;
+  text-align: center;
+}
+
+.aimp-stat-val {
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #1a3461 !important;
+  line-height: 1 !important;
+  font-variant-numeric: tabular-nums;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.aimp-stat-lbl {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+/* ── KANBAN ──────────────────────────────────────────────────── */
+.aimp-kanban-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 220px;
+  gap: 14px;
+  align-items: start;
+}
+
+.aimp-kanban-col {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.aimp-col-head {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.aimp-col-leads .aimp-col-head  { background: #eff6ff; color: #1d4ed8 !important; }
+.aimp-col-bot   .aimp-col-head  { background: #f0fdf4; color: #15803d !important; }
+.aimp-col-prop  .aimp-col-head  { background: #f5f3ff; color: #6d28d9 !important; }
+.aimp-col-won   .aimp-col-head  { background: #ecfdf5; color: #065f46 !important; }
+
+.aimp-col-count {
+  background: rgba(0,0,0,.1);
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 10px;
+}
+
+.aimp-col-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 80px;
+}
+
+/* Deal card */
+.aimp-deal {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 11px 13px;
+}
+
+.aimp-deal-company {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-bottom: 1px;
+}
+
+.aimp-deal-meta {
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 5px;
+}
+
+.aimp-deal-amount {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #10b981 !important;
+  margin-bottom: 6px;
+}
+
+.aimp-deal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.aimp-deal-action {
+  font-size: 10px !important;
+  padding: 3px 8px !important;
+  border-radius: 5px;
+  border: 1px solid #cbd5e1 !important;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  transition: all .1s;
+  line-height: 1 !important;
+}
+.aimp-deal-action:hover { background: #1e293b; color: #fff !important; border-color: #1e293b !important; }
+.aimp-deal-action.del { border-color: #fca5a5 !important; color: #dc2626 !important; }
+.aimp-deal-action.del:hover { background: #dc2626; color: #fff !important; border-color: #dc2626 !important; }
+
+.aimp-meddic-pill {
+  display: inline-block;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.aimp-meddic-pill.critical  { background: #fee2e2; color: #991b1b !important; }
+.aimp-meddic-pill.at-risk   { background: #fef3c7; color: #92400e !important; }
+.aimp-meddic-pill.stable    { background: #dbeafe; color: #1e40af !important; }
+.aimp-meddic-pill.optimized { background: #d1fae5; color: #065f46 !important; }
+
+.aimp-col-empty {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 11px !important;
+  color: #94a3b8 !important;
+}
+
+/* ── NEW DEAL FORM ────────────────────────────────────────────── */
+.aimp-form {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  display: none;
+}
+.aimp-form.open { display: block; }
+
+.aimp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.aimp-field { display: flex; flex-direction: column; gap: 5px; }
+
+.aimp-field label {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+}
+
+.aimp-field input,
+.aimp-field select,
+.aimp-field textarea {
+  padding: 8px 11px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 7px !important;
+  font-size: 12px !important;
+  color: #111827 !important;
+  background: #fff !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+}
+
+.aimp-field input:focus,
+.aimp-field select:focus,
+.aimp-field textarea:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,.1) !important;
+}
+
+/* ── CHECKLIST PANEL ─────────────────────────────────────────── */
+.aimp-checklist-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.aimp-checklist-head {
+  background: #1e293b;
+  color: #fff !important;
+  padding: 10px 14px;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.aimp-checklist-body { padding: 8px 10px; }
+
+.aimp-check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .1s;
+}
+.aimp-check-item:hover { background: #f8fafc; }
+
+.aimp-check-item input[type=checkbox] {
+  width: 14px !important;
+  height: 14px !important;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.aimp-check-text {
+  font-size: 11px !important;
+  color: #374151 !important;
+  flex: 1;
+  line-height: 1.4 !important;
+}
+
+.aimp-check-item.done .aimp-check-text {
+  text-decoration: line-through;
+  color: #9ca3af !important;
+}
+
+/* ── ICP OUTPUT ──────────────────────────────────────────────── */
+.aimp-icp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.aimp-icp-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.aimp-icp-card-title {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #6366f1 !important;
+  margin-bottom: 10px !important;
+}
+
+.aimp-kv {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 11px !important;
+}
+.aimp-kv:last-child { border-bottom: none; }
+.aimp-kv-k { color: #64748b !important; flex-shrink: 0; }
+.aimp-kv-v { font-weight: 600 !important; color: #0f172a !important; text-align: right; }
+
+/* ── PROSPECT CARDS ──────────────────────────────────────────── */
+.aimp-prospect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.aimp-prospect-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  transition: box-shadow .15s, border-color .15s;
+}
+.aimp-prospect-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); border-color: #a5b4fc; }
+
+.aimp-prospect-name {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 4px;
+}
+
+.aimp-prospect-meta {
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 8px;
+  line-height: 1.5 !important;
+}
+
+.aimp-score-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f0fdf4;
+  color: #15803d !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid #86efac;
+  margin-bottom: 8px;
+}
+
+.aimp-pain-chip {
+  background: #fffbeb;
+  color: #92400e !important;
+  font-size: 10px !important;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  line-height: 1.4 !important;
+  display: block;
+}
+
+.aimp-prospect-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* ── EXPLORER LAYOUT ─────────────────────────────────────────── */
+.aimp-explorer-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.aimp-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  background: #fff;
+  color: #374151 !important;
+  transition: all .12s;
+}
+.aimp-filter-chip.active { background: #1e293b; color: #fff !important; border-color: #1e293b; }
+
+.aimp-filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+
+.aimp-map-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ── MEDDIC SCORECARD ────────────────────────────────────────── */
+.aimp-meddic-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.aimp-criterion { margin-bottom: 18px; }
+
+.aimp-criterion-label {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-bottom: 3px !important;
+}
+
+.aimp-criterion-desc {
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 7px !important;
+  line-height: 1.5 !important;
+}
+
+.aimp-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.aimp-star {
+  font-size: 22px;
+  cursor: pointer;
+  color: #d1d5db;
+  transition: color .08s;
+  user-select: none;
+  line-height: 1;
+}
+.aimp-star.on { color: #f59e0b; }
+.aimp-star:hover { color: #f59e0b; }
+
+/* Score gauge */
+.aimp-gauge {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+
+.aimp-gauge-num {
+  font-size: 56px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  color: #1a3461 !important;
+  margin: 10px 0 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.aimp-gauge-status {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .05em;
+  margin-bottom: 12px !important;
+}
+
+.aimp-gauge-bar-bg {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+.aimp-gauge-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width .3s, background .3s;
+}
+
+.aimp-next-actions {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+}
+.aimp-next-actions h4 {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: #374151 !important;
+  margin: 0 0 8px !important;
+}
+.aimp-next-action {
+  font-size: 11px !important;
+  color: #374151 !important;
+  padding: 4px 0;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  gap: 6px;
+  line-height: 1.4 !important;
+}
+.aimp-next-action:last-child { border-bottom: none; }
+.aimp-next-action::before { content: "→"; color: #6366f1; flex-shrink: 0; font-weight: 700; }
+
+/* ── OUTREACH TABS ────────────────────────────────────────────── */
+.aimp-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 16px;
+}
+
+.aimp-tab {
+  padding: 8px 14px;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  background: none !important;
+  cursor: pointer;
+  color: #64748b !important;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all .12s;
+  border-radius: 0 !important;
+}
+.aimp-tab.active { color: #6366f1 !important; border-bottom-color: #6366f1 !important; }
+.aimp-tab:hover  { color: #1e293b !important; }
+
+.aimp-tab-panel { display: none; }
+.aimp-tab-panel.active { display: block; }
+
+.aimp-email-pre {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px !important;
+  line-height: 1.7 !important;
+  white-space: pre-wrap;
+  color: #1e293b !important;
+  user-select: all;
+  margin-bottom: 8px;
+  font-family: inherit !important;
+  min-height: 80px;
+}
+
+.aimp-li-step {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+}
+
+.aimp-li-step-head {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #6366f1 !important;
+  margin-bottom: 6px !important;
+}
+
+/* ── ALERTS & BANNERS ────────────────────────────────────────── */
+.aimp-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px;
+  line-height: 1.5 !important;
+}
+.aimp-alert-warning { background: #fffbeb; color: #92400e !important; border: 1px solid #fde68a; }
+.aimp-alert-success { background: #f0fdf4; color: #065f46 !important; border: 1px solid #86efac; }
+.aimp-alert-info    { background: #eff6ff; color: #1d4ed8 !important; border: 1px solid #93c5fd; }
+
+/* ── SPINNER ─────────────────────────────────────────────────── */
+.aimp-spin {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: aimp-rotate .6s linear infinite;
+  vertical-align: middle;
+}
+.aimp-spin-dark { border-color: rgba(0,0,0,.1); border-top-color: #6366f1; }
+@keyframes aimp-rotate { to { transform: rotate(360deg); } }
+
+/* ── BADGE ───────────────────────────────────────────────────── */
+.aimp-ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg,#6366f1,#8b5cf6);
+  color: #fff !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  padding: 3px 9px;
+  border-radius: 4px;
+  letter-spacing: .04em;
+}
+
+/* ── DELEGATED SECTION ───────────────────────────────────────── */
+.aimp-delegated {
+  text-align: center;
+  padding: 80px 20px;
+}
+.aimp-delegated-icon  { font-size: 52px; margin-bottom: 14px; display: block; }
+.aimp-delegated-title { font-size: 18px !important; font-weight: 800 !important; color: #1e293b !important; margin-bottom: 8px !important; }
+.aimp-delegated-desc  { font-size: 13px !important; color: #64748b !important; max-width: 380px; margin: 0 auto 20px !important; line-height: 1.6 !important; }
+
+/* ── TWO-COL GRID ────────────────────────────────────────────── */
+.aimp-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.aimp-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ── RESEARCH RESULT INLINE ──────────────────────────────────── */
+.aimp-research-result {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
