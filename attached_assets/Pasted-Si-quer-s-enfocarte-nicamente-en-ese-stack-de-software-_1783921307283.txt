@@ -1,0 +1,44 @@
+Si querés enfocarte **únicamente** en ese stack de software, organizaría el catálogo así:
+
+| Categoría             | Software                                                                                                                                      |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **ERP**               | Dolibarr, ERPNext, Akaunting                                                                                                                  |
+| **CRM**               | Dolibarr CRM                                                                                                                                  |
+| **Automatización**    | n8n                                                                                                                                           |
+| **IA**                | Open WebUI, Ollama, AnythingLLM, OpenClaw                                                                                                     |
+| **Desarrollo Web**    | WordPress, Elementor, Flatsome, Laravel, Next.js                                                                                              |
+| **E-commerce**        | WooCommerce                                                                                                                                   |
+| **Marketing Digital** | Mautic, WP Social, Predis.ai                                                                                                                  |
+| **Hosting**           | Cloudflare, Docker                                                                                                                            |
+| **Soporte**           | FreeScout                                                                                                                                     |
+| **Integraciones**     | Dolibarr API, WooCommerce API, Mercado Pago, WhatsApp (Evolution API/Baileys), ARCA/AFIP WSFE, Google Workspace, Google Sheets, Mercado Libre |
+| **Capacitación**      | Moodle, Tutor LMS, LearnPress                                                                                                                 |
+| **Consultoría**       | Auditorías ERP, BI con Metabase, Metabase, PostgreSQL, MariaDB, Migraciones, Optimización de procesos                                         |
+
+## Además agregaría estas categorías técnicas
+
+| Categoría                      | Software                      |
+| ------------------------------ | ----------------------------- |
+| **Business Intelligence (BI)** | Metabase                      |
+| **Bases de Datos**             | PostgreSQL, MariaDB           |
+| **Infraestructura**            | Docker, Cloudflare            |
+| **APIs e Integraciones**       | Dolibarr API, WooCommerce API |
+
+### El ecosistema de Clientum quedaría muy claro:
+
+* **ERP:** Dolibarr · ERPNext · Akaunting
+* **CRM:** Dolibarr CRM
+* **Automatización:** n8n
+* **IA:** Ollama · Open WebUI · AnythingLLM · OpenClaw
+* **Desarrollo Web:** WordPress · Elementor · Flatsome · Laravel · Next.js
+* **E-commerce:** WooCommerce
+* **Marketing:** Mautic · WP Social · Predis.ai
+* **Hosting:** Cloudflare · Docker
+* **Soporte:** FreeScout
+* **BI:** Metabase
+* **Bases de Datos:** PostgreSQL · MariaDB
+* **Capacitación:** Moodle · Tutor LMS · LearnPress
+* **Integraciones:** Mercado Pago · WhatsApp · Google Workspace · Google Sheets · Mercado Libre · ARCA/AFIP WSFE · APIs de Dolibarr y WooCommerce
+* **Consultoría:** Auditorías ERP · Migraciones · Optimización de procesos · Business Intelligence
+
+Esta selección es coherente con el enfoque de **software libre, soluciones web e IA para PyMEs**, evitando incorporar plataformas que no forman parte de tu oferta principal.
