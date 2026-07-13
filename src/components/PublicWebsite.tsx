@@ -2177,6 +2177,8 @@ export default function PublicWebsite({
                       { id: "integraciones", label: "Integraciones", desc: "Conecta tu CRM con WhatsApp, AFIP y más", icon: Zap, color: "text-amber-500 bg-amber-50" },
                       { id: "academia", label: "Academia", desc: "Cursos gratis de CRM y automatizaciones", icon: GraduationCap, color: "text-indigo-600 bg-indigo-50" },
                       { id: "casos", label: "Casos de Éxito", desc: "Historias de éxito de PyMEs reales", icon: Building, color: "text-emerald-500 bg-emerald-50" },
+                      { id: "planes", label: "Planes y Precios", desc: "Encontrá el plan exacto para tu negocio", icon: BarChart2, color: "text-blue-500 bg-blue-50" },
+                      { id: "clientes", label: "Nuestros Clientes", desc: "+35 empresas que ya confían en Clientum", icon: Users, color: "text-teal-500 bg-teal-50" },
                     ].map((item) => {
                       const ItemIcon = item.icon;
                       return (
@@ -2274,6 +2276,7 @@ export default function PublicWebsite({
                           </span>
                           <button
                             onClick={() => {
+                              setDemoForm({ ...demoForm, mensaje: `Hola Clientum, quiero consultar sobre el servicio "${s.name}".` });
                               setActiveTab("contacto");
                               window.scrollTo({ top: 0, behavior: "smooth" });
                             }}
