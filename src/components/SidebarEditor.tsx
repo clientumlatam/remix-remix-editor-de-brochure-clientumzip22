@@ -808,15 +808,15 @@ export default function SidebarEditor({
                   {[
                     {
                       name: "Variante 1",
-                      url: "/src/assets/images/clientum_logo_one_1783646444331.jpg"
+                      url: "/src/assets/images/clientum-logo-1.jpg"
                     },
                     {
                       name: "Variante 2",
-                      url: "/src/assets/images/clientum_logo_two_1783646457784.jpg"
+                      url: "/src/assets/images/clientum-logo-2.jpg"
                     },
                     {
                       name: "Variante 3",
-                      url: "/src/assets/images/clientum_logo_three_1783646468008.jpg"
+                      url: "/src/assets/images/clientum-logo-3.jpg"
                     }
                   ].map((logo, idx) => {
                     const isSelected = data.logoUrl === logo.url;
@@ -1574,19 +1574,19 @@ export default function SidebarEditor({
                 {[
                   {
                     name: "Variante 1: Crecimiento",
-                    url: "/src/assets/images/clientum_logo_one_1783646444331.jpg",
+                    url: "/src/assets/images/clientum-logo-1.jpg",
                     concept: "Abstracción C y Flecha",
                     desc: "Simboliza la 'C' de Clientum integrada con una flecha de crecimiento ascendente en degradé esmeralda. Transmite escalabilidad, automatización y superación de cuotas de ventas."
                   },
                   {
                     name: "Variante 2: Conectividad",
-                    url: "/src/assets/images/clientum_logo_two_1783646457784.jpg",
+                    url: "/src/assets/images/clientum-logo-2.jpg",
                     concept: "Origami de Diamante",
                     desc: "Un emblema en forma de diamante facetado que representa la red de contactos, la sincronización de leads en tiempo real y la elegancia tecnológica de una plataforma Premium."
                   },
                   {
                     name: "Variante 3: Inteligencia",
-                    url: "/src/assets/images/clientum_logo_three_1783646468008.jpg",
+                    url: "/src/assets/images/clientum-logo-3.jpg",
                     concept: "Anillos Concéntricos",
                     desc: "Anillos de órbita concéntrica y destellos estelares que representan la inteligencia comercial basada en datos, el ruteo geolocalizado GPS en la Patagonia y la automatización inteligente."
                   }
