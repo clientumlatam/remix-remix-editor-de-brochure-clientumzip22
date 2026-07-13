@@ -319,13 +319,13 @@ export default function PublicWebsite({
 
     // 4 — Soluciones (nav items)
     const solucionesData = [
-      { id: "chatbot",          name: "Chatbot WhatsApp",    desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
-      { id: "crm_inteligente",  name: "CRM Inteligente",     desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
-      { id: "asistente_ia",     name: "Asistente IA",        desc: "Tu analista de negocio disponible en todo momento." },
+      { id: "chatbot",          name: "Chatbot WhatsApp",    desc: "Tu negocio atiende solo, las 24 horas." },
+      { id: "crm_inteligente",  name: "CRM Inteligente",     desc: "Nunca más perdas una venta." },
+      { id: "asistente_ia",     name: "Asistente IA",        desc: "Tu analista de negocio, siempre disponible." },
       { id: "reportes",         name: "Reportes Automáticos",desc: "Dashboards en tiempo real para decisiones basadas en datos." },
-      { id: "automatizacion",   name: "Automatización",      desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
-      { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes consultan stock, facturas y pedidos solos." },
-      { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Sitios y e-commerce conectados directamente al CRM." },
+      { id: "automatizacion",   name: "Automatización",      desc: "Hacé más con menos esfuerzo." },
+      { id: "portal_cliente",   name: "Portal del Cliente",  desc: "Tus clientes se autoatienden." },
+      { id: "desarrollo_web",   name: "Desarrollo Web",      desc: "Tu presencia web, conectada al CRM." },
       { id: "integraciones",    name: "Integraciones",       desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
       { id: "catalogo",         name: "Catálogo Completo",   desc: "488 servicios en 14 categorías con precios reales." },
       { id: "consultoria_erp",  name: "Consultoría & ERP",   desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
@@ -1379,13 +1379,13 @@ export default function PublicWebsite({
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                       {[
-                        { id: "chatbot",        icon: Bot,          color: "bg-green-50 text-green-600 border-green-100",   accent: "group-hover:text-green-600",  label: "Chatbot WhatsApp",      desc: "Tu negocio atiende solo, las 24 horas, con IA en castellano." },
-                        { id: "crm_inteligente",icon: Briefcase,    color: "bg-blue-50 text-blue-600 border-blue-100",     accent: "group-hover:text-blue-600",   label: "CRM Inteligente",       desc: "Pipeline drag & drop, facturación AFIP y seguimiento automático." },
-                        { id: "asistente_ia",   icon: Sparkles,     color: "bg-violet-50 text-violet-600 border-violet-100",accent: "group-hover:text-violet-600", label: "Asistente IA",          desc: "Tu analista de negocio disponible en todo momento." },
+                        { id: "chatbot",        icon: Bot,          color: "bg-green-50 text-green-600 border-green-100",   accent: "group-hover:text-green-600",  label: "Chatbot WhatsApp",      desc: "Tu negocio atiende solo, las 24 horas." },
+                        { id: "crm_inteligente",icon: Briefcase,    color: "bg-blue-50 text-blue-600 border-blue-100",     accent: "group-hover:text-blue-600",   label: "CRM Inteligente",       desc: "Nunca más perdas una venta." },
+                        { id: "asistente_ia",   icon: Sparkles,     color: "bg-violet-50 text-violet-600 border-violet-100",accent: "group-hover:text-violet-600", label: "Asistente IA",          desc: "Tu analista de negocio, siempre disponible." },
                         { id: "reportes",       icon: BarChart2,    color: "bg-orange-50 text-orange-600 border-orange-100",accent: "group-hover:text-orange-600", label: "Reportes Automáticos",  desc: "Dashboards en tiempo real para decisiones basadas en datos." },
-                        { id: "automatizacion", icon: Zap,          color: "bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Automatización",        desc: "Flujos que procesan pedidos, cobros y envíos sin intervención." },
-                        { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes consultan stock, facturas y pedidos solos." },
-                        { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Sitios y e-commerce conectados directamente al CRM." },
+                        { id: "automatizacion", icon: Zap,          color: "bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Automatización",        desc: "Hacé más con menos esfuerzo." },
+                        { id: "portal_cliente", icon: LayoutGrid,   color: "bg-teal-50 text-teal-600 border-teal-100",     accent: "group-hover:text-teal-600",   label: "Portal del Cliente",    desc: "Tus clientes se autoatienden." },
+                        { id: "desarrollo_web", icon: Code2,        color: "bg-slate-100 text-slate-700 border-slate-200", accent: "group-hover:text-slate-900",  label: "Desarrollo Web",        desc: "Tu presencia web, conectada al CRM." },
                         { id: "integraciones",  icon: ArrowLeftRight,color:"bg-amber-50 text-amber-600 border-amber-100",  accent: "group-hover:text-amber-600",  label: "Integraciones",         desc: "WhatsApp, AFIP, MercadoPago, Gmail y más de 50 servicios." },
                         { id: "catalogo",       icon: LayoutGrid,   color: "bg-indigo-50 text-indigo-600 border-indigo-100",accent:"group-hover:text-indigo-600", label: "Catálogo Completo",     desc: "488 servicios en 14 categorías con precios reales." },
                         { id: "servicios",      icon: Briefcase,    color: "bg-blue-50 text-blue-700 border-blue-100",     accent: "group-hover:text-blue-700",   label: "Consultoría & ERP",     desc: "Auditoría de procesos, ERP personalizado y hoja de ruta." },
