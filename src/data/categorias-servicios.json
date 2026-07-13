@@ -1,7 +1,7 @@
 [
   {
     "name": "ERP y CRM",
-    "count": 75
+    "count": 74
   },
   {
     "name": "Desarrollo Web y E-Commerce",
@@ -17,15 +17,15 @@
   },
   {
     "name": "Atención al Cliente",
-    "count": 41
-  },
-  {
-    "name": "Soluciones por Industria",
-    "count": 39
+    "count": 40
   },
   {
     "name": "Formación y Capacitación",
     "count": 30
+  },
+  {
+    "name": "Soluciones por Industria",
+    "count": 21
   },
   {
     "name": "Automatización de Procesos",
