@@ -796,7 +796,14 @@ export default function PublicWebsite({
           {authUser ? (
             <div className="flex items-center gap-2 bg-slate-100 rounded-lg pl-3 pr-1.5 py-1.5">
               <UserCircle2 className="w-4 h-4 text-[#1A3461]" />
-              <span className="text-xs font-bold text-slate-700 max-w-[110px] truncate">{authUser}</span>
+              <button
+                onClick={onOpenLogin}
+                title="Ir al dashboard"
+                className="flex items-center gap-1 text-xs font-bold text-slate-700 max-w-[110px] truncate hover:text-[#1A3461] transition-colors cursor-pointer"
+              >
+                <span className="truncate">{authUser}</span>
+                <LogIn className="w-3 h-3 shrink-0 rotate-180" />
+              </button>
               <button
                 onClick={onLogout}
                 title="Cerrar sesión"
