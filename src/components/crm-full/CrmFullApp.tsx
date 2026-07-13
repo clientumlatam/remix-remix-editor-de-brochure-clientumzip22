@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot, Database, Blocks } from 'lucide-react';
+import { LayoutDashboard, Users, Package, Building2, MessageSquare, MessagesSquare, Bot, Database, Blocks, UserPlus } from 'lucide-react';
 import CrmFullDashboard from './CrmFullDashboard';
 import CrmFullPipeline from './CrmFullPipeline';
 import CrmFullProducts from './CrmFullProducts';
@@ -9,6 +9,7 @@ import CrmFullConversations from './CrmFullConversations';
 import CrmFullBotConfig from './CrmFullBotConfig';
 import CrmFullCMDB from './CrmFullCMDB';
 import CrmFullUseCases from './CrmFullUseCases';
+import CrmFullLeads from './CrmFullLeads';
 import { Conversation, Seller, Branch, Product } from './crmTypes';
 import {
   initialConversations,
@@ -17,7 +18,7 @@ import {
   initialProducts,
 } from './crmInitialData';
 
-type SubTab = 'dashboard' | 'crm' | 'products' | 'usecases' | 'sellers' | 'branches' | 'conversations' | 'bot' | 'cmdb';
+type SubTab = 'dashboard' | 'crm' | 'products' | 'usecases' | 'sellers' | 'branches' | 'conversations' | 'leads' | 'bot' | 'cmdb';
 
 const tabs: { id: SubTab; label: string; icon: React.ReactNode }[] = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard className="w-4 h-4" /> },
@@ -27,6 +28,7 @@ const tabs: { id: SubTab; label: string; icon: React.ReactNode }[] = [
   { id: 'sellers', label: 'Vendedores', icon: <Users className="w-4 h-4" /> },
   { id: 'branches', label: 'Sucursales', icon: <Building2 className="w-4 h-4" /> },
   { id: 'conversations', label: 'Conversaciones', icon: <MessageSquare className="w-4 h-4" /> },
+  { id: 'leads', label: 'Leads', icon: <UserPlus className="w-4 h-4" /> },
   { id: 'bot', label: 'Bot', icon: <Bot className="w-4 h-4" /> },
   { id: 'cmdb', label: 'Infraestructura', icon: <Database className="w-4 h-4" /> },
 ];
@@ -123,6 +125,8 @@ export default function CrmFullApp({ activeTabOverride, hideNav = false }: CrmFu
         return <CrmFullBranches branches={branches} onSave={handleSaveBranch} />;
       case 'conversations':
         return <CrmFullConversations conversations={conversations} />;
+      case 'leads':
+        return <CrmFullLeads />;
       case 'bot':
         return <CrmFullBotConfig />;
       case 'cmdb':

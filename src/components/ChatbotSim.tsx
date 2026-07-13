@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Bot, Send, Sparkles, RefreshCw, User, MessageSquare, Download, Github, ExternalLink } from "lucide-react";
+import { Bot, Send, Sparkles, RefreshCw, User, MessageSquare, Download, Github, ExternalLink, UserPlus, Loader2, CheckCircle2 } from "lucide-react";
 import { BrochureData } from "../types";
 
 interface ChatbotSimProps {
@@ -96,6 +96,55 @@ export default function ChatbotSim({ brochureData }: ChatbotSimProps) {
 
   const [showExportSuccess, setShowExportSuccess] = useState(false);
 
+  // --- Captura de lead real ---------------------------------------------
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadName, setLeadName] = useState("");
+  const [leadPhone, setLeadPhone] = useState("");
+  const [leadEmail, setLeadEmail] = useState("");
+  const [leadCompany, setLeadCompany] = useState("");
+  const [leadSaving, setLeadSaving] = useState(false);
+  const [leadError, setLeadError] = useState<string | null>(null);
+  const [leadSaved, setLeadSaved] = useState(false);
+
+  const buildConversationText = () =>
+    messages.map((m) => `[${m.sender === "user" ? "Cliente" : "Asesor"}]: ${m.text}`).join("\n");
+
+  const handleSaveLead = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadName.trim() || leadSaving) return;
+    setLeadSaving(true);
+    setLeadError(null);
+    try {
+      const response = await fetch("/api/chatbot-leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: leadName.trim(),
+          phone: leadPhone.trim() || undefined,
+          email: leadEmail.trim() || undefined,
+          company: leadCompany.trim() || undefined,
+          conversation: buildConversationText(),
+        }),
+      });
+      const resData = await response.json();
+      if (!response.ok) throw new Error(resData.error || "No se pudo guardar el lead.");
+
+      setLeadSaved(true);
+      setLeadName("");
+      setLeadPhone("");
+      setLeadEmail("");
+      setLeadCompany("");
+      setTimeout(() => {
+        setLeadSaved(false);
+        setShowLeadForm(false);
+      }, 2500);
+    } catch (err: any) {
+      setLeadError(err.message || "Ocurrió un error al guardar el lead.");
+    } finally {
+      setLeadSaving(false);
+    }
+  };
+
   const handleExportChat = () => {
     try {
       const header = `========= EXPORTACIÓN DE CONVERSACIÓN CLIENTUM =========\nFecha: ${new Date().toLocaleDateString("es-AR")}\nAsesor: Asesor Comercial Virtual Clientum\n========================================================\n\n`;
@@ -163,6 +212,18 @@ export default function ChatbotSim({ brochureData }: ChatbotSimProps) {
         </div>
         <div className="flex items-center gap-2">
           <button
+            onClick={() => { setShowLeadForm((v) => !v); setLeadError(null); }}
+            className={`p-1.5 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-[10px] font-bold border px-2.5 ${
+              showLeadForm
+                ? "bg-blue-950/60 border-blue-800 text-blue-300"
+                : "bg-slate-900 border-slate-800 text-slate-400 hover:text-blue-400 hover:border-blue-900"
+            }`}
+            title="Capturar lead real"
+          >
+            <UserPlus className="w-3 h-3" />
+            <span>Capturar Lead</span>
+          </button>
+          <button
             onClick={handleExportChat}
             className="text-slate-400 hover:text-emerald-400 p-1.5 rounded-lg transition-all cursor-pointer flex items-center gap-1.5 text-[10px] font-bold bg-slate-900 border border-slate-800 hover:border-emerald-900 px-2.5"
             title="Exportar conversación"
@@ -179,6 +240,67 @@ export default function ChatbotSim({ brochureData }: ChatbotSimProps) {
           </button>
         </div>
       </div>
+
+      {/* Lead Capture Form */}
+      {showLeadForm && (
+        <div className="p-3 border-b border-slate-800 bg-slate-950/60 shrink-0">
+          {leadSaved ? (
+            <div className="bg-emerald-950/80 border border-emerald-800/60 rounded-xl p-3 text-xs text-emerald-100 flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Lead guardado. Ya aparece en la pestaña <strong>Leads</strong> del CRM.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleSaveLead} className="flex flex-col gap-1.5">
+              <p className="text-[10px] text-slate-400 font-semibold">
+                Cargá los datos reales de esta persona para sumarla al CRM:
+              </p>
+              <div className="grid grid-cols-2 gap-1.5">
+                <input
+                  type="text"
+                  value={leadName}
+                  onChange={(e) => setLeadName(e.target.value)}
+                  placeholder="Nombre *"
+                  required
+                  className="col-span-2 bg-slate-950 border border-slate-800 text-xs px-2.5 py-1.5 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                />
+                <input
+                  type="text"
+                  value={leadPhone}
+                  onChange={(e) => setLeadPhone(e.target.value)}
+                  placeholder="Teléfono"
+                  className="bg-slate-950 border border-slate-800 text-xs px-2.5 py-1.5 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                />
+                <input
+                  type="email"
+                  value={leadEmail}
+                  onChange={(e) => setLeadEmail(e.target.value)}
+                  placeholder="Email"
+                  className="bg-slate-950 border border-slate-800 text-xs px-2.5 py-1.5 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                />
+                <input
+                  type="text"
+                  value={leadCompany}
+                  onChange={(e) => setLeadCompany(e.target.value)}
+                  placeholder="Empresa"
+                  className="col-span-2 bg-slate-950 border border-slate-800 text-xs px-2.5 py-1.5 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
+                />
+              </div>
+              {leadError && <p className="text-[10px] text-red-400">{leadError}</p>}
+              <div className="flex items-center gap-2 mt-0.5">
+                <button
+                  type="submit"
+                  disabled={leadSaving || !leadName.trim()}
+                  className="bg-blue-600 hover:bg-blue-500 disabled:bg-slate-800 disabled:text-slate-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer"
+                >
+                  {leadSaving ? <Loader2 className="w-3 h-3 animate-spin" /> : <UserPlus className="w-3 h-3" />}
+                  Guardar lead
+                </button>
+                <span className="text-[9px] text-slate-500">Se adjunta el historial de esta conversación.</span>
+              </div>
+            </form>
+          )}
+        </div>
+      )}
 
       {/* Message Area */}
       <div className="flex-1 overflow-y-auto p-3 flex flex-col gap-3 scrollbar-thin scrollbar-thumb-slate-800">

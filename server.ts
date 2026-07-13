@@ -2071,6 +2071,74 @@ Proporciona consejos estratégicos, creativos y prácticos. Usa el voseo argenti
 });
 
 // ---------------------------------------------------------------------------
+// Chatbot leads — captura real de leads desde el Asesor Comercial IA
+// (ChatbotSim), a diferencia de santi_leads que son prospectos generados
+// por el buscador satelital. Estos son personas reales que el vendedor
+// carga durante una demo/conversación con el bot.
+// ---------------------------------------------------------------------------
+async function initChatbotLeadsTable() {
+  await pgPool.query(`
+    CREATE TABLE IF NOT EXISTS chatbot_leads (
+      id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      name         TEXT NOT NULL,
+      phone        VARCHAR(40),
+      email        VARCHAR(200),
+      company      TEXT,
+      notes        TEXT,
+      conversation TEXT,
+      status       VARCHAR(20) NOT NULL DEFAULT 'nuevo',
+      created_at   TIMESTAMP NOT NULL DEFAULT NOW(),
+      updated_at   TIMESTAMP NOT NULL DEFAULT NOW()
+    );
+  `);
+  console.log("[Chatbot Leads] Tabla chatbot_leads lista.");
+}
+
+// POST /api/chatbot-leads
+// Body: { name, phone?, email?, company?, notes?, conversation? }
+// Lo llama el widget del Asesor Comercial IA cuando el vendedor captura los
+// datos de la persona con la que está conversando.
+app.post("/api/chatbot-leads", requireAuth, async (req, res) => {
+  const { name, phone, email, company, notes, conversation } = req.body ?? {};
+  if (typeof name !== "string" || !name.trim()) {
+    return res.status(400).json({ error: "name requerido" });
+  }
+  const result = await pgPool.query(
+    `INSERT INTO chatbot_leads (name, phone, email, company, notes, conversation)
+     VALUES ($1,$2,$3,$4,$5,$6)
+     RETURNING id, name, phone, email, company, notes, status, created_at`,
+    [name.trim(), phone || null, email || null, company || null, notes || null, conversation || null],
+  );
+  res.status(201).json({ ok: true, lead: result.rows[0] });
+});
+
+// GET /api/chatbot-leads
+// Lista los leads capturados, para la pestaña "Leads" del CRM.
+app.get("/api/chatbot-leads", requireAuth, async (req, res) => {
+  const result = await pgPool.query(
+    `SELECT id, name, phone, email, company, notes, conversation, status, created_at
+     FROM chatbot_leads
+     ORDER BY created_at DESC`,
+  );
+  res.json({ leads: result.rows });
+});
+
+// PATCH /api/chatbot-leads/:id
+// Body: { status: "nuevo"|"contactado"|"calificado"|"descartado" }
+app.patch("/api/chatbot-leads/:id", requireAuth, async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body ?? {};
+  const VALID = ["nuevo", "contactado", "calificado", "descartado"];
+  if (!VALID.includes(status)) return res.status(400).json({ error: "status inválido" });
+  const result = await pgPool.query(
+    `UPDATE chatbot_leads SET status = $1, updated_at = NOW() WHERE id = $2 RETURNING id`,
+    [status, id],
+  );
+  if (!result.rows[0]) return res.status(404).json({ error: "lead not found" });
+  res.json({ ok: true, id, status });
+});
+
+// ---------------------------------------------------------------------------
 // Santi SDR — DB migration: create tables if they don't exist yet
 // ---------------------------------------------------------------------------
 async function initSantiTables() {
@@ -2222,6 +2290,7 @@ app.post("/api/leads/:id/notes", requireApiKey, async (req, res) => {
 
 // Configure Vite or Static Files
 async function setupServer() {
+  await initChatbotLeadsTable();
   await initSantiTables();
 
   if (process.env.NODE_ENV !== "production") {
