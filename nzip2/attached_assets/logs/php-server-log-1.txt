@@ -1,0 +1,48 @@
+[Fri Jul 10 18:41:33 2026] PHP 8.2.23 Development Server (http://0.0.0.0:5000) started
+[Fri Jul 10 18:41:34 2026] 127.0.0.1:56312 Accepted
+[Fri Jul 10 18:41:34 2026] 127.0.0.1:56312 Closing
+[Fri Jul 10 18:41:36 2026] 127.0.0.1:56318 Accepted
+[Fri Jul 10 18:41:36 2026] 127.0.0.1:56318 Closing
+[Fri Jul 10 18:41:36 2026] 127.0.0.1:56332 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56332 [200]: GET /wp-admin/install.php
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56332 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56334 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56336 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56334 [200]: GET /wp-admin/css/forms.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56344 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56336 [200]: GET /wp-admin/css/l10n.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56354 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56344 [200]: GET /wp-includes/css/dashicons.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56358 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56334 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56354 [200]: GET /wp-includes/css/buttons.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56360 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56336 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56358 [200]: GET /wp-admin/css/install.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56360 [200]: GET /wp-includes/css/dist/base-styles/admin-schemes.min.css?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56344 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56354 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56358 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56360 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56376 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56376 [200]: GET /wp-includes/js/jquery/jquery.min.js?ver=3.7.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56376 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56380 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56382 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56388 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56380 [200]: GET /wp-admin/js/language-chooser.min.js?ver=7.0.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56380 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56382 [200]: GET /wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56382 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56388 [200]: GET /wp-admin/images/wordpress-logo-gray.svg?ver=20260303
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56388 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56402 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56402 [200]: GET /wp-admin/images/spinner.gif
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56402 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56410 Accepted
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56410 Closing
+[Fri Jul 10 18:41:37 2026] 127.0.0.1:56426 Accepted
+[Fri Jul 10 18:41:38 2026] 127.0.0.1:56426 [200]: GET /wp-admin/install.php
+[Fri Jul 10 18:41:38 2026] 127.0.0.1:56426 Closing
+[Fri Jul 10 18:44:56 2026] 127.0.0.1:48986 Accepted
+[Fri Jul 10 18:44:56 2026] 127.0.0.1:48986 Closing

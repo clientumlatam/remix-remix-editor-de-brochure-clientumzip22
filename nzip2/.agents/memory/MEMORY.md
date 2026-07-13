@@ -1,0 +1,1 @@
+- [CRM–WordPress Integration](crm-wp-integration.md) — auth via WP, Express internal on 3001, CrmProxy must call register_routes() directly (not via add_action), SQLite via PHP PDO only.

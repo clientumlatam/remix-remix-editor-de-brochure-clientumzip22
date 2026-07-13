@@ -1,0 +1,829 @@
+/**
+ * Course Flow PRO License - Styles
+ * 
+ * Professional CSS for PRO License page with world-class UX/UI design.
+ * Consistent with existing Course Flow design system.
+ * Author: Pawel Borowiec
+ * 
+ * @package CourseFlow
+ * @version 2.1.1
+ * @since 2.1.0
+ */
+
+/* Ensure proper spacing from WordPress admin menu. */
+#wpcontent .wrap {
+	max-width: 100% !important;
+	overflow-x: hidden !important;
+}
+
+/* Fix z-index stacking context to prevent adminmenuback overlap. */
+.courseflow-pro-license-container {
+	position: relative;
+	z-index: 1;
+}
+
+/* ====================================================================
+ * PRO LICENSE CONTAINER
+ * ==================================================================== */
+
+.courseflow-pro-license-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.courseflow-pro-license-header {
+	margin-bottom: 24px;
+}
+
+.courseflow-pro-license-header .courseflow-page-title {
+	font-size: 28px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 8px 0;
+	line-height: 1.3;
+}
+
+.courseflow-pro-license-content {
+	display: grid;
+	grid-template-columns: 1fr 360px;
+	gap: 24px;
+	align-items: start;
+}
+
+@media (max-width: 1024px) {
+	.courseflow-pro-license-content {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ====================================================================
+ * PENDING ACTIVATION NOTICE
+ * ==================================================================== */
+
+.courseflow-notice {
+	padding: 16px 20px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	border-left: 4px solid;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.courseflow-notice-info {
+	border-left-color: #3b82f6;
+	background: #eff6ff;
+}
+
+.courseflow-notice-content {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	margin-bottom: 12px;
+}
+
+.courseflow-notice-icon {
+	flex-shrink: 0;
+	color: #3b82f6;
+	margin-top: 2px;
+}
+
+.courseflow-notice-title {
+	font-weight: 600;
+	color: #1e40af;
+	margin: 0 0 4px 0;
+	font-size: 15px;
+}
+
+.courseflow-notice-subtitle {
+	color: #1e40af;
+	margin: 0;
+	font-size: 14px;
+	opacity: 0.9;
+}
+
+.courseflow-polling-indicator {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 13px;
+	color: #3b82f6;
+	font-weight: 500;
+}
+
+.courseflow-polling-dot {
+	width: 8px;
+	height: 8px;
+	background: #3b82f6;
+	border-radius: 50%;
+	animation: courseflow-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes courseflow-pulse {
+	0%, 100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.5;
+		transform: scale(0.95);
+	}
+}
+
+/* ====================================================================
+ * FORM CARDS
+ * ==================================================================== */
+
+.courseflow-form-card {
+	background: #fff;
+	border-radius: 12px;
+	padding: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 20px;
+	transition: box-shadow 0.3s ease;
+}
+
+.courseflow-form-card:hover {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.courseflow-card-header {
+	margin-bottom: 20px;
+}
+
+.courseflow-card-title {
+	font-size: 18px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 8px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.courseflow-card-description {
+	color: #64748b;
+	font-size: 14px;
+	line-height: 1.6;
+	margin: 0 0 20px 0;
+}
+
+/* ====================================================================
+ * LICENSE STATUS CARD (ACTIVE)
+ * ==================================================================== */
+
+.courseflow-license-active-card {
+	border-left: 4px solid #10b981;
+}
+
+.courseflow-status-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+}
+
+.courseflow-status-active {
+	background: #d1fae5;
+	color: #065f46;
+}
+
+.courseflow-license-details {
+	margin-top: 20px;
+}
+
+.courseflow-license-detail-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 0;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.courseflow-license-detail-row:last-child {
+	border-bottom: none;
+}
+
+.courseflow-detail-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #64748b;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.courseflow-detail-label svg {
+	color: #94a3b8;
+}
+
+.courseflow-detail-value {
+	font-size: 14px;
+	color: #1e293b;
+	font-weight: 500;
+	text-align: right;
+}
+
+.courseflow-detail-mono {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 13px;
+	background: #f8fafc;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+
+.courseflow-license-message {
+	margin-top: 16px;
+	padding: 12px;
+	background: #f8fafc;
+	border-radius: 6px;
+	border-left: 3px solid #3b82f6;
+}
+
+.courseflow-license-message p {
+	margin: 0;
+	color: #475569;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* ====================================================================
+ * UPGRADE CARD (INACTIVE LICENSE)
+ * ==================================================================== */
+
+.courseflow-upgrade-card {
+	text-align: center;
+	border-left: 4px solid #8b5cf6;
+}
+
+.courseflow-upgrade-header {
+	padding-bottom: 24px;
+	border-bottom: 1px solid #f1f5f9;
+	margin-bottom: 24px;
+}
+
+.courseflow-upgrade-icon {
+	width: 64px;
+	height: 64px;
+	margin: 0 auto 16px;
+	background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+}
+
+.courseflow-upgrade-title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #1e293b;
+	margin: 0 0 8px 0;
+}
+
+.courseflow-upgrade-subtitle {
+	font-size: 15px;
+	color: #64748b;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.courseflow-upgrade-features {
+	text-align: left;
+	margin-bottom: 24px;
+}
+
+.courseflow-features-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 16px 0;
+}
+
+.courseflow-features-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.courseflow-feature-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 10px 0;
+	color: #475569;
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.courseflow-feature-icon {
+	flex-shrink: 0;
+	color: #10b981;
+	margin-top: 2px;
+}
+
+.courseflow-upgrade-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.courseflow-upgrade-notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 12px;
+	background: #fef3c7;
+	border-radius: 6px;
+	margin-top: 16px;
+	text-align: left;
+}
+
+.courseflow-upgrade-notice svg {
+	flex-shrink: 0;
+	color: #d97706;
+	margin-top: 2px;
+}
+
+.courseflow-upgrade-notice p {
+	margin: 0;
+	color: #92400e;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+/* ====================================================================
+ * DOWNLOAD CARD
+ * ==================================================================== */
+
+.courseflow-download-card {
+	border-left: 4px solid #06b6d4;
+}
+
+.courseflow-download-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.courseflow-download-info {
+	background: #f0fdfa;
+	border-radius: 8px;
+	padding: 16px;
+	margin-bottom: 16px;
+}
+
+.courseflow-info-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	padding: 8px 0;
+	color: #0f766e;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.courseflow-info-item svg {
+	flex-shrink: 0;
+	color: #14b8a6;
+	margin-top: 2px;
+}
+
+.courseflow-download-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 16px;
+	border-top: 1px solid #f1f5f9;
+}
+
+.courseflow-download-help {
+	font-size: 12px;
+	color: #94a3b8;
+}
+
+/* ====================================================================
+ * SIDEBAR
+ * ==================================================================== */
+
+.courseflow-status-sidebar {
+	position: sticky;
+	top: 32px;
+}
+
+.courseflow-sidebar-title {
+	font-size: 16px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 16px 0;
+}
+
+.courseflow-status-summary {
+	margin-bottom: 16px;
+}
+
+.courseflow-status-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #f1f5f9;
+}
+
+.courseflow-status-row:last-child {
+	border-bottom: none;
+}
+
+.courseflow-status-label {
+	font-size: 13px;
+	color: #64748b;
+	font-weight: 500;
+}
+
+.courseflow-status-value {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.courseflow-status-value.active {
+	color: #10b981;
+}
+
+.courseflow-status-value.inactive {
+	color: #ef4444;
+}
+
+.courseflow-status-email {
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.courseflow-status-mono {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 11px;
+	background: #f8fafc;
+	padding: 3px 6px;
+	border-radius: 3px;
+}
+
+.courseflow-status-unavailable {
+	text-align: center;
+	padding: 24px;
+	color: #94a3b8;
+}
+
+.courseflow-status-unavailable svg {
+	margin-bottom: 8px;
+}
+
+.courseflow-status-unavailable p {
+	margin: 0;
+	font-size: 13px;
+}
+
+.courseflow-sidebar-divider {
+	height: 1px;
+	background: #f1f5f9;
+	margin: 16px 0;
+}
+
+.courseflow-sidebar-tips {
+	margin-bottom: 16px;
+}
+
+.courseflow-tips-title {
+	font-size: 14px;
+	font-weight: 600;
+	color: #1e293b;
+	margin: 0 0 12px 0;
+}
+
+.courseflow-tips-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.courseflow-tip-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	padding: 6px 0;
+	font-size: 13px;
+	color: #64748b;
+	line-height: 1.5;
+}
+
+.courseflow-tip-item svg {
+	flex-shrink: 0;
+	color: #3b82f6;
+	margin-top: 2px;
+}
+
+.courseflow-sidebar-security {
+	background: #f0fdf4;
+	padding: 12px;
+	border-radius: 6px;
+	border: 1px solid #bbf7d0;
+}
+
+.courseflow-security-badge {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: #166534;
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.courseflow-security-badge svg {
+	color: #22c55e;
+}
+
+.courseflow-security-text {
+	font-size: 12px;
+	color: #166534;
+	line-height: 1.5;
+	margin: 0;
+}
+
+/* ====================================================================
+ * BUTTONS
+ * ==================================================================== */
+
+.courseflow-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 10px 16px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.courseflow-btn:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.courseflow-btn:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.courseflow-btn-primary {
+	background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+	color: #fff;
+	border-color: transparent;
+	box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+.courseflow-btn-primary:hover:not(:disabled) {
+	background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+	box-shadow: 0 4px 6px rgba(99, 102, 241, 0.25);
+	transform: translateY(-1px);
+}
+
+.courseflow-btn-secondary {
+	background: #fff;
+	color: #475569;
+	border-color: #e2e8f0;
+}
+
+.courseflow-btn-secondary:hover:not(:disabled) {
+	background: #f8fafc;
+	border-color: #cbd5e1;
+	transform: translateY(-1px);
+}
+
+.courseflow-btn-text {
+	background: transparent;
+	color: #64748b;
+	border: none;
+	padding: 6px 12px;
+}
+
+.courseflow-btn-text:hover:not(:disabled) {
+	color: #3b82f6;
+	background: #f1f5f9;
+}
+
+.courseflow-btn-large {
+	padding: 14px 24px;
+	font-size: 16px;
+}
+
+.courseflow-btn-spinner {
+	width: 14px;
+	height: 14px;
+	border: 2px solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: courseflow-spin 0.6s linear infinite;
+}
+
+@keyframes courseflow-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* ====================================================================
+ * TOAST NOTIFICATIONS
+ * ==================================================================== */
+
+.courseflow-toast {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	min-width: 320px;
+	max-width: 480px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	z-index: 9999;
+	animation: courseflow-toast-slide-in 0.3s ease-out;
+}
+
+@keyframes courseflow-toast-slide-in {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.courseflow-toast-content {
+	display: flex;
+	align-items: flex-start;
+	padding: 16px;
+	gap: 12px;
+}
+
+.courseflow-toast-icon {
+	flex-shrink: 0;
+}
+
+.courseflow-toast-message {
+	flex: 1;
+	font-size: 14px;
+	line-height: 1.5;
+	padding-top: 2px;
+}
+
+.courseflow-toast-close {
+	flex-shrink: 0;
+	background: transparent;
+	border: none;
+	padding: 4px;
+	cursor: pointer;
+	color: #94a3b8;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+}
+
+.courseflow-toast-close:hover {
+	color: #475569;
+	background: #f1f5f9;
+}
+
+.courseflow-toast-success {
+	border-left: 4px solid #10b981;
+}
+
+.courseflow-toast-success .courseflow-toast-icon {
+	color: #10b981;
+}
+
+.courseflow-toast-success .courseflow-toast-message {
+	color: #065f46;
+}
+
+.courseflow-toast-error {
+	border-left: 4px solid #ef4444;
+}
+
+.courseflow-toast-error .courseflow-toast-icon {
+	color: #ef4444;
+}
+
+.courseflow-toast-error .courseflow-toast-message {
+	color: #991b1b;
+}
+
+.courseflow-toast-info {
+	border-left: 4px solid #3b82f6;
+}
+
+.courseflow-toast-info .courseflow-toast-icon {
+	color: #3b82f6;
+}
+
+.courseflow-toast-info .courseflow-toast-message {
+	color: #1e40af;
+}
+
+/* ====================================================================
+ * LOADING STATE
+ * ==================================================================== */
+
+.courseflow-loading-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 400px;
+	gap: 16px;
+}
+
+.courseflow-spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px solid #e2e8f0;
+	border-top-color: #6366f1;
+	border-radius: 50%;
+	animation: courseflow-spin 0.8s linear infinite;
+}
+
+.courseflow-loading-container p {
+	color: #64748b;
+	font-size: 14px;
+}
+
+/* ====================================================================
+ * RESPONSIVE
+ * ==================================================================== */
+
+@media (max-width: 768px) {
+	.courseflow-pro-license-container {
+		padding: 16px;
+	}
+
+	.courseflow-form-card {
+		padding: 20px;
+	}
+
+	.courseflow-upgrade-header {
+		padding-bottom: 20px;
+	}
+
+	.courseflow-upgrade-title {
+		font-size: 20px;
+	}
+
+	.courseflow-toast {
+		right: 16px;
+		left: 16px;
+		min-width: auto;
+	}
+
+	.courseflow-download-footer {
+		flex-direction: column;
+		gap: 12px;
+		align-items: flex-start;
+	}
+}
+
+/* ====================================================================
+ * ACCESSIBILITY
+ * ==================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* High contrast mode support. */
+@media (prefers-contrast: high) {
+	.courseflow-btn {
+		border-width: 2px;
+	}
+
+	.courseflow-form-card {
+		border: 1px solid #cbd5e1;
+	}
+}

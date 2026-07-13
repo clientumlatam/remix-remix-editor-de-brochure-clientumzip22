@@ -1,0 +1,95 @@
+modules = ["php-8.2", "nodejs-20", "python-base-3.13"]
+[nix]
+channel = "stable-25_05"
+
+[agent]
+expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "WhatsApp Bridge"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "CRM Express"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd wordpress && php -S 0.0.0.0:5000 router.php"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "WhatsApp Bridge"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd whatsapp-bridge && node index.js"
+
+[[workflows.workflow]]
+name = "CRM Express"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd crm-express && npx tsx server.ts"
+waitForPort = 3001
+
+[workflows.workflow.metadata]
+outputType = "console"
+
+[[ports]]
+localPort = 3001
+externalPort = 3003
+
+[[ports]]
+localPort = 3300
+externalPort = 3000
+exposeLocalhost = true
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 23636
+externalPort = 3002
+
+[[ports]]
+localPort = 24678
+externalPort = 3001
+
+[userenv]
+
+[userenv.shared]
+WHATSAPP_BRIDGE_PORT = "3300"
+WHATSAPP_BRIDGE_TOKEN = "4c2be81cbe21e4c4d25aa4053fe72077865974631699e9260aa29cf1cb38189e"
+WHATSAPP_BRIDGE_URL = "http://127.0.0.1:3300"
+WP_WEBHOOK_SECRET = "e098d5cf15ee0c572272a7eb58d19e9e76901f62a62041d010b49736e3be1b7c"
+WP_WEBHOOK_URL = "http://127.0.0.1:5000/index.php?rest_route=/aime/v1/chatbot/whatsapp/incoming"
+CRM_INTERNAL_TOKEN = "4f6a3fa0b2cc1f876430492b1aa05fc0365a4dd299027c4a"
+CRM_EXPRESS_URL = "http://127.0.0.1:3001"
+HUNTER_API_KEY = "0711d0e54b9d37e59e30e8f15e6b62574675bb50"
+"SANTI API_KEY" = "5440b3f62c3d7e5950572ab45cc2a721e27e1b5abec0b9b6ccff194cef627849"

@@ -1,0 +1,232 @@
+[Fri Jul 10 18:51:55 2026] PHP 8.2.23 Development Server (http://0.0.0.0:5000) started
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48066 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48066 [200]: GET /wp-admin/install.php?step=2
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48066 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48082 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48082 [200]: GET /wp-includes/css/dashicons.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48082 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48094 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48096 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48094 [200]: GET /wp-admin/css/l10n.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48100 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48094 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48108 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48096 [200]: GET /wp-includes/css/dist/base-styles/admin-schemes.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48100 [200]: GET /wp-admin/css/forms.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48112 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48108 [200]: GET /wp-includes/css/buttons.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48112 [200]: GET /wp-admin/css/install.min.css?ver=7.0.1
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48096 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48100 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48108 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48112 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48118 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48118 [200]: GET /wp-admin/images/wordpress-logo-gray.svg?ver=20260303
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48118 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48132 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48132 Closing
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48138 Accepted
+[Fri Jul 10 18:52:00 2026] 127.0.0.1:48138 Closing
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59150 Accepted
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59150 Closing
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59158 Accepted
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59158 Closing
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59166 Accepted
+[Fri Jul 10 18:52:09 2026] 127.0.0.1:59166 Closing
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34312 Accepted
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34312 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34312 Closing
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34318 Accepted
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34318 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:26 2026] 127.0.0.1:34318 Closing
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34322 Accepted
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34322 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34322 Closing
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34336 Accepted
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34336 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34336 Closing
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34350 Accepted
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34350 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34350 Closing
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34366 Accepted
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34366 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34366 Closing
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34376 Accepted
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34376 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:27 2026] 127.0.0.1:34376 Closing
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34388 Accepted
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34388 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34388 Closing
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34398 Accepted
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34398 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34398 Closing
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34400 Accepted
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34400 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34400 Closing
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34406 Accepted
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34406 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:28 2026] 127.0.0.1:34406 Closing
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51512 Accepted
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51512 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51512 Closing
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51528 Accepted
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51528 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51528 Closing
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51530 Accepted
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51530 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51530 Closing
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51540 Accepted
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51540 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51540 Closing
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51552 Accepted
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51552 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:29 2026] 127.0.0.1:51552 Closing
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51554 Accepted
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51554 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51554 Closing
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51564 Accepted
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51564 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51564 Closing
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51568 Accepted
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51568 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51568 Closing
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51576 Accepted
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51576 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51576 Closing
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51578 Accepted
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51578 [302]: GET /wp-admin/
+[Fri Jul 10 18:52:30 2026] 127.0.0.1:51578 Closing
+[Fri Jul 10 18:52:48 2026] 127.0.0.1:45834 Accepted
+[Fri Jul 10 18:52:48 2026] 127.0.0.1:45834 Closing
+[Fri Jul 10 18:52:48 2026] 127.0.0.1:36230 Accepted
+[Fri Jul 10 18:52:48 2026] 127.0.0.1:36230 Closing
+[Fri Jul 10 18:52:49 2026] 127.0.0.1:36238 Accepted
+[Fri Jul 10 18:52:49 2026] 127.0.0.1:36238 Closing
+[Fri Jul 10 18:53:19 2026] 127.0.0.1:33440 Accepted
+[Fri Jul 10 18:53:19 2026] 127.0.0.1:33440 Closing
+[Fri Jul 10 18:53:23 2026] 127.0.0.1:33452 Accepted
+[Fri Jul 10 18:53:23 2026] 127.0.0.1:33452 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:23 2026] 127.0.0.1:33452 Closing
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33456 Accepted
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33456 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33456 Closing
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33468 Accepted
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33468 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33468 Closing
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33478 Accepted
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33478 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33478 Closing
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33480 Accepted
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33480 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:24 2026] 127.0.0.1:33480 Closing
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33494 Accepted
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33494 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33494 Closing
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33508 Accepted
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33508 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33508 Closing
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33518 Accepted
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33518 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33518 Closing
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33526 Accepted
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33526 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33526 Closing
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33542 Accepted
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33542 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:25 2026] 127.0.0.1:33542 Closing
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33556 Accepted
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33556 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33556 Closing
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33564 Accepted
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33564 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33564 Closing
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33574 Accepted
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33574 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33574 Closing
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33582 Accepted
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33582 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33582 Closing
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33596 Accepted
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33596 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:26 2026] 127.0.0.1:33596 Closing
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33598 Accepted
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33598 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33598 Closing
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33610 Accepted
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33610 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33610 Closing
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33626 Accepted
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33626 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33626 Closing
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33638 Accepted
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33638 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33638 Closing
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33652 Accepted
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33652 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:27 2026] 127.0.0.1:33652 Closing
+[Fri Jul 10 18:53:28 2026] 127.0.0.1:33668 Accepted
+[Fri Jul 10 18:53:28 2026] 127.0.0.1:33668 [302]: GET /wp-admin/
+[Fri Jul 10 18:53:28 2026] 127.0.0.1:33668 Closing
+[Fri Jul 10 18:53:32 2026] 127.0.0.1:37054 Accepted
+[Fri Jul 10 18:53:32 2026] 127.0.0.1:37054 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:32 2026] 127.0.0.1:37054 Closing
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37070 Accepted
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37070 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37070 Closing
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37076 Accepted
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37076 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37076 Closing
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37082 Accepted
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37082 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37082 Closing
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37088 Accepted
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37088 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:33 2026] 127.0.0.1:37088 Closing
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37096 Accepted
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37096 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37096 Closing
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37098 Accepted
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37098 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37098 Closing
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37108 Accepted
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37108 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37108 Closing
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37120 Accepted
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37120 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:34 2026] 127.0.0.1:37120 Closing
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37122 Accepted
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37122 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37122 Closing
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37134 Accepted
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37134 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37134 Closing
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37142 Accepted
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37142 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37142 Closing
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37150 Accepted
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37150 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:35 2026] 127.0.0.1:37150 Closing
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37156 Accepted
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37156 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37156 Closing
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37162 Accepted
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37162 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37162 Closing
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37164 Accepted
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37164 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37164 Closing
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37172 Accepted
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37172 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37172 Closing
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37180 Accepted
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37180 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:36 2026] 127.0.0.1:37180 Closing
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37188 Accepted
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37188 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37188 Closing
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37204 Accepted
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37204 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37204 Closing
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37210 Accepted
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37210 [302]: GET /wp-login.php
+[Fri Jul 10 18:53:37 2026] 127.0.0.1:37210 Closing

@@ -1,0 +1,41 @@
+/**
+ * Frontend Styles for Course Flow Plugin
+ * Styles for Stripe buttons and frontend elements
+ * Version: 1.0.0
+ * Author: Pawel Borowiec
+ * Text Domain: course-flow
+ */
+
+.courseflow-stripe-button {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Container for button preview in the admin panel */
+#courseflow-button-preview {
+    margin: 1.25rem 0;
+    text-align: right;
+}
+
+/* Preview button styling */
+#courseflow-preview-button {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+#courseflow-preview-button:hover {
+    opacity: 0.8;
+}
+
+/* Style for the image button */
+.courseflow-stripe-image-button {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.courseflow-stripe-image-button:hover {
+    opacity: 0.8;
+}

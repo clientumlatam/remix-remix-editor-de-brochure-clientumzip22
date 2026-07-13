@@ -1,0 +1,25 @@
+{
+    "name": "wpraiz/content-api-tool",
+    "description": "REST API + MCP Server for WordPress. AI content generation with BYOK.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "José Ícaro",
+            "email": "joseicarobc@gmail.com",
+            "homepage": "https://wpraiz.com.br"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "WPRaiz\\ContentAPI\\": "includes/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

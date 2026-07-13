@@ -1,0 +1,104 @@
+/**
+ * Styles for the Image Button Settings page in Course Flow.
+ * Version: 1.0.0
+ * Author: Pawel Borowiec
+ * Text Domain: course-flow
+ */
+
+/* Style for the image button settings container */
+.courseflow-button-settings-container {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.courseflow-button-settings-form {
+    flex: 1;
+    max-width: 50%;
+}
+
+.courseflow-button-settings-preview {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+}
+
+/* Preview image styling */
+.courseflow-button-settings-preview img {
+    margin-top: 0.625rem;
+    max-width: 100%;
+}
+
+/* Upload and remove button styling */
+.courseflow-upload-button, .courseflow-remove-button {
+    margin-right: 0.625rem;
+}
+
+/* Original size image styling */
+.courseflow-image-button-original-size {
+    margin-top: 0.625rem;
+}
+
+/* Styles for the copy notification (consistent with courses-page.css) */
+.courseflow-copy-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #28a745;
+    color: #fff;
+    padding: 0.9375rem 1.875rem;
+    border-radius: 8px;
+    z-index: 10000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    text-align: center;
+    display: none;
+    font-weight: 600;
+}
+
+.courseflow-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .courseflow-button-settings-container {
+        flex-direction: column;
+    }
+
+    .courseflow-button-settings-form,
+    .courseflow-button-settings-preview {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .courseflow-button-settings-container {
+        gap: 10px;
+    }
+
+    .courseflow-button-settings-preview img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Responsive styles for very small screens (smartphones) */
+@media (max-width: 30rem) {
+    .courseflow-button-settings-container {
+        gap: 0.625rem;
+    }
+
+    .courseflow-button-settings-preview img {
+        max-width: 100%;
+        height: auto;
+    }
+}
